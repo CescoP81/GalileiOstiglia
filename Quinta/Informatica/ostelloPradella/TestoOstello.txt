@@ -1,0 +1,50 @@
+CONSEGNA:
+L'ostello MiraMonti ti ha commissionato lo sviluppo di un gestionale per la propria attività di prenotazione e gestione delle camere.
+Nella fase iniziale ti è richiesto di poter gestire un elenco delle camere, un elenco dei clienti ed, ovviamente, un elenco delle prenotazioni.
+Le specifiche concordare con il personale sono le seguenti:
+1. ogni cliente deve essere schedato con i seguenti dati: Cognome, nome, email, telefono, stato di provenienza, provincia di provenienza(se lo stato è italia).
+2. ogni camera deve essere schedata con i seguenti dati: nr. camera, posti letto, bagno in camera, prezzo giornaliero.
+3. ogni prenotazione, che viene inserita dal personale dell'ostello, deve prevedere i seguenti dati: data di inizio, data di fine, nr. della camera, incasso (calcolato nel momento in cui la camera viene liberata), rank apprezzamento cliente (un valore da 1 a 5 dove 1-per niente soddisfatto 5-pienamente soddisfatto).
+
+Oltre a queste specifiche concordate, devi progettare il set di tabelle con i campi richiesti ed eventuali campi accessori utili alla tua applicazione. 
+
+FASI
+OK 1. brainstorming per la definizione del set tabelle-attributi del database.
+OK 2. set delle regole di sviluppo (nome cartella principale).
+3. Sviluppo delle pagine PHP per la webapp.
+
+// DEFINIZIONE DELLE TABELLE
+CREATE TABLE ostello_cliente(
+	id integer unsigned auto_increment,
+	cognome varchar(30),
+	nome varchar(30),
+	email varchar(50),
+	telefono varchar(15),
+	stato_provenienza varchar(3),
+	provincia_provenienza char(2),
+	data_nascita date,
+	primary key(id)
+)
+
+CREATE TABLE ostello_camera(
+	id integer unsigned auto_increment,
+	nr_camera varchar(3),
+	posti_letto tinyint unsigned,
+	bagno_in_camera char(1),
+	prezzo_giornaliero float,
+	primary key(id)
+)
+
+CREATE TABLE ostello_prenotazione(
+	id integer unsigned auto_increment,
+	data_inizio date,
+	data_fine date,
+	id_camera integer unsigned,
+	id_cliente integer unsigned,
+	incasso float unsigned,
+	rank_apprezzamento tinyint,
+	
+	foreign key (id_camera) references ostello_camera(id),
+	foreign key (id_cliente) references ostello_cliente(id),
+	primary key(id)
+)

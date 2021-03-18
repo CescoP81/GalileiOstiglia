@@ -1,0 +1,4 @@
+Il Comune di Mantova ha predisposto a partire dall'anno 2000 la monitorizzazione delle temperature 
+in città grazie ad alcune stazioni meteo. Le stazioni misurano la temperatura con precisione al decimo 
+di grado, tale dato viene registrato su un database generale. 
+Le stazioni sono definite da un nome arbitrario e dalla posizione in cui sono poste.
