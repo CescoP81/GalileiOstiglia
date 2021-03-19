@@ -10,13 +10,13 @@
 if(isset($_REQUEST['scelta'])) $sc = $_REQUEST['scelta'];
 else $sc = null;
 
-include("head.html");
+include("../head.html");
     // creo il menu operativo della pagina.
     // utilizzo il blocco nav di base come specificato nella documentation.
     echo("<nav class=\"nav\">");
-        echo("<a class=\"nav-link\" href=\"docente.php\">Home</a>");
-        echo("<a class=\"nav-link\" href=\"docente.php?scelta=showDocente\">Visualizza Docenti</a> ");
-        echo("<a class=\"nav-link\" href=\"docente.php?scelta=formDocente\">Nuovo Docente</a>");
+        echo("<a class=\"nav-link\" href=\"docenteBS.php\">Home</a>");
+        echo("<a class=\"nav-link\" href=\"docenteBS.php?scelta=showDocente\">Visualizza Docenti</a> ");
+        echo("<a class=\"nav-link\" href=\"docenteBS.php?scelta=formDocente\">Nuovo Docente</a>");
     echo("</nav>");
     echo("<br />");
 
@@ -98,5 +98,5 @@ include("head.html");
             break;
         }
     }
-include("foot.html");
+include("../foot.html");
 ?>

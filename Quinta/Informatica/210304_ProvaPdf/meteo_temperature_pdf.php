@@ -32,7 +32,7 @@ while($record){
 $db->close();
 
 // Carico a fianco della tabella valori, il grafico multilinea delle temperature presenti.
-$pdf->Image('http://scuola.localhost/5I_AS2021/Informatica/210304_ProvaPdf/multilinea_spezzata.php', 85, 10, 115, 0, 'PNG');
+$pdf->Image('http://scuola.localhost/Quinta/Informatica/210304_ProvaPdf/multilinea_spezzata.php', 85, 10, 115, 0, 'PNG');
 
 $pdf->Output();
 ?>
