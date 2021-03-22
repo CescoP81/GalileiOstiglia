@@ -1,3 +1,12 @@
+/*
+Realizzare un programma C che sviluppi le seguenti funzioni:
+1. initVettore -> inizializza un vettore di 15 elementi con valori casuali tra 1 e 50 estremi compresi.
+2. stampaVettore -> visualizza l'intero vettore.
+3. ricercaValore -> Riceve un vettore ed un valore da ricercare, restituisce il numero di volte che trova il valore nel vettore.
+4. swapValori -> riceve un vettore e due indici, quindi scambia il valore delle celle identificate dagli indici. Ritorna 1 se l'operazione è stata eseguita, ritorna 0 se gli indici non sono validi.
+5. equalsVettori -> riceve due vettori di uguale lunghezza e verifica che siano uguali oppure no.
+    ritorna 1 se i due vettori sono uguali, 0 se non sono uguali.
+*/
 #include <conio.h>
 #include <stdio.h>
 #include "lib.c"
