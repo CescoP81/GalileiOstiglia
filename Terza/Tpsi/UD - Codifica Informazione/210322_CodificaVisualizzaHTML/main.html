@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Esercitazione sulla Codifica Binaria</title>
+    </head>
+    <body>
+        <h1>Codificatore Binario</h1>
+        <b>Valore Decimale: </b>
+        <input type="text" ID="vdec"><br /> <!-- Casella di testo in cui inserire un valore -->
+        <input type="button" value="Converti in Binario" onclick="decToBin();"><br /><br /> <!-- bottone da premere per INVOCARE la funzione -->
+        <div id="lavagna" style="border: solid 2px rgb(0,0,0); width:320px; height: 240px;"> <!-- spazio in cui scrivere i risultati della funzione -->
+            Lavagna inizializzata...<br />
+        </div>
+
+        <!-- spazio di definizione delle funzioni JS (Javascript) -->
+        <script>
+            function f1(){
+                // creo una variabile per il valore di vdec
+                let valore;
+
+                // recupero dalla casella di testo il valore presente.
+                valore = document.getElementById("vdec").value;
+
+                // aggiungo il contenuto di 'valore' alla lavagna.
+                document.getElementById("lavagna").innerHTML += valore;
+                document.getElementById("lavagna").innerHTML += "<br />";
+            }
+
+            function decToBin(){
+                // azzero il contenuto della lavagna.
+                document.getElementById("lavagna").innerHTML = "";
+
+                // creo una variabile per il valore di vdec
+                let valore;
+
+                // recupero il valore da vdec
+                valore = document.getElementById("vdec").value;
+
+                // converto il valore da stringa a numero
+                valore = parseInt(valore);
+
+                let i;
+                let r;
+
+                for(i=0; i<8; i++){
+                    r = valore % 2;
+                    valore = Math.floor(valore / 2);
+                    //document.getElementById("lavagna").innerHTML += valore + " " + r + "<br />";
+                    document.getElementById("lavagna").innerHTML += r + "<br />";
+                }
+            }
+        </script>
+    </body>
+</html>
