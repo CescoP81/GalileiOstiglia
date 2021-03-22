@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Prova di JavaScript</title>
+        <style type="text/css">
+            #lavagna{
+                border: solid 2px rgb(0,200,0);
+                width: 320px;
+                height: 240px;
+            }    
+        </style>
+    </head>
+    <body>
+        <!-- definire la parte visuale per i dati-->
+        <form>
+            Valore A: <input type="text" ID="val_1" value=""><br />
+            Valore B: <input type="text" ID="val_2" value=""><br />
+            <input type="button" ID="btn1" onclick="funz1();" value="Calcola Somma">
+            <input type="button" ID="btn2" onclick="funz2();" value="Calcola Differenza">
+        </form>
+        <p ID="lavagna">Lavagna vuota...</p> 
+
+
+        <!-- Parte relativa alle funzioni in Javascript che vengono sbiluppate. -->
+        <script>
+            function funz1(){
+                //document.write("Hello da Funz1"); che scrive nell'intero documento
+
+                // sostituisco quanto presente in lavagna con il nuovo contenuto.
+                //document.getElementById("lavagna").innerHTML = "Hello da Funz1";
+                // aggiungo il nuovo contenuto a quanto già presente nella lavagna.
+                //document.getElementById("lavagna").innerHTML += "Hello da Funz1";
+
+                let a = document.getElementById("val_1").value;
+                let b = document.getElementById("val_2").value;
+
+                a = parseInt(a);
+                b = parseInt(b);
+                document.getElementById("lavagna").innerHTML += "somma: " + (a+b) + "<br />";
+            }
+
+            function funz2(){
+                let a = document.getElementById("val_1").value;
+                let b = document.getElementById("val_2").value;
+
+                a = parseInt(a);
+                b = parseInt(b);
+
+                document.getElementById("lavagna").innerHTML += "differenza: " + (a-b) + "<br />";
+            }
+        </script>
+    </body>
+</html>
