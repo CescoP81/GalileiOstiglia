@@ -1,6 +1,9 @@
 #################################
 # Elenco Esercitazioni presenti #
 #################################
+
+UD - Codifica dell'Informazione
+---------------------------------
 e1_Codifica Binaria
     e1.c -> Algoritmo che condifica un numero decimale compreso tra 0 e 255  in formato binario.
     e2.c -> Realizzare un programma C che richiede un numero decimale intero (es 145) minore o uguale a 9999
@@ -13,4 +16,5 @@ e2_SommaBinaria
 
 e3_CodificaVisualizzaHTML
     main.html -> Realizzazione degli algoritmi sopra proposti in formato JavaScript con interfaccia web.
+
 ---------------------------------
