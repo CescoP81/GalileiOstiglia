@@ -109,6 +109,12 @@ void caricaLista(Nodo **l){
         printf("%s, %s, %d", tmp.cognome, tmp.nome, tmp.anni);
         
         newHead = (Nodo*) malloc(sizeof(Nodo));
+            /*  se la p nel nodo fosse puntatore allora avrei:
+                newHead->p= (Persona*) malloc(sizeOf(Persona));
+                strcpy(newHead->p->cognome, tmp.cognome);
+                strcpy(newHead->p->nome, tmp.nome);
+                newHead->p->anni = tmp.anni;
+                */
         strcpy(newHead->p.cognome, tmp.cognome);
         strcpy(newHead->p.nome, tmp.nome);
         newHead->p.anni = tmp.anni;
@@ -116,7 +122,6 @@ void caricaLista(Nodo **l){
         newHead->next = *l;
         *l = newHead;
     }
-
     fclose(fpin);
 }
 

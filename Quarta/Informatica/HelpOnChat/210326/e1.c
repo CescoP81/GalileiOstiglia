@@ -23,6 +23,13 @@ void backupLibreria(char _nomefile[], char _bkpfile[]); // esegue una copia del 
 int main(){
     Libro lib; // singola variabile di tipo libro.
 
+
+    // eseguo un'azzeramento del file libreria.bin iniziale
+    FILE *fp;
+    fp = fopen("libreria.bin","wb");
+    fclose(fp);
+
+
     strcpy(lib.titolo, "Oggi come domani");
     lib.prezzo = 12.99;
     lib.pagine = 120;
