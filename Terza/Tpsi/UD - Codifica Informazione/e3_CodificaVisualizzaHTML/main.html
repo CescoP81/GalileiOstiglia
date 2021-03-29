@@ -2,8 +2,20 @@
 <html>
     <head>
         <title>Esercitazione sulla Codifica Binaria</title>
+        <style type="text/css">
+            TABLE{
+                border:solid 1px rgb(0,200,0);
+            }
+            .bit{
+                border: solid 1px rgb(200,0,0);
+                display: inline;                
+            }
+        </style>
     </head>
     <body>
+        <img src="0.png" width="254" height="254" ID="tuximage" alt="Immagine del Tux" onclick="changeTux()" /><br /><br />
+        <img src="0.png" width="254" height="254" ID="tuximage2" alt="Immagine del Tux" onMouseOver="document.getElementById('tuximage2').src='1.png';" onMouseOut="document.getElementById('tuximage2').src='0.png';" />
+
         <h1>Codificatore Binario</h1>
         <b>Valore Decimale: </b>
         <input type="text" ID="vdec"><br /> <!-- Casella di testo in cui inserire un valore -->
@@ -14,6 +26,20 @@
 
         <!-- spazio di definizione delle funzioni JS (Javascript) -->
         <script>
+            let tux_number;
+            tux_number = 0;
+            function changeTux(){
+                if(tux_number == 0){
+                    tux_number = 1;
+                    document.getElementById("tuximage").src="1.png";
+                }
+                else{
+                    tux_number = 0;
+                    document.getElementById("tuximage").src="0.png";
+                }
+                    
+            }
+
             function f1(){
                 // creo una variabile per il valore di vdec
                 let valore;
@@ -27,6 +53,8 @@
             }
 
             function decToBin(){
+                let bin = Array(8);
+
                 // azzero il contenuto della lavagna.
                 document.getElementById("lavagna").innerHTML = "";
 
@@ -44,11 +72,19 @@
 
                 for(i=0; i<8; i++){
                     r = valore % 2;
+                    bin[i] = r;
                     valore = Math.floor(valore / 2);
                     //document.getElementById("lavagna").innerHTML += valore + " " + r + "<br />";
-                    document.getElementById("lavagna").innerHTML += r + "<br />";
+                    //document.getElementById("lavagna").innerHTML += r;
                 }
-            }
+
+                /*for(i=7; i>=0; i--)
+                    document.getElementById("lavagna").innerHTML += bin[i];
+                */
+                for(i=7; i>=0; i--){
+                    document.getElementById("lavagna").innerHTML += "<p class='bit'>"+bin[i]+"</p>";
+                }
+            }           
         </script>
     </body>
 </html>
