@@ -45,7 +45,6 @@ $pdf->SetFont('Arial','B',14);
 $pdf->Cell(150,10,"Totale:", "T",0,"R");
 $pdf->Cell(40,10,chr(128).number_format((float)$totale,2,'.',''),1,1,"R");
 
-
-
+$db->close();
 $pdf->Output();
 ?>
