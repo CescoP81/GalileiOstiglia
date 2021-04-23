@@ -1,4 +1,12 @@
 <?php
+// Variabili globali per aggancio al db con mysqli, da cambiare se diverse da quelle
+// della macchina in uso.
+$dbhost="localhost";
+$dbuser="root";
+$dbpassword="";
+$dbname="scuola2021";
+//--------------------------
+
 if(isset($_REQUEST['scelta'])) $sc=$_REQUEST['scelta']; else $sc=null;
 
 require('../head.html');
@@ -47,7 +55,7 @@ require('../head.html');
             $prezzo = $_REQUEST['prezzo'];
             $id_autore = $_REQUEST['id_autore'];
 
-            $db = new mysqli("localhost","root","","scuola2021");
+            $db = new mysqli($dbhost,$dbuser,$dbpassword,$dbname);
             $sql = "INSERT INTO v_libro(titolo, n_pagine, prezzo, id_autore) ";
             $sql .= "VALUES('$titolo', $n_pagine, $prezzo, $id_autore)";
 
@@ -61,7 +69,7 @@ require('../head.html');
 
         case "vediLibri":{
             if(isset($_REQUEST['order'])) $orderby=$_REQUEST['order']; else $orderby='id';
-            $db = new mysqli("localhost","root","","scuola2021");
+            $db = new mysqli($dbhost,$dbuser,$dbpassword,$dbname);
             $sql = "SELECT libro.id, libro.titolo, libro.n_pagine, libro.prezzo, autore.cognome, autore.nome ";
             $sql .= "FROM v_libro AS libro, v_autore AS autore ";
             $sql .= "WHERE libro.id_autore=autore.id ";
@@ -89,6 +97,7 @@ require('../head.html');
                 }
                 echo("</tbody>");
             echo("</table>");
+            $db->close();
             break;
         }
         default:{
