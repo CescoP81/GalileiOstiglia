@@ -12,6 +12,8 @@
 #include <time.h>
 
 #define DIM 10
+
+// PROTOTIPI PER IL PUNTO 1
 /*
 Funzione ricorsiva che mostra tutti i divisori di un numero.
 @param int Numero iniziale.
@@ -20,7 +22,7 @@ Funzione ricorsiva che mostra tutti i divisori di un numero.
 */
 void divisoriRicorsiva(int _num, int _lastDiv);
 
-// FUNZIONI PER IL PUNTO 2
+// PROTOTIPI PER IL PUNTO 2
 /* Funzione che inizializza un vettore di interi
 @param int* puntatore al vettore.
 @param int dimensione del vettore.
@@ -60,6 +62,7 @@ int main(){
     return(0);
 }
 
+// FUNZIONI PUNTO 1
 void divisoriRicorsiva(int _num, int _lastDiv){
     if(_lastDiv <= _num){
         if(_num%(_lastDiv) == 0)
