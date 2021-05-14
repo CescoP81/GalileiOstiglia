@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Funzione che visualizza i risultati di una query sottoforma di tabella.
  * @param object $_rS ResultSet generato dalla query SQL.
