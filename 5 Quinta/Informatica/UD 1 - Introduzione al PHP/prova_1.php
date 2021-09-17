@@ -49,7 +49,7 @@
 
       echo("<br /><br />");
       for($i=1; $i<=10; $i++)          // esempio di ciclo FOR (la sintassi è identica al C.) Anche i cicli Wihile e do-while sono identici.
-         echo("$i"."<br />");
+         echo("$i <br />");
 
       echo("</body>
       </html>");
