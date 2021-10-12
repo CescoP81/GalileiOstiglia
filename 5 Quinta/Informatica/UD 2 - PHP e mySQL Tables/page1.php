@@ -1,4 +1,12 @@
 <?php
+   /* TABELLA NEL DB
+   CREATE TABLE persone(
+      id integer auto_increment,
+      cognome varchar(30),
+      nome varchar(30),
+      primary key(id)
+   );
+   */
    define("MYSQL_HOST", "localhost");
    define("MYSQL_USER", "root");          // in5a??
    define("MYSQL_PASSWORD", "");          // in5a??
@@ -21,14 +29,7 @@
       echo($record['id']." ".$record['cognome']." ".$record['nome']."<br />");
       $record = $rs->fetch_assoc();
    }
-
-   echo("<br><br>");
-   echo("Seconda volta...");
-   $record = $rs->fetch_assoc();
-   while($record){
-      echo($record['id']." ".$record['cognome']." ".$record['nome']."<br />");
-      $record = $rs->fetch_assoc();
-   }
+   
    // Step 5 - Chiusura del collegamento con il db.
    $db->close();
 ?>
