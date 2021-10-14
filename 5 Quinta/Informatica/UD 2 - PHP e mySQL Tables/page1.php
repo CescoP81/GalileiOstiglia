@@ -10,6 +10,7 @@
    <body>
       <div class="container">
 <?php
+require("../funzioni.php");
    /* TABELLA NEL DB
    CREATE TABLE persone(
       id integer auto_increment,
@@ -18,10 +19,7 @@
       primary key(id)
    );
    */
-   define("MYSQL_HOST", "localhost");
-   define("MYSQL_USER", "root");          // in5a??
-   define("MYSQL_PASSWORD", "");          // in5a??
-   define("MYSQL_DB", "scuola2122");      // in5a??
+   
 
    // step 1 - CREARE COLLEGAMENTO TRA PHP E MYSQL
    // UTILIZZANDO UN OGGETTO MYSQLI
