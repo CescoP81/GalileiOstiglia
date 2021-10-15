@@ -1,13 +1,24 @@
 /*
 Desc: Realizzare un programma C che richieda una stringa da tastiera (max 20 char):
-      - determina se la parola è palindroma (è uguale anche se letta al contrario)Auth: Pradella F.
+      - determina se la parola è palindroma (è uguale anche se letta al contrario)
+Auth: Pradella F.
 Date: 14.10.2021
 */
 #include <stdio.h>
 
 #define DIM 21    // 20 car + '\0'
-
+/**
+ * Determina la lunghezza di una stringa passata come parametro, basandosi sul terminatore '\0'
+ * @param char[] Stringa da utilizzare
+ * @return int Lunghezza della stringa.
+ */
 int strLength(char []);
+/**
+ * Determina se una stringa è palindroma oppure no. Una stringa si dice palindroma se può
+ * essere letta anche al contrario.
+ * @param char[] Stringa da utilizzare.
+ * @return int 1 se è palindroma, 0 se non è palindroma
+ */
 int checkPalindroma(char []);
 
 int main(){

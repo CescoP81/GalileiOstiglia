@@ -5,8 +5,20 @@ Desc: Realizzare un programma C che richieda due stringhe da tastiera (max 20 ch
 #include <stdio.h>
 
 #define DIM 21    // 20 car + '\0'
-
+/**
+ * Determina la lunghezza di una stringa passata come parametro, basandosi sul terminatore '\0'
+ * @param char[] Stringa da utilizzare
+ * @return int Lunghezza della stringa.
+ */
 int strLength(char []);
+/**
+ * Determina se due stringhe passate come parametri sono due anagrammi. Due parole sono anagrammi
+ * se sono formate dalle stesse lettere, nello stesso numero, ma in posizioni diverse.
+ * es: casca -> sacca ### pepito -> pipeto
+ * @param char[] Stringa uno da utilizzare.
+ * @param char[] stringa due da utlizzare.
+ * @return int 1 se sono anagrammi, 0 se non sono anagrammi.
+ */
 int checkAnagramma(char [], char []);
 
 int main(){
@@ -60,7 +72,7 @@ int checkAnagramma(char _str[], char _str2[]){
          alfabeto[_str2[i]-'a']--;
       }
       for(i=0; i<26; i++){
-         if(alfabeto[i]>0)
+         if(alfabeto[i]!=0)
             return(0);
       }
    }
