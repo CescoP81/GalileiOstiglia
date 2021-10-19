@@ -44,7 +44,7 @@ require("../funzioni.php");
    $sql = "SELECT * FROM persone";
    $rs = $db->query($sql);
 
-   echo("<table class=\"table table-striped table-hover\">
+   echo("<table class=\"table table-success table-striped table-hover\">
       <thead>
          <tr>
             <th scope=\"col\">#</th>
@@ -65,7 +65,8 @@ require("../funzioni.php");
          }      
       echo("</tbody>");
    echo("</table>");
-
+   echo("<button type=\"button\" class=\"btn btn-success\">Invia Feedback</button>");
+   echo("<button type=\"button\" class=\"btn btn-outline-success\">Invia Feedback</button>");
 
    // Step 5 - Chiusura del collegamento con il db.
    $db->close();
