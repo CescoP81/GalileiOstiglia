@@ -13,3 +13,19 @@ int strLength(char _s[]){
       i++;
    return(i);
 }
+
+int getIndexMaxLength(char _e[][DIM], int _r){
+   int max;
+   int indice;
+   int i;
+
+   max = strLength(_e[0]);
+   indice = 0;
+   for(i=1; i<_r; i++){
+      if(strLength(_e[i]) > max){
+         max = strLength(_e[i]);
+         indice = i;
+      }
+   }
+   return(indice);
+}

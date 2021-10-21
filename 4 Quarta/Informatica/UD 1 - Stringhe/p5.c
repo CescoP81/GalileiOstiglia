@@ -1,9 +1,10 @@
 #include <conio.h>
 #include <stdio.h>
-#include "funzioni.c"
 
 #define RIGHE 5
 #define DIM 30
+
+#include "funzioni.c"
 
 int main(){
    char elenco[RIGHE][DIM];
@@ -25,7 +26,8 @@ int main(){
    for(i=0; i<RIGHE; i++){
       printf("%d. %s = %d caratteri\n", i+1, elenco[i], strLength(elenco[i]));
    }
-
+   printf("\n\n");
+   printf("Stringa piu' lunga in posizione %d.", getIndexMaxLength(elenco, RIGHE)+1);
    return(0);
 }
 
