@@ -6,7 +6,16 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+/**
+ * Visualizzazione di una stringa tramite puntatore.
+ * @param char* Puntatore alla stringa
+ */
 void viewString(char *);
+/**
+ * Funzione che determina la presenza di lettere doppie consecutive.
+ * @param char* Puntatore alla stringa.
+ * @return 1 Doppie presenti, 0  Doppie non presenti
+ */
 int findDoppie(char *);
 
 int main(){
