@@ -52,6 +52,28 @@ echo("<ul class=\"nav\">
          break;
       }
 
+      case "deleteRecord":{
+         // step 1: recupero l'id della persona che voglio cancellare -> PK del record.
+         $idp = $_REQUEST['id_persona'];
+         echo("Voglio cancellare la persona con PK: $idp");
+
+         // step 2: mi collego al db.
+         $db = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DB);
+
+         // step 3: creo la stringa sql per la cancellazione.
+         $sql = "DELETE FROM persone WHERE id=$idp";
+         echo("<br>$sql");
+
+         // step 4: eseguo la query sul db
+         if($db->query($sql))
+            echo("Cancellazione avvenuta con successo.");
+         else
+            echo("Problema in cancellazione.");
+
+         $db->close();
+         break;
+      }
+
       /* Il case di default, cioè quando scelta non è definito nell'indirizzo HTTP di chiamata, oppure
       contiene un valore non valido per lo script, visualizza la tabella 'persone' del database.
       Possiamo far fare qualunque cosa al default, importante è gestire il caso anomalo in cui 'scelta' non sia definita.
@@ -67,6 +89,7 @@ echo("<ul class=\"nav\">
                   <th scope=\"col\">#</th>
                   <th scope=\"col\">Nome</th>
                   <th scope=\"col\">Cognome</th>
+                  <th scope=\"col\">Gestione</th>
                </tr>
             </thead>");
             echo("<tbody>");
@@ -77,13 +100,15 @@ echo("<ul class=\"nav\">
                      <th scope=\"row\">".$record['id']."</th>
                      <td>".$record['nome']."</td>
                      <td>".$record['cognome']."</td>
+                     <td><a href=\"personeTable.php?scelta=deleteRecord&id_persona=".$record['id']."\">Delete</a>
                   </tr>");
                   $record = $rs->fetch_assoc();
                }      
             echo("</tbody>");
          echo("</table>");
-         echo("<button type=\"button\" class=\"btn btn-success\">Invia Feedback</button>");
+         /*echo("<button type=\"button\" class=\"btn btn-success\">Invia Feedback</button>");
          echo("<button type=\"button\" class=\"btn btn-outline-success\">Invia Feedback</button>");
+         */
 
          // Step 5 - Chiusura del collegamento con il db.
          $db->close();
