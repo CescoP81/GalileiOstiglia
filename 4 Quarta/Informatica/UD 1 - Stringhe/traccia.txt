@@ -1,0 +1,6 @@
+1. Realizzare un programma C che richieda una stringa da tastiera e determina se contiene delle doppie,
+es tetto, lotto, zappa.
+
+2. Realizzare un programma C che richiede tre stringhe e le concatena in un'unica stringa.
+
+(Realizzare i programmi creando funzioni e sfruttando i puntatori)

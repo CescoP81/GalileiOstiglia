@@ -69,7 +69,7 @@ void initMat(int _m[][DIM], int _l){
 
    for(i=0; i<_l; i++){
       for(j=0; j<_l; j++){
-         _m[i][j] = rand()%(20-5+1) + 5;
+         _m[i][j] = rand()%(25-5+1) + 5;
       }
    }
 }
@@ -116,7 +116,6 @@ float avgMat(int _m[][DIM], int _l){
 void rowMinMaxMat(int _m[][DIM], int _l, int *imin, int *imax){
    int i, j;
    int stmp, smin, smax;
-   
 
    for(i=0;i<_l; i++){
       smin = smin + _m[0][i];
