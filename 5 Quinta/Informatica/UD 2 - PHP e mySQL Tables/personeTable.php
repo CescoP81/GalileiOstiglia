@@ -74,6 +74,60 @@ echo("<ul class=\"nav\">
          break;
       }
 
+      case "formModifica":{
+         // recupero dal vettore request l'id della persona selezionata.
+         $idp = $_REQUEST['id_persona'];
+         
+         // aggancio al database e recupero dei dati presenti per il determinato id.
+         $db = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DB);
+
+         // interrogo il db e recupero i dati della persona.
+         $sql = "SELECT * FROM persone WHERE id=$idp";
+         $result = $db->query($sql);
+         $record = $result->fetch_assoc();
+
+         // stampa di verifica estrazione dati.
+         //echo($record['nome']." ".$record['cognome']);
+
+         // costruzione del form inserimento pre-compilato.
+         echo("<form action=\"personeTable.php\" method=\"post\">
+            <label for=\"campo_1\" class=\"form-label\">Cognome:</label>
+            <input class=\"form-control\" type=\"text\" id=\"campo_1\" name=\"cognomeP\" value=\"".$record['cognome']."\" aria-label=\"default input example\">
+            <label for=\"campo_2\" class=\"form-label\">Nome:</label>
+            <input class=\"form-control\" type=\"text\" id=\"campo_2\" name=\"nomeP\" value=\"".$record['nome']."\" aria-label=\"default input example\">
+            
+            <input type=\"hidden\" name=\"scelta\" value=\"updatePersona\">
+            <input type=\"hidden\" name=\"id_persona\" value=\"$idp\">
+            <br />
+            <button type=\"submit\" class=\"btn btn-primary\">Aggiorna dati Persona</button>
+            </form>");
+
+         $db->close();
+         break;
+      }
+
+      case "updatePersona":{
+         // recupero i dati dal vettore request e li metto i variabili semplici.
+         $idp = $_REQUEST['id_persona'];
+         $nome = $_REQUEST['nomeP'];
+         $cognome = $_REQUEST['cognomeP'];
+
+         // aggancio al db
+         $db = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DB);
+
+         // creo la query di UPDATE
+         $sql = "UPDATE persone SET cognome='$cognome', nome='$nome' WHERE id=$idp";
+         echo($sql);
+         echo("<br><br>");
+
+         if($db->query($sql))
+            echo("Persona aggiornata correttamente.");
+         else
+            echo("Problema in fase di update.");
+         $db->close();
+         break;
+      }
+
       /* Il case di default, cioè quando scelta non è definito nell'indirizzo HTTP di chiamata, oppure
       contiene un valore non valido per lo script, visualizza la tabella 'persone' del database.
       Possiamo far fare qualunque cosa al default, importante è gestire il caso anomalo in cui 'scelta' non sia definita.
@@ -100,15 +154,17 @@ echo("<ul class=\"nav\">
                      <th scope=\"row\">".$record['id']."</th>
                      <td>".$record['nome']."</td>
                      <td>".$record['cognome']."</td>
-                     <td><a href=\"personeTable.php?scelta=deleteRecord&id_persona=".$record['id']."\">Delete</a>
+                     <td>
+                        <a href=\"personeTable.php?scelta=deleteRecord&id_persona=".$record['id']."\">Delete</a> | 
+                        <a href=\"personeTable.php?scelta=formModifica&id_persona=".$record['id']."\">
+                        <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-pen\" viewBox=\"0 0 16 16\">
+                           <path d=\"m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z\"/>
+                        </svg></a>
                   </tr>");
                   $record = $rs->fetch_assoc();
                }      
             echo("</tbody>");
          echo("</table>");
-         /*echo("<button type=\"button\" class=\"btn btn-success\">Invia Feedback</button>");
-         echo("<button type=\"button\" class=\"btn btn-outline-success\">Invia Feedback</button>");
-         */
 
          // Step 5 - Chiusura del collegamento con il db.
          $db->close();
