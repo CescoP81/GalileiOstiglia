@@ -16,12 +16,16 @@ Scansionando la stringa deve comunicare:
 int LetteraMag(char []);
 int LetteraMag2(char *);
 int NumWord(char *);
+int CambiaCarattere(char *,char,char);
+
+void DividiParole(char *);
 
 int main(){
    char *str;
    str = malloc(sizeof(char)*100);
    int indice_mag;
    int num_word;
+   char src,dst;
    // acquisizione della stringa e stampa d verifica.
    printf("Inserisci la frase: ");
    gets(str);
@@ -40,8 +44,16 @@ int main(){
    else  
       printf("\n\nLa stringa non contiene parole");
 
+   printf("Inserisci un carattere: ");
+   scanf("%c",&src);
+   fflush(stdin);
 
+   printf("Inserisci un carattere: ");
+   scanf("%c",&dst);
+   fflush(stdin);
 
+   printf("\nNumero sostituzioni: %d",CambiaCarattere(str,src,dst));
+   printf("\n%s",str);
    return(0);
 }
 
@@ -120,3 +132,30 @@ int NumWord(char *s){
    }
    return(cnt);
 }
+
+int CambiaCarattere(char *_s,char _src,char _dst){
+   int i;
+   int cnt;
+   cnt=0;
+   for(i=0;*(_s+i)!='\0';i++){
+      if(*(_s+i)==_src){
+         *(_s+i)=_dst;
+         cnt++;
+      }
+   }
+   return (cnt);
+}
+
+// DA TERMINARE //
+void DividiParole(char *str){ //divide la stringa in singole parole e per ognuna visualizza la lunghezza
+   int i;
+   char buffer[101];
+
+  // if(*str != '\0'){
+ 
+   for(i=0;*(str+i)!=' ';i++){
+      buffer[0] = *(str+i); // str+i *str+i *(str+i) *(str)+i
+      if(*(str+i) ==' ')
+
+   }
+} 
