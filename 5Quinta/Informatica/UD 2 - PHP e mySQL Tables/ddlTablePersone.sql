@@ -11,4 +11,3 @@ INSERT INTO persone(cognome, nome) VALUES('Pradella','Francesco');
 INSERT INTO persone(cognome, nome) VALUES('Rossi','Alice');
 INSERT INTO persone(cognome, nome) VALUES('Verdi','Mario');
 INSERT INTO persone(cognome, nome) VALUES('Bianchi','Sofia');
-
