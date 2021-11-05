@@ -164,6 +164,7 @@ echo("<ul class=\"nav\">
                   $record = $rs->fetch_assoc();
                }      
             echo("</tbody>");
+            echo("<caption>Tabella 'persone' su DB scuola2021</caption>");
          echo("</table>");
 
          // Step 5 - Chiusura del collegamento con il db.
