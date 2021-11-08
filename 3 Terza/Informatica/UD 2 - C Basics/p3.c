@@ -41,7 +41,6 @@ int main(){
    printf("%3d\n", x);
    printf("%3d\n", y);
    printf("%3d\n", z);
-
-
+   
    return(0);
 }
