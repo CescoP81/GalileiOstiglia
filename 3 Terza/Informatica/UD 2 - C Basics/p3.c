@@ -33,6 +33,11 @@ int main(){
    printf("%d\n", y);
    printf("%d\n", z);
    printf("\n");
+   // esempio di spaziatura fissa. ogni stampa occupa sempre 3 caratteri.
+   /*   5
+       25
+      175
+      */
    printf("%3d\n", x);
    printf("%3d\n", y);
    printf("%3d\n", z);
