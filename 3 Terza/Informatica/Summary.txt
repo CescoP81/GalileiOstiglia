@@ -1,8 +1,0 @@
-#################################
-# Elenco Esercitazioni presenti #
-#################################
-
-UD - Functions
----------------------------------
-- es1 -> Esempi di scrittura funzioni void e non void, con passaggio di parametri per valore e/o per riferimento.
-- 210322_es1 -> Programma con funzioni e passaggio di vettori.
