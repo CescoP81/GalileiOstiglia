@@ -4,7 +4,7 @@
 - funzioni.c => File con la definizione di varie funzioni.
 
 
-**p1.c**
+**p1.c**  
 Realizzare un programma C che richieda una stringa da tastiera (max 20 char):
    - determina la sua lunghezza e la comunica.
    - la stampa al contrario char-by-char.
