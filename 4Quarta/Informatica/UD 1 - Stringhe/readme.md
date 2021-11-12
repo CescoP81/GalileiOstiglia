@@ -1,4 +1,4 @@
-### _ ELENCO ESERCITAZIONI _
+### *ELENCO ESERCITAZIONI*
 
 -funzioni.h => File con i prototipi delle funzioni
 -funzioni.c => File con la definizione di varie funzioni.
