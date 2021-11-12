@@ -31,7 +31,7 @@ Realizzare un programma C che richieda una stringa da tastiera e determina se co
    es tetto, lotto, zappa.
 
 **p7.c**  
-- in sviluppo -
+-in sviluppo-
 
 **p8.c**  
 Realizzare un programma che richiede una stringa composta da più
