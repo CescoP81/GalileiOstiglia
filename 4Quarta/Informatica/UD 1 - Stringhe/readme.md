@@ -1,7 +1,7 @@
 ### *ELENCO ESERCITAZIONI*
 
--funzioni.h => File con i prototipi delle funzioni
--funzioni.c => File con la definizione di varie funzioni.
+- funzioni.h => File con i prototipi delle funzioni
+- funzioni.c => File con la definizione di varie funzioni.
 
 
 p1.c
