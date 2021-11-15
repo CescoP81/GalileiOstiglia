@@ -1,9 +1,5 @@
 ### *ELENCO ESERCITAZIONI*
 
-- funzioni.h => File con i prototipi delle funzioni
-- funzioni.c => File con la definizione di varie funzioni.
-
-
 **p01.c**  
 Esempio di selezione unaria e binaria.
 
