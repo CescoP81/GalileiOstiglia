@@ -10,3 +10,4 @@ Realizzare un programma che richiede un numero da tastiera, quindi comunica se Ã
 Realizzare un programma che richiede 5 ipotetici prezzi, calcola il totale e se Ã¨ superiore a 50, calcola-visualizza e applica uno sconto del 25%, comunicando il nuovo totale.
 
 **p05.c**  
+Realizzare un programma che richiede l'inserimento di 3 numeri interi determina e comunica il valore maggiore inserito.
