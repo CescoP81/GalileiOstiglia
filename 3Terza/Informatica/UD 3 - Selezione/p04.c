@@ -1,7 +1,7 @@
 /*
 *  Auth: Pradella Francesco.
 *  Date: 15.11.2021
-*  File: p02.c
+*  File: p04.c
 *  Description: Realizzare un programma che richiede l'inserimento di 3 numeri interi
 *  determina e comunica il valore maggiore inserito.
 */

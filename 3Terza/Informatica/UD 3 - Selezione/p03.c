@@ -1,7 +1,7 @@
 /*
 *  Auth: Pradella Francesco.
 *  Date: 15.11.2021
-*  File: p02.c
+*  File: p03.c
 *  Description: Realizzare un programma che richiede 5 ipotetici prezzi,
 *  calcola il totale e se è superiore a 50, calcola-visualizza e applica uno sconto
 *  del 25%, comunicando il nuovo totale.
