@@ -1,3 +1,7 @@
+/*
+   Esempio esplicativo del concetto di puntatore a puntatore.
+   Per semplicità è realizzato con puntatori di tipo intero.
+*/
 #include <stdio.h>
 
 int main(){

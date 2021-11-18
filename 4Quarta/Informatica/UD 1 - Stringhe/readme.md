@@ -58,3 +58,9 @@ programma che contiene due funzioni distinte:
 **p13.c**  
 Programma che acquisisce una stringa di massimo 99 caratteri quindi rende maiuscola
 la prima lettera di ogni parola.
+
+**p14.c**  
+Programma di ripasso sulle stringhe, acquisizione stringa come vettore di char e creazione di una stringa allocando lo spazio strettamente necessario al contenimento dei caratteri inseriti.
+
+**p15.c**  
+Esempio esplicativo del concetto di puntatore a puntatore, realizzato con puntatori di tipo int. Controllare le varie parti della stampa a video, indirizzi-contenuti.

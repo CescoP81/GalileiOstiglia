@@ -1,12 +1,18 @@
+/*
+   Auth: Pradella F.
+   Date: 18.11.2021 
+   File: p14.c
+   Descr: Accesso e copia caratteri da vettore di char a stringa
+   allocata dinamicamente.
+*/
 #include <conio.h>
 #include <stdio.h>
 #include <stdlib.h>
 
 #define DIM 20
-void InputStringa(char []);
-char* NuovaStringa(char [], char*);
-void NuovaStringa_2(char [], char**);
-
+void InputStringa(char []);            // funzione per input stringa come vettore di caratteri.
+char* NuovaStringa(char [], char*);    // funzione che alloca una stringa e restituisce il puntatore al main.
+void NuovaStringa_2(char [], char**);  // funzione che alloca e modifica una stringa nel main. (use del puntatore a puntatore)
 
 int main(){
    char stringa[DIM];
