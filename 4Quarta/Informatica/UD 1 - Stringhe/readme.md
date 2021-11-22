@@ -64,3 +64,6 @@ Programma di ripasso sulle stringhe, acquisizione stringa come vettore di char e
 
 **p15.c**  
 Esempio esplicativo del concetto di puntatore a puntatore, realizzato con puntatori di tipo int. Controllare le varie parti della stampa a video, indirizzi-contenuti.
+
+**p16.c**  
+Esercitazione di ripasso.
