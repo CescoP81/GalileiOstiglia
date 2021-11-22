@@ -12,6 +12,10 @@ int main(){
    printf("1. Calcolo area rettangolo.\n");
    printf("2. Calcolo lunghezza circonferenza.\n");
    printf("3. Verifica divisore.\n");
+   // da fare
+   printf("4. verifica multiplo.\n");
+   printf("5. verifica anno Bisestile.\n");
+   printf("6. Verifica numero pari e multiplo di 3.\n");
    printf("Scelta: ");
    scanf("%d", &scelta);
    fflush(stdin);
@@ -52,6 +56,8 @@ int main(){
             printf("%d non e' un divisore di %d.", divisore, numero);
          break;
       }
+      // case da aggiungere.
+
       default:{
          printf("Scelta effettuata non valida!");
          break;
