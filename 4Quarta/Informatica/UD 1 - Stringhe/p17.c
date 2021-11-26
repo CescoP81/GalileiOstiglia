@@ -27,7 +27,7 @@ int main(){
       scanf("%s", parola);
       fflush(stdin);
 
-      if(!checkFine(parola, fine)){
+      if(checkFine(parola, fine) == 0){
          if(strLength(parola) > lmax){
             lmax = strLength(parola);
             strCopy(parola, pmax);
@@ -37,7 +37,7 @@ int main(){
             strCopy(parola, pmin);
          }
       }
-   }while(!checkFine(parola, fine));
+   }while(checkFine(parola, fine) == 0);
 
    printf("\n\n");
    printf("\nParola %s -> lunga: %d",pmin,lmin);
