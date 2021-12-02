@@ -10,21 +10,22 @@ Creare un programma C che richieda una stringa da tastiera, quindi eseguire le s
 /**
  * @brief Conta quante volte compare il carattere nella stringa.
  * @param char[] Stringa da analizzare.
- * @param char Carattere da utilizzare. 
+ * @param char Carattere da utilizzare.
  */
 void countingChar(char[], char);
 /**
  * @brief Da minuscolo a maiuscolo, la prima lettera e tutte quelle uguali ad essa.
- * @param char[] Stringa da analizzare. 
+ * @param char[] Stringa da analizzare.
  */
 void growUpAsFirst(char[]);
 /**
- * @brief Nasconde le vocali della stringa con un # 
- * @param char[] La stringa da analizzare. 
+ * @brief Nasconde le vocali della stringa con un #
+ * @param char[] La stringa da analizzare.
  */
 void hideVocals(char[]);
 
-int main(){
+int main()
+{
    char str[DIM];
    char c;
 
@@ -45,10 +46,11 @@ int main(){
    // punto 3
    hideVocals(str);
    printf("Stringa modificata: %s\n", str);
-   return(0);
+   return (0);
 }
 
-void countingChar(char _str[], char _c){
+void countingChar(char _str[], char _c)
+{
    int i;
    int cnt;
    int doppie;
@@ -56,40 +58,48 @@ void countingChar(char _str[], char _c){
    i = 0;
    doppie = 0;
    cnt = 0;
-   while(_str[i] != '\0'){
-      if(_str[i] == _c)
+   while (_str[i] != '\0')
+   {
+      if (_str[i] == _c)
          cnt++;
-      if(_str[i+1]!='\0')
-         if(_str[i] == _str[i+1])
+      if (_str[i + 1] != '\0')
+         if (_str[i] == _str[i + 1])
             doppie = 1;
       i++;
    }
    printf("Il carattere %c compare nella stringa %s: %d volta/e.\n", _c, _str, cnt);
-   if(doppie)  printf("Il carattere %c e' presente in almeno una doppia.\n",_c);
-   else printf("Non sono presenti doppie.\n");
-   
+   if (doppie)
+      printf("Il carattere %c e' presente in almeno una doppia.\n", _c);
+   else
+      printf("Non sono presenti doppie.\n");
 }
-void growUpAsFirst(char _str[]){
+void growUpAsFirst(char _str[])
+{
    int i;
-   char c='\0';
-   i=0;
-   if((_str[i]>='a') && (_str[i]<='z')){
+   char c = '\0';
+   i = 0;
+   if ((_str[i] >= 'a') && (_str[i] <= 'z'))
+   {
       c = _str[i];
-      while(_str[i] != '\0'){
-         if(_str[i] == c)
-            _str[i] = 'A' + (_str[i]-'a');
+      while (_str[i] != '\0')
+      {
+         if (_str[i] == c)
+            _str[i] = 'A' + (_str[i] - 'a'); // ciccia -> [0]='c' c='c' 'A'+('c'-'a')
          i++;
       }
-   }   
+   }
 }
-void hideVocals(char _str[]){
+void hideVocals(char _str[])
+{
    int i, j;
-   char vocali[5] = {'a','e','i','o','u'};
+   char vocali[5] = {'a', 'e', 'i', 'o', 'u'};
 
    i = 0;
-   while(_str[i] != '\0'){
-      for(j=0; j<5; j++){
-         if((_str[i] == vocali[j]) || (_str[i] == vocali[j]+('A'-'a')))
+   while (_str[i] != '\0')
+   {
+      for (j = 0; j < 5; j++)
+      {
+         if ((_str[i] == vocali[j]) || (_str[i] == vocali[j] + ('A' - 'a')))
             _str[i] = '#';
       }
       i++;
