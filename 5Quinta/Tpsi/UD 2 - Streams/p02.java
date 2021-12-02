@@ -8,7 +8,7 @@ public class p02 {
    public static void main(String[] args){
       String st = new String();
       try{
-         FileReader fr = new FileReader("parole.txt");
+         FileReader fr = new FileReader("parola.txt");
          BufferedReader br = new BufferedReader(fr);
          try{
             st = br.readLine();

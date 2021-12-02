@@ -9,7 +9,7 @@ public class p01{
       try{
          st = br.readLine();
          System.out.print("Stringa: "+st);
-      } catch(IOException e){
+      } catch(IOException ex){
          System.out.println("Error!");
       };
    }
