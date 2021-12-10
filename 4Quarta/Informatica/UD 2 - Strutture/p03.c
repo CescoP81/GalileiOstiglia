@@ -6,7 +6,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-#define DIM_CONTATTI 2
+#define DIM_CONTATTI 3
 
 typedef struct{
    char nome[20];
@@ -17,9 +17,11 @@ typedef struct{
 
 void addPersona(Persona[], int, char[], char[], char[], char[]);
 void showRubrica(Persona[], int);
+void searchContatto(Persona[], int, char[]);
+void backupOnFile(Persona[], int);
 
 int main(){
-   Persona rubrica[DIM_CONTATTI];
+   Persona rubrica[DIM_CONTATTI]; // --> Persona *rubrica
    int cnt_contatti;
    int scelta;
 
@@ -31,6 +33,7 @@ int main(){
       printf("3. Cancella contatto.\n");
       printf("4. Rircerca contatto.\n");
       printf("5. Modifica contatto.\n");
+      printf("6. Backup su file.\n");
       printf("0. USCITA\n");
       printf("Scelta: ");
       scanf("%d", &scelta);
@@ -65,12 +68,21 @@ int main(){
             break;
          }
          case 3:{
+            char str[20];
+            printf("Inserisci la stringa: ");
+            scanf("%s", str);
+            fflush(stdin);
+            searchContatto(rubrica, cnt_contatti, str);
             break;
          }
          case 4:{
             break;
          }
          case 5:{
+            break;
+         }
+         case 6:{
+            backupOnFile(rubrica, cnt_contatti);
             break;
          }
       }
@@ -92,4 +104,23 @@ void showRubrica(Persona _r[], int _cnt){
    for(i=0; i<_cnt; i++){
       printf("%s %s %s %s\n", _r[i].cognome, _r[i].nome, _r[i].telefono, _r[i].mail);
    }
+}
+
+void searchContatto(Persona _r[], int _cnt, char _str[]){
+   int i;
+   for(i=0; i<_cnt; i++){
+      if((strcmp(_r[i].cognome, _str) == 0) || (strcmp(_r[i].nome, _str) == 0))
+         printf("%s %s %s %s\n", _r[i].cognome, _r[i].nome, _r[i].telefono, _r[i].mail);
+   }
+}
+
+void backupOnFile(Persona _r[], int _cnt){
+   FILE *fpout;
+   int i;
+   fpout = fopen("rubrica.txt","w+");
+
+   for(i=0; i<_cnt; i++){
+      fwrite(&_r[i], sizeof(Persona), 1, fpout);
+   }
+   fclose(fpout);
 }
