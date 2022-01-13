@@ -30,3 +30,27 @@ Realizzare un programma C che determina se un numero inserito
 da tastiera è PERFETTO oppure no.
 Un numero si intende perfetto quando la somma dei suoi divisori è
 uguale al suo doppio.
+
+**p07.c**  
+Realizzare il seguente scema grafico con numero di righe inserito
+da tastiera.
+   n=5;
+   *
+   **
+   ***
+   ****
+   *****
+
+**p08.c**  
+Realizzare il seguente scema grafico con numero di righe inserito
+da tastiera.
+   n=5;
+   *****
+    ****
+     ***
+      **
+       *
+
+**p09.c**  
+Realizzare un programma C che inseriti due numeri N1 e N2,
+determina e comunica mcm(minimo comune multiplo) e MCD (massimo comun divisore)
