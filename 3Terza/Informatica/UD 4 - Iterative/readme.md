@@ -35,21 +35,21 @@ uguale al suo doppio.
 Realizzare il seguente scema grafico con numero di righe inserito
 da tastiera.
 n=5;
-'*
-'**
-'***
-'****
-'*****
+'*  
+'**  
+'***  
+'****  
+'*****  
 
 **p08.c**  
 Realizzare il seguente scema grafico con numero di righe inserito
 da tastiera.
 n=5;
-'*****
-' ****
-'  ***
-'   **
-'    *
+'*****  
+' ****  
+'  ***  
+'   **  
+'    *  
 
 **p09.c**  
 Realizzare un programma C che inseriti due numeri N1 e N2,
