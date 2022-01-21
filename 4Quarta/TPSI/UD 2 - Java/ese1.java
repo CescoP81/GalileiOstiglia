@@ -22,7 +22,6 @@ public class ese1{
       BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
       String s;
       s = br.readLine();
-      
       System.out.print("Stringa: "+s);
    }
 }
