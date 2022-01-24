@@ -44,7 +44,5 @@ int main(){
       }
    }
    printf("Valore minimo %d in posizione %d\n", min, imin);
-
-
    return(0);
 }
