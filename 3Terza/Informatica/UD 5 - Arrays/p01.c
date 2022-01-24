@@ -9,6 +9,7 @@ int main(){
    int i;         // variabile necessaria per i cicli for di scorrimento sul vettore.
    int vet[DIM];  // dichiarazione di un vettore intero di DIM elementi.
    int somma;     // variabile per calcolare la somma totale dei valori inseriti nel vettore.
+   float media;   // variabile per il calcolo della media.
 
    // carico i valori nel vettore chiedendoli all'utente.
    for(i=0; i<DIM; i++){
@@ -30,5 +31,15 @@ int main(){
       somma = somma + vet[i];
    }
    printf("Somma totale: %d", somma);
+   printf("\n\n");
+
+   // calcolo della media dei valori presenti nel vettore.
+   somma = 0;
+   for(i=0; i<DIM; i++){
+      somma = somma + vet[i];
+   }
+   media = (float)somma / DIM;      // eseguo il casting temporaneo della variabile somma.
+   printf("Media: %.2f", media);    // %.2f ".2f" -> indica il numero di cifre decimali.
+
    return(0);
 }
