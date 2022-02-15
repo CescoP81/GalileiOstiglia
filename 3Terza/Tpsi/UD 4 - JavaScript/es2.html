@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+   <head>
+      <title>My Color Picker</title>
+      <style type="text/css">
+         /* classe generale per modificare i bottoni dell'interfaccia*/
+         .btn{
+            width: 25px;
+            font-weight: Bold;
+         }
+         /* Identificativo univoco per la cella del colore risultante, sarà gestita poi con JS */
+         #resultColor{
+            border: solid 2px rgb(0,0,0);
+            font-style: Italic;
+         }
+      </style>
+   </head>
+   <body>
+      <table border="1">
+         <tr style="height: 10px;">
+            <td id="redChannel"></td>
+            <td id="greenChannel"></td>
+            <td id="blueChannel"></td>
+         </tr>
+
+         <tr>
+            <td>
+               <input type="button" id="rDec" value="-" class="btn">
+               <input type="button" id="rInc" value="+" class="btn">
+            </td>
+            <td>
+               <input type="button" id="gDec" value="-" class="btn">
+               <input type="button" id="gInc" value="+" class="btn">
+            </td>
+            <td>
+               <input type="button" id="bDec" value="-" class="btn">
+               <input type="button" id="bInc" value="+" class="btn">
+            </td>
+         </tr>
+
+         <tr style="height: 40px;">
+            <td id="resultColor" colspan="3"></td>
+         </tr>
+      </table>
+
+      <script>
+         // variabili per il valore corrente del relativo colore Red, Green, Blue
+         var rValue = 255; 
+         var gValue = 255;
+         var bValue = 255;
+
+         // recupero gli elementi dall'interfaccia così da gestirli dopo con JS.
+         /*var r = document.getElementById("redChannel");
+         var g = document.getElementById("greenChannel");
+         var b = document.getElementById("blueChannel");*/
+         var r = document.querySelector("#redChannel");
+         var g = document.querySelector("#greenChannel");
+         var b = document.querySelector("#blueChannel");
+
+         // recupero gli elementi bottone +/- per il colore Red e aggiungo il relativo evento 'click', con relativa funzione.
+         var rD = document.querySelector("#rDec");
+         rD.addEventListener("click",decreaseRed);
+         var rI = document.querySelector("#rInc");
+         rI.addEventListener("click",increaseRed);
+
+         // recupero gli elementi bottone +/- per il colore Green e aggiungo il relativo evento 'click', con relativa funzione.
+         var gD = document.querySelector("#gDec");
+         gD.addEventListener("click",decreaseGreen);
+         var gI = document.querySelector("#gInc");
+         gI.addEventListener("click",increaseGreen);
+
+         // recupero gli elementi bottone +/- per il colore Blue e aggiungo il relativo evento 'click', con relativa funzione.
+         var bD = document.querySelector("#bDec");
+         bD.addEventListener("click",decreaseBlue);
+         var bI = document.querySelector("#bInc");
+         bI.addEventListener("click",increaseBlue);
+
+         // recupero l'elemento dove visualizzare il risultato finale dall'interfaccia così da gestirlo con JS.
+         var resultColor = document.querySelector("#resultColor");
+
+         // funzione che riceve un elemento 'e' ed una stringa rgb(x,x,x) cambia il relativo background.
+         function changeBackground(e, color){
+            e.style.background = color;
+         }
+         // funzione che modifica il contenuto testuale di un elemento 'e' con 'stringa'
+         function changeLabel(e, stringa){
+            e.innerHTML = stringa;
+         }
+
+         
+         // inizializzo i vari componenti con i relativi colori, i tre canali RGB sono impostati a 255 ognuno, il colore risultante generato è quindi un Bianco.
+         function initColor(){
+            changeBackground(r, "rgb("+rValue+",0,0)");
+            changeBackground(g, "rgb(0,"+gValue+",0)");
+            changeBackground(b, "rgb(0,0,"+bValue+")");
+            changeLabel(resultColor, "rgb("+rValue+","+gValue+","+bValue+")");
+            changeBackground(resultColor, "rgb("+rValue+","+gValue+","+bValue+")");
+            resultColor.style.textAlign = "center";
+         }         
+
+         // ### Inizializzo l'interfaccia colori ###
+         initColor();
+
+
+         // gestione eventi componente ROSSO
+         function decreaseRed(){
+            if(rValue > 0){
+               rValue--;
+               changeBackground(r, "rgb(255,"+(255-rValue)+","+(255-rValue)+")");
+               changeLabel(resultColor, "rgb("+rValue+","+gValue+","+bValue+")");    
+               changeBackground(resultColor, "rgb("+rValue+","+gValue+","+bValue+")");
+            }
+         }
+         function increaseRed(){
+            if(rValue < 255){
+               rValue++;
+               changeBackground(r, "rgb(255,"+(255-rValue)+","+(255-rValue)+")");
+               changeLabel(resultColor, "rgb("+rValue+","+gValue+","+bValue+")");
+               changeBackground(resultColor, "rgb("+rValue+","+gValue+","+bValue+")");
+            }            
+         }
+
+         // gestione eventi componente VERDE
+         function decreaseGreen(){
+            if(gValue > 0){
+               gValue--;
+               changeBackground(g, "rgb("+(255-gValue)+",255,"+(255-gValue)+")");
+               changeLabel(resultColor, "rgb("+rValue+","+gValue+","+bValue+")");
+               changeBackground(resultColor, "rgb("+rValue+","+gValue+","+bValue+")");
+            }       
+         }
+         function increaseGreen(){
+            if(gValue < 255){
+               gValue++;
+               changeBackground(g, "rgb("+(255-gValue)+",255,"+(255-gValue)+")");
+               changeLabel(resultColor, "rgb("+rValue+","+gValue+","+bValue+")");
+               changeBackground(resultColor, "rgb("+rValue+","+gValue+","+bValue+")");
+            }  
+         }
+
+         // gestione eventi componente BLU
+         function decreaseBlue(){
+            if(bValue > 0){
+               bValue--;
+               changeBackground(b, "rgb("+(255-bValue)+","+(255-bValue)+",255)");
+               changeLabel(resultColor, "rgb("+rValue+","+gValue+","+bValue+")");
+               changeBackground(resultColor, "rgb("+rValue+","+gValue+","+bValue+")");
+            } 
+         }
+         function increaseBlue(){
+            if(bValue < 255){
+               bValue++;
+               changeBackground(b, "rgb("+(255-bValue)+","+(255-bValue)+",255)");
+               changeLabel(resultColor, "rgb("+rValue+","+gValue+","+bValue+")");
+               changeBackground(resultColor, "rgb("+rValue+","+gValue+","+bValue+")");
+            }  
+         }
+      </script>
+   </body>
+</html>
