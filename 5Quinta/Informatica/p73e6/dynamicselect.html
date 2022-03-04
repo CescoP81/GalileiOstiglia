@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+   <head>
+      <title>Prova di Select Dinamica</title>
+   </head>
+   <body>
+      <form action="pippo.php" method="get">
+         <select id="zona" name="idZona"></select>
+         <input type="submit" value="Clikkami">
+      </form>
+      
+      <script>
+         funzione();
+         function funzione(){
+            let z = document.querySelector("#zona");
+            var newOption;
+            fetch('require/jsonTable.php')
+            .then(response => response.json())
+            .then(mioRisultato => {
+                  for(let i=0; i<mioRisultato.length; i++){
+                     //const myJSON = JSON.stringify(mioRisultato[i]);
+                     //const record = JSON.parse(myJSON);
+
+                     newOption = document.createElement("option");
+                     newOption.text = mioRisultato[i].nome;
+                     newOption.value = mioRisultato[i].id;
+                     z.add(newOption);                  
+                  }
+            }
+            );
+         }
+      </script>
+   </body>
+</html>
