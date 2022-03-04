@@ -27,6 +27,8 @@ function popolaImmobile(){
    let z = document.querySelector("#Zona");
    let idZona = z.value;
    let im = document.querySelector("#Immobile");
+   
+   // fase di svuotamento select dalle precedenti option.
    let numberOfChild = im.childElementCount;
    //alert(numberOfChild);
    if(numberOfChild > 0){
@@ -34,6 +36,7 @@ function popolaImmobile(){
          im.remove("option");
    }
 
+   // fase di creazione delle nuove option basate sul json recuperato dalla fetch.
    var newOption;
    let httpRequest = 'require/jsonImmobile.php?idZona='+idZona;
    //alert(httpRequest);
