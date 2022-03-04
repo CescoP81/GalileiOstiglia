@@ -50,6 +50,10 @@
                 <li><a class=\"dropdown-item\" href=\"immobili.php?sc=nuovoImmobile\">Nuovo Immobile</a></li>
               </ul>
             </li>
+
+            <li class=\"nav-item\">
+              <a class=\"nav-link\" href=\"ricerca.php\">Ricerca</a>
+            </li>
             
             <li class=\"nav-item\">
               <a class=\"nav-link\" href=\"index.php?sc=logout\">Logout</a>
@@ -60,31 +64,49 @@
     </nav>
     <br />");
   }
+/**
+ * Visualizza sottoforma di tabella una resultSet derivata da una query mySQL.
+ * @param object $resultSet Risultato della query da visualizzare.
+ * @param string $caption La caption della tabella.
+ * @param string $detailPage La pagina da richiamare per i dettagli.
+ * @param string $detailCase Costante letterale per il case di dettagli.
+ * @param string $editPage La pagina da richiamare per la modifica.
+ * @param string $editCase Costante letterale per il case di modifica.
+ * @param string $deletePage La pagina da richiamare per la cancellazione di un record.
+ * @param string $deleteCase Costante letterale per il case di cancellazione.
+ */
+  function showResultTable($resultSet, $caption=null, $detailPage=null, $detailCase=null, $editPage=null, $editCase=null, $deletePage=null, $deleteCase=null){
+    if($resultSet && $resultSet->num_rows){
+      $record = $resultSet->fetch_assoc();
+      $keys = array_keys($record);
+      /*for($i=0; $i<count($keys); $i++)
+        echo($keys[$i]." ");*/
 
-  function showResultTable($resultSet, $caption=null){
-    $record = $resultSet->fetch_assoc();
-    $keys = array_keys($record);
-    /*for($i=0; $i<count($keys); $i++)
-      echo($keys[$i]." ");*/
-
-    echo("<table class=\"table table-striped\">");
-      if($caption) echo("<caption>$caption</caption>");
-      echo("<thead>");
-        echo("<tr>");
-          //echo("<th scope=\"col\">#</th>");
+      echo("<table class=\"table table-striped\">");
+        if($caption) echo("<caption>$caption</caption>");
+        echo("<thead>");
+          echo("<tr>");
+            //echo("<th scope=\"col\">#</th>");
+            for($i=0; $i<count($keys); $i++)
+              echo("<th scope=\"col\">".$keys[$i]."</th> ");
+          echo("</tr>");
+        echo("</thead>");
+        echo("<tbody>");
+        while($record){
+          echo("<tr>");
           for($i=0; $i<count($keys); $i++)
-            echo("<th scope=\"col\">".$keys[$i]."</th> ");
-        echo("</tr>");
-      echo("</thead>");
-      echo("<tbody>");
-      while($record){
-        echo("<tr>");
-        for($i=0; $i<count($keys); $i++)
-          echo("<td>".$record[$keys[$i]]."</td>");
-        echo("</tr>");
-        $record = $resultSet->fetch_assoc();
-      }
-      echo("</tbody>");
-    echo("</table>");
+            echo("<td>".$record[$keys[$i]]."</td>");
+          if($detailPage)
+            echo("<td><a href=\"$detailPage?sc=$detailCase&idRecord=".$record[$keys[0]]."\">Details</a></td>");
+          if($editPage)
+            echo("<td><a href=\"$editPage?sc=$editCase\">Edit</a></td>");
+          if($deletePage)
+            echo("<td><a href=\"$editPage?sc=$editCase\">Delete</a></td>");
+          echo("</tr>");
+          $record = $resultSet->fetch_assoc();
+        }
+        echo("</tbody>");
+      echo("</table>");
+    }
   }
 ?>
