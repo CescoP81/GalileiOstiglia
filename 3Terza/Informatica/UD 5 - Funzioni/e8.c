@@ -22,13 +22,17 @@ int getNumber(int, int);
  * @return int Voce selezionata.
  */
 int writeMenu();
-
 /**
  * @brief Visualizza una matrice casuale di NxN valori e restituisce il valor medio
  * 
  * @return float Media dei valori della matrice
  */
 float getMediaMatrice(int);
+/**
+ * @brief Visualizza il triangolo inferiore della matrice di numeri casuali.
+ * @param int Dimensione della matrice quadrata.
+ */
+void triangoloInferioreCausale(int);
 
 // ## MAIN PROGRAM
 int main(){
@@ -45,7 +49,8 @@ int main(){
             break;
          }
          case 2:{
-
+            triangoloInferioreCausale(N);
+            printf("\n\n");
             break;
          }
          case 3:{
@@ -96,4 +101,23 @@ float getMediaMatrice(int _n){
       printf("\n");
    }
    return((float)sommaTotale/(_n*_n));
+}
+
+void triangoloInferioreCausale(int _n){
+   int i, j;
+   int randomico;
+
+   srand(time(NULL));
+   for(i=1; i<=_n; i++){
+      for(j=1; j<=_n; j++){
+         if(i>j){
+            randomico = rand()%20+1;
+            printf("%3d",randomico);
+         }
+         else{
+            printf(" **");
+         }
+      }
+      printf("\n");
+   }
 }
