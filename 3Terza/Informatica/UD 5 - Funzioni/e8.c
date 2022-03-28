@@ -33,12 +33,21 @@ float getMediaMatrice(int);
  * @param int Dimensione della matrice quadrata.
  */
 void triangoloInferioreCausale(int);
-
+/**
+ * @brief Serie numerica di N valori, determinando minimo, massimo, nr pari e nr dispari.
+ * @param int Numero di valori da richiedere.
+ * @param int* Riferimento alla vaiabile per il minimo.
+ * @param int* Riferimento alla varaibile per il massimo.
+ * @param int* Riferimento alla variabile per il numero di valori pari.
+ * @param int* Riferimento alla variabile per il numero di valori dispari.
+ */
+void serieNumerica(int, int*, int*, int*, int*);
 // ## MAIN PROGRAM
 int main(){
    int N;
    int scelta;
    float media;
+   int minimo, massimo, nrPari, nrDispari;
    N = getNumber(5, 15);
    do{
       scelta = writeMenu();
@@ -54,7 +63,9 @@ int main(){
             break;
          }
          case 3:{
-
+            serieNumerica(N, &minimo, &massimo, &nrPari, &nrDispari);
+            printf("Valore minimo: %d, massimo: %d\n", minimo, massimo);
+            printf("Nr. valori pari: %d, dispari: %d\n\n", nrPari, nrDispari);
             break;
          }
       }
@@ -119,5 +130,28 @@ void triangoloInferioreCausale(int _n){
          }
       }
       printf("\n");
+   }
+}
+
+void serieNumerica(int _n, int *_min, int *_max, int *_pari, int *_dispari){
+   int i;
+   int num;
+   *_pari = 0;
+   *_dispari = 0;
+
+   for(i=1; i<=_n; i++){
+      printf("Inserisci valore %d: ", i);
+      scanf("%d", &num);
+      if(i==1){
+         *_min = num;
+         *_max = num;
+      }
+      else{
+         if(num < *_min)   *_min = num;
+         if(num > *_max)   *_max = num;
+      }
+
+      if(num%2 == 0) *_pari = *_pari + 1;
+      else  *_dispari = *_dispari + 1;
    }
 }
