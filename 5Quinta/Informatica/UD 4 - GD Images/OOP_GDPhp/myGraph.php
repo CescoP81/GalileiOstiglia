@@ -14,6 +14,7 @@ class myGraph{
 
     private $im;
     private $colors;
+    private $values = array();
     /**
      * Costruttore della classe
      * @param int $w Larghezza in pixel dell'immagine.
@@ -61,11 +62,44 @@ class myGraph{
         imageRectangle($this->im, $this->leftMargin, $this->topMargin, $this->leftMargin+$this->graphWidth, $this->topMargin+$this->graphHeight, $this->colors['blue']);
     }
 
+    public function DrawPoint($val, $maxVal){
+        // calcolo i pixel in proporzione
+        // $maxVal:$graphHeight = $val:$pixel --> $pixel= $val*$graphHeight/$maxVal
+        $pixel = $val * $this->graphHeight / $maxVal;
+        $yPunto = $this->totalHeight - $this->bottomMargin - $pixel;
+        $xPunto = $this->leftMargin + ($this->graphWidth/2);
+
+        imageFilledEllipse($this->im, $xPunto, $yPunto, 10, 10, $this->colors['blue']);
+    }
+
+    public function DrawPoints(){
+        $maxVal = $this->values[0];
+        for($i=1; $i<count($this->values); $i++)
+            if($this->values[$i] > $maxVal) $maxVal = $this->values[$i];
+        
+        $deltaX = $this->graphWidth / (count($this->values)-1);
+        $xPunto = $this->leftMargin;
+        for($i=0; $i<count($this->values); $i++){
+            $pixel = $this->values[$i] * $this->graphHeight / $maxVal;
+            //echo($this->values[$i]." ".$pixel."<br >");
+            $yPunto = $this->totalHeight - $this->bottomMargin - $pixel;
+            imageFilledEllipse($this->im, $xPunto, $yPunto, 10, 10, $this->colors['blue']);
+
+            $xPunto = $xPunto + $deltaX;
+        }        
+    }
+
+    public function SetValues($valori){
+        for($i=0; $i<count($valori); $i++){
+            array_push($this->values, $valori[$i]);
+        }
+    }
+
     /**
      * Output del codice PNG realtivo all'immagine creata.
      */
     public function Output(){
-        header("Content-type: image/png");
+        //header("Content-type: image/png");
         imagePNG($this->im);
         imageDestroy($this->im);
     }   
