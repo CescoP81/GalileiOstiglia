@@ -1,0 +1,43 @@
+<html>
+   <head>
+      <title>Codifica Dec-Bin</title>
+      <style type="text/css">
+         TD{
+            font-size: 1.5em;
+         }
+      </style>
+   </head>
+   <body>
+      <table border="1">
+         <tr>
+            <td><b>Numero:</b></td>
+            <td><input type="text" id="decimale"></td>
+            <td><input type="button" id="btn" value="Converti"></td>
+
+            <td id="bit7">0</td>
+            <td id="bit6">0</td>
+            <td id="bit5">0</td>
+            <td id="bit4">0</td>
+            <td id="bit3">0</td>
+            <td id="bit2">0</td>
+            <td id="bit1">0</td>
+            <td id="bit0">0</td>
+         </tr>
+      </table>
+      <script>
+         let i;
+         let bit;
+         let btn = document.querySelector("#btn");
+         btn.addEventListener("click",converti);
+
+         function converti(){
+            var dec = document.querySelector("#decimale").value;
+            for(i=0; i<8; i++){
+               bit = "bit"+i;
+               document.getElementById(bit).innerHTML = dec%2;
+               dec = Math.floor(dec / 2);
+            }
+         }
+      </script>
+   </body>
+</html>
