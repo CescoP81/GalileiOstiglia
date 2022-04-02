@@ -5,23 +5,31 @@
          TD{
             font-size: 1.5em;
          }
+         .bit{
+            font-size: 2em;
+            padding: 5px 10px 5px 10px;
+            border: solid 1px;            
+         }
+         #btn{
+            font-size: 1.4em;
+         }
       </style>
    </head>
    <body>
-      <table border="1">
+      <table border="0">
          <tr>
             <td><b>Numero:</b></td>
-            <td><input type="text" id="decimale"></td>
+            <td><input type="text" id="decimale" style="text-align: right;"></td>
             <td><input type="button" id="btn" value="Converti"></td>
 
-            <td id="bit7">0</td>
-            <td id="bit6">0</td>
-            <td id="bit5">0</td>
-            <td id="bit4">0</td>
-            <td id="bit3">0</td>
-            <td id="bit2">0</td>
-            <td id="bit1">0</td>
-            <td id="bit0">0</td>
+            <td id="bit7" class="bit">0</td>
+            <td id="bit6" class="bit">0</td>
+            <td id="bit5" class="bit">0</td>
+            <td id="bit4" class="bit">0</td>
+            <td id="bit3" class="bit">0</td>
+            <td id="bit2" class="bit">0</td>
+            <td id="bit1" class="bit">0</td>
+            <td id="bit0" class="bit">0</td>
          </tr>
       </table>
       <script>
@@ -33,9 +41,14 @@
          function converti(){
             var dec = document.querySelector("#decimale").value;
             for(i=0; i<8; i++){
-               bit = "bit"+i;
-               document.getElementById(bit).innerHTML = dec%2;
+               bit = "#bit"+i;
+               var r = dec%2;
+               document.querySelector(bit).innerHTML = r;
                dec = Math.floor(dec / 2);
+               if(r == 0)
+                  document.querySelector(bit).style = "color: rgb(200,0,0);";
+               else
+                  document.querySelector(bit).style = "color: rgb(0,200,0);";
             }
          }
       </script>
