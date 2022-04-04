@@ -51,13 +51,13 @@ int main(){
          else
             printf("\n --Sei troppo basso""\n");
       }
-   }while(indovinato == 0);
+   }while(indovinato == 0);  // while(!indovinato);
    return(0);
 }
 
 int getRandomNumber(int _min, int _max){
    int n;
-   n = _min + (rand()%(_max - _min) + 1);
+   n = _min + (rand()%(_max - _min + 1 ));
    return(n);
 }
 int getNumeroUtente(int _min, int _max){

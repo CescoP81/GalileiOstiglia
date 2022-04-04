@@ -42,21 +42,20 @@ int main(){
    int cntTentativi;
    int minimo = 1;
    int massimo = 20;
-   int indovinato;
 
    srand(time(NULL));
    numeroDaIndovinare = getRandomNumber(minimo, massimo);
-   indovinato = 0;
    cntTentativi = 0;
-   do{ 
+   /*do{ 
       numeroScelto = getNumeroUtente(minimo, massimo);
-   }while(checkNumber(numeroScelto, numeroDaIndovinare, &cntTentativi) == 0);
+   }while(!checkNumber(numeroScelto, numeroDaIndovinare, &cntTentativi));*/
+   while(!checkNumber(getNumeroUtente(minimo, massimo), numeroDaIndovinare, &cntTentativi));
    return(0);
 }
 
 int getRandomNumber(int _min, int _max){
    int n;
-   n = _min + (rand()%(_max - _min) + 1);
+   n = _min + (rand()%(_max - _min + 1));
    return(n);
 }
 int getNumeroUtente(int _min, int _max){
@@ -74,11 +73,11 @@ int checkNumber(int _scelto, int _random, int *_cnt){
          printf("\n -- Hai Indovinato!! Tentativi Usati: %d", *_cnt);
          return(1);
       }
-      else{
-         if(_scelto > _random)
-            printf("\n -- Sei troppo alto!!\n");
-         else
-            printf("\n --Sei troppo basso""\n");
-         return(0);
-      }
+   else{
+      if(_scelto > _random)
+         printf("\n -- Sei troppo alto!!\n");
+      else
+         printf("\n --Sei troppo basso""\n");
+      return(0);
+   }
 }
