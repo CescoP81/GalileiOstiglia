@@ -25,15 +25,6 @@ int getRandomNumber(int, int);
  * @return int Numero scelto dall'utente.
  */
 int getNumeroUtente(int, int);
-/**
- * @brief Verifica il numero scelto dall'utente rispetto al numero da indovinare.
- * @param int Numero scelto dall'utente.
- * @param int Numero random da indovinare.
- * @param int Numero di tentativi 
- * 
- * @return int 
- */
-int checkNumber(int, int, int*);
 
 int main(){
    int numeroDaIndovinare;
@@ -77,18 +68,4 @@ int getNumeroUtente(int _min, int _max){
       fflush(stdin);
    }while(n<_min || n>_max);
    return(n);
-}
-int checkNumber(int _scelto, int _random, int *_cnt){
-   *_cnt = *_cnt + 1;
-   if(_scelto == _random){
-         printf("\n -- Hai Indovinato!! Tentativi Usati: %d", *_cnt);
-         return(1);
-      }
-      else{
-         if(_scelto > _random)
-            printf("\n -- Sei troppo alto!!\n");
-         else
-            printf("\n --Sei troppo basso""\n");
-         return(0);
-      }
 }
