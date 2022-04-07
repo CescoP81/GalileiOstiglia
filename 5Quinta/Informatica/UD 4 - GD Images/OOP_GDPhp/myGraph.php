@@ -99,7 +99,7 @@ class myGraph{
      * Output del codice PNG realtivo all'immagine creata.
      */
     public function Output(){
-        //header("Content-type: image/png");
+        header("Content-type: image/png");
         imagePNG($this->im);
         imageDestroy($this->im);
     }   
