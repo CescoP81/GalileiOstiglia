@@ -4,6 +4,9 @@
 
    - Creare una funzione che riceve due parametri interi per riferimento ed esegue lo scambio
    dei valori contenuti.
+
+   - Creare una funzione che visualizza la serie numerica compresa tra
+   il valore più piccolo e più grande, passati come parametri.
 */
 #include <stdio.h>
 /**
@@ -22,11 +25,20 @@ void areaPerimetroRettangolo(int, int, int*, int*);
  */
 void scambio(int*, int*);
 
+/**
+ * @brief Serie numerica tra il valore minimo e massimo passati come parametri. I valori
+ * posso anche non essere in ordine crescente.
+ * @param int Primo valore.
+ * @param int Secondo valore. 
+ */
+void serieMinMax(int, int);
+
 int main(){
    int base = 6;
    int altezza = 5;
    int area, perimetro;
    int v1, v2;
+   int x, y;
 
    areaPerimetroRettangolo(base, altezza, &area, &perimetro);
    printf("Rettagolo %dx%d, area: %d, perimetro: %d\n\n", base, altezza, area, perimetro);
@@ -36,6 +48,10 @@ int main(){
    printf("V1: %d - V2: %d\n", v1, v2);
    scambio(&v1, &v2);
    printf("V1: %d - V2: %d\n", v1, v2);
+
+   printf("\n\n");
+   x=4; y=10;
+   serieMinMax(y,x);
    return(0);
 }
 
@@ -49,4 +65,13 @@ void scambio(int *_n1, int *_n2){
    tmp = *_n1;
    *_n1 = *_n2;
    *_n2 = tmp;
+}
+
+void serieMinMax(int v1, int v2){
+   int i;
+   if(v1>v2)
+      scambio(&v1,&v2);
+   
+   for(i=v1; i<=v2; i++)
+      printf("%d ", i);
 }

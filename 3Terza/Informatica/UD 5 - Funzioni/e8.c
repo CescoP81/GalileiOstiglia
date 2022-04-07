@@ -42,6 +42,7 @@ void triangoloInferioreCausale(int);
  * @param int* Riferimento alla variabile per il numero di valori dispari.
  */
 void serieNumerica(int, int*, int*, int*, int*);
+
 // ## MAIN PROGRAM
 int main(){
    int N;
@@ -82,7 +83,6 @@ int getNumber(int _min, int _max){
    }while(( num < _min) || (num > _max));
    return(num);
 }
-
 int writeMenu(){
    int sc;
    printf("1. Genera matrice casuale di NxN valori e calcola il valor medio.\n");
@@ -94,7 +94,6 @@ int writeMenu(){
    fflush(stdin);
    return(sc);
 }
-
 float getMediaMatrice(int _n){
    int i, j;
    int randomico;
@@ -113,7 +112,6 @@ float getMediaMatrice(int _n){
    }
    return((float)sommaTotale/(_n*_n));
 }
-
 void triangoloInferioreCausale(int _n){
    int i, j;
    int randomico;
@@ -132,7 +130,6 @@ void triangoloInferioreCausale(int _n){
       printf("\n");
    }
 }
-
 void serieNumerica(int _n, int *_min, int *_max, int *_pari, int *_dispari){
    int i;
    int num;

@@ -1,4 +1,4 @@
-/*Realizzare un algoritmo, il più ottimizzato possibile, che indovini un numero inserito
+/* Realizzare un algoritmo, il più ottimizzato possibile, che indovini un numero inserito
  dall'utente in un intervallo definito (min, max).
  Comunica il numero di tentativi utilizzati per indovinare il numero.
  */
