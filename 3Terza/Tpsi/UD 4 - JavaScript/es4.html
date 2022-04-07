@@ -1,0 +1,52 @@
+<html>
+   <head>
+      <title>Esempio Talassico</title>
+   </head>
+   <body>
+      <input type="button" value="Cliccami" id="btn1">
+      <br /><br />
+      <table border="1">
+         <tr>
+            <td>
+               <select id="colori">
+                  <option value="1">Rosso</option>
+                  <option value="2">Verde</option>
+                  <option value="3">Blu</option>
+               </select>
+            </td>
+            <td id="cella">Colore scelto</td>
+         </tr>
+      </table>
+
+      <script>
+         var btn = document.querySelector("#btn1");
+         btn.addEventListener("click", btnClic);
+
+         function btnClic(){
+            console.log("Hello World...");
+         }
+
+         var slc = document.querySelector("#colori");
+         slc.addEventListener("change", cambiaColore);
+         function cambiaColore(){
+            var c = slc.value;
+            console.log(c);
+
+            var cell = document.querySelector("#cella");
+            if(c == 1){
+               cell.style.background = "rgb(200,0,0)";
+               cell.innerHTML = "ROSSO";
+            }
+            if(c == 2){
+               cell.style.background = "rgb(0,200,0)";
+               cell.innerHTML = "VERDE";
+            }
+            if(c == 3){
+               cell.style.background = "rgb(0,0,200)";
+               cell.innerHTML = "BLU";
+            }
+         }
+
+      </script>
+   </body>
+</html>
