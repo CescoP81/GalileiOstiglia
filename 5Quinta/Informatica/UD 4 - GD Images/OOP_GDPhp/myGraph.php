@@ -15,6 +15,8 @@ class myGraph{
     private $im;
     private $colors;
     private $values = array();
+    private $categories = array();
+    private $titles = array();
     
     /**
      * Costruttore della classe
@@ -122,6 +124,8 @@ class myGraph{
      */
     private function numberOfDigits($n){
         $cnt = 0;
+        if($n == 0)
+            return(1);
         while($n>0){
             $cnt++;
             $n = (int)($n/10);
@@ -155,6 +159,114 @@ class myGraph{
         for($i=0; $i<count($valori); $i++){
             array_push($this->values, $valori[$i]);
         }
+    }
+    /**
+     * Carica un vettore di stringhe da usare come categorie, label sotto all'asse X.
+     * @param array $categorie Vettore delle categorie.
+     */
+    public function SetCategories($categorie){
+        for($i=0; $i<count($categorie); $i++){
+            array_push($this->categories, $categorie[$i]);
+        }
+    }
+    /**
+     * Carica i titoli del grafico, dell'asse x e dell'asse y
+     * @param string $mainTitle Titolo generale del grafico.
+     * @param string $xAxisTitle Titolo dell'asse X.
+     * @param string $yAxisTitle Titolo dell'asse Y.
+     */
+    public function SetTitles($mainTitle, $xAxisTitle, $yAxisTitle){
+            array_push($this->titles, $mainTitle);
+            array_push($this->titles, $xAxisTitle);
+            array_push($this->titles, $yAxisTitle);
+    }
+
+    /**
+     * Disegna le linee di riferimento orizzontali e relativi valori a fianco dell'asse Y.
+     */
+    public function DrawReferenceLine(){
+        $maxVal = $this->values[0];
+        for($i=1; $i<count($this->values); $i++) // ricerco il valore massimo da graficare, mi servirà per la proporzione dei pixel.
+            if($this->values[$i] > $maxVal) $maxVal = $this->values[$i];
+        
+        $spacers = 10;
+        $deltaY = $this->graphHeight / $spacers;
+        
+        $yPunto = $this->totalHeight - $this->bottomMargin;
+        for($i=0; $i<=$spacers; $i++){
+            imageLine($this->im, $this->leftMargin-5, $yPunto, $this->totalWidth-$this->rightMargin, $yPunto, $this->colors['lightgray']);
+            $yPunto = $yPunto - $deltaY;
+        }
+
+        $yPunto = $this->totalHeight - $this->bottomMargin;
+        $referenceValue = 0;
+        for($i=0; $i<=$spacers; $i++){
+            //imageLine($this->im, $this->leftMargin, $yPunto, $this->totalWidth-$this->rightMargin, $yPunto, $this->colors['lightgray']);
+            imageString($this->im, 5, $this->leftMargin-($this->numberOfDigits($referenceValue)*8)-10, $yPunto-8, round($referenceValue), $this->colors['lightgray']);
+            $yPunto = $yPunto - $deltaY;
+            $referenceValue += $maxVal / $spacers;
+        }
+    }
+    
+    /**
+     * Scrive le categorie sotto all'asse delle X, se troppo lunghe è possibile troncarle passando il numero di caratteri.
+     * @param int $trunk Numero di caratteri da visualizzare, lasciare vuoto per vedere la stringa completa.
+     */
+    public function WriteCategories($trunk=null){
+        $deltaX = $this->graphWidth / (count($this->categories)-1);
+        for($i=0; $i<count($this->categories); $i++){
+            $category = null;
+            if(!$trunk)
+                $category = $this->categories[$i];
+            else
+                $category = substr($this->categories[$i], 0, $trunk);
+
+            $xPunto = $this->leftMargin + ($deltaX*$i);
+            $xPunto = $xPunto - (strlen($category)*4);
+                        
+            imageString($this->im, 5, $xPunto, $this->totalHeight-$this->bottomMargin+5, $category, $this->colors['black']);
+        }
+    }
+
+    /**
+     * Visualizza i titoli del grafico nelle rispettive posizioni.
+     */
+    public function WriteTitles(){
+        $maxVal = $this->values[0];
+        for($i=1; $i<count($this->values); $i++) // ricerco il valore massimo da graficare, mi servirà per la proporzione dei pixel.
+            if($this->values[$i] > $maxVal) $maxVal = $this->values[$i];
+
+        // main title
+        imageString(
+            $this->im,
+            5,
+            ($this->totalWidth/2)-(strlen($this->titles[0])*4),
+            20,
+            $this->titles[0],
+            $this->colors['black']
+        );
+
+        // x axis title
+        imageString(
+            $this->im,
+            5,
+            //($this->totalWidth/2)-(strlen($this->titles[1])*4),
+            $this->leftMargin + ($this->graphWidth/2 - strlen($this->titles[1])*4),
+            $this->totalHeight-($this->bottomMargin/2),
+            $this->titles[1],
+            $this->colors['black']
+        );
+
+        // y axis title
+        //imageString($this->im, 5, 0,0, $this->numberOfDigits($maxVal), $this->colors['black']);
+        imageStringUp(
+            $this->im,
+            5,
+            $this->leftMargin - ($this->numberOfDigits($maxVal)*8) - 10 - 22,
+            $this->totalHeight/2 + (strlen($this->titles[2])*4),
+            $this->titles[2],
+            $this->colors['black']
+        );
     }
 
     /**
