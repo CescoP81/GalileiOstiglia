@@ -2,12 +2,12 @@
     require ("myGraph.php");
 
     $g = new myGraph(640, 480);
-    $g->SetInternalMargins(150,50,100,50);
+    $g->SetInternalMargins(150,50,100,100);
     
     $g->DrawBounds();
     $g->DrawInternalBounds();
 
-    $valori = array(10,50,110,90,43,26,88);
+    $valori = array(4,8,2,4,9);
     $g->SetValues($valori);
     $g->DrawPoints();
     $g->DrawConnectionLines();

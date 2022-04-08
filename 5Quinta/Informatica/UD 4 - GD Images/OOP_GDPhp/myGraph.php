@@ -79,7 +79,7 @@ class myGraph{
      */
     public function DrawPoints(){
         $maxVal = $this->values[0];
-        for($i=1; $i<count($this->values); $i++)
+        for($i=1; $i<count($this->values); $i++) // ricerco il valore massimo da graficare, mi servirà per la proporzione dei pixel.
             if($this->values[$i] > $maxVal) $maxVal = $this->values[$i];
         
         $deltaX = $this->graphWidth / (count($this->values)-1);
@@ -88,7 +88,7 @@ class myGraph{
             $pixel = $this->values[$i] * $this->graphHeight / $maxVal;
             //echo($this->values[$i]." ".$pixel."<br >");
             $yPunto = $this->totalHeight - $this->bottomMargin - $pixel;
-            imageFilledEllipse($this->im, $xPunto, $yPunto, 10, 10, $this->colors['blue']);
+            imageFilledEllipse($this->im, $xPunto, $yPunto, 8, 8, $this->colors['blue']);
 
             $xPunto = $xPunto + $deltaX;
         }        
