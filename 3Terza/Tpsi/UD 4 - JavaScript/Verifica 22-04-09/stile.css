@@ -1,0 +1,15 @@
+.inputField{
+    text-align: right;
+}
+.reportField{
+    text-align: center;
+    font-weight: Bold;
+    font-size: 1.5em;
+}
+#btnVerifica{
+    font-size: 2em;
+    /*background: rgb(0,200,0);*/
+}
+TD{
+    padding: 5px;
+}
