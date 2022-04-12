@@ -2,7 +2,7 @@
 function popolaZona(){
 
    let z = document.querySelector("#Zona");     // recupero il riferimento alla 
-   if(z){
+   if(z){   // controllo che il riferimento esista.
       z.addEventListener("change",popolaImmobile);           
       var newOption;
       fetch('require/jsonZona.php')
@@ -26,6 +26,7 @@ function popolaZona(){
 function popolaImmobile(){
    let z = document.querySelector("#Zona");
    let idZona = z.value;
+   //alert(idZona);
    let im = document.querySelector("#Immobile");
    
    // fase di svuotamento select dalle precedenti option.

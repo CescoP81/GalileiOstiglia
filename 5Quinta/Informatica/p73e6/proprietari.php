@@ -95,6 +95,7 @@ if($_SESSION['loggato']){
          $db = new mysqli(DBHOST, DBUSER, DBPASSWORD, DBNAME);
             $sql = "INSERT INTO p73e6_proprietario(cognome, nome, via, civico, citta, telefono, mail) 
                   VALUES('$cognome', '$nome', '$via', $civico, '$citta', '$telefono', '$mail')";
+            echo($sql);
             if($db->query($sql))
                echo("<div class=\"alert alert-success\" role=\"alert\">Proprietario Aggiunto.</div>");
             else
@@ -132,7 +133,7 @@ if($_SESSION['loggato']){
 
          // Visualizzo il form di inserimento di una nuova associazione Proprietario<->Immobile
          echo("<div class=\"alert alert-info\">Associa nuovo immobile</div>");
-         echo("<form action=\"proprietari.php\" method=\"get\" oncreate=\"alert('PincoPallo');\">
+         echo("<form action=\"proprietari.php\" method=\"get\">
             <div class=\"row\">
                <div class=\"col\">
                   <div class=\"mb-3\">

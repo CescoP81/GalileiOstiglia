@@ -53,3 +53,21 @@ create table p73e6_possiede(
    foreign key (idProprietario) references p73e6_proprietario(id),
    foreign key (idImmobile) references p73e6_immobile(id)
 )
+
+/*
+   Aggiunto in un secondo momento la tabella rendita_annua permette di assegnare
+   ad ogni immobile in ogni zona una specifica rendita (prezzo al mq) per un determinato
+   anno. In questo modo possiamo comunicare anno per anno, ad un ipotetico cliente
+   dell'agenzia quanto rendono i suoi immobili.
+*/
+create table p73e6_rendita_annua(
+   id integer unsigned auto_increment,
+   anno integer unsigned not null,
+   prezzo_mq float,
+   idZona integer unsigned,
+   idTipologia integer unsigned,
+   
+   primary key (id),
+   foreign key (idZona) references p73e6_zona(id),
+   foreign key (idTipologia) references p73e6_tipologia(id)
+)
