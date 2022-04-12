@@ -1,5 +1,5 @@
 let btn = document.querySelector("#btnVerifica");
-            btn.addEventListener("click",verificaNumeri);
+btn.addEventListener("click",verificaNumeri);
 
             function verificaNumeri(){
                 let v1 = parseInt(document.querySelector("#v1").value);
