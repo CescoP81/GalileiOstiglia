@@ -64,41 +64,19 @@ if($_SESSION['loggato'] == true){ // se sono loggato visualizzo il menu operativ
 
 }
 else{ // se non sono loggato mostro il form per il login.
-   echo("<div class=\"row\">");
-      echo("<div class=\"col col-4\">");
-         echo("<div class=\"alert alert-success\">Login Proprietario</div>");
-         echo("<form action=\"cliente.php\" method=\"post\">
-            <div class=\"mb-3\">
-               <label for=\"userInput\" class=\"form-label\">E-mail</label>
-               <input class=\"form-control\" type=\"text\" name=\"username\" placeholder=\"Username\" aria-label=\"default input example\">
-            </div>
-            <div class=\"mb-3\">
-               <label for=\"passwordInput\" class=\"form-label\">Password</label>
-               <input class=\"form-control\" type=\"password\" name=\"password\" placeholder=\"Password\" aria-label=\"default input example\">
-            </div>
-            <input type=\"hidden\" name=\"sc\" value=\"login\">
-            <button type=\"submit\" class=\"btn btn-primary\">Login</button>
-         </form>");
-      echo("</div>");
-
-      echo("<div class=\"col col-4\">");
-      echo("</div>");
-
-      echo("<div class=\"col col-4\">");
-         echo("<div class=\"alert alert-danger\">Login Agenzia</div>");
-         echo("<form action=\"index.php\" method=\"post\">
-            <div class=\"mb-3\">
-               <label for=\"userInput\" class=\"form-label\">Username</label>
-               <input class=\"form-control\" type=\"text\" name=\"username\" placeholder=\"Username\" aria-label=\"default input example\">
-            </div>
-            <div class=\"mb-3\">
-               <label for=\"passwordInput\" class=\"form-label\">Password</label>
-               <input class=\"form-control\" type=\"password\" name=\"password\" placeholder=\"Password\" aria-label=\"default input example\">
-            </div>
-            <input type=\"hidden\" name=\"sc\" value=\"login\">
-            <button type=\"submit\" class=\"btn btn-primary\">Login</button>
-         </form>");
-      echo("</div>");
+   echo("<form action=\"index.php\" method=\"get\">
+      <div class=\"mb-3\">
+         <label for=\"userInput\" class=\"form-label\">Username</label>
+         <input class=\"form-control\" type=\"text\" name=\"username\" placeholder=\"Username\" aria-label=\"default input example\">
+      </div>
+      <div class=\"mb-3\">
+         <label for=\"passwordInput\" class=\"form-label\">Password</label>
+         <input class=\"form-control\" type=\"password\" name=\"password\" placeholder=\"Password\" aria-label=\"default input example\">
+      </div>
+      <input type=\"hidden\" name=\"sc\" value=\"login\">
+      <button type=\"submit\" class=\"btn btn-primary\">Login</button>
+      </form>");
 }
+
 require("require/closePage.php"); // contiene il codice HTML standard di chiusura di ogni pagina.
 ?>

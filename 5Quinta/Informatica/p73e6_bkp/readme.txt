@@ -12,7 +12,7 @@ La gestione deve poter ottenere:
 
 Ver. 1.2.0 (under develop)
 - Aggiunta tabella rendita_annuale.
-- Aggiunta autenticazione utenti (pagina cliente.php).
+- Aggiunta autenticazione utenti.
 - Calcolo rendita per singolo Proprietario su base annua o più anni.
 
 Ver. 1.1.0
