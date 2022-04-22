@@ -8,6 +8,7 @@ create table p73e6_proprietario(
    citta varchar(30),
    telefono varchar(15),
    mail varchar(255) not null,
+   passwd char(32) not null,
 
    primary key(id)
 );

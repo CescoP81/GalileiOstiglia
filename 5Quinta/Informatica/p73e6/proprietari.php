@@ -58,16 +58,22 @@ if($_SESSION['loggato']){
                   </div>
 
                   <div class=\"row\">
-                     <div class=\"col-6\">
+                     <div class=\"col-4\">
                         <div class=\"mb-3\">
                            <label for=\"inTelefono\" class=\"form-label\">Telefono:</label>
                            <input class=\"form-control\" type=\"text\" name=\"telefono\" id=\"inTelefono\" placeholder=\"\" aria-label=\"default input example\">
                         </div>
                      </div>
-                     <div class=\"col-6\">
+                     <div class=\"col-4\">
                         <div class=\"mb-3\">
                            <label for=\"inMail\" class=\"form-label\">Mail:</label>
                            <input class=\"form-control\" type=\"text\" name=\"mail\" id=\"inMail\" placeholder=\"\" aria-label=\"default input example\">
+                        </div>
+                     </div>
+                     <div class=\"col-4\">
+                        <div class=\"mb-3\">
+                           <label for=\"inPasswd\" class=\"form-label\">Mail:</label>
+                           <input class=\"form-control\" type=\"password\" name=\"passwd\" id=\"inPasswd\" placeholder=\"\" aria-label=\"default input example\">
                         </div>
                      </div>
                   </div>
@@ -91,15 +97,16 @@ if($_SESSION['loggato']){
          $citta = $_REQUEST['citta'];
          $telefono = $_REQUEST['telefono'];
          $mail = $_REQUEST['mail'];
+         $passwd = md5($_REQUEST['mail']);
 
          $db = new mysqli(DBHOST, DBUSER, DBPASSWORD, DBNAME);
-            $sql = "INSERT INTO p73e6_proprietario(cognome, nome, via, civico, citta, telefono, mail) 
-                  VALUES('$cognome', '$nome', '$via', $civico, '$citta', '$telefono', '$mail')";
-            echo($sql);
-            if($db->query($sql))
-               echo("<div class=\"alert alert-success\" role=\"alert\">Proprietario Aggiunto.</div>");
-            else
-               echo("<div class=\"alert alert-danger\" role=\"alert\">Problema.</div>");
+         $sql = "INSERT INTO p73e6_proprietario(cognome, nome, via, civico, citta, telefono, mail, passwd) 
+               VALUES('$cognome', '$nome', '$via', $civico, '$citta', '$telefono', '$mail', '$passwd')";
+         //echo($sql);
+         if($db->query($sql))
+            echo("<div class=\"alert alert-success\" role=\"alert\">Proprietario Aggiunto.</div>");
+         else
+            echo("<div class=\"alert alert-danger\" role=\"alert\">Problema.</div>");
          $db->close();
          break;
       }

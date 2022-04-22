@@ -1,4 +1,7 @@
-SELECT p.cognome, p.nome, i.nome AS 'Immobile', i.metratura, ra.prezzo_mq, (i.metratura*ra.prezzo_mq) AS 'Totale Valore'
+SELECT p.cognome, p.nome,
+    i.nome AS 'Immobile',
+    i.metratura, ra.prezzo_mq,
+    (i.metratura*ra.prezzo_mq) AS 'Totale Valore'
 FROM p73e6_proprietario AS p, 
    p73e6_possiede AS po, 
    p73e6_immobile AS i, 
@@ -7,3 +10,4 @@ WHERE p.id = po.idProprietario
    AND po.idImmobile = i.id 
    AND i.idZona = ra.idZona
    AND i.idTipologia = ra.idTipologia
+   AND p.id=1
