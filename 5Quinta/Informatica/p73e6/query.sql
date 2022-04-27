@@ -11,3 +11,4 @@ WHERE p.id = po.idProprietario
    AND i.idZona = ra.idZona
    AND i.idTipologia = ra.idTipologia
    AND p.id=1
+   

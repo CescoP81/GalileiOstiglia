@@ -1,0 +1,105 @@
+<html>
+   <head>
+      <title>Fabulous Animation Example</title>
+      <style>
+         .led{
+            width: 30px;
+            height: 30px;
+         }
+      </style>
+   </head>
+   <body>
+      <button id="btnLinear">Linear</button>
+      <button id="btnAlternate">Alternate</button>
+      <br />
+      <table border="1">
+         <tr>
+            <td class="led" id="l1"></td>
+            <td class="led" id="l2"></td>
+            <td class="led" id="l3"></td>
+            <td class="led" id="l4"></td>
+            <td class="led" id="l5"></td>
+            <td class="led" id="l6"></td>
+            <td class="led" id="l7"></td>
+         </tr>
+      </table>
+      <script>
+         const MAX_LED=7;
+
+         let btnL = document.querySelector("#btnLinear");
+         let btnA = document.querySelector("#btnAlternate");
+
+         btnL.addEventListener("click",lineare);
+         btnA.addEventListener("click",alternata);
+         
+         var i;
+         var direzione=1; // direzione 1 -> DX; 0 ->SX
+         function lineare(){
+            clearTimeout();
+            i = 1;
+            setInterval(greenLedLinear, 500);
+         }
+         function alternata(){
+            clearTimeout();
+            i = 1;
+            setInterval(greenLedAlternate, 1000);
+         }
+
+         function greenLedLinear(){
+            console.log("Led " + i);
+            if(i==1){            // se sono sulla prima cella   
+               let l = document.querySelector("#l"+i);
+               l.style.background = "rgb(0,200,0)";
+               l = document.querySelector("#l"+MAX_LED);
+               l.style.background = "rgb(255,255,255)";
+               i++;
+            }
+            else{
+               if(i<MAX_LED){    // se sono tra la prima e l'ultima
+                  let l = document.querySelector("#l"+(i-1));
+                  l.style.background = "rgb(255,255,255)";
+                  l = document.querySelector("#l"+i);
+                  l.style.background = "rgb(0,200,0)";
+                  i++;
+               }
+               else{             // sono sull'ultima
+                  l = document.querySelector("#l"+(i-1));
+                  l.style.background = "rgb(255,255,255)";
+                  l = document.querySelector("#l"+i);
+                  l.style.background = "rgb(0,200,0)";
+                  i=1;
+               }               
+            }
+         }
+         
+         function greenLedAlternate(){
+            console.log("Led " + i);
+            if(direzione == 1){  // vado verso destra
+               if(i > 1)   l = document.querySelector("#l"+(i-1));
+               else  l = document.querySelector("#l1");
+               l.style.background = "rgb(255,255,255)";
+
+               l = document.querySelector("#l"+i);
+               l.style.background = "rgb(0,200,0)";
+               i++;
+            }
+            if(direzione == 0){
+               if(i < MAX_LED){
+                  l = document.querySelector("#l"+(i+1));
+               }
+               else{
+                  l = document.querySelector("#l"+MAX_LED);
+               }
+               l.style.background = "rgb(255,255,255)";
+               l = document.querySelector("#l"+i);
+               l.style.background = "rgb(0,200,0)";
+               i--;
+            }
+            if(i==1)
+               direzione = 1;
+            if(i==MAX_LED)
+               direzione = 0;
+         } //*/
+      </script>
+   </body>
+</html>

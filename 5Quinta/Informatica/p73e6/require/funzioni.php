@@ -74,6 +74,48 @@
     </nav>
     <br />");
   }
+
+  function writeCustomerMenu(){
+    
+  }
+  function showLoginForms(){
+    echo("<div class=\"row\">");
+      echo("<div class=\"col col-4\">");
+         echo("<div class=\"alert alert-success\">Login Proprietario</div>");
+         echo("<form action=\"cliente.php\" method=\"post\">
+            <div class=\"mb-3\">
+               <label for=\"userInput\" class=\"form-label\">E-mail</label>
+               <input class=\"form-control\" type=\"text\" name=\"username\" placeholder=\"Username\" aria-label=\"default input example\">
+            </div>
+            <div class=\"mb-3\">
+               <label for=\"passwordInput\" class=\"form-label\">Password</label>
+               <input class=\"form-control\" type=\"password\" name=\"password\" placeholder=\"Password\" aria-label=\"default input example\">
+            </div>
+            <input type=\"hidden\" name=\"sc\" value=\"login\">
+            <button type=\"submit\" class=\"btn btn-primary\">Login</button>
+         </form>");
+      echo("</div>");
+
+      echo("<div class=\"col col-4\">");
+      echo("</div>");
+
+      echo("<div class=\"col col-4\">");
+         echo("<div class=\"alert alert-danger\">Login Agenzia</div>");
+         echo("<form action=\"index.php\" method=\"post\">
+            <div class=\"mb-3\">
+               <label for=\"userInput\" class=\"form-label\">Username</label>
+               <input class=\"form-control\" type=\"text\" name=\"username\" placeholder=\"Username\" aria-label=\"default input example\">
+            </div>
+            <div class=\"mb-3\">
+               <label for=\"passwordInput\" class=\"form-label\">Password</label>
+               <input class=\"form-control\" type=\"password\" name=\"password\" placeholder=\"Password\" aria-label=\"default input example\">
+            </div>
+            <input type=\"hidden\" name=\"sc\" value=\"login\">
+            <button type=\"submit\" class=\"btn btn-primary\">Login</button>
+         </form>");
+      echo("</div>");
+    echo("</div>");
+  }
 /**
  * Visualizza sottoforma di tabella una resultSet derivata da una query mySQL.
  * @param object $resultSet Risultato della query da visualizzare.
