@@ -1,4 +1,10 @@
 <?php
+/**
+ * La pagina cliente.php permette ad un proprietario loggato di vedere la propria anagrafica e lo
+ * stato dei propri immobili.
+ * Dalla tabella degli immobili è possibile anche produrre un PDF con il riepilogo; la pagina che produce il
+ * PDF è nella cartella /cliente/pdfImmobili.php
+ */
 session_start();
 if(isset($_REQUEST['sc'])) $sc = $_REQUEST['sc']; else $sc=null;
 if(!isset($_SESSION['loggato'])) $_SESSION['loggato'] = false;
@@ -39,7 +45,6 @@ if($_SESSION['loggato'] == true){ // se sono loggato visualizzo il menu operativ
    echo("<div class=\"alert alert-success\">Proprietario: ".$_SESSION['nomeProprietario']." ".$_SESSION['cognomeProprietario']."
       <a href=\"cliente.php?sc=logout\"><button type=\"button\" class=\"btn btn-link btn-sm\">Logout</button></a>
    </div>");
-   //echo("Sono dentro come proprietario...");
    $db = new mysqli(DBHOST, DBUSER, DBPASSWORD, DBNAME);
    echo("<div class=\"row\">
       <div class=\"col col-4\">");
@@ -65,41 +70,6 @@ if($_SESSION['loggato'] == true){ // se sono loggato visualizzo il menu operativ
          echo("<a href=\"cliente\pdfImmobili.php?idProprietario=".$_SESSION['idProprietario']."\" target=\"_blank\"><button type=\"button\" class=\"btn btn-outline-primary\">Stampa PDF</button></a>");
       echo("</div>");
    echo("</div>");
-   /*writeMenu();
-   // Riga di riepilogo sulla situazione delle tabelle.
-   echo("<div class=\"row\">
-      <div class=\"col col-4\">
-         <div class=\"alert alert-success\">Proprietari</div>
-      ");
-         $db = new mysqli(DBHOST, DBUSER, DBPASSWORD, DBNAME);
-         $sql = "SELECT COUNT(id) AS 'Proprietari Presenti' FROM p73e6_proprietario";
-         $rs = $db->query($sql);
-         showResultTable($rs, "Table Proprietario");
-         $db->close();
-      echo("</div>
-      <div class=\"col col-4\">
-         <div class=\"alert alert-success\">Zone e Tipologie</div>
-      ");
-         $db = new mysqli(DBHOST, DBUSER, DBPASSWORD, DBNAME);
-         $sql = "SELECT COUNT(id) AS 'Zone Presenti' FROM p73e6_zona";
-         $rs = $db->query($sql);
-         showResultTable($rs, "Table Zona");
-
-         $sql = "SELECT COUNT(id) AS 'Tipologie Presenti' FROM p73e6_tipologia";
-         $rs = $db->query($sql);
-         showResultTable($rs, "Table Tipologia");
-         $db->close();
-      echo("</div>
-      <div class=\"col col-4\">
-         <div class=\"alert alert-success\">Immobili</div>
-      ");
-         $db = new mysqli(DBHOST, DBUSER, DBPASSWORD, DBNAME);
-         $sql = "SELECT COUNT(id) AS 'Immobili Presenti' FROM p73e6_immobile";
-         $rs = $db->query($sql);
-         showResultTable($rs, "Table Immobile");
-      echo("</div>
-   </div>");*/
-
 }else{ // se non sono loggato mostro il form per il login.
    showLoginForms();
 }
