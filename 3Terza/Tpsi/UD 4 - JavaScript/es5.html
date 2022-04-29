@@ -41,14 +41,23 @@
          function lineare(){
             if(intervallo)
                clearTimeout(intervallo);
+            clearLed();
             i = 1;
             intervallo=setInterval(greenLedLinear, 500);
          }
          function alternata(){
             if(intervallo)
                clearTimeout(intervallo);
+            clearLed();
             i = 1;
             intervallo=setInterval(greenLedAlternate, 500);
+         }
+         function clearLed(){
+            var i;
+            for(i=1; i<=MAX_LED; i++){
+               let l = document.querySelector("#l"+i);
+               l.style.background = "rgb(255,255,255)";
+            }
          }
 
          function greenLedLinear(){
