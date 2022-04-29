@@ -21,10 +21,13 @@
             <td class="led" id="l5"></td>
             <td class="led" id="l6"></td>
             <td class="led" id="l7"></td>
+            <td class="led" id="l8"></td>
+            <td class="led" id="l9"></td>
+            <td class="led" id="l10"></td>
          </tr>
       </table>
       <script>
-         const MAX_LED=7;
+         const MAX_LED = 10;
 
          let btnL = document.querySelector("#btnLinear");
          let btnA = document.querySelector("#btnAlternate");
@@ -33,16 +36,19 @@
          btnA.addEventListener("click",alternata);
          
          var i;
-         var direzione=1; // direzione 1 -> DX; 0 ->SX
+         var direzione = 1; // direzione 1 -> DX; 0 ->SX
+         var intervallo = null;
          function lineare(){
-            clearTimeout();
+            if(intervallo)
+               clearTimeout(intervallo);
             i = 1;
-            setInterval(greenLedLinear, 500);
+            intervallo=setInterval(greenLedLinear, 500);
          }
          function alternata(){
-            clearTimeout();
+            if(intervallo)
+               clearTimeout(intervallo);
             i = 1;
-            setInterval(greenLedAlternate, 1000);
+            intervallo=setInterval(greenLedAlternate, 500);
          }
 
          function greenLedLinear(){
@@ -77,9 +83,9 @@
             if(direzione == 1){  // vado verso destra
                if(i > 1)   l = document.querySelector("#l"+(i-1));
                else  l = document.querySelector("#l1");
-               l.style.background = "rgb(255,255,255)";
+               l.style.background = "rgb(255,255,255)";  // spengo il led prima
 
-               l = document.querySelector("#l"+i);
+               l = document.querySelector("#l"+i);       // accendo il led corrente.
                l.style.background = "rgb(0,200,0)";
                i++;
             }
@@ -95,10 +101,14 @@
                l.style.background = "rgb(0,200,0)";
                i--;
             }
-            if(i==1)
+            if(i<1){
                direzione = 1;
-            if(i==MAX_LED)
+               i = 1;
+            }
+            if(i>MAX_LED){
                direzione = 0;
+               i = MAX_LED;
+            }
          } //*/
       </script>
    </body>
