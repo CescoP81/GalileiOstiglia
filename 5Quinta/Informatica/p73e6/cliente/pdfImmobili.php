@@ -106,7 +106,7 @@
       $cnt++;
    }
    $pdf->SetFont('Times','B',12);
-   $pdf->Cell(165,10,"Totale:");
+   $pdf->Cell(165,10,"Totale:",0,0,'R');
    $pdf->Cell(25,10,chr(128).$totale);
    $pdf->Output();
 ?>
