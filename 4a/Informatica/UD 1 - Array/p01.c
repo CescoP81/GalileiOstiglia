@@ -4,7 +4,7 @@
    x Input da tastiera di un vettore di interi.
    x visualizzazione di un vettore.
    - visualizzazione al contrario.
-   - ricerca di un valore
+   - ricerca di un valore (ritorno 0/1 in caso negativo o positivo)
    - calcolo del valor medio
    - azzeramento di una cella scelta da utente.
    - scambio tra due celle scelte dall'utente.
