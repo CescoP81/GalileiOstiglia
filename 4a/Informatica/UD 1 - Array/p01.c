@@ -1,8 +1,8 @@
 /*
    Esempio di utilizzo e gestione di un array mono-dimensionale
    Elenco funzioni richieste:
-   - Input da tastiera di un vettore di interi.
-   - visualizzazione di un vettore.
+   x Input da tastiera di un vettore di interi.
+   x visualizzazione di un vettore.
    - visualizzazione al contrario.
    - ricerca di un valore
    - calcolo del valor medio
@@ -42,7 +42,7 @@ int main(){
    printVettore(vet, DIM);
 
    printf("\n");
-   
+
    inputVettore(vet2, DIM*2);
    printVettore(vet2, DIM*2);
 
