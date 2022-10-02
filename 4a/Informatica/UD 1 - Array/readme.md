@@ -1,15 +1,15 @@
 ### *ELENCO ESERCITAZIONI*
 
-**p1.c**  
+**p01.c**  
 Esempio di utilizzo e gestione di un array mono-dimensionale
    Elenco funzioni richieste:
-   x Input da tastiera di un vettore di interi.
-   x visualizzazione di un vettore.
-   x visualizzazione al contrario.
-   x ricerca di un valore (ritorno 0/1 in caso negativo o positivo)
-   x calcolo del valor medio
-   x azzeramento di una cella scelta da utente.
-   x scambio tra due celle scelte dall'utente.
+   - Input da tastiera di un vettore di interi.
+   - visualizzazione di un vettore.
+   - visualizzazione al contrario.
+   - ricerca di un valore (ritorno 0/1 in caso negativo o positivo)
+   - calcolo del valor medio
+   - azzeramento di una cella scelta da utente.
+   - scambio tra due celle scelte dall'utente.
    - ordinamento di un vettore.
    - ricerca valore massimo e/o minimo.
    
