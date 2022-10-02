@@ -8,7 +8,7 @@
    x calcolo del valor medio
    x azzeramento di una cella scelta da utente.
    x scambio tra due celle scelte dall'utente.
-   - ordinamento di un vettore.
+   x ordinamento di un vettore.
    - ricerca valore massimo e/o minimo.
    
    ATTENZIONE:
@@ -70,8 +70,8 @@ int azzeraCellaVettore(int[], int, int);
  * @brief Scambia i valori di due celle selezionate per indice.
  * @param int[] Vettore da utilizzare nella funzione.
  * @param int Dimensione del vettore.
- * @param int Indice prima cella
- * @param int Indice seconda cella
+ * @param int Indice assoluto prima cella
+ * @param int Indice assoluto seconda cella
  * 
  * @return int 0/1 se lo scambio è avvenuto oppure no.
  */
@@ -169,7 +169,6 @@ float avgVettore(int _v[], int _d){
    
    return((float)somma/_d);
 }
-
 int azzeraCellaVettore(int _v[], int _d, int _index){
 
    if(_index<1 || _index>_d){
@@ -178,25 +177,24 @@ int azzeraCellaVettore(int _v[], int _d, int _index){
    _v[_index-1] = 0;
    return(1);
 }
-
 int swapCelleVettore(int _v[], int _d, int _index1, int _index2){
    int box;
-   if(_index1<1 || _index1>_d)
+   if(_index1<0 || _index1>_d-1)
       return(0);
-   if(_index2<1 || _index2>_d)
+   if(_index2<0 || _index2>_d-1)
       return(0);
    
-   box = _v[_index1-1];
-   _v[_index1-1] = _v[_index2-1];
-   _v[_index2-1] = box;
+   box = _v[_index1];
+   _v[_index1] = _v[_index2];
+   _v[_index2] = box;
    return(1);
 }
-
 void ordinaVettore(int _v[], int _d){
    int box;
    int i, j;
 
-   for(i=0; i<_d-1; i++){
+   // Doppio ciclo di base per l'ordinamento di un vettore in modo crescente.
+   /*for(i=0; i<_d-1; i++){
       for(j=i+1; j<_d; j++){
          if(_v[i] > _v[j]){
             box = _v[i];
@@ -204,15 +202,15 @@ void ordinaVettore(int _v[], int _d){
             _v[j] = box;
          }
       }
-   }
+   }*/
 
    /* Utilizzando una funzione costruita precedentemente e funzionante.
-   Attenzione che la funzione richiede indici assoluti e non relativi.
+   Attenzione che la funzione richiede indici assoluti e non relativi.*/
    for(i=0; i<_d-1; i++){
       for(j=i+1; j<_d; j++){
          if(_v[i] > _v[j]){
-            swapCelleVettore(_v, _d, i+1, j+1);
+            swapCelleVettore(_v, _d, i, j);
          }
       }
-   }*/
+   } //*/
 }
