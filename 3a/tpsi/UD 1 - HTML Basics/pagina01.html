@@ -17,8 +17,59 @@
       <B>Testo in Grassetto</B> <BR />
       <I>Testo in Corsivo</I><BR />
       <U>Testo sottolineato</U><BR />
-      <BR>
+      <BR />
       Questo <b>Testo</b> è in <i>corsivo</i> e a volte <u><i>corsivo sottolineato</i></u>. <BR />
+      <br />
+      <br />
+      Inserimento di una tabella<br /><br />
+      <!-- attributi di table
+         - border: indica la dimensione visibile del bordo (in pixel mi pare)
+         - cellspacing: indica la distanza tra le celle (in pixel mi pare)
+         - cellpadding: indica la distanza tra il contenuto di una cella e il bordo
+      -->
+      <TABLE border="2" cellspacing="5" cellpadding="5">
+         <CAPTION>ELENCO STUDENTI 3IA</CAPTION>
+         <!-- riga con le intestazioni delle singole colonne -->
+         <TR>
+            <TH>#</TH>
+            <TH>Cognome</TH>
+            <TH>Nome</TH>
+         </TR>
+         <!-- righe della mia tabella con i dati. -->
+         <TR>
+            <TD>1</TD>
+            <TD>Anghel Rares </TD>
+            <TD>Stefan</TD>
+         </TR>
+         <TR>
+            <TD>2</TD>
+            <TD>Bacchiega</TD>
+            <TD>Samuele</TD>
+         </TR>
+         <TR>
+            <TD>3</TD>
+            <TD>Bettini</TD>
+            <TD>Alessandro</TD>
+         </TR>
+      </TABLE>
+      <br /><br />
+      <!-- caricamento di un'immagine
+         - src: nome del file da caricare / o indirizzo web da cui recuperare l'immagine.
+         - width: larghezza in pixel dell'immagine renderizzata.
+         - height: altezza in pixel dell'immagine renderizzata.
+         - alt: descrizione breve dell'immagine caricata.
 
-   </BODY>
+         - Cartella di base con i file (BASE)
+            - pagina html
+            - file immagine
+
+         - cartella di base con i file (VERSIONE PRO)
+            - images
+               - tux.svg (<IMG SRC="images/tux.svg" />)
+         -pagina html
+      -->      
+      <IMG SRC="tux.svg" height="100" height="100" alt="Immagine di un tux base a colori." />
+      <br /><br />
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/8e1L6zYoTn4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </BODY> 
 </HTML>
