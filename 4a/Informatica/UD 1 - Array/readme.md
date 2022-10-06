@@ -16,9 +16,10 @@ Esempio di utilizzo e gestione di un array mono-dimensionale
    ATTENZIONE:
    per ogni punto è richiesta una funzione specifica.
 
-**p02.c**
+**p02.c**--
 Realizzare un programma C che esegua le seguenti operazioni su un vettore
 di 10 elementi interi:
    - Caricamento del vettore da tastiera, con valori interi, univoci!
    - Calcolo della media dei valori PARI e dei valori DISPARI.
    - Determinazione se compaiono più valori pari o dispari.
+
