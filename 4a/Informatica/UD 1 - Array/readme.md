@@ -23,7 +23,7 @@ di 10 elementi interi:
    - [x] Stampa del vettore inserito.
    - [x] Calcolo della media dei valori PARI e dei valori DISPARI.
    - [x] Determinazione se compaiono più valori pari o dispari.
-   - [ ]Copia tra vettori di stessa dimensione.
-   - [ ]Moltiplica vettore per fattore x.
-   - [ ]Ricerca valore nel vettore e restituzione prima posizione valida.
+   - [ ] Copia tra vettori di stessa dimensione.
+   - [ ] Moltiplica vettore per fattore x.
+   - [ ] Ricerca valore nel vettore e restituzione prima posizione valida.
 
