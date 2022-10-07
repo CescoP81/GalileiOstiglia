@@ -25,5 +25,5 @@ di 10 elementi interi:
    - [x] Determinazione se compaiono più valori pari o dispari.
    - [ ] Copia tra vettori di stessa dimensione.
    - [ ] Moltiplica vettore per fattore x.
-   - [ ] Ricerca valore nel vettore e restituzione prima posizione valida.
+   - [ ] Ricerca valore nel vettore e restituzione prima posizione valida. 
 
