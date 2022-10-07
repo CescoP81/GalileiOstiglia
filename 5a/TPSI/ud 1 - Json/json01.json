@@ -1,0 +1,4 @@
+[
+    {"name":"John", "age":30, "car":null},
+    {"name":"Mike", "age":33, "car":"Golf"}
+]
