@@ -1,5 +1,5 @@
 <?php
-    header("Content-Type: application/json; charset=UTF-8");
+    //header("Content-Type: application/json; charset=UTF-8");
     // connessione al database
     $db = new mysqli("localhost","root","","scuola2223");
     // creo la query da eseguire sul database
