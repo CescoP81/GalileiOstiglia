@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Prova fetch XML</title>
+    </head>
+    <body>
+        <button onClick="myxml()">Console</button>
+        <script>
+            function myxml(){
+                // recuperare contenuto di un file xml
+
+                parser = new DOMParser();
+                xmlDoc = parser.parseFromString(Text,"text/xml");
+
+                document.getElementById("demo").innerHTML =
+                xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+            }
+        </script>
+    </body>
+</html>

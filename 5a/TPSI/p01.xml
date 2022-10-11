@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<elenco>
+    <persona ruolo="Docente">
+        <nome>Francesco</nome>
+        <cognome>Pradella</cognome>  
+    </persona>
+    <persona ruolo="Docente">
+        <nome>Alberto</nome>
+        <cognome>Bottoni</cognome> 
+    </persona>
+    <persona ruolo="Studente">
+        <nome>Alessandro</nome>
+        <cognome>Marcheselli</cognome>
+    </persona>
+    <persona ruolo="Studente">
+        <nome>Alexandra</nome>
+        <cognome>Miscoci</cognome>
+    </persona>
+</elenco>
