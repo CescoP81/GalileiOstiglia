@@ -25,5 +25,15 @@ di 10 elementi interi:
    - [x] Determinazione se compaiono più valori pari o dispari.
    - [ ] Copia tra vettori di stessa dimensione.
    - [ ] Moltiplica vettore per fattore x.
-   - [ ] Ricerca valore nel vettore e restituzione prima posizione valida. 
+   - [ ] Ricerca valore nel vettore e restituzione prima posizione valida.
 
+**p03.c**   
+Realizzare un programma che inizializza una matrice 5x5 di interi quindi esegue le seguenti funzioni:
+   - [ ] Caricamento dei valor nella matrice random con valori compresi tra 5 e 25.
+   - [ ] Stampa della matrice per righe.
+   - [ ] Stampa della matrice per colonne.
+   - [ ] Calcolo della media della matrice.
+   - [ ] Calcolo del totale di una riga della matrice (riga indicata per indice).
+   - [ ] Ricerca della riga con media maggiore.
+   - [ ] Ricerca di un vettore di 5 elementi interi all'interno della matrice.
+   
