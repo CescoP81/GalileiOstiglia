@@ -23,9 +23,9 @@ di 10 elementi interi:
    - [x] Stampa del vettore inserito.
    - [x] Calcolo della media dei valori PARI e dei valori DISPARI.
    - [x] Determinazione se compaiono più valori pari o dispari.
-   - [ ] Copia tra vettori di stessa dimensione.
-   - [ ] Moltiplica vettore per fattore x.
-   - [ ] Ricerca valore nel vettore e restituzione prima posizione valida.
+   - [x] Copia tra vettori di stessa dimensione.
+   - [x] Moltiplica vettore per fattore x.
+   - [x] Ricerca valore nel vettore e restituzione prima posizione valida.
 
 **p03.c**   
 Realizzare un programma che inizializza una matrice 5x5 di interi quindi esegue le seguenti funzioni:
