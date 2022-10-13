@@ -1,4 +1,9 @@
 <?php
+/**
+ * Funzione per la visualizzazione di record estratti da un database, sotto forma di tabella realizzata con BootStrap
+ * @param Object $_rs Insieme dei risultati estratti con mysqli::query()
+ * @param String $_caption Stringa da usare come caption della tabella
+ */
 function showResultSetTable($_rs, $_caption=null){
     if($_rs->num_rows != 0){                            // controllo, se _rs è valido oppure vuoto.
         $record = $_rs->fetch_assoc();                  // estraggo il primo record 
