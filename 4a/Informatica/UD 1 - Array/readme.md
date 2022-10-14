@@ -29,11 +29,11 @@ di 10 elementi interi:
 
 **p03.c**   
 Realizzare un programma che inizializza una matrice 5x5 di interi quindi esegue le seguenti funzioni:
-   - [ ] Caricamento dei valori nella matrice random con valori compresi tra 5 e 25.
-   - [ ] Stampa della matrice per righe.
-   - [ ] Stampa della matrice per colonne.
-   - [ ] Calcolo della media della matrice.
-   - [ ] Calcolo del totale di una riga della matrice (riga indicata per indice).
+   - [x] Caricamento dei valori nella matrice random con valori compresi tra 5 e 25.
+   - [x] Stampa della matrice per righe.
+   - [x] Stampa della matrice per colonne.
+   - [x] Calcolo della media della matrice.
+   - [x] Calcolo del totale di una riga della matrice (riga indicata per indice).
    - [ ] Ricerca della riga con media maggiore.
    - [ ] Ricerca di un vettore di 5 elementi interi all'interno della matrice.
    
