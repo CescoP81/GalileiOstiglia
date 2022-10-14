@@ -9,6 +9,8 @@ Realizzare un algoritmo che richiede un numero intero, quindi visualizza tutti i
 
 **p03.c**  
 Realizzare un algoritmo che richiede un numero intero, quindi:
-    - [x] visualizza tutti i divisori di tale numero
-    - [x] determina quanti divisori sono stati trovati
-    - [x] calcola la somma di tali divisori.
+- [x] visualizza tutti i divisori di tale numero.  
+- [x] determina quanti divisori sono stati trovati.  
+- [x] calcola la somma di tali divisori.  
+
+**p04.c**  
