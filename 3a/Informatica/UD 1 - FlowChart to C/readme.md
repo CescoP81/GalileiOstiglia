@@ -20,7 +20,7 @@ Def: Due numeri sono amicali se la somma dei divisori di numA è uguale a numB e
 rif: https://it.wikipedia.org/wiki/Numeri_amicabili  
 
 **p05.c**  
-Realizzare un algoritmo che richiede un numero in input, successivamente comunica se il numero è PRIMO o se è PERFETTO.
-def PRIMO: Un numero è primo se divisibile SOLO per 1 e per se stesso (3-7-11-13...)
+Realizzare un algoritmo che richiede un numero in input, successivamente comunica se il numero è PRIMO o se è PERFETTO.  
+def PRIMO: Un numero è primo se divisibile SOLO per 1 e per se stesso (3-7-11-13...)  
 def PERFETTO: Un numero è perfetto se la somma dei suoi divisori, escluso se stesso, è uguale al numero
 (6: 1+2+3=6; 28: 1+2+4+7+14=28; 12: 1+2+3+4+6=16 NO PERFETTO)
