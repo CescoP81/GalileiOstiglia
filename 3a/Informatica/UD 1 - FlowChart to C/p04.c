@@ -16,6 +16,7 @@ int main(){
     fflush(stdin);
 
     // calcolo della somma divisori di A
+    sommaA = 0;
     div = 1;
     while(div < numA){
         if(numA % div == 0){
@@ -25,6 +26,7 @@ int main(){
     }
 
     // calcolo della somma divisori di B
+    sommaB = 0;
     div = 1;
     while(div < numB){
         if(numB % div == 0){
@@ -32,6 +34,8 @@ int main(){
         }
         div = div + 1;
     }
+
+    //printf("SommaA %d - SommaB %d", sommaA, sommaB);
 
     // test finale della regola numeri amicali/amicabili/amici
     if((sommaA == numB) && (sommaB == numA)){
