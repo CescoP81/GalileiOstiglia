@@ -16,4 +16,10 @@ Visualizzazione della tabella 'studenti' presente sul database, con style Bootst
 Come pagina p02 ma la tabella è stata spostata nel file snippet 'showResultSetTable.php' nella cartella '/require'.   
 
 **p02tris.php**   
-Come pagina p02 ma la tabella è stata spostata nella funzione presente nel file 'mylib.php' nella cartella '/require'.
+Come pagina p02 ma la tabella è stata spostata nella funzione presente nel file 'mylib.php' nella cartella '/require'.  
+
+**studenti.php**  
+Pagina che permette le seguenti operazioni sulla tabella 'studenti':  
+- [x] Visualizzazione degli studenti presenti.  
+- [x] Visualizzazione form inserimento dati nuovo studente.  
+- [x] Inserimento effettivo dei dati nella tabella studenti.
