@@ -1,3 +1,10 @@
+/*  Data: 15/10/22
+    Author: Francesco Pradella
+    Filename: p03.c
+    Abstracty: Realizzare un algoritmo che determina se due numeri inseriti in input sono amici/amicali.
+    Due numeri si dicono amici se la somma dei divisori di A è uguale a B e allo stesso tempo
+    la somma dei divisori di B è uguale ad A.
+*/
 #include <stdio.h>
 
 int main(){
