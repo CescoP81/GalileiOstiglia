@@ -55,11 +55,30 @@ float mediaMatrice(int [][DIM], int, int);
  * @return int Totale della riga
 */
 int totaleRigaMatrice(int [][DIM], int, int, int);
+/**
+ * @brief Funzione che determina l'indice della riga con media maggiore
+ * @param int[][] Matrice da utilizzare
+ * @param int Numero di righe
+ * @param int Numero di colonne
+ * @return int Indice di riga con media maggiore
+*/
+int rigaConMediaMaggiore(int[][DIM], int, int);
+/**
+ * @brief Funzione che ricerca un vettore di 5 elementi tra le righe della matrice
+ * @param int[][] Matrice da utilizzare
+ * @param int Numero di righe
+ * @param int Numero di colonne
+ * @param int[] Vettore da confrontare con ogni singola riga.
+ * @return int 1 Vettore trovato / 0 Vettore non trovato.
+*/
+int cercaVettoreInMatrice(int [][DIM], int, int, int[]);
 
 
 // MAIN PROGRAM
 int main(){
     int m[DIM][DIM];
+    int v[DIM];
+    int i;
     int sommaRiga;
 
     initMatrice(m, DIM, DIM, 0, 10);
@@ -72,6 +91,19 @@ int main(){
     sommaRiga = totaleRigaMatrice(m, DIM, DIM, 6);
     if(sommaRiga != -1)
         printf("Somma della riga 4: %d", sommaRiga);
+    printf("\n\n");
+    printf("Riga con media maggioree': %d", rigaConMediaMaggiore(m,DIM, DIM)+1); // aggiungo 1 all'indice restituito per comodità dell'utente.
+    printf("\n\n");
+    for(i=0; i<DIM; i++){
+        printf("Inserisci il valore [%d]: ", i+1);
+        scanf("%d", &v[i]);
+        fflush(stdin);
+    }
+    if(cercaVettoreInMatrice(m, DIM, DIM, v))
+        printf("Vettore trovato come riga nella matrice.");
+    else
+        printf("Vettore non presente come riga della matrice.");
+    printf("\n\n");
     return(0);
 }
 
@@ -129,4 +161,45 @@ int totaleRigaMatrice(int _m[][DIM], int _r, int _c, int _index){
             somma = somma + _m[_index][j];
         return(somma);
     }
+}
+int rigaConMediaMaggiore(int _m[][DIM], int _r, int _c){
+    int i, j;       // indici per muovermi sulla matrice
+    int media;      // media calcolata sulla singola riga
+    int mediaMax;   // media massima trovata fino a quel momento.
+    int indexMax;   // indice della riga che media massima
+
+    media = 0;
+    mediaMax = 0;
+    indexMax = 0;
+    for(i=0; i<_r; i++){
+        media = 0;
+        for(j=0; j<_c; j++){
+            media = media + _m[i][j];
+        }
+        media = media / _c;
+
+        if(media > mediaMax){
+            mediaMax = media;
+            indexMax = i;
+        }
+    }
+    return(indexMax);
+}
+int cercaVettoreInMatrice(int _m[][DIM], int _r, int _c, int _v[]){
+    int i, j;
+    int trovato;
+    int cntTrovati;
+
+    trovato = 0;
+    for(i=0; i<_r; i++){
+        cntTrovati = 0;
+        for(j=0; j<_c; j++){
+            if(_v[j] == _m[i][j])
+                cntTrovati++;
+        }
+        //printf("--\n %d", cntTrovati);        // esempio di debug inline.
+        if(cntTrovati == _c)
+            trovato = 1;
+    }
+    return(trovato);
 }
