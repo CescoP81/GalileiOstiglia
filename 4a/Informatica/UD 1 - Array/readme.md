@@ -34,8 +34,8 @@ Realizzare un programma che inizializza una matrice 5x5 di interi quindi esegue 
    - [x] Stampa della matrice per colonne.
    - [x] Calcolo della media della matrice.
    - [x] Calcolo del totale di una riga della matrice (riga indicata per indice).
-   - [ ] Ricerca della riga con media maggiore.
-   - [ ] Ricerca di un vettore di 5 elementi interi all'interno della matrice.
+   - [x] Ricerca della riga con media maggiore.
+   - [x] Ricerca di un vettore di 5 elementi interi all'interno della matrice.
 
 **p04.c**
 Realizzare un algoritmo che tramite funzioni apposite realizzi i seguenti punti su una matrice di interi 5x5
