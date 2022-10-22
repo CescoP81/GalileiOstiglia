@@ -1,4 +1,4 @@
-/*  Data: 06/10/22
+/*  Data: 22/10/22
     Author: Francesco Pradella
     Filename: p06.c
     Abstracty: Esercizio nr. 8 pag. 153
