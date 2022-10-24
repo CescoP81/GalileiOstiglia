@@ -29,4 +29,7 @@ def PERFETTO: Un numero è perfetto se la somma dei suoi divisori, escluso se st
 Esercizio nr. 8 pag. 153 - FlowChart p06.png  
 
 **p07.c**  
-Esercizio nr. 15 pag. 153 - Flowchart p07.png
+Esercizio nr. 15 pag. 153 - Flowchart p07.png  
+
+**p08.c**  
+Esercizio nr. 10 pag. 153  
