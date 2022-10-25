@@ -42,7 +42,7 @@ Realizzare un algoritmo che tramite funzioni apposite realizzi i seguenti punti 
    - [x] Caricamento con valori casuali, il range deve essere passato come parametro.
    - [x] Stampa della matrice
    - [x] Ricerca del valore massimo e relativa posizione(attenzione a come restituire gli indici al main)
-   - [ ] Visualizzazione del triangolo superiore, inferiore, solo diagonale principale (scelta dell'utente fatta nel main)
-   - [ ] Ordinamento della matrice in modo crescente
-   - [ ] Scambio delle righe con le colonne (la primma riga diventa la prima colonna e così via...)
+   - [x] Visualizzazione del triangolo superiore, inferiore, solo diagonale principale (scelta dell'utente fatta nel main)
+   - [x] Ordinamento della matrice in modo crescente
+   - [x] Scambio delle righe con le colonne (la primma riga diventa la prima colonna e così via...)
 

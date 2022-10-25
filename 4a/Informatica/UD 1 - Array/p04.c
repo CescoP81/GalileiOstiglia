@@ -40,6 +40,28 @@ void printMatrice(int [][DIM], int, int);
  * @param int* Riferimento alla variabile per l'indice di colonna
 */
 void ricercaValoreMaggiore(int [][DIM], int, int, int *, int*, int*);
+/**
+ * Funzione che visualizza parti della matrice
+ * @param int[][] Matrice da utilizzare.
+ * @param int Dimensione delle righe
+ * @param int Dimensione delle colonne
+ * @param int Parte della matrice 1. Triangolo Sup; 2. Triang. Inf; 3. Diagonale Principale.
+*/
+void visualizzaPartiMatrice(int [][DIM], int, int, int);
+/**
+ * Funzione che ordina in modo crescente la matrice
+ * @param int[][] Matrice da utilizzare.
+ * @param int Dimensione delle righe
+ * @param int Dimensione delle colonne
+*/
+void ordinaMatrice(int [][DIM], int, int);
+/**
+ * Funzione che scambia le righe con le colonne
+ * @param int[][] Matrice da utilizzare.
+ * @param int Dimensione delle righe
+ * @param int Dimensione delle colonne
+*/
+void scambiaRigheColonne(int [][DIM], int, int);
 
 int main(){
   int mat[DIM][DIM];
@@ -48,7 +70,19 @@ int main(){
   initRandomMatrix(mat, DIM, DIM, 3, 20);
   printMatrice(mat, DIM, DIM);
   ricercaValoreMaggiore(mat, DIM, DIM, &massimo, &riga, &colonna);
-  printf("Il valore maggiore (%d) si trova in posizione [%d][%d].", massimo, riga, colonna);
+  printf("Il valore maggiore (%d) si trova in posizione [%d][%d].\n\n", massimo, riga, colonna);
+
+  visualizzaPartiMatrice(mat, DIM, DIM, 1);
+  printf("\n");
+  visualizzaPartiMatrice(mat, DIM, DIM, 2);
+  printf("\n");
+  visualizzaPartiMatrice(mat, DIM, DIM, 3);
+  printf("\n");
+  ordinaMatrice(mat, DIM, DIM);
+  printMatrice(mat, DIM, DIM);
+  printf("\n\n");
+  scambiaRigheColonne(mat, DIM, DIM);
+  printMatrice(mat, DIM, DIM);
   return(0);
 }
 
@@ -84,6 +118,86 @@ void ricercaValoreMaggiore(int _m[][DIM], int _r, int _c, int *_max, int *_index
         *_indexRiga = i;
         *_indexColonna = j;
       }
+    }
+  }
+}
+void visualizzaPartiMatrice(int _m[][DIM], int _r, int _c, int _parte){
+  int i, j;
+  if(_parte == 1){ // Triangolo superiore
+    for(i=0; i<_r; i++){
+      for(j=0; j<_c; j++){
+        if(j > i)
+          printf("%3d", _m[i][j]);
+        else
+          printf("...");
+      }
+      printf("\n");
+    }
+  }
+
+  if(_parte == 2){  // triangolo inferiore
+    for(i=0; i<_r; i++){
+      for(j=0; j<_c; j++){
+        if(j < i)
+          printf("%3d", _m[i][j]);
+        else
+          printf("...");
+      }
+      printf("\n");
+    }
+  }
+
+  if(_parte == 3){  // diagonale principale
+    for(i=0; i<_r; i++){
+      for(j=0; j<_c; j++){
+        if(j == i)
+          printf("%3d", _m[i][j]);
+        else
+          printf("...");
+      }
+      printf("\n");
+    }
+  }
+}
+void ordinaMatrice(int _m[][DIM], int _r, int _c){
+  int i, j, h, k;
+  int tmp;
+
+  for(i=0; i<_r; i++){
+    for(j=0; j<_c; j++){
+      for(h=i; h<_r; h++){
+        if(h == i)
+          k = j;
+        else
+          k = 0;
+        for(; k<_c; k++){
+          if(h>=i){
+            if(_m[i][j] > _m[h][k]){
+              tmp = _m[i][j];
+              _m[i][j] = _m[h][k];
+              _m[h][k] = tmp;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+void scambiaRigheColonne(int _m[][DIM], int _r, int _c){
+  int tmp[DIM][DIM];
+  int i, j;
+
+  // uso una matrice temporanea in cui copia le righe della prima come colonne
+  for(i=0; i<_r; i++){
+    for(j=0; j<_c; j++){
+      tmp[j][i] = _m[i][j];
+    }
+  }
+
+  // ricopio la matrice temporanea nella matrice passata dal main.
+  for(i=0; i<_r; i++){
+    for(j=0; j<_c; j++){
+      _m[i][j] = tmp[i][j];
     }
   }
 }
