@@ -54,5 +54,5 @@ Realizzare un programma C sull’utilizzo delle strutture dati Vettore e Matrice
    - [x] d)LoadVettore() → carica un vettore di 6 elementi da tastiera con valori univoci.  
    - [x] e)ComparaVettoreMatrice() → Compara i valori del vettore con quelli della matrice e ritorna il numero di valori che sono non comuni (valori del vettore che non compaiono mai nella matrice).  
    
-Tutti i punti devono essere svolti con funzione, nel mail deve essere effettuata almeno una chiamata di test per ogni funzione. Le funzioni non eseguono output a video.
+Tutti i punti devono essere svolti con funzione, nel main deve essere effettuata almeno una chiamata di test per ogni funzione. Le funzioni non eseguono output a video.
 
