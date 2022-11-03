@@ -33,3 +33,6 @@ Esercizio nr. 15 pag. 153 - Flowchart p07.png
 
 **p08.c**  
 Esercizio nr. 10 pag. 153  
+
+**p09.c**  
+Richiedere due numeri da tastiera (val1 e val2), se val1 è maggiore di val2 scambiarli quindi visualizzare tutti i numeri presenti tra val1 e val2.
