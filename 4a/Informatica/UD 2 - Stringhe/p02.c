@@ -2,12 +2,13 @@
     Esempio di utilizzo di stringhe come PUNTATORI a caratteri.
 */
 #include <stdio.h>
+#include <stdlib.h>
 
 int getStringLength(char*);
 
 int main(){
     char *str;
-    *str = '\0';
+    str = malloc(sizeof(char)*100);
 
     printf("Inserisci stringa: ");
     scanf("%s", str);
