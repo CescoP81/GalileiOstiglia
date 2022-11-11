@@ -24,6 +24,7 @@ Realizzare un programma per la gestione di una stringa inserita da tastiera (str
 
 **p03.c**  
 Realizzare un programma per la gestione di una stringa inserita da tastiera (stringa allocata massimo 100byte), utilizzando un puntatore a stringa.
-- [ ] initStringa() Richiede l'input di una stringa da tastiera.
-- [ ] comparaStringhe() Compara due stringhe alfabeticamente, -1 se str1 precede str2; 0 se le stringhe sono uguali; +1 se str1 segue str2.
+- [x] initStringa() Richiede l'input di una stringa da tastiera.
+- [x] comparaStringhe() Compara due stringhe alfabeticamente, -1 se str1 precede str2; 0 se le stringhe sono uguali; +1 se str1 segue str2.
 - [ ] trovaDoppie() Comunica quante doppie sono presenti nella stringa. (otto -> 1 doppia; cassetto -> 2 doppie; xxx -> 2 doppie).
+- [ ] concatenaStringhe() Concatena due stringhe, dividendole con uno spazio, in una terza stringa.
