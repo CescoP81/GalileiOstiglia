@@ -1,4 +1,8 @@
-/*Algoritmo che somma i valori
+/*
+Date: 12.11.22
+Author: Pradella Francesco
+Abstract:
+Algoritmo che somma i valori
  inseriti dall'utente finche l'utente non comunica di voler terminare.
 */
 #include <stdio.h>

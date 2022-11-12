@@ -96,6 +96,67 @@
             showResultSetTable($rs," tabella degli studenti");
             break;
         }
+        case "deleteStudente":{
+            $idStudente = $_REQUEST['id_studente'];
+            echo("Voglio cancellare lo studente con ID: ".$idStudente);
+            $db = new mysqli("localhost","root","","scuola2223");
+            $sql = "DELETE FROM studenti WHERE id=$idStudente";
+
+            if($db->query($sql))    
+                echo("<div class=\"alert alert-success\">Cancellazione OK</div>");
+            else
+                echo("<div class=\"alert alert-danger\">Problemi in cancellazione!</div>");
+            $db->close();
+            break;
+        }
+        case "modificaStudente":{
+            $idStudente = $_REQUEST['id_studente'];
+            $db = new mysqli("localhost","root","","scuola2223");
+            $sql = "SELECT * FROM studenti WHERE id=$idStudente";
+            $resultSet = $db->query($sql);
+            $record = $resultSet->fetch_assoc();
+            $db->close();
+
+            echo("<form action=\"studenti.php\">
+                <div class=\"mb-3\">
+                    <label for=\"exampleFormControlInput1\" class=\"form-label\">Cognome</label>
+                    <input type=\"text\" name=\"cognomeS\" class=\"form-control\" value=\"".$record['cognome']."\" id=\"exampleFormControlInput1\" placeholder=\"Cognome...\">
+                </div>
+
+                <div class=\"mb-3\">
+                    <label for=\"exampleFormControlInput2\" class=\"form-label\">Nome</label>
+                    <input type=\"text\" name=\"nomeS\" class=\"form-control\" value=\"".$record['nome']."\" id=\"exampleFormControlInput2\" placeholder=\"Nome...\">
+                </div>
+
+                <div class=\"mb-3\">
+                    <label for=\"exampleFormControlInput3\" class=\"form-label\">Classe</label>
+                    <input type=\"text\" name=\"classeS\" class=\"form-control\" value=\"".$record['classe']."\" id=\"exampleFormControlInput3\" placeholder=\"Classe...\">
+                </div>
+
+                <input type=\"hidden\" name=\"idStudente\" value=\"".$record['id']."\">
+                <input type=\"hidden\" name=\"scelta\" value=\"updateStudente\">
+                <div class=\"col-auto\">
+                    <button type=\"submit\" class=\"btn btn-primary mb-3\">Modifica Studente</button>
+                </div>
+            </form>");
+
+            break;
+        }
+        case "updateStudente":{
+            $c = $_REQUEST['cognomeS'];
+            $n = $_REQUEST['nomeS'];
+            $cl = $_REQUEST['classeS'];
+            $idStudente = $_REQUEST['idStudente'];
+
+            $db = new mysqli("localhost","root","","scuola2223");
+            $sql = "UPDATE studenti SET cognome='$c', nome='$n', classe='$cl' WHERE id=$idStudente";
+            if($db->query($sql))    
+                echo("<div class=\"alert alert-success\">Modifica/Aggiornamento OK</div>");
+            else
+                echo("<div class=\"alert alert-danger\">Problemi in Modifica/Aggiornamento!</div>");
+            $db->close();
+            break;
+        }
         default:{
             echo("Scelta non valida...");
             break;

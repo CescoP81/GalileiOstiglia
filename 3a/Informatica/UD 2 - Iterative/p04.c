@@ -1,4 +1,7 @@
 /*
+Date: 12.11.22
+Author: Pradella Francesco
+Abstract:
 Algoritmo che visualizza una tabellina a scelta tra i primi 10 numeri naturali,
 le altre tabelline sono sostituite da un carattere '#'.
 Deve prevedere il controllo sull'input della tabellina scelta.

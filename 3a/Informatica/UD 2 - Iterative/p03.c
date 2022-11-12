@@ -1,4 +1,7 @@
 /*
+Date: 12.11.22
+Author: Pradella Francesco
+Abstract:
 Algoritmo che visualizza a video le prime 10 tabelline.
 */
 #include <stdio.h>

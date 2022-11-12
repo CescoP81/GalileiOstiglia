@@ -4,7 +4,7 @@
  * @param Object $_rs Insieme dei risultati estratti con mysqli::query()
  * @param String $_caption Stringa da usare come caption della tabella
  */
-function showResultSetTable($_rs, $_caption=null){
+function showResultSetTable($_rs, $_caption=null, $_page=null){
     if($_rs->num_rows != 0){                            // controllo, se _rs è valido oppure vuoto.
         $record = $_rs->fetch_assoc();                  // estraggo il primo record 
         $keys = array_keys($record);                    // creo il record delle chiavi (nomi delle colonne)
@@ -22,6 +22,8 @@ function showResultSetTable($_rs, $_caption=null){
                 echo("<tr>");
                     for($i=0; $i<count($keys); $i++)    // ciclo per la stampa dei campi di ogni singolo record.
                         echo("<td>".$record[$keys[$i]]."</td>");
+                    echo("<td><a href=\"studenti.php?scelta=deleteStudente&id_studente=".$record['id']."\">Cancello record ".$record['id']."</a></td>");
+                    echo("<td><a href=\"studenti.php?scelta=modificaStudente&id_studente=".$record['id']."\">Modifica record ".$record['id']."</a></td>");
                 echo("</tr>");
                 $record = $_rs->fetch_assoc();          // estraggo il record successivo
             }
