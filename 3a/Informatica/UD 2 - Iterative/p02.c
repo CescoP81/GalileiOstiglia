@@ -2,6 +2,7 @@
  inseriti dall'utente finche l'utente non comunica di voler terminare.
 */
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(){
     int val;
@@ -10,6 +11,8 @@ int main(){
 
     somma = 0;
     do{
+        // eseguo una pulizia schermo.
+        system("CLS");
         // richiesta valore
         printf("Inserisci un valore: ");
         scanf("%d", &val);
