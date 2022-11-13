@@ -93,7 +93,7 @@
             $sql = "SELECT * FROM studenti";
             $rs = $db->query($sql);
             $db->close();
-            showResultSetTable($rs," tabella degli studenti");
+            showResultSetTable($rs," tabella degli studenti", "studenti.php");
             break;
         }
         case "deleteStudente":{

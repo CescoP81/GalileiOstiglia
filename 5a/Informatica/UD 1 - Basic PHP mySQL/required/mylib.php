@@ -1,8 +1,9 @@
 <?php
 /**
  * Funzione per la visualizzazione di record estratti da un database, sotto forma di tabella realizzata con BootStrap
- * @param Object $_rs Insieme dei risultati estratti con mysqli::query()
- * @param String $_caption Stringa da usare come caption della tabella
+ * @param Object $_rs Insieme dei risultati estratti con mysqli::query().
+ * @param String $_caption Stringa da usare come caption della tabella.
+ * @param String $_page Pagina da richiamare per modifica e cancellazione.
  */
 function showResultSetTable($_rs, $_caption=null, $_page=null){
     if($_rs->num_rows != 0){                            // controllo, se _rs è valido oppure vuoto.
@@ -22,8 +23,10 @@ function showResultSetTable($_rs, $_caption=null, $_page=null){
                 echo("<tr>");
                     for($i=0; $i<count($keys); $i++)    // ciclo per la stampa dei campi di ogni singolo record.
                         echo("<td>".$record[$keys[$i]]."</td>");
-                    echo("<td><a href=\"studenti.php?scelta=deleteStudente&id_studente=".$record['id']."\">Cancello record ".$record['id']."</a></td>");
-                    echo("<td><a href=\"studenti.php?scelta=modificaStudente&id_studente=".$record['id']."\">Modifica record ".$record['id']."</a></td>");
+                    if(!is_null($_page)){
+                        echo("<td><a href=\"$_page?scelta=deleteStudente&id_studente=".$record['id']."\">Cancello record ".$record['id']."</a></td>");
+                        echo("<td><a href=\"$_page?scelta=modificaStudente&id_studente=".$record['id']."\">Modifica record ".$record['id']."</a></td>");
+                    }
                 echo("</tr>");
                 $record = $_rs->fetch_assoc();          // estraggo il record successivo
             }
