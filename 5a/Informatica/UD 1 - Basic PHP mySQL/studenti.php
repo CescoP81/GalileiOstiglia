@@ -11,7 +11,7 @@
 */
     if(isset($_REQUEST['scelta'])) $sc = $_REQUEST['scelta'];
     else $sc = null;
-    require("required/mylib.php");
+    require("include/mylib.php");
     require("../head.html");
     
     //echo("<a href=\"studenti.php?scelta=formStudente\">Nuovo Studente</a> ");
