@@ -23,3 +23,5 @@ Pagina che permette le seguenti operazioni sulla tabella 'studenti':
 - [x] Visualizzazione degli studenti presenti.  
 - [x] Visualizzazione form inserimento dati nuovo studente.  
 - [x] Inserimento effettivo dei dati nella tabella studenti.
+- [x] Cancellazione di uno studente dalla tabella.
+- [x] Modifica dei dati di uno studente.
