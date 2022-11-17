@@ -29,3 +29,9 @@ Realizzare un programma per la gestione di una stringa inserita da tastiera (str
 - [ ] trovaDoppie() Comunica quante doppie sono presenti nella stringa. (otto -> 1 doppia; cassetto -> 2 doppie; xxx -> 2 doppie).
 - [ ] mergeStringhe() Concatena due stringhe, dividendole con uno spazio, in una terza stringa.
 - [ ] splitStringa() ricava una sottostringa compresa tra due indici passati come parametri.
+
+**p04.c**  
+Realizzare un programma per la gestione di una stringa inserita da tastiera (stringa allocata massimo 100byte), utilizzando un puntatore a stringa.
+- [ ] mergeStringhe() Concatena due stringhe, dividendole con uno spazio, in una terza stringa.
+- [ ] splitStringAtPosition() divide una stringa in due parti partendo dalla posizione indicata come parametro.
+- [ ] getSubString() restituisce la sottostringa presente tra due indici indicati (verificare gli indici).
