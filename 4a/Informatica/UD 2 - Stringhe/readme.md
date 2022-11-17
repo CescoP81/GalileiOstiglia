@@ -30,6 +30,7 @@ Realizzare un programma per la gestione di una stringa inserita da tastiera (str
 
 **p04.c**  
 Realizzare un programma per la gestione di una stringa inserita da tastiera (stringa allocata massimo 100byte), utilizzando un puntatore a stringa.
+- [ ] initStringa() Richiede l'input di una stringa da tastiera.
 - [ ] mergeStringhe() Concatena due stringhe, dividendole con uno spazio, in una terza stringa.
 - [ ] splitStringAtPosition() divide una stringa in due parti partendo dalla posizione indicata come parametro.
 - [ ] getSubString() restituisce la sottostringa presente tra due indici indicati (verificare gli indici).
