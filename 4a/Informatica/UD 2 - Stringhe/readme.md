@@ -34,3 +34,12 @@ Realizzare un programma per la gestione di una stringa inserita da tastiera (str
 - [x] mergeStringhe() Concatena due stringhe, dividendole con uno spazio, in una terza stringa.
 - [x] splitStringAtPosition() divide una stringa in due parti partendo dalla posizione indicata come parametro.
 - [x] getSubString() restituisce la sottostringa presente tra due indici indicati (verificare gli indici).
+
+**p04.c**  
+Realizzare un programma per la gestione di stringhe, allocazione iniziale 100byte, utilizzando puntatore a stringa.
+- [ ] checkPalindroma() Verifica si una stringa è palindroma.
+- [ ] checkAnagramma() Verifica se le due stringhe passate sono due anagrammi.
+- [ ] printAnagrammi() Riceve una stringa ed il numero di anagrammi da generare quindi stampa il numero di anagrammi richiesto.
+- [ ] checkSubstring() Riceve una stringa ed una sottostringa, verifica se sottostringa è presente nella stringa principale.
+Stringa2 è anagramma di Stringa1 se è composta dalle stesse lettere ma in posizioni diverse.
+es: tosto -> sotto
