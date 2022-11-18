@@ -35,7 +35,7 @@ Realizzare un programma per la gestione di una stringa inserita da tastiera (str
 - [x] splitStringAtPosition() divide una stringa in due parti partendo dalla posizione indicata come parametro.
 - [x] getSubString() restituisce la sottostringa presente tra due indici indicati (verificare gli indici).
 
-**p04.c**  
+**p05.c**  
 Realizzare un programma per la gestione di stringhe, allocazione iniziale 100byte, utilizzando puntatore a stringa.
 - [ ] checkPalindroma() Verifica si una stringa è palindroma.
 - [ ] checkAnagramma() Verifica se le due stringhe passate sono due anagrammi.
