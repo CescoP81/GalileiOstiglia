@@ -32,5 +32,5 @@ Realizzare un programma per la gestione di una stringa inserita da tastiera (str
 Realizzare un programma per la gestione di una stringa inserita da tastiera (stringa allocata massimo 100byte), utilizzando un puntatore a stringa.
 - [x] initStringa() Richiede l'input di una stringa da tastiera.
 - [x] mergeStringhe() Concatena due stringhe, dividendole con uno spazio, in una terza stringa.
-- [ ] splitStringAtPosition() divide una stringa in due parti partendo dalla posizione indicata come parametro.
+- [x] splitStringAtPosition() divide una stringa in due parti partendo dalla posizione indicata come parametro.
 - [x] getSubString() restituisce la sottostringa presente tra due indici indicati (verificare gli indici).

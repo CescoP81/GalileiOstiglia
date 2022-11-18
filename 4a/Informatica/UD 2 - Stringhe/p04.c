@@ -83,7 +83,6 @@ void mergeStringhe(char *_str1, char *_str2, char *_str3){
     }
     *(_str3+j) = '\0';
 }
-
 void splitStringAtPosition(char *_str1, int _index, char *_str2){
     int i,j;
     int len; // lunghezza della stringa;
@@ -111,7 +110,6 @@ void splitStringAtPosition(char *_str1, int _index, char *_str2){
         *_str2 = '\0';
     }
 }
-
 void getSubString(char *_str1, int _imin, int _imax, char *_str2){
     int i,j;
     int len; // lunghezza della stringa;
