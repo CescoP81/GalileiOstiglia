@@ -16,6 +16,8 @@ void initStringa(char*);
 */
 int comparaStringhe(char*, char*);
 
+int trovaDoppie(char*);
+
 // MAIN
 int main(){
     char *s1;
@@ -29,7 +31,8 @@ int main(){
     
     printf("\n");
     printf("Comparazione: %d", comparaStringhe(s1,s2));
-
+    printf("\n\n");
+    printf("Doppie trovate in %s: %d", s1, trovaDoppie(s1));
     return(0);
 }
 // FUNZIONI
@@ -56,4 +59,17 @@ int comparaStringhe(char *_str1, char *_str2){
         if(*(_str2+i)!='\0')
             return(0);
     }
+}
+int trovaDoppie(char *_str){
+    int i;
+    int cnt;
+
+    i = 0;
+    cnt = 0;
+    while(*(_str+i) != '\0'){
+        if(*(_str+i) == *(_str+i+1))
+            cnt = cnt + 1;
+        i++;
+    }
+    return(cnt);
 }
