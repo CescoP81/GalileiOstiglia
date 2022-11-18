@@ -7,3 +7,11 @@ Negozio di Animali: La banca dati del negozio permette alla segretaria di gestir
 
 **Realtà 2**   
 La fumetteria: La banca dati del negozio permette al negoziante di gestire i fumetti presenti in negozio, suddividendoli per casa editrice. Ogni fumetto quindi ha come dati fondamentali (titolo, numero, data_uscita, prezzo, casa editrice, immagine), ogni Casa Editrice è composta da (nome, email, sito web). Le funzionalità minime richieste sono di inserimento, visualizzazione, modifica, cancellazione di dati dal database.
+
+**Project structure**   
+\root
+    \images
+    \include
+    \resource
+    - all php files
+    - version.txt
