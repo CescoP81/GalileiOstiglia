@@ -1,0 +1,1 @@
+Collection of all image files, preferred format JPG, PNG.
