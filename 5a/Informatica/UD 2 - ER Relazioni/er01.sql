@@ -13,5 +13,5 @@ CREATE TABLE album(
     idCasaDiscrografica integer unsigned,
 
     primary key(id),
-    foreign key(idCasaDiscrografica) references (casa_discografica)id
+    foreign key(idCasaDiscrografica) references casa_discografica(id)
 )

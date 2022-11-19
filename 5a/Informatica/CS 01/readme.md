@@ -10,6 +10,7 @@ La fumetteria: La banca dati del negozio permette al negoziante di gestire i fum
 
 **Project structure**   
 - \root
+    - \admin
     - \images
     - \include
     - \resource
