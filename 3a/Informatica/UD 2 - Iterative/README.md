@@ -25,7 +25,8 @@ ripetizione del programma con scelta dell'utente.
 
 **p08.c**   
 Realizzare un programma che richiede all'utente il numero di riga (compreso tra 1 e 10), quindi realizza il seguente schema grafico:
-es. 5
+es. 5   
+'''
 1 2 3 4 5   
   2 3 4 5   
     3 4 5   
@@ -45,5 +46,5 @@ es. 5
 - - 3 4 5
 - 2 3 4 5
 1 2 3 4 5
-
+'''
 Cicli iterativi innestati.
