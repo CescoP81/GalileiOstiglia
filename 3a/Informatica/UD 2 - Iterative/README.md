@@ -18,3 +18,7 @@ ES: tabellina_iniziale 5 - tabellina_finale 8 -> Visualizza le tabelline del 5,6
 
 **p06.c**   
 Realizzare un programma che richieda l'inserimento di un numero quindi determina se il numero è primo o se è perfetto. Il numero inserito deve essere compreso tra 1 e 999. Il programma deve prevedere di poter essere ripetuto più volte.
+
+**p07.c**   
+Come esercizio precedente ma con selezione dell'algoritmo da utilizzare e
+ripetizione del programma con scelta dell'utente.
