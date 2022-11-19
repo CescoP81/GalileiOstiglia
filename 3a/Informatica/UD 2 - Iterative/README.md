@@ -22,7 +22,7 @@ Realizzare un programma che richieda l'inserimento di un numero quindi determina
 **p07.c**   
 Come esercizio precedente ma con selezione dell'algoritmo da utilizzare e
 ripetizione del programma con scelta dell'utente.
-
+prova...
 **p08.c**   
 Realizzare un programma che richiede all'utente il numero di riga (compreso tra 1 e 10), quindi realizza il seguente schema grafico:
 es. 5
