@@ -1,2 +1,3 @@
 Version #1.0
-- Definizione ER in formato drawio
+- Definizione ER in formato drawio.
+- Creazione tabelle sul database.
