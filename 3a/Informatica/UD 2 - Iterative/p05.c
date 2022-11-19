@@ -25,7 +25,7 @@ int main(){
     scanf("%d", &riga_max);
     fflush(stdin);
 
-    if(riga_min < riga_max){
+    if((riga_min < riga_max) && (riga_min >=1 && riga_max<=MAX)){
         // eseguo la creazione delle tabellini
         riga=1;
         while(riga <= MAX){

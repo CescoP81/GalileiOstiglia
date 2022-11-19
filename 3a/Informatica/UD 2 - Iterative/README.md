@@ -15,3 +15,6 @@ Algoritmo che visualizza una tabellina a scelta tra i primi 10 numeri naturali, 
 **p05.c**  
 Algoritmo che visualizza un intervallo di tabelline a scelta tra i primi 10 numeri naturali, le altre tabelline sono sostituite da un carattere '#'. Deve prevedere il controllo sull'input della tabellina scelta.
 ES: tabellina_iniziale 5 - tabellina_finale 8 -> Visualizza le tabelline del 5,6,7,8 mentre # per tutte le altre.
+
+**p06.c**   
+Realizzare un programma che richieda l'inserimento di un numero quindi determina se il numero è primo o se è perfetto. Il numero inserito deve essere compreso tra 1 e 999. Il programma deve prevedere di poter essere ripetuto più volte.
