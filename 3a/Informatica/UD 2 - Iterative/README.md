@@ -22,3 +22,26 @@ Realizzare un programma che richieda l'inserimento di un numero quindi determina
 **p07.c**   
 Come esercizio precedente ma con selezione dell'algoritmo da utilizzare e
 ripetizione del programma con scelta dell'utente.
+
+**p08.c**   
+Realizzare un programma che richiede all'utente il numero di riga (compreso tra 1 e 10), quindi realizza il seguente schema grafico:
+es. 5
+1 2 3 4 5
+  2 3 4 5
+    3 4 5
+      4 5
+        5
+
+
+1 - 3 - 5
+1 - 3 -
+1 - 3
+1 - 
+1
+
+
+- - - - 5
+- - - 4 5
+- - 3 4 5
+- 2 3 4 5
+1 2 3 4 5
