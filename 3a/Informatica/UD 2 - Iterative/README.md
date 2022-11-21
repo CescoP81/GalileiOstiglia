@@ -48,3 +48,10 @@ es. 5
 1 2 3 4 5
 */
 Cicli iterativi innestati.
+
+**p09.c**   
+Realizzare un algoritmo che simula una cassa da supermercato, vengono passati N prodotti senza sapere a priori quanti essi siano, ma al termine dell'inserimento vengono comunicati i seguenti dati: 
+- Totale da pagare
+- Prezzo minore inserito
+- Prezzo maggiore inserito
+- Prezzo medio risultante della spesa.
