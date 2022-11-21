@@ -30,13 +30,30 @@ int main(){
     }
 
     printf("\n\n");
-    
+
     // schema grafico 2
     cnt1 = 1;
-    while(cnt1 <= righe){
+    while(cnt1 <= righe){               // ciclo per le righe
         cnt2 = 1;
-        while(cnt2 <= righe-cnt1+1){
+        while(cnt2 <= righe-cnt1+1){    // ciclo per i numeri dispari/spazi sulle righe
             if(cnt2%2 != 0)
+                printf("%3d", cnt2);
+            else
+                printf("  -");
+            cnt2 = cnt2 + 1;
+        }
+        printf("\n");
+        cnt1 = cnt1 + 1;
+    }
+
+    printf("\n\n");
+
+    // schema grafico 3
+    cnt1 = 1;
+    while(cnt1 <= righe){               // ciclo per le righe
+        cnt2 = 1;
+        while(cnt2 <= righe){           // ciclo per gli spazi/numeri sulle righe.
+            if(cnt2 >= righe-cnt1+1)
                 printf("%3d", cnt2);
             else
                 printf("  -");
