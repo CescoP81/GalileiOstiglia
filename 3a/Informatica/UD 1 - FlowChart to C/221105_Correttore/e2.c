@@ -19,7 +19,7 @@ int main(){
         cnt = A;
         while(cnt <= B){
             if(cnt%2 == 1){
-                printf("%d ", cnt);
+                printf("%d ", cnt); 
             }
             cnt = cnt + 1;
         }
