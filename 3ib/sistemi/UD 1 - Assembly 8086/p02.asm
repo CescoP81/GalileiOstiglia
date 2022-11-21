@@ -29,7 +29,7 @@ MAIN:
     mov AL, 255d
     ADD AX, 0001h
     ;quanto vale il registro AX?
-    ;il registro di Carry è cambiato? quali altri flag sono cambiati?
+    ;il flag di Carry è cambiato? quali altri flag sono cambiati?
 
     mov AH, 4Ch
     int 21h
