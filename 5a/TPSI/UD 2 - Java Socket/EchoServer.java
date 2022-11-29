@@ -3,14 +3,14 @@ import java.net.*;
 import java.io.*;
 
 class EchoServer {
-    public static void log(Object... args) {
-        System.err.println(Arrays.toString(args));
-    }
-    public static void main(String ars[]) throws IOException {
-    	int port = 9876;
-    	ServerSocket ss = new ServerSocket(port); // crea server socket
-    	log("accepting connections on port " + port);
-    	Socket socket = ss.accept(); // aspettiamo connessione client
+	public static void log(Object... args) {
+		System.err.println(Arrays.toString(args));
+	}
+	public static void main(String ars[]) throws IOException {
+		int port = 9876;
+		ServerSocket ss = new ServerSocket(port); // crea server socket
+		log("accepting connections on port " + port);
+		Socket socket = ss.accept(); // aspettiamo connessione client
 		InputStream is = socket.getInputStream();
 		OutputStream os = socket.getOutputStream();
 		os.write("hello, I'm EchoServer!\n".getBytes());
@@ -20,6 +20,6 @@ class EchoServer {
 		// add '?' to input
 		line += "?\n";
 		os.write(line.getBytes()); // write reponse
-        log("have a nice day... " + socket);
-    }
+		log("have a nice day... " + socket);
+	}
 }
