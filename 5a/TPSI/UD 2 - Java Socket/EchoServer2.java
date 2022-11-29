@@ -24,7 +24,7 @@ class EchoServer2 {
             lineInSS = new String(bf.readLine());                           // Leggo la stringa inserita dal client fino al carattere 'invio'
             lineOutSS = "You said "+lineInSS+"? ;)\r\n";                    // Creo la stringa da rimandare al client.
             os.write(lineOutSS.getBytes());                                 // Scrivo la risposta lineOutSS sul ServerSocket
-        }while(!lineInSS.equals("ciao!"));                        // Verifico che ServerSocket non abbia ricevuto la stringa 'ciao!' che lo fa terminare.
+        }while(!lineInSS.equals((String)"ciao!"));                          // Verifico che ServerSocket non abbia ricevuto la stringa 'ciao!' che lo fa terminare.
         log("have a nice day... " + socket);
     }
 }
