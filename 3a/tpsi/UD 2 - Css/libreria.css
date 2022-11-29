@@ -1,0 +1,16 @@
+.TitoloRosso{
+    color: rgb(255,0,0);
+    background: rgb(230,230,230);
+    margin-left: 50px;
+    text-decoration: underline;
+    font-style: Italic;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.TitoloVerde{
+    color: rgb(0,100,0);
+}
+.TitoloGiallo{
+    color: rgb(255,255,0);
+}
