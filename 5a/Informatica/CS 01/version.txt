@@ -1,4 +1,6 @@
 Version Progression
+#3.0
+- Creazione pagina per la gestione dei fumetti.
 #2.0
 - Creazione pagina di gestione delle case editrici.
 #1.0
