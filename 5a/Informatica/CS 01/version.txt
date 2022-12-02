@@ -1,3 +1,6 @@
-Version #1.0
+Version Progression
+#2.0
+- Creazione pagina di gestione delle case editrici.
+#1.0
 - Definizione ER in formato drawio.
 - Creazione tabelle sul database.
