@@ -9,19 +9,22 @@ int main(){
     int numeroRandom;           // variabile per il numero generato.
     int numeroUtente;           // variabile per il numero del giocatore.
     int indovinato;             // FLAG/BANDIERINA per stabilire se ho indovinato il numero
+    int numeroTentativi;        // contatore del numero di tentativi effettuati.
     srand(time(NULL));
 
     // 1. genero il numero da indovinare
     numeroRandom = MIN_RANGE + (rand()%(MAX_RANGE - MIN_RANGE + 1));
 
     indovinato = 0;             // lampadina spenta
+    numeroTentativi = 0;
     do{
         // richiesta valore al giocatore
+        numeroTentativi = numeroTentativi + 1;
         printf("Inserisci un numero: ");
         scanf("%d", &numeroUtente);
         fflush(stdin);
         if(numeroUtente == numeroRandom){
-            printf("HAI INDOVINATO!!");
+            printf("HAI INDOVINATO con %d TENTATIVI!!", numeroTentativi);
             indovinato = 1;
         }
         else{

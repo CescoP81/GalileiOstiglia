@@ -61,3 +61,8 @@ Esempio pratico dell'uso della funzione rand() per generare numeri casuali.
 
 **p11.c**   
 Realizzare un programma C che genera un numero casuale compreso tra 1 e 20, dopo di che richiede all'utente di indovinare tale numero. Ogni volta che l'utente inserisce un valore il programma deve indicare se ha indovinato, oppure comunicare "Troppo alto" o "Troppo basso" in base al confronto tra il numero inserito ed il numero da indovinare.
+
+**p12.c**   
+Realizzare un programma C che genera un codice di 3 cifre comprese tra 0 e 9.
+L'utente deve inserire singolarmente ogni cifra, il programma verifica la corrispondenza di ogni cifra e se la cifra è esatta visualizza la cifra stessa, altrimenti visualizza un '*'.
+Il programma termina quando tutte le cifre sono indovinate e comunica il numero di tentativi.
