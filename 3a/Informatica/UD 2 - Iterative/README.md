@@ -55,3 +55,9 @@ Realizzare un algoritmo che simula una cassa da supermercato, vengono passati N 
 - Prezzo minore inserito
 - Prezzo maggiore inserito
 - Prezzo medio risultante della spesa.
+
+**p10.c**   
+Esempio pratico dell'uso della funzione rand() per generare numeri casuali.
+
+**p11.c**   
+Realizzare un programma C che genera un numero casuale compreso tra 1 e 20, dopo di che richiede all'utente di indovinare tale numero. Ogni volta che l'utente inserisce un valore il programma deve indicare se ha indovinato, oppure comunicare "Troppo alto" o "Troppo basso" in base al confronto tra il numero inserito ed il numero da indovinare.
