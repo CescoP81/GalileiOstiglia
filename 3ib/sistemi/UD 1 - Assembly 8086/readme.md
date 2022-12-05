@@ -12,8 +12,12 @@ Esempi di addizioni di valori a registri e tra registri.
 - addizione tra registri a 16bit.
 - addizione tra parti di registri a 8bit.
 
-**p03.asm**
+**p03.asm**   
 Abstract under costruction
 
-**p04.asm**  
+**p04.asm**
+Esempio di ciclo WHILE (controllo in testa) e di ciclo DO-WHILE (controllo in coda). Esempio anche di stampa a video di un carattere.
+
+
+**p05.asm**  
 Realizzare un programma Assembly inizializzando i registri AX con valore 000AH, BX con valore a piacere. Se il valore di BX è minore di AX allora raddoppiarlo e saltare a fine; altrimenti calcolare in CX la differenza tra BX e AX.
