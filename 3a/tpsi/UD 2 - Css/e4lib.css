@@ -1,0 +1,26 @@
+A:LINK{
+    color: rgb(0,0,0);
+    text-decoration: none;
+    border-bottom: solid 3px rgb(220,220,220);
+}
+A:VISITED{
+    color: rgb(0,0,0);
+    text-decoration: none;
+}
+A:HOVER{
+    color: rgb(255,0,0);
+    text-decoration: none;
+    border-bottom: solid 3px rgb(0,220,0);
+}
+P{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+#menuBar{
+    text-align: right;
+    border-bottom: solid 2px rgb(0,0,200);
+    padding-bottom: 10px;
+}
+#content{
+    border: solid 2px rgb(200,0,200);
+}
