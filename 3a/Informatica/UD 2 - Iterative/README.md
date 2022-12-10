@@ -66,3 +66,13 @@ Realizzare un programma C che genera un numero casuale compreso tra 1 e 20, dopo
 Realizzare un programma C che genera un codice di 3 cifre comprese tra 0 e 9.
 L'utente deve inserire singolarmente ogni cifra, il programma verifica la corrispondenza di ogni cifra e se la cifra è esatta visualizza la cifra stessa, altrimenti visualizza un '*'.
 Il programma termina quando tutte le cifre sono indovinate e comunica il numero di tentativi.
+
+**p13.c**   
+Realizzare un programma C che richiede due valori interi da tastiera, calcola e comunica il "minimo comune multiplo" mcm e il "massimo comun divisore" MCD.
+
+**p14.c**   
+Realizzare un programma C che richiede da tastiera tre valori: N numero di valori da calcolare, d1 primo divisore, d2 secondo divisore. Il programma deve generare N numeri casuali compresi tra 1 e 99 che siano divisibili per d1 e d2 contemporaneamente.
+
+**p15.c**   
+Creare un programma C che richiede un numero >1 e ne visualizza i fattori primi.
+es: 18 -> 2 3 3
