@@ -33,11 +33,12 @@ int main(){
     // aumento il contatore, il ciclo "gira" finche contatore non arriva a N
     srand(time(NULL));
     cnt = 1;
-    while(cnt <= N){
+    while(N>0){     //(cnt<=N)
         r = (rand()%99) + 1;            // genero un numero casuale
         if(r%d1==0 && r%d2==0){
             printf("%d ", r);
-            cnt = cnt + 1;
+                    //cnt = cnt + 1;
+            N = N - 1;
         }
     }
     return(0);
