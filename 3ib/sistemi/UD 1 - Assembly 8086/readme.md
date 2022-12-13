@@ -7,11 +7,11 @@
 # Comandi in DOSBox
 - DIR -> Visualizza il contenuto della directory corrente.
 - DIR p*.asm -> Visualizza tutti i file che iniziano per 'p' e hanno estensione .asm
-- tasm file.asm -> Compila il file scritto in assembly, se tutto ok restituisce un file con lo stesso nome ma con estensione .obj
-- tlink file -> senza specificare l'estensione, viene linkato e quindi generati .map e .exe
+- tasm p.asm -> Compila il file scritto in assembly, se tutto ok restituisce un file con lo stesso nome ma con estensione .obj
+- tlink p -> senza specificare l'estensione, viene linkato e quindi generati .map e .exe
 - p.exe -> esegue il programma nel prompt dei comandi.
 - td p.exe -> Apre il debugger e permette di eseguire il programma riga per riga (tasto F7).
-- rescan -> se non vedi il file .asm nell0unità e:\ esegue un nuovo check della cartella.
+- rescan -> se non vedi il file .asm nell'unità e:\ esegue un nuovo check della cartella.
 
 # ISTRUZIONI DI SALTO (Pag. 137)
 Devono sempre essere precedute da un'istruzione di compare (CMP) tra due registri o tra registro e valore.
