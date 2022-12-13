@@ -4,7 +4,7 @@
 - Eseguire il comando "mount e: z:\tasm\bin" per montare l'unità vituale E:
     - Digitare E: (invio) per cambiare unità [ E:\ -> z:\tasm\bin].
 - Salvare il proprio esercizio sul server nella cartella \tasm\bin
-# Comandi in DOSBox
+### Comandi in DOSBox
 - DIR -> Visualizza il contenuto della directory corrente.
 - DIR p*.asm -> Visualizza tutti i file che iniziano per 'p' e hanno estensione .asm
 - tasm p.asm -> Compila il file scritto in assembly, se tutto ok restituisce un file con lo stesso nome ma con estensione .obj
@@ -13,7 +13,7 @@
 - td p.exe -> Apre il debugger e permette di eseguire il programma riga per riga (tasto F7).
 - rescan -> se non vedi il file .asm nell'unità e:\ esegue un nuovo check della cartella.
 
-# ISTRUZIONI DI SALTO (Pag. 137)
+### ISTRUZIONI DI SALTO (Pag. 137)
 Devono sempre essere precedute da un'istruzione di compare (CMP) tra due registri o tra registro e valore.
 CMP operando1, operando 2
 - JNE -> Jump Not Equal -> !=
