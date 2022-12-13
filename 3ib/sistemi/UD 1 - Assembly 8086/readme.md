@@ -40,7 +40,7 @@ Esempi di addizioni di valori a registri e tra registri.
 - addizione tra parti di registri a 8bit.
 
 **p03.asm**   
-Abstract under costruction
+Esempio di IF-ELSE con i saldi condizionati e l'utilizzo delle LABEL.
 
 **p04.asm**
 Esempio di ciclo WHILE (controllo in testa) e di ciclo DO-WHILE (controllo in coda). Esempio anche di stampa a video di un carattere.
