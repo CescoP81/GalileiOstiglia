@@ -1,3 +1,30 @@
+### PER COMPILARE IN ASSEMBLER
+- Aprire DOSBox
+    - Nell'interfaccia comandi (Prompt) ci troviamo in Z:\
+- Eseguire il comando "mount e: z:\tasm\bin" per montare l'unità vituale E:
+    - Digitare E: (invio) per cambiare unità [ E:\ -> z:\tasm\bin].
+- Salvare il proprio esercizio sul server nella cartella \tasm\bin
+# Comandi in DOSBox
+- DIR -> Visualizza il contenuto della directory corrente.
+- DIR p*.asm -> Visualizza tutti i file che iniziano per 'p' e hanno estensione .asm
+- tasm file.asm -> Compila il file scritto in assembly, se tutto ok restituisce un file con lo stesso nome ma con estensione .obj
+- tlink file -> senza specificare l'estensione, viene linkato e quindi generati .map e .exe
+- p.exe -> esegue il programma nel prompt dei comandi.
+- td p.exe -> Apre il debugger e permette di eseguire il programma riga per riga (tasto F7).
+- rescan -> se non vedi il file .asm nell0unità e:\ esegue un nuovo check della cartella.
+
+# ISTRUZIONI DI SALTO (Pag. 137)
+Devono sempre essere precedute da un'istruzione di compare (CMP) tra due registri o tra registro e valore.
+CMP operando1, operando 2
+- JNE -> Jump Not Equal -> !=
+- JE -> Jump Equal -> ==
+- JL -> Jump Less -> <
+- JLE -> Jump Less Equal -> <=
+- JG -> Jump Great -> >
+- JGE -> Jump Great Equal -> >=
+
+
+
 ### *ELENCO ESERCITAZIONI*
 
 **p01.asm**  
@@ -18,6 +45,6 @@ Abstract under costruction
 **p04.asm**
 Esempio di ciclo WHILE (controllo in testa) e di ciclo DO-WHILE (controllo in coda). Esempio anche di stampa a video di un carattere.
 
-
 **p05.asm**  
-Realizzare un programma Assembly inizializzando i registri AX con valore 000AH, BX con valore a piacere. Se il valore di BX è minore di AX allora raddoppiarlo e saltare a fine; altrimenti calcolare in CX la differenza tra BX e AX.
+Programma Assembly che grazie all'uso di una label ed ai salti condizionati,
+realizza una iteravia (ciclo do-while) per la stampa delle prime 10 cifre naturali.
