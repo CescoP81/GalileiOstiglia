@@ -4,10 +4,18 @@
 }
 
 .paragrafo1{
+    border-left: solid 3px rgb(200,200,200);
+    font-family: 'Courier New';
+    color: rgb(0,0,255);
+    padding-left: 10px;
+    text-align: justify;
 }
 
 .paragrafo2{
-
+    margin-left: 30px;
+    margin-right: 30px;
+    font-size: 1.5em;
+    font-style: Italic;
 }
 .paragrafo3{
 
