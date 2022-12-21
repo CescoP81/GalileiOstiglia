@@ -20,7 +20,7 @@ int main(){
     do{
         // richiesta valore al giocatore
         numeroTentativi = numeroTentativi + 1;
-        printf("Inserisci un numero: ");
+        printf("Inserisci un numero (<20): ");
         scanf("%d", &numeroUtente);
         fflush(stdin);
         if(numeroUtente == numeroRandom){
