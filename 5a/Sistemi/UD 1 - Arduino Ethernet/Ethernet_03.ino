@@ -92,11 +92,11 @@ void loop() {
     cnt++;
     time_read = millis();
   }
-  
+
 // BLOCCO DI SCRITTURA VALORE RANDOM SU SERVER
   if(millis()-time_write > DELTA_WRITE){
     random_value = 1 + rand()%100;
-    String url = "GET /ardushield.php?&scelta=addValue&value=";
+    String url = "GET /ardushield.php?scelta=addValue&value=";
     //char url[] ="GET /ardushield.php?&scelta=addValue&value=";
     url += String(random_value);
     Ethernet.begin(mac, ip);

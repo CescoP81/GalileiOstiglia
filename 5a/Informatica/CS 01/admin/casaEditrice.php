@@ -51,7 +51,26 @@ require("../include/head.html");
             $db = new mysqli($mysql_host, $mysql_user, $mysql_password, $mysql_db);
             $sql = "SELECT * FROM cs01_casaEditrice";
             $rs = $db->query($sql);
-            showResultSetTable($rs,"Lista delle Case Editrici");
+            showResultSetTable($rs,"Lista delle Case Editrici","casaEditrice.php");
+            $db->close();
+            break;
+        }
+        case "deleteRecord":{
+            $idr = $_REQUEST['idRecord'];
+            // step 1. verifico che nella tabella fumetti non ci siano chiavi esternet uguale all'id del record che voglio cancellare.
+            $db = new mysqli($mysql_host, $mysql_user, $mysql_password, $mysql_db);
+            $sql = "SELECT id FROM cs01_fumetto WHERE idCasaEditrice=$idr";
+            $rs = $db->query($sql);
+            if($rs->num_rows > 0){   // se la query mi restituisce una o più righe, non posso cancellare la casa editrice.
+                echo("<div class=\"alert alert-danger\">Attenzione, ci sono fumetti con questa Casa Editrice.</div>");
+            }
+            else{
+                $sql = "DELETE FROM cs01_casaEditrice WHERE id=$idr";
+                if($db->query($sql))
+                    echo("<div class=\"alert alert-success\">Cancellazione avvenuta.</div>");
+                else
+                    echo("<div class=\"alert alert-warning\">Problema in cancellazione.</div>");
+            }
             $db->close();
             break;
         }

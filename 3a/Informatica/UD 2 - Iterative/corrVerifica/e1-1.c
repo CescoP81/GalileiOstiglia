@@ -86,7 +86,7 @@ int main(){
     printf("Valore accettato: %d", val3);
     printf("\n\n");
 
-    // PUNTO E
+    // PUNTO F
     somma = 0;
     cnt = 0;
     while(val3>0){

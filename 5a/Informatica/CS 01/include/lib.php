@@ -30,7 +30,7 @@ function adminNavBar(){
                     </a>
                     <ul class=\"dropdown-menu\">
                         <li><a class=\"dropdown-item\" href=\"fumetto.php?scelta=formNuovoFumetto\">Nuovo Fumetto</a></li>
-                        <li><a class=\"dropdown-item\" href=\"#\">Lista Fumetti</a></li>
+                        <li><a class=\"dropdown-item\" href=\"fumetto.php?scelta=listaFumetti\">Lista Fumetti</a></li>
                     </ul>
                 </li>
             </ul>
@@ -64,10 +64,35 @@ function showResultSetTable($_rs, $_caption=null, $_page=null){
             while($record){                             // ciclo per separare i vari record.
                 echo("<tr>");
                     for($i=0; $i<count($keys); $i++)    // ciclo per la stampa dei campi di ogni singolo record.
-                        echo("<td>".$record[$keys[$i]]."</td>");
+                        if($keys[$i] == "immagine"){
+                            echo("<td>
+                                <button type=\"button\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal\">
+                                    Vedi la Copertina
+                                </button>
+                                <div class=\"modal\" id=\"exampleModal\" tabindex=\"-1\">
+                                    <div class=\"modal-dialog\">
+                                        <div class=\"modal-content\">
+                                            <div class=\"modal-header\">
+                                                <h5 class=\"modal-title\">Immagine di Copertina</h5>
+                                                <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>
+                                            </div>
+                                            <div class=\"modal-body\">
+                                                <p><img src=\"../images/".$record[$keys[$i]]."\" class=\"img-fluid rounded\" /></p>
+                                            </div>
+                                            <div class=\"modal-footer\">
+                                                <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                                                           
+                            </td>");
+                        }
+                        else{
+                            echo("<td>".$record[$keys[$i]]."</td>");
+                        }
                     if(!is_null($_page)){
-                        echo("<td><a href=\"$_page?scelta=deleteStudente&id_studente=".$record['id']."\">Cancello record ".$record['id']."</a></td>");
-                        echo("<td><a href=\"$_page?scelta=modificaStudente&id_studente=".$record['id']."\">Modifica record ".$record['id']."</a></td>");
+                        echo("<td><a href=\"$_page?scelta=deleteRecord&idRecord=".$record['id']."\">Cancello record ".$record['id']."</a></td>");
+                        echo("<td><a href=\"$_page?scelta=modificaRecord&idRecord=".$record['id']."\">Modifica record ".$record['id']."</a></td>");
                     }
                 echo("</tr>");
                 $record = $_rs->fetch_assoc();          // estraggo il record successivo
