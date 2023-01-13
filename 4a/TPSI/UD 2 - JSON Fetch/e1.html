@@ -1,0 +1,74 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<h1>Prova Fetch</h1>
+		<p id="jsonText"></p>
+		<table id="tabella">
+		</table>
+
+		<script type="text/javascript">
+			console.log("Ciao a tutti");
+			//document.querySelector("#jsonText").innerHTML ="Ciao";
+			//let p = fetch("https://api.coindesk.com/v1/bpi/currentprice.json");
+			
+            /*
+			p.then(function(arg){
+				let t = arg.text();
+				t.then(function(txt){
+					console.log(txt);
+				});
+			});	*/
+			
+            fetch("https://api.coindesk.com/v1/bpi/currentprice.json")
+            .then((response) => response.json())
+            .then((myjson) =>{
+				//document.querySelector("#jsonText").innerHTML = "Ciao";
+				document.querySelector("#jsonText").innerHTML += ("<b>Main JSon Keys:</b> " + Object.keys(myjson) + "<br /><br />");
+				document.querySelector("#jsonText").innerHTML += ("<b>Keys for time: </b>"+ Object.keys(myjson.time) + "<br />");
+				document.querySelector("#jsonText").innerHTML += (myjson.time.updated + "<br />");
+				document.querySelector("#jsonText").innerHTML += (myjson.time.updatedISO + "<br />");
+				document.querySelector("#jsonText").innerHTML += (myjson.time.updateduk + "<br />");
+				document.querySelector("#jsonText").innerHTML += ("<br />");
+				document.querySelector("#jsonText").innerHTML += ("<b>Disclaimer:</b> "+myjson.disclaimer + "<br />");
+				document.querySelector("#jsonText").innerHTML += ("<b>Chart Name:</b> "+myjson.chartName + "<br />");
+				document.querySelector("#jsonText").innerHTML += ("<br />");
+				document.querySelector("#jsonText").innerHTML += ("<b>Keys for bpi:</b> "+ Object.keys(myjson.bpi)+ "<br />");
+					document.querySelector("#jsonText").innerHTML += (myjson.bpi.USD + "<br />");
+					document.querySelector("#jsonText").innerHTML += ("<b>Keys for bpi.USD:</b> "+ Object.keys(myjson.bpi.USD) + "<br />");
+						document.querySelector("#jsonText").innerHTML += (myjson.bpi.USD.code + "<br />");
+						document.querySelector("#jsonText").innerHTML += (myjson.bpi.USD.symbol + "<br />");
+						document.querySelector("#jsonText").innerHTML += (myjson.bpi.USD.rate + "<br />");
+						document.querySelector("#jsonText").innerHTML += (myjson.bpi.USD.description + "<br />");
+						document.querySelector("#jsonText").innerHTML += (myjson.bpi.USD.rate_float + "<br />");
+						document.querySelector("#jsonText").innerHTML += ("<br />");
+					document.querySelector("#jsonText").innerHTML += (myjson.bpi.GBP + "<br />");
+					document.querySelector("#jsonText").innerHTML += ("<b>Keys for bpi.GBP:</b> "+ Object.keys(myjson.bpi.GBP) + "<br />");
+						document.querySelector("#jsonText").innerHTML += (myjson.bpi.GBP.code + "<br />");
+						document.querySelector("#jsonText").innerHTML += (myjson.bpi.GBP.symbol + "<br />");
+						document.querySelector("#jsonText").innerHTML += (myjson.bpi.GBP.rate + "<br />");
+						document.querySelector("#jsonText").innerHTML += (myjson.bpi.GBP.description + "<br />");
+						document.querySelector("#jsonText").innerHTML += (myjson.bpi.GBP.rate_float + "<br />");
+						document.querySelector("#jsonText").innerHTML += ("<br />");
+					document.querySelector("#jsonText").innerHTML += (myjson.bpi.EUR + "<br />");
+					document.querySelector("#jsonText").innerHTML += ("<b>Keys for bpi.EUR:</b> "+ Object.keys(myjson.bpi.EUR) + "<br />");
+						document.querySelector("#jsonText").innerHTML += (myjson.bpi.EUR.code + "<br />");
+						document.querySelector("#jsonText").innerHTML += (myjson.bpi.EUR.symbol + "<br />");
+						document.querySelector("#jsonText").innerHTML += (myjson.bpi.EUR.rate + "<br />");
+						document.querySelector("#jsonText").innerHTML += (myjson.bpi.EUR.description + "<br />");
+						document.querySelector("#jsonText").innerHTML += (myjson.bpi.EUR.rate_float + "<br />");
+            })
+
+			/*
+			let t = document.querySelector("#tabella");
+			for(let i=1; i<=5; i++){
+				const tr = t.insertRow();
+				for(let j=1; j<=8; j++){
+					const td = tr.insertCell();
+					td.appendChild(document.createTextNode(i+"*"+j+":"+(i*j)));
+					td.style.border = '1px solid black';
+				}
+			}		*/	
+		</script>
+	</body>
+</html>
