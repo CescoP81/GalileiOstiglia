@@ -1,7 +1,9 @@
+// #############################
+// # Librerie e Costanti       #
+// #############################
 #include <conio.h>
 #include <stdio.h>
 #include <stdlib.h>
-// costanti del programma
 #define MAX_CHAR 20
 #define MAX_ITEMS 10
 
@@ -12,7 +14,9 @@ typedef struct{
     int anno;
 }Studente;
 
-// prototipi delle funzioni
+// #############################
+// #        PROTOTIPI          #
+// #############################
 /**
  * Aggiunge uno studente al vettore di elenco
  * @param Studente[] Vettore di strutture da usare come elenco
@@ -27,6 +31,9 @@ void addStudente(Studente[], int*, int);
 */
 void showStudenti(Studente[], int);
 
+// #############################
+// #       MAIN PROGRAM        #
+// #############################
 int main(){
     Studente elenco[MAX_ITEMS];     // vettore per le strutture allocate.
     int cntStudenti;                // contatore degli studenti inseriti.
@@ -43,6 +50,9 @@ int main(){
     return(0);
 }
 
+// #############################
+// #         FUNZIONI          #
+// #############################
 void addStudente(Studente x[], int *_cnt, int MAX_ITEM){
     if(*_cnt < MAX_ITEM){
         printf("Nome: ");
@@ -60,7 +70,6 @@ void addStudente(Studente x[], int *_cnt, int MAX_ITEM){
         printf("ERROR! - No Space Available!!\n");
     }
 }
-
 void showStudenti(Studente x[], int _cnt){
     int i;
     printf("--ELENCO--\n");
