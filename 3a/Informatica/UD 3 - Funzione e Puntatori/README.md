@@ -9,3 +9,10 @@ Programma che con una funzione specifica esegue le seguenti operazioni:
 - [x] verificaPrimo -> Verifica e comunica se un numero è primo oppure no.
 - [x] verificaPerfetto -> Verifica e comunica se un numero è perfetto oppure no.
 - [x] valoreMassimo -> Determina e comunica il valore maggiore tra 3 valori.
+
+
+**p03.c**
+Realizzare un programma C dove definire e testare le seguenti funzioni:
+- [ ] sommaDivisori() -> Determina e somma i divisori di un numero.
+- [ ] mcd() -> Calcola il massimo comun divisore tra due numeri.
+- [ ] mcm() -> Calcola il minimo comune multiplo tra due numeri.
