@@ -10,7 +10,6 @@ Programma che con una funzione specifica esegue le seguenti operazioni:
 - [x] verificaPerfetto -> Verifica e comunica se un numero è perfetto oppure no.
 - [x] valoreMassimo -> Determina e comunica il valore maggiore tra 3 valori.
 
-
 **p03.c**
 Realizzare un programma C dove definire e testare le seguenti funzioni:
 - [ ] sommaDivisori() -> Determina e somma i divisori di un numero.
