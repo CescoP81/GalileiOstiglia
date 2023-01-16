@@ -15,3 +15,6 @@ Realizzare un programma C dove definire e testare le seguenti funzioni:
 - [x] sommaDivisori() -> Determina e somma i divisori di un numero.
 - [x] mcd() -> Calcola il massimo comun divisore tra due numeri.
 - [x] mcm() -> Calcola il minimo comune multiplo tra due numeri.
+
+**p04.c**
+Modificare il codice del p03.c in modo che le funzioni ritornino al MAIN il valore calcolato.
