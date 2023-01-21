@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define MAX_CHAR 20
-#define MAX_ITEMS 10
+#define MAX_ITEMS 2
 
 // struttura definita per il programma
 typedef struct{
@@ -76,6 +76,7 @@ int main(){
     addStudente(elenco, &cntStudenti, MAX_ITEMS);
     addStudente(elenco, &cntStudenti, MAX_ITEMS);
     addStudente(elenco, &cntStudenti, MAX_ITEMS);
+    addStudente(elenco, &cntStudenti, MAX_ITEMS);
 
     // Visualizzo gli studenti inseriti chiamando la show
     showStudenti(elenco, cntStudenti);
@@ -83,7 +84,7 @@ int main(){
     // Modifica di uno studente
     showStudenti(elenco, cntStudenti);
     printf("Inserisci nr. studente: ");
-    scanf("%d", &indexStudente, cntStudenti);
+    scanf("%d", &indexStudente);
     fflush(stdin);
     if(modifyStudente(elenco, indexStudente, cntStudenti))
         printf("Aggiornamento studente avvenuto!\n");
