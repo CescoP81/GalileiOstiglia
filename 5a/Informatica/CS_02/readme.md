@@ -14,7 +14,7 @@ Un’azienda opera in diverse regioni del Paese, in ognuna delle quali ha molti 
    
    
 ## Pag. 189 nr. 4    
-iscritti A un’AssociAzione culturAle e spettAcoli teAtrAli   
+Iscritti a un’associAzione culturale e spettacoli teatrali   
 Gli iscritti a un’associazione culturale partecipano a spettacoli teatrali proposti annualmente dall’associazione e, dopo ogni rappresentazione, indicano il livello di gradimento dello spettacolo teatrale da 1-minimo gradimento a 5-massimo gradimento. La partecipazione di un iscritto a un evento è controllata con la presenza di un livello di gradimento. Gli iscritti che non partecipano a un dato spettacolo non forniscono alcuna indicazione.    Nell’anagrafica degli iscritti è registrata anche la fascia d’età con valori da 1-giovani fino a 4-anziani. Si vuole organizzare un database per registrare le partecipazioni agli spettacoli e controllare partecipazione e livello di gradimento per gli spettacoli proposti.    Descrivi l’analisi del problema con entità, attributi e associazioni; disegna il modello E/R e deriva le tabelle. Sviluppa in Access le operazioni per:
 - aggiornare l’archivio degli iscritti;
 - permettere l’inserimento e la modifica delle partecipazioni di ogni iscritto con l’indicazione del gradimento;
