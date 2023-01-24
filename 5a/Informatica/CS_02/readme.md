@@ -19,8 +19,8 @@ Gli iscritti a un’associazione culturale partecipano a spettacoli teatrali pro
 
 Funzionalità minime richieste da sviluppare in PHP/mySQL:   
     Lato amministrazione:   
-        [x] aggiornare l’archivio degli iscritti;   
-        [ ] ottenere, a fine stagione, il conteggio delle partecipazioni di ogni iscritto, ordinato per iscritto;   
+        - [x] aggiornare l’archivio degli iscritti;   
+        - [ ] ottenere, a fine stagione, il conteggio delle partecipazioni di ogni iscritto, ordinato per iscritto;   
         [ ] individuare gli iscritti che non hanno partecipato a nessuno spettacolo;   
         [ ] ottenere la lista degli iscritti che hanno partecipato a tutti gli spettacoli;   
         [ ] ottenere il gradimento medio di tutti gli spettacoli;   
