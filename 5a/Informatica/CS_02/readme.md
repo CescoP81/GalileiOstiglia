@@ -30,11 +30,11 @@ Funzionalità minime richieste da sviluppare in PHP/mySQL:
 - [ ] Specificare indice di gradimento di uno spettacolo visto.   
    
 Funzionalità aggiuntive di progetto   
-    - Lato amministrazione:   
+    Lato amministrazione:   
 - [ ]    
 - [ ]    
    
-    - Lato iscritto:
+    Lato iscritto:
 - [ ] 
 - [ ] 
 
