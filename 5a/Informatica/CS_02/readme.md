@@ -31,12 +31,12 @@ Funzionalità minime richieste da sviluppare in PHP/mySQL:
    
 Funzionalità aggiuntive di progetto   
     Lato amministrazione:   
-- [ ]    
-- [ ]    
+- [ ] ...   
+- [ ] ...   
    
     Lato iscritto:
-- [ ] 
-- [ ] 
+- [ ] ...   
+- [ ] ...   
 
 
 
