@@ -24,17 +24,17 @@ Lato amministrazione:
 - [ ] individuare gli iscritti che non hanno partecipato a nessuno spettacolo;   
 - [ ] ottenere la lista degli iscritti che hanno partecipato a tutti gli spettacoli;   
 - [ ] ottenere il gradimento medio di tutti gli spettacoli;   
-    Lato iscritto:   
+Lato iscritto:   
 - [ ] Visualizzare il programma dell'annualità e relative schede spettacolo.   
 - [ ] permettere l’inserimento e la modifica delle partecipazioni a spettacoli.   
 - [ ] Specificare indice di gradimento di uno spettacolo visto.   
    
 ## Funzionalità aggiuntive di progetto   
-    Lato amministrazione:   
+Lato amministrazione:   
 - [ ] ...   
 - [ ] ...   
    
-    Lato iscritto:
+Lato iscritto:
 - [ ] ...   
 - [ ] ...   
 
