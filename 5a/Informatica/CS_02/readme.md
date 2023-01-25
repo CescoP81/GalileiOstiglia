@@ -1,5 +1,3 @@
-Tracce prese in esame per questo caso studio:
-
 # Pag. 188 nr. 2  
 Vendite di prodotti   
 Un’azienda opera in diverse regioni del Paese, in ognuna delle quali ha molti uffici di rappresentanza. Ciascuno di questi uffici può vendere più di un prodotto tra quelli offerti dall’azienda. Si vuole costruire un database per controllare la distribuzione regionale delle vendite. Descrivi l’analisi del problema individuando entità, attributi e associazioni; disegna il modello E/R e deriva le tabelle.
