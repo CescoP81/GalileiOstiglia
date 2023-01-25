@@ -48,3 +48,18 @@ Esempio di ciclo WHILE (controllo in testa) e di ciclo DO-WHILE (controllo in co
 **p05.asm**  
 Programma Assembly che grazie all'uso di una label ed ai salti condizionati,
 realizza una iteravia (ciclo do-while) per la stampa delle prime 10 cifre naturali.
+
+**p06.asm**  
+Programma Assembly per mostrare l'utilizzo dello stack come area di memoria in cui salvare momentaneamente il valore di registri per poterli utilizzare per altre funzionalità. Uso di PUSH e POP.
+
+**p08.asm**  
+Programma di esempio per la dichiarazione di una procedura NEAR, con richiamo grazie all'uso di CALL e con passaggio di valori tramite lo stack PUSH e POP.
+
+**p09.asm**  
+Programma Assembly che grazie alla procedura stampaCar recupera dallo stack il carattere da visualizzare a video.
+
+**p10.asm**  
+Programma Assembly che grazie alla procedura stampaCar richiamata internamente ad una iterativa 'ciclo' stampa a video le lettere dalla A alla Z, alfabeto maiuscolo.
+
+**p11.asm**  
+Programma Assembly che grazie alla procedura 'sommatoria' recupera dallo stack i due addendi e a sua volta scrive nello stack il risultato calcolato. Il main con le operazioni di POP estrae i valori così calcolati. Fare attenzione alla struttura LI-FO dello stack, le operazioni di PUSH e POP come di indirizzamento [BP+??] non sono casuali.
