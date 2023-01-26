@@ -63,3 +63,8 @@ Programma Assembly che grazie alla procedura stampaCar richiamata internamente a
 
 **p11.asm**  
 Programma Assembly che grazie alla procedura 'sommatoria' recupera dallo stack i due addendi e a sua volta scrive nello stack il risultato calcolato. Il main con le operazioni di POP estrae i valori così calcolati. Fare attenzione alla struttura LI-FO dello stack, le operazioni di PUSH e POP come di indirizzamento [BP+??] non sono casuali.
+
+**p12.asm**  
+Scrivere una PROC NEAR Assembly che riceve dal MAIN tramite lo stack due valori, il primo valore è un numero intero maggiore di zero; il secondo valore deve essere 0 oppure 1. La funzione recuperati i due dati dallo stack procede nel seguente modo:
+- se il numero è minore di 9, controlla il secondo valore se è 1 stampa a video i valori da numero a 9, se è zero invece da numero a 0.
+- se il numero è superiore a 9 allora stampa a video un singolo carattere ash '#'.
