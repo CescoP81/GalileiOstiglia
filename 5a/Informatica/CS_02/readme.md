@@ -54,8 +54,8 @@ Lato iscritto:
 - [ ] ...   
 
 ## Project Timeline
-- [ ] 14.01.23 Presentazione tracce.
-- [ ] 21.01.23 Definizione ER Database - DDL.sql e DML.sql
+- [x] 14.01.23 Presentazione tracce.
+- [x] 21.01.23 Definizione ER Database - DDL.sql e DML.sql
 - [ ] 28.01.23 Definizione funzionalità aggiuntive
     - [ ] Inizio programmazione parte amministrativa
 - [ ] 31.01.23 Visione concetto di sessione ed utilizzo (login utente).
