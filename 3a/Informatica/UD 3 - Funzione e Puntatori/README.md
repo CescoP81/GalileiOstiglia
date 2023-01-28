@@ -20,8 +20,7 @@ Realizzare un programma C dove definire e testare le seguenti funzioni:
 Modificare il codice del p03.c in modo che le funzioni ritornino al MAIN il valore calcolato.
 
 **p05.c**
-Realizza un programma C che richiede in input un valore compreso tra 1 e 999, con una funzione deve determinare un numero la cui somma delle cifre
-sia uguale alla somma delle cifre del numero inserito.
+Realizza un programma C che richiede in input un valore compreso tra 1 e 999, con una funzione deve determinare un numero la cui somma delle cifre sia uguale alla somma delle cifre del numero inserito.
 
 **p06.c**
 Realizza un programma C che richiede in input un valore N compreso tra 1 e 20, con una funzione determina i primi N numeri della serie dei Fibonacci.
