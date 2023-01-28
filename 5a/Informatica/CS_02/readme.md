@@ -56,8 +56,8 @@ Lato iscritto:
 ## Project Timeline
 - [x] 14.01.23 Presentazione tracce.
 - [x] 21.01.23 Definizione ER Database - DDL.sql e DML.sql
-- [ ] 28.01.23 Definizione funzionalità aggiuntive
-    - [ ] Inizio programmazione parte amministrativa
+- [x] 28.01.23 Definizione funzionalità aggiuntive
+    - [x] Inizio programmazione parte amministrativa
 - [ ] 31.01.23 Visione concetto di sessione ed utilizzo (login utente).
 - [ ] 04.02.23 Inizio programmazione parte front-end (iscritto o agenzia di vendita)
 - [ ] 11.02.23 Check preventivo per rilascio versione finale.
