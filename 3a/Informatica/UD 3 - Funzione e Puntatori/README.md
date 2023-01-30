@@ -28,5 +28,5 @@ Realizza un programma C che richiede in input un valore N compreso tra 1 e 20, c
 **p07.c**
 Realizza un programma C che richiede in input base ed esponente, la funzione 'potenza' riceve i due valori e restituisce il risultato del calcolo.
 
-**p06.c**
+**p08.c**
 Realizza un programma C che richiede in input un valore N compreso tra 1 e 10, la funzione 'fattoriale' calcola e ritorna al main il risultato.
