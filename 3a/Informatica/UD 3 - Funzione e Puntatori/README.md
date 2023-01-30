@@ -24,3 +24,9 @@ Realizza un programma C che richiede in input un valore compreso tra 1 e 999, co
 
 **p06.c**
 Realizza un programma C che richiede in input un valore N compreso tra 1 e 20, con una funzione determina i primi N numeri della serie dei Fibonacci.
+
+**p07.c**
+Realizza un programma C che richiede in input base ed esponente, la funzione 'potenza' riceve i due valori e restituisce il risultato del calcolo.
+
+**p06.c**
+Realizza un programma C che richiede in input un valore N compreso tra 1 e 10, la funzione 'fattoriale' calcola e ritorna al main il risultato.
