@@ -68,3 +68,6 @@ Programma Assembly che grazie alla procedura 'sommatoria' recupera dallo stack i
 Scrivere una PROC NEAR Assembly che riceve dal MAIN tramite lo stack due valori, il primo valore è un numero intero maggiore di zero; il secondo valore deve essere 0 oppure 1. La funzione recuperati i due dati dallo stack procede nel seguente modo:
 - se il numero è minore di 9, controlla il secondo valore se è 1 stampa a video i valori da numero a 9, se è zero invece da numero a 0.
 - se il numero è superiore a 9 allora stampa a video un singolo carattere ash '#'.
+
+**pausa01.asm**
+Realizzare un programma Assembly utilizzando i salti condizionali, impostando nel registro AX il numero del giorno della settimana il programma dovrà visualizzare il nome del giorno in formato 3 lettere: lun, mar, mer, gio, ven, sab, dom dove lunedì è il giorno 1.
