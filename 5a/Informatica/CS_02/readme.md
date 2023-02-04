@@ -59,7 +59,7 @@ Lato iscritto:
 - [x] 28.01.23 Definizione funzionalità aggiuntive
     - [x] Inizio programmazione parte amministrativa
 - [x] 31.01.23 Visione concetto di sessione ed utilizzo (login utente).
-- [ ] 04.02.23 Inizio programmazione parte front-end (iscritto o agenzia di vendita)
+- [x] 04.02.23 Inizio programmazione parte front-end (iscritto o agenzia di vendita)
 - [ ] 11.02.23 Check preventivo per rilascio versione finale.
 - [ ] 18.02.23 Chiusura lavori e rubric di valutazione.
 
