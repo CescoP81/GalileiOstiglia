@@ -30,3 +30,12 @@ Realizza un programma C che richiede in input base ed esponente, la funzione 'po
 
 **p08.c**
 Realizza un programma C che richiede in input un valore N compreso tra 1 e 10, la funzione 'fattoriale' calcola e ritorna al main il risultato.
+
+**p09.c**
+
+**p10.c**
+Creare un main program che esegua il test di queste funzioni opportunamente sviluppate:
+- int numberOfDigits(int) -> riceve un numero e restituisce il numero di cifre.
+- int avarageValueOfDigits(int) -> riceve un numero e calcola la media delle cifre.
+- int majorDigit(int) -> Riceve un numero e restituisce la cifra maggiore
+- int reversedNumber(int) -> Riceve un numero e lo restituisce al contrario (es. 123 -> 321)
