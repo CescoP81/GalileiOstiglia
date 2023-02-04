@@ -14,7 +14,7 @@ CREATE TABLE cs02_spettacoli(
     regia varchar(30) not null,
     attorePrincipale varchar(20),
     durata integer unsigned,
-    locandina varchar(100),
+    immagine varchar(100),
 
     primary key(id)
 );
