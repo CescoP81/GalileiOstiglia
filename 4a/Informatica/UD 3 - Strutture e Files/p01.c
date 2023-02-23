@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define MAX_CHAR 20
-#define MAX_ITEMS 2
+#define MAX_ITEMS 5
 
 // struttura definita per il programma
 typedef struct{
@@ -53,6 +53,13 @@ int deleteStudente(Studente[], int, int*);
  * @param int Contatore studenti presenti.
 */
 void searchStudente(Studente[], char*, int);
+/**
+ * Scrittura elenco su file binario
+ * @param Studente[] Vettore con gli studenti da registrare su file
+ * @param int numero di studenti da scrivere su file
+*/
+void scriviSuFile(Studente[], int);
+
 
 /**
  * Funzione che compara alfabeticamente due stringhe.
@@ -99,9 +106,12 @@ int main(){
     else
         printf("Indice non presente!\n");
     showStudenti(elenco, cntStudenti);
-
+    /*
     printf("\n- Ricerca studente 'Rossi' -\n");
     searchStudente(elenco, cognome, cntStudenti);
+    */
+
+    scriviSuFile(elenco, cntStudenti);
     return(0);
 }
 
@@ -167,6 +177,17 @@ void searchStudente(Studente x[], char *_Cognome, int _cntStudenti){
         if(comparaStringhe(x[i].cognome, _Cognome) == 0)
             printf("%s %s %d\n", x[i].cognome, x[i].nome, x[i].anno);
     }
+}
+
+void scriviSuFile(Studente _x[], int _cntStudenti){
+    FILE *fpOut = fopen("elenco.bin", "wb");
+    int i;
+
+    for(i=0; i<_cntStudenti; i++){
+        fwrite(&_x[i], sizeof(Studente), 1, fpOut);
+    }
+
+    fclose(fpOut);
 }
 
 // ereditate dalle stringhe
