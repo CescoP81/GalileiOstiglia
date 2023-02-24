@@ -190,7 +190,7 @@ void scriviSuFile(Studente _x[], int _cntStudenti){
     fclose(fpOut);
 }
 
-// ereditate dalle stringhe
+// ereditate dalle stringhe //
 int comparaStringhe(char *_str1, char *_str2){
     int i;
     i=0;
