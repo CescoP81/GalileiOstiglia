@@ -20,9 +20,16 @@ Il programma deve permettere le seguenti operazioni su una lista di massimo 10 p
 
 
 **p03.c**  
-
+Realizzare un programma che gestendo una struttura Prodotto(nome, prezzo, sconto)
+permetta di aggiungere prodotto ad un file binario catalogo.bin,
+leggere e stampare a video l'intero catalogo,
+ricercare un prodotto per nome, oppure per fascia di prezzo nel catalogo.
 
 **p04.c**  
+Realizzare un algoritmo che gestendo l'input di ipotetici studenti (cognome, nome, anno di nascita)
+ed un file chiamato classe.bin inserisce gli studenti, li visualizza e permette di ricercare uno studente.
 
+L'inserimento degli studenti dovrebbe essere realizzato in modo tale da avere sempre un file con nominativi
+ordinati per cognome.
 
 **p05.c**  
