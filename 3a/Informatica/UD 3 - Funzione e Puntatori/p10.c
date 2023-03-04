@@ -57,7 +57,6 @@ void f(int _n){
     }
 }
 
-
 int inputValore(int _min, int _max){
     int numero;
     do{
