@@ -21,8 +21,10 @@ CREATE TABLE cliente(
 CREATE TABLE noleggio(
     id integer unsigned auto_increment,
     dataNoleggio date not null,
+    
     idAuto integer unsigned,
     idCliente integer unsigned,
+
     dataResa date not null,
     dataResaEffettiva date,
     kmPercorsi integer unsigned,
