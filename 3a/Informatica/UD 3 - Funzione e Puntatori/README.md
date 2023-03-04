@@ -34,6 +34,11 @@ Realizza un programma C che richiede in input un valore N compreso tra 1 e 10, l
 **p09.c**
 
 **p10.c**
+Realizzare un algoritmo che richiede l'input di un valore da tastiera compreso tra due estremi definiti,
+    il valore inserito viene utilizzato per generare N valor random e per ogni valore vengono visualizzati
+    i divisori.
+
+**p11.c**
 Creare un main program che esegua il test di queste funzioni opportunamente sviluppate:
 - int numberOfDigits(int) -> riceve un numero e restituisce il numero di cifre.
 - int avarageValueOfDigits(int) -> riceve un numero e calcola la media delle cifre.
