@@ -2,8 +2,11 @@
 Realizzare un programma che richieda l'inserimento di tre valori in altrettante variabili chiamate val1, val2, val3.
 Il programma deve:
     a. Determinare qual'è il valore maggiore e minore inserito.
+
     b. SE val1 < val3: visualizzare tutti i valori tra val1 e val2 comunicando quanti sono numeri primi. Altrimenti visualizzare un quadrato di '#' con lato val3.
+    
     c. SE val1 è un numero pari, scomporlo in fattori primi. ATRIMENNTI stampare a video il messaggio "Numero non utilizzabile".
+    
     d. visualizzare a video un rettangolo di '*' vuoto all'interno, con lati val1 come base e val2 come altezza.
 
 es d:
@@ -49,7 +52,7 @@ int main(){
     if(val1 < val3){
         cntPrimi = 0;
         num = val1;
-        while(num < val2){                  // imposto un ciclo da val1 a val2 utilizzando la variabile num per non perdere val1.
+        while(num <= val2){                  // imposto un ciclo da val1 a val2 utilizzando la variabile num per non perdere val1.
             printf("%d", num);
             cntDiv=0;
             div=1;
@@ -65,7 +68,7 @@ int main(){
             printf("\n");
             num++;
         }
-        printf("I numero di valori primi trovati e': %d", cntPrimi);
+        printf("Il numero di valori primi trovati e': %d", cntPrimi);
     }
     else{
         x = 1;
