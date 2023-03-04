@@ -58,3 +58,9 @@ VALUES('2023/03/01', 4, 5, '2023/02/05', '2023/02/08', 125);
 
 INSERT INTO noleggio(dataNoleggio, idAuto, idCliente, dataResa, dataResaEffettiva, kmPercorsi) 
 VALUES('2023/03/11', 7, 5, '2023/03/15', '2023/03/18', 230);
+
+INSERT INTO noleggio(dataNoleggio, idAuto, idCliente, dataResa) 
+VALUES('2023/03/11', 6, 3, '2023/03/15');
+
+INSERT INTO noleggio(dataNoleggio, idAuto, idCliente, dataResa) 
+VALUES('2023/03/22', 2, 4, '2023/03/25');
