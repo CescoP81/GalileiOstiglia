@@ -44,3 +44,7 @@ Creare un main program che esegua il test di queste funzioni opportunamente svil
 - int avarageValueOfDigits(int) -> riceve un numero e calcola la media delle cifre.
 - int majorDigit(int) -> Riceve un numero e restituisce la cifra maggiore
 - int reversedNumber(int) -> Riceve un numero e lo restituisce al contrario (es. 123 -> 321)
+
+**p12.c**
+Programma di visualizzazione della ASCII TABLE, finding di un carattere o del relativo codice decimale.
+	Sviluppato con funzioni.
