@@ -93,3 +93,38 @@ FROM noleggio AS n,
         cliente AS c
 WHERE c.id=n.idCliente AND n.idAuto=a.id
     AND n.kmPercorsi >= (SELECT AVG(kmPercorsi) FROM noleggio);
+
+/* Visualizzare tutte le auto con tarda iniziale AC*/
+SELECT *
+FROM auto
+WHERE targa LIKE "AC%";
+
+/* Visualizz<re tutte le auto con targa contentente '12' */
+SELECT *
+FROM auto
+WHERE targa LIKE "%12%";
+
+/* Visualizzare i km percorsi da ogni auto in ordine decrescente */
+SELECT a.targa, a.marca, a.modello, SUM(n.kmPercorsi) AS 'totale'
+FROM auto AS a, noleggio AS n
+WHERE a.id=n.idAuto
+GROUP BY a.id
+HAVING totale>0
+ORDER BY totale DESC
+
+/* Visualizzare le prime tre auto per km percorsi in ordine decrescente */
+SELECT a.targa, a.marca, a.modello, SUM(n.kmPercorsi) AS 'totale'
+FROM auto AS a, noleggio AS n
+WHERE a.id=n.idAuto
+GROUP BY a.id
+HAVING totale>0
+ORDER BY totale DESC
+LIMIT 3
+
+/* Visualizzare per ogni auto il numero di noleggi effettuati */
+SELECT a.marca, a.modello, a.targa, COUNT(n.idAuto) AS 'Nr. Noleggi' 
+FROM auto AS a, noleggio AS n 
+WHERE a.id=n.idAuto
+GROUP BY a.id
+
+
