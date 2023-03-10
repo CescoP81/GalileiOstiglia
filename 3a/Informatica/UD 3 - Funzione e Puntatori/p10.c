@@ -43,7 +43,8 @@ int main(){
         r = generaRandomIntervallo(20, 50);
         visualizzaDivisori(r);
         cnt++;
-    }*/
+    } 
+        //oppure usando funzioni innestate, vedere riga sotto*/
     f(inputValore(4,20));
     return(0);
 }
