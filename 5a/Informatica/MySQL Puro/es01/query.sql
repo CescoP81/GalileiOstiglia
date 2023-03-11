@@ -127,4 +127,26 @@ FROM auto AS a, noleggio AS n
 WHERE a.id=n.idAuto
 GROUP BY a.id
 
+/*Determinare il km massimo e minimo percorsi tra tutti i noleggi*/
+SELECT MIN(n.kmPercorsi), MAX(n.kmPercorsi)
+FROM noleggio AS n
+
+/* Determinare l'auto "marca, modello,targa" che ha effettuato il numero massimo di km*/
+SELECT a.marca, a.modello, a.targa
+FROM auto AS a, noleggio AS n
+WHERE a.id = n.idAuto
+    AND n.kmPercorsi =(SELECT MAX(n.kmPercorsi) FROM noleggio AS n) 
+
+/*Visualizzare le auto che hanno effettuato almeno 2 noleggi*/
+SELECT a.marca, a.modello, a.targa, COUNT(n.idAuto) AS 'Viaggi'
+FROM auto AS a, noleggio AS n
+WHERE a.id = n.idAuto
+GROUP BY a.id
+HAVING Viaggi>=2
+
+/*Visualizzare il cliente che ha effettuato il noleggio più lungo(in km) e con che auto*/
+SELECT c.cognome, c.nome, a.marca, a.modello, a.targa
+FROM cliente AS c, auto AS a, noleggio AS n
+WHERE a.id = n.idAuto AND c.id = n.idCliente
+    AND n.kmPercorsi= (SELECT MAX(n.kmPercorsi) FROM noleggio AS n)
 
