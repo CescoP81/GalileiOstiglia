@@ -4,6 +4,7 @@ CREATE TABLE cs02_iscritti(
     cognome varchar(20) not null,
     mail varchar(50) not null,
     password char(32),
+    fasciaEta tinyint,
 
     primary key(id)
 );

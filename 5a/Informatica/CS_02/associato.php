@@ -1,19 +1,24 @@
 <?php
-/* Pagina di gestione della tabella iscritti.*/
+/*  Pagina di gestione lato associato con login specifico iscritto e possibilità di iscrizione ad uno specifico spettacolo.
+*/
 session_start();
-$_SESSION['alogged'] = true;
 if(isset($_REQUEST['scelta'])) $sc = $_REQUEST['scelta']; else $sc = null;
+if(!isset($_SESSION['ulogged'])){
+    $_SESSION['ulogged'] = false;
+    $_SESSION['associatoName'] = null;
+}
 
-require("../include/lib.php");
-require("../include/head.html");
+require("include/lib.php");
+require("include/head.html");
 
-if(!$_SESSION['alogged']){
+if(!$_SESSION['ulogged']){
     echo("Form per l'autentica come amministratore...");
     // funzione che crea il form
 }
 else{
-    adminNavBar();
+    associatonavBar($_SESSION['idIscritto'], $_SESSION['associatoName']);
     switch($sc){
+        /*
         case "formNuovoIscritto":{
             echo("<form action=\"iscritti.php\" method=\"post\">
                 <div class=\"mb-3\">
@@ -46,45 +51,24 @@ else{
             </form>");
             break;
         }
-        case "aggiungiIscritto":{
-            $n = $_REQUEST['nome'];
-            $c = $_REQUEST['cognome'];
-            $m = $_REQUEST['mail'];
-            $p = md5($_REQUEST['password']);
-            $fe = $_REQUEST['fasciaEta'];
-
-            $db = new mysqli($mysql_host, $mysql_user, $mysql_password, $mysql_db);
-            $sql = "INSERT INTO cs02_iscritti(nome, cognome, mail, password, fasciaEta) VALUES('$n','$c','$m','$p',$fe)";
-            echo($sql);
-            if($db->query($sql)) echo("<div class=\"alert alert-success\">Iscritto aggiunto</div>");
-            else echo("<div class=\"alert alert-danger\">Problema Inserimento.</div>");
-            $db->close();
-            break;
-        }
-        case "listaIscritti":{
-            $db = new mysqli($mysql_host, $mysql_user, $mysql_password, $mysql_db);
-            $sql = "SELECT cognome AS 'Cognome', nome AS 'Nome', mail AS 'eMail Address', password AS 'MD5 Password', fasciaEta AS 'Fascia Età' 
-                FROM cs02_iscritti 
-                ORDER BY cognome ASC";
-            $rs = $db->query($sql);
-            if($rs) showResultSetTable($rs, "Tabella Iscritti"); else echo("Problema...");
-
-            $db->close();
-            break;
-        }
-        case "cancellaIscritto":{
-            break;
-        }
-        case "modificaIscritto":{
-            break;
-        }
-        case "aggiornaIscritto":{
-            break;
-        }
+        */
         default:{
+            // mostro le iscrizioni effettuate.
+            $db = new mysqli($mysql_host, $mysql_user, $mysql_password, $mysql_db);
+            $sql = "SELECT spe.titolo AS 'Titolo Spettacolo', spe.regia AS 'Regia di', pal.dataSpettacolo AS 'Data programmata'  
+                    FROM cs02_iscritti AS isc, cs02_partecipa AS par, cs02_spettacoli AS spe, cs02_palinsesto as pal   
+                    WHERE par.idIscritto=isc.id AND 
+                        par.idPalinsesto=pal.id AND
+                        pal.idSpettacolo=spe.id AND
+                        isc.id=".$_SESSION['idIscritto'];
+            //echo($sql);
+            $rs = $db->query($sql); 
+            if($rs)
+                showResultSetTable($rs, "Iscrizioni personali");
+            $db->close();
             break;
         }
     }
 }
-require("../include/foot.html");
+require("include/foot.html");
 ?>

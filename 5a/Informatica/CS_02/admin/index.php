@@ -13,7 +13,7 @@ if($sc == "logout"){
     session_destroy();
 }
 
-if(!$_SESSION['alogged']){
+if($_SESSION['alogged'] == false){
     switch($sc){
         case "login":{
             if(($_REQUEST['username']=="admin") && ($_REQUEST['passwd']=="admin"))

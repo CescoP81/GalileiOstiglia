@@ -4,14 +4,15 @@
     cognome varchar(20) not null,
     mail varchar(50) not null,
     password char(32),
+    fasciaEta tinyint,
 
     primary key(id)
 );*/
-INSERT INTO cs02_iscritti(nome, cognome, mail) VALUES ("Francesco","Pradella","fp@fp.it");
-INSERT INTO cs02_iscritti(nome, cognome, mail) VALUES ("Mario","Rossi","mr@mr.it");
-INSERT INTO cs02_iscritti(nome, cognome, mail) VALUES ("Anna","Verdi","av@av.it");
-INSERT INTO cs02_iscritti(nome, cognome, mail) VALUES ("Maria","Bianchi","mb@mb.it");
-INSERT INTO cs02_iscritti(nome, cognome, mail) VALUES ("Simone","Giudici","sg@sg.it");
+INSERT INTO cs02_iscritti(nome, cognome, mail, password, fasciaEta) VALUES ("Francesco","Pradella","fp@fp.it", MD5('guest'),3);
+INSERT INTO cs02_iscritti(nome, cognome, mail, password, fasciaEta) VALUES ("Mario","Rossi","mr@mr.it", MD5('guest'),1);
+INSERT INTO cs02_iscritti(nome, cognome, mail, password, fasciaEta) VALUES ("Anna","Verdi","av@av.it", MD5('guest'),1);
+INSERT INTO cs02_iscritti(nome, cognome, mail, password, fasciaEta) VALUES ("Maria","Bianchi","mb@mb.it", MD5('guest'),4);
+INSERT INTO cs02_iscritti(nome, cognome, mail, password, fasciaEta) VALUES ("Simone","Giudici","sg@sg.it", MD5('guest'),2);
 
 /*CREATE TABLE cs02_spettacoli(
     id integer unsigned auto_increment,
