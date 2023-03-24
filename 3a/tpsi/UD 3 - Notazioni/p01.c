@@ -20,7 +20,7 @@ int main(){
         n = n/2;
     }
 
-    // stampo il numero convertire, visualizzo il vettore partendo dalla cella 7, la più significativa.
+    // stampo il numero convertito, visualizzo il vettore partendo dalla cella DIM-1, la più significativa.
     // stampa del vettore al contrario per avere la corretta visualizzazione.
     printf("Numero in binario: ");
     for(i=DIM-1; i>=0; i--){

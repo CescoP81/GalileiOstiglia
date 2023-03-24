@@ -1,11 +1,11 @@
 /*1) realizzare un programma che richiama la funzione tabellina la quale riceve due valori passati per valore 
 la funzione stampa tutte le tabelline dei valori compresi tra i due valori passati
 2) creare una funzione che determina il numero minimo di bit per codificare un numero passato come valore.
-3)creare una funzione che riceve un numero decimale (float), se il numero è nella condizione 0,... moltiplicarlo 
+3)creare una funzione che riceve un numero decimale (float), se il numero Ã¨ nella condizione 0,... moltiplicarlo 
 8 volte per 2 e ad ogni moltiplicazione stampare la parte intera prima di toglierla dal numero;
 altrimenti stampare il messaggio non codificabile.
 4) Creare una funzione che riceve tre parametri e restituisce un intero, la funzione ordina in modo crescente i tre parametri 
-   e restituisce 1 se è stato effettuato almeno uno scambio.
+   e restituisce 1 se Ã¨ stato effettuato almeno uno scambio.
 */
 
 #include <stdio.h>
@@ -92,7 +92,7 @@ void moltiplicazione(float _v){
 			_v=_v-((int)_v);
 		}
 	}else{
-		printf("il messaggio non è codificabile.");
+		printf("il messaggio non ï¿½ codificabile.");
 	}
 }
 
@@ -123,14 +123,3 @@ int ordina(int *v1, int *v2, int *v3){
 	
 	return(scambiati);	
 }
-
-
-
-
-
-
-
-
-
-
-
