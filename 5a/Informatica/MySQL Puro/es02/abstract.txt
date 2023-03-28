@@ -1,0 +1,12 @@
+Una ditta di logistica sposta merci da una sede all'altra situate in diverse città italiane.
+La ditta vuole tenere traccia degli spostamenti effettuati dai diversi mezzi (automezzo, furgone, etc), conoscendo il tipo di merce trasportata e il quantitativo espresso in quintali.
+La ditta può avere sedi in città italiane ma non aver ancora effettuato nessuna spedizione da e per tali città.
+Come reportistica richiesta dalla ditta sono obbligatorie le seguenti richieste:
+- Vedere tutti i mezzi a disposizione.
+- Avere una lista delle città abilitate per la ditta.
+- Avere un report di trasporti suddiviso per provincia.
+- Avere il totale di merce trasportata da ogni singolo mezzo.
+- Visualizzare una lista di mezzi operanti in una determinata provincia.
+- Avere una lista dei trasporti effettuati in un particolare lasso di tempo.
+
+
