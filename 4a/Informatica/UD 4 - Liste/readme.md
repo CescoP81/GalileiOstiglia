@@ -2,11 +2,11 @@
 
 **p01.c**  
 Esercitazione con sviluppo e test di funzioni inerenti le liste.
-- [ ] addTesta Aggiunge un nodo alla testa della lista.
-- [ ] showLista Visualizza una lista partendo dalla testa.
-- [ ] showListaRecursive Visualizza una lista con funzione ricorsiva.
-- [ ] showListaReversedREcursive Visualizza una lista al contrario con funzione ricorsiva.
-- [ ] popTesta Estra un nodo dalla testa della lista con controllo sull'esistenza.
-- [ ] pushCoda Aggiunge un nodo alla coda della lista.
-- [ ] ricercaMaxMinLista Ricerca e restituisce il massimo o il minimo presente nella lista.
-- [ ] contaNodi Determina e restituisce la lunghezza di una lista.
+- [x] addTesta Aggiunge un nodo alla testa della lista.
+- [x] showLista Visualizza una lista partendo dalla testa.
+- [x] showListaRecursive Visualizza una lista con funzione ricorsiva.
+- [x] showListaReversedREcursive Visualizza una lista al contrario con funzione ricorsiva.
+- [x] popTesta Estra un nodo dalla testa della lista con controllo sull'esistenza.
+- [x] pushCoda Aggiunge un nodo alla coda della lista.
+- [x] ricercaMaxMinLista Ricerca e restituisce il massimo o il minimo presente nella lista.
+- [x] contaNodi Determina e restituisce la lunghezza di una lista.
