@@ -8,13 +8,53 @@ typedef struct nodo{
 }Nodo;
 
 // Dichiarazione dei prototipi
+/**
+ * @brief Aggiunge un nodo in testa alla lista
+ * @param Nodo* Puntatore alla testa della lista.
+ * @param int Valore da inserire nel nodo.
+ * @return Nuova testa della lista.
+*/
 Nodo* addTesta(Nodo *, int);
+/**
+ * @brief Visualizza una lista.
+ * @param Nodo* Puntatore alla testa della lista.
+*/
 void showLista(Nodo *);
+/**
+ * @brief Visualizza una lista in modo ricorsivo
+ * @param Nodo* Puntatore alla lista.
+*/
 void showListaRecursive(Nodo *);
+/**
+ * @brief Visualizza una lista al contrario in modo ricorsivo.
+ * @param Nodo* Puntatore alla lista.
+*/
 void showListaReversedRecursive(Nodo *);
+/**
+ * @brief Estrae un nodo dalla testa della lista, con controllo esistenza.
+ * @param Nodo* Puntatore alla testa della lista
+ * @return Nuova testa della lista.
+*/
 Nodo* popTesta(Nodo *);
+/**
+ * @brief Aggiunge un nodo alla coda della lista.
+ * @param Nodo* Puntatore alla testa della lista.
+ * @param int valore da inserire nel nodo
+ * @return Nodo* Puntatore alla nuova testa.
+*/
 Nodo* pushCoda(Nodo *, int );
+/**
+ * @brief Ricerca il valore massimo o minimo interno alla lista.
+ * @param Nodo* Puntatore alla testa della lista.
+ * @param int 0->Minimo; 1->Massimo
+ * @return Valore trovato.
+*/
 int ricercaMaxMinLista(Nodo *, int);
+/**
+ * @brief Determina la lunghezza di una lista.
+ * @param Nodo* Puntatore alla testa della lista.
+ * @return Numero di nodi che compongono la lista.
+*/
 int contaNodi(Nodo*);
 
 // ### MAIN PROOGRAM ###
@@ -45,7 +85,6 @@ Nodo* addTesta(Nodo *_testa, int _val){
     tmp->val = _val;
     return(tmp);
 }
-
 void showLista(Nodo *_testa){
     Nodo *tmp;
     tmp = _testa;
