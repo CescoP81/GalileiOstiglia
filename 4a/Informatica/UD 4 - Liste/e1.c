@@ -12,6 +12,10 @@ Nodo* addTesta(Nodo *, int);
 void showLista(Nodo *);
 void showListaRecursive(Nodo *);
 void showListaReversedRecursive(Nodo *);
+Nodo* popTesta(Nodo *);
+Nodo* pushCoda(Nodo *, int );
+int ricercaMaxMinLista(Nodo *, int);
+int contaNodi(Nodo*);
 
 // ### MAIN PROOGRAM ###
 int main(){
@@ -67,4 +71,64 @@ void showListaReversedRecursive(Nodo *_tmp){
         showListaReversedRecursive(_tmp->next);
         printf("Address: %d; val: %d, next: %d\n", _tmp, _tmp->val, _tmp->next);        
     }
+}
+Nodo* popTesta(Nodo *_head){
+	if(_head == NULL)
+		return NULL;
+	Nodo* _nh = _head->next;	// New head
+	free(_head);
+	return _nh;
+}
+Nodo* pushCoda(Nodo *_head, int _val){
+	Nodo *_tmp = _head;	// Nodo temporaneo di appoggio per scorrere lista
+	Nodo *_nt = (Nodo*) malloc(sizeof(Nodo));	// New tail
+	_nt->next = NULL;
+	_nt->val = _val;
+	
+	if(_tmp == NULL)	// Se la lista era vuota, ritorno il nuovo nodo
+		return _nt;
+	
+	//getTail
+	while ( _tmp->next != NULL){
+		_tmp = _tmp->next;
+	}
+	_tmp->next = _nt;
+	return _head;
+}
+int ricercaMaxMinLista(Nodo *_head, int _scelta){
+	// scelta == 0, minimo
+	// scelta == 1, massimo
+	if(_head != NULL){
+		if(_scelta == 1){		// ricerca massimo
+			int max = _head->val;
+			Nodo *_tmp = _head;
+			while ( _tmp != NULL){	// scorro lista
+				if(_tmp->val > max )	// aggiorno massimo
+					max = _tmp->val;
+				_tmp = _tmp->next;
+			}
+			return max;
+		}
+		if(_scelta == 0){		// ricerca minore
+			int min = _head->val;
+			Nodo *_tmp = _head;
+			while ( _tmp != NULL){	// scorro lista
+				if(_tmp->val < min )	// aggiorno minimo
+					min = _tmp->val;
+				_tmp = _tmp->next;
+			}
+			return min;
+		}
+		return -1;	// se parametro errato
+	}
+	return -1;		// se lista vuota
+}
+int contaNodi(Nodo* _head){
+	int cnt = 0;	// numero nodi
+	Nodo* _tmp = _head;	// nodo tmp per scorrere
+	while ( _tmp != NULL){			// scorro lista
+		cnt++;
+		_tmp = _tmp->next;
+	}
+	return cnt;		// ritorno numero nodi
 }
