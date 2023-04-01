@@ -16,7 +16,7 @@ void initVettore(int [],int);
 void initVettoreRandom(int [],int ,int ,int );
 void stampaVettore(int [],int);
 /**
-* @abstract Moltiplica tutte le celle del vettore per un valore fisso detto fattore
+* @brief Moltiplica tutte le celle del vettore per un valore fisso detto fattore
 * @param int[] vettore da utilizzare
 * @param int dimensione del vettore
 * @param int fattore moltiplicativo
@@ -24,7 +24,7 @@ void stampaVettore(int [],int);
 void moltiplicaVettore(int[], int, int);
 
 /**
-* @abstract trova tutti i multipli di un valore passato e denominato base
+* @brief trova tutti i multipli di un valore passato e denominato base
 * @param int[] vettore da utilizzare
 * @param int dimensione del vettore
 * @param int valore di riferimento "base" 
@@ -32,7 +32,7 @@ void moltiplicaVettore(int[], int, int);
 void trovaMultipli(int[], int, int);
 
 /**
-* @abstract dato un vettore in input modificarne ogni singolo parametro mettendo
+* @brief dato un vettore in input modificarne ogni singolo parametro mettendo
 la somma cumulativa fino alla iesima posizione
 * @param int[] vettore da utilizzare
 * @param int dimensione del vettore
@@ -40,14 +40,14 @@ la somma cumulativa fino alla iesima posizione
 void totaliSuccessivi(int[], int);
 
 /**
-* @Abstract verifica se i valori del vettore sono tutti in ordine crescente
+* @brief verifica se i valori del vettore sono tutti in ordine crescente
 * @param int[] vettore da utilizzare
 * @param int dimensione del vettore
 */
 void verificaVettoreCrescente(int[], int);
 
 /**
-* @Abstract inverte i valori nel vettore rispetto alla metà del vettore
+* @brief inverte i valori nel vettore rispetto alla metà del vettore
 * @param int[] vettore da utilizzare
 * @param int dimensione vettore
 */
