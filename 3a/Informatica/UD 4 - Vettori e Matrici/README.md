@@ -23,3 +23,9 @@ Esercitazione sull'uso dei vettori e delle funzioni.
 - [x] Dato un vettore in input modificarne ogni singolo parametro mettendo la somma cumulativa fino alla iesima posizione.
 - [x] Verifica se i valori del vettore sono tutti in ordine crescente.
 - [x] Inverte i valori nel vettore rispetto alla metà del vettore.
+
+**p04.c**
+Esercitazione sull'uso dei vettori e delle funzioni.
+- [x] Inizializza un vettore con valori random compresi tra min e max;se gli estremi sono a 0 i numeri random vanno da 1 a 100.
+- [x] Funzione che ritorna la media di tutti i valori del vettore.
+- [x] Inizializza un vettore con valori random univoci compresi tra 1 e 2 * dim
