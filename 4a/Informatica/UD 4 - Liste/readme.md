@@ -1,12 +1,13 @@
-### *ELENCO ESERCITAZIONI*
+### *LIST OF EXERCISES*
 
 **p01.c**  
-Esercitazione con sviluppo e test di funzioni inerenti le liste.
-- [x] addTesta Aggiunge un nodo alla testa della lista.
-- [x] showLista Visualizza una lista partendo dalla testa.
-- [x] showListaRecursive Visualizza una lista con funzione ricorsiva.
-- [x] showListaReversedREcursive Visualizza una lista al contrario con funzione ricorsiva.
-- [x] popTesta Estra un nodo dalla testa della lista con controllo sull'esistenza.
-- [x] pushCoda Aggiunge un nodo alla coda della lista.
-- [x] ricercaMaxMinLista Ricerca e restituisce il massimo o il minimo presente nella lista.
-- [x] contaNodi Determina e restituisce la lunghezza di una lista.
+xample about definition and menagement of a list.
+- [x] addTesta Add a new node to the head of the list.
+- [x] showLista Show all nodes of a list.
+- [x] showListaRecursive Show all nodes of a list with recursive function.
+- [x] showListaReversedRecursive Show a list from the tail to the head with a recursive function.
+- [x] popTesta Extract a node from the head of the list, check if the list exist.
+- [x] pushCoda Add a new node the the tail of the list.
+- [x] ricercaMaxMinLista Search and return the min or max value, min or max selected by user with a flag as parameter.
+- [x] contaNodi Count and return the number of nodes of a list.
+- [x] pushInPos Add a new node into a specific position of the list.

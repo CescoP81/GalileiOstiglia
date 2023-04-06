@@ -1,69 +1,70 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Definizione dells truttura Nodo
+// Definition of the structure Nodo.
 typedef struct nodo{
     int val;
     struct nodo *next;
 }Nodo;
 
-// Dichiarazione dei prototipi
+/* Declaration of prototypes */ 
 /**
- * @brief Aggiunge un nodo in testa alla lista
- * @param Nodo* Puntatore alla testa della lista.
- * @param int Valore da inserire nel nodo.
- * @return Nuova testa della lista.
+ * @brief Add a new node to the head of the list.
+ * @param Nodo* Pointer to the head.
+ * @param int Value to save.
+ * @return Return the new head of the list.
 */
 Nodo* addTesta(Nodo *, int);
 /**
- * @brief Visualizza una lista.
- * @param Nodo* Puntatore alla testa della lista.
+ * @brief Show all nodes of a list.
+ * @param Nodo* Pointer to the head.
 */
 void showLista(Nodo *);
 /**
- * @brief Visualizza una lista in modo ricorsivo
- * @param Nodo* Puntatore alla lista.
+ * @brief Show all nodes of a list with recursive function.
+ * @param Nodo* Pointer to the head.
 */
 void showListaRecursive(Nodo *);
 /**
- * @brief Visualizza una lista al contrario in modo ricorsivo.
- * @param Nodo* Puntatore alla lista.
+ * @brief Show a list from the tail to the head with a recursive function.
+ * @param Nodo* Pointer to the head.
 */
 void showListaReversedRecursive(Nodo *);
 /**
- * @brief Estrae un nodo dalla testa della lista, con controllo esistenza.
- * @param Nodo* Puntatore alla testa della lista
- * @return Nuova testa della lista.
+ * @brief Extract a node from the head of the list, check if the list exist.
+ * @param Nodo* Pointer to the head.
+ * @return New reference to the head.
 */
 Nodo* popTesta(Nodo *);
 /**
- * @brief Aggiunge un nodo alla coda della lista.
- * @param Nodo* Puntatore alla testa della lista.
- * @param int valore da inserire nel nodo
- * @return Nodo* Puntatore alla nuova testa.
+ * @brief Add a new node the the tail of the list.
+ * @param Nodo* Pointer to the head.
+ * @param int Value to save into the new node.
+ * @return Nodo* New reference to the head.
 */
 Nodo* pushCoda(Nodo *, int );
 /**
- * @brief Ricerca il valore massimo o minimo interno alla lista.
- * @param Nodo* Puntatore alla testa della lista.
- * @param int 0->Minimo; 1->Massimo
- * @return Valore trovato.
+ * @brief Search and return the min or max value, min or max selected by user with a flag as parameter.
+ * @param Nodo* Pointer to the head.
+ * @param int Flag 0->min; 1->max
+ * @return The searched value
 */
 int ricercaMaxMinLista(Nodo *, int);
 /**
- * @brief Determina la lunghezza di una lista.
- * @param Nodo* Puntatore alla testa della lista.
- * @return Numero di nodi che compongono la lista.
+ * @brief Count and return the number of nodes of a list.
+ * @param Nodo* Pointer to the head.
+ * @return The number of nodes of a list.
 */
 int contaNodi(Nodo*);
 /**
- * @brief Inserisce un nodo nella posizione scelta
- * @param Nodo* Puntatore alla testa della lista.
- * @param int posizione scelta.
- * @param int valore.
- * @return Riferimento alla testa della lista.
+ * @brief Add a new node into a specific position of the list.
+ * @param Nodo* Pointer to the head.
+ * @param int the selected position, check if the position exist.
+ * @param int The value to save into the list.
+ * @return Return the new head of the list.
 */
 Nodo* pushinPos(Nodo*, int, int);
+
 // ### MAIN PROOGRAM ###
 int main(){
     Nodo *t;        // puntatore alla testa della lista.
