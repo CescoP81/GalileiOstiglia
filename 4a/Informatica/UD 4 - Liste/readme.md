@@ -10,4 +10,7 @@ xample about definition and menagement of a list.
 - [x] pushCoda Add a new node the the tail of the list.
 - [x] ricercaMaxMinLista Search and return the min or max value, min or max selected by user with a flag as parameter.
 - [x] contaNodi Count and return the number of nodes of a list.
-- [x] pushInPos Add a new node into a specific position of the list.
+- [x] pushAtPos Add a new node into a specific position of the list.
+- [x] writeToFile Open a file and write the number of the list in it.
+- [x] loadFromFile Create a list with values from a specific file.
+- [x] mergeList Merge the second list into the first list.

@@ -64,34 +64,10 @@ int contaNodi(Nodo*);
  * @return Return the new head of the list.
 */
 Nodo* pushAtPos(Nodo*, int, int);
-/**
- * @brief Open a file and write the number of the list in it.
- * @param Nodo* Pointer to the head.
- * @param char Name of the file.
-*/
-void writeToFile(Nodo*, char[]);
-/**
- * @brief Create a list with values from a specific file.
- * @param Nodo* Pointer to the head.
- * @param char Name of the file.
- * @return reference to a created list.
-*/
-Nodo* loadFromFile(Nodo*, char[]);
-/**
- * @brief Merge the second list into the first list.
- * @param Nodo* Pointer to the first list.
- * @param Nodo* Pointer to the second list.
- * @return reference to a created list.
-*/
-Nodo* mergeList(Nodo*, Nodo*);
 
 // ### MAIN PROOGRAM ###
 int main(){
     Nodo *t;        // puntatore alla testa della lista.
-    Nodo *t2;
-    Nodo *t3;
-    t3 = NULL;
-    t2 = NULL;
     t = NULL;       // inizialmente punta a NULL (nessuna lista creata)
 
     // eseguo tre inserimenti di prova.
@@ -117,19 +93,6 @@ int main(){
 	
 	t = pushAtPos(t, contaNodi(t)-2, 100);
 	showLista(t);
-	
-	writeToFile(t, "lista.txt");
-	printf("\n");
-	showLista(t);
-	
-	t2 = loadFromFile(t2, "lista.txt");
-	showLista(t2);
-	printf("\n---\n");
-	
-	t3 = mergeList(t3, t);
-	t3 = mergeList(t3, t2);
-	t2 = NULL;
-	showLista(t3);
     return(0);
 }
 
@@ -264,34 +227,7 @@ Nodo* pushAtPos(Nodo* _head, int pos, int val){
 		box->next = x->next;
 		x->next = box;
 		return (_head);
-	}	
-}
-void writeToFile(Nodo* _head, char _filename[]){
-	FILE *f = fopen(_filename, "w");		//open a file in mode writing
+	}
 	
-	while(_head != NULL){					//run 'til head is NULL 
-		fprintf(f, "%d\n", _head->val);
-		_head = _head->next;
-	}
-	fclose(f);								//close the file
-}
-Nodo* loadFromFile(Nodo* _head, char _filename[]){
-	FILE *f = fopen(_filename, "r");
-	int valore;
 	
-	while(!feof(f)){
-		if(fscanf(f, "%d", &valore) > 0){
-			printf("%d\n", valore);
-			_head = pushCoda(_head, valore);
-		}
-	}
-	fclose(f);
-	return (_head);
-}
-Nodo* mergeList(Nodo* _head1, Nodo* _head2){
-	while(_head2 != NULL){
-		_head1 = pushCoda(_head1, _head2->val);
-		_head2 = _head2->next;
-	}
-	return(_head1);
 }
