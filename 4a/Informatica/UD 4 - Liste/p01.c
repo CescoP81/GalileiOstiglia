@@ -63,7 +63,7 @@ int contaNodi(Nodo*);
  * @param int The value to save into the list.
  * @return Return the new head of the list.
 */
-Nodo* pushinPos(Nodo*, int, int);
+Nodo* pushAtPos(Nodo*, int, int);
 
 // ### MAIN PROOGRAM ###
 int main(){
@@ -83,15 +83,15 @@ int main(){
     /*
     showListaReversedRecursive(t); 
 	*/
-	t = pushinPos(t, 1, 99); 
+	t = pushAtPos(t, 1, 99); 
 	showLista(t);
 	printf("\n\n");
 	
-	t = pushinPos(t, contaNodi(t)+1, 66);
+	t = pushAtPos(t, contaNodi(t)+1, 66);
 	showLista(t);
 	printf("\n\n");
 	
-	t = pushinPos(t, contaNodi(t)-2, 100);
+	t = pushAtPos(t, contaNodi(t)-2, 100);
 	showLista(t);
     return(0);
 }
@@ -190,7 +190,7 @@ int contaNodi(Nodo* _head){
 	}
 	return cnt;		// ritorno numero nodi
 }
-Nodo* pushinPos(Nodo* _head, int pos, int val){
+Nodo* pushAtPos(Nodo* _head, int pos, int val){
 	/*
 	Nodo* nPos = malloc(sizeof(Nodo));
 	nPos->val = val;
