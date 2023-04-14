@@ -1,7 +1,7 @@
 ### *LIST OF EXERCISES*
 
 **p01.c**  
-xample about definition and menagement of a list.
+Example about definition and menagement of a list.
 - [x] addTesta Add a new node to the head of the list.
 - [x] showLista Show all nodes of a list.
 - [x] showListaRecursive Show all nodes of a list with recursive function.
@@ -14,3 +14,10 @@ xample about definition and menagement of a list.
 - [x] writeToFile Open a file and write the number of the list in it.
 - [x] loadFromFile Create a list with values from a specific file.
 - [x] mergeList Merge the second list into the first list.
+
+**p02.c**  
+Example of a list with nodes containing a structure.
+- [x] addTesta Add a new node to the head of the list.
+- [x] showLista Show all nodes of a list.
+- [x] writeToFile Open a file and write the structures of the list in it.
+- [x] loadFromFile Open a file and read each structure and create a list with them.
