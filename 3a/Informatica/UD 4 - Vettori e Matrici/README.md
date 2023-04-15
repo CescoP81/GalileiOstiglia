@@ -29,3 +29,8 @@ Esercitazione sull'uso dei vettori e delle funzioni.
 - [x] Inizializza un vettore con valori random compresi tra min e max;se gli estremi sono a 0 i numeri random vanno da 1 a 100.
 - [x] Funzione che ritorna la media di tutti i valori del vettore.
 - [x] Inizializza un vettore con valori random univoci compresi tra 1 e 2 * dim
+
+**p05.c**
+- [x] Richiede l'inserimento di valori univoci nel vettore senza un range.
+- [x] Ritorna il valore del vettore più vicino al valore passato come parametro.
+- [x] Funzione che stampa a video i valori di vet1 non presenti in vet2.
