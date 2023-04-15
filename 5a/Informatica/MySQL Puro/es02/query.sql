@@ -44,8 +44,28 @@ HAVING totale>=3 AND totale<=4
 ORDER BY totale ASC;
 -- WHERE c.id=t.idCittaDestinatario AND t.data BETWEEN '2023-03-01' AND '2023-03-31'
 
---8) Visualizzare tutti i trasporti (quintali, data, mezzo) che hanno provincia_mittente e provincia_destinatario diverse.
+--8) Visualizzare tutti i trasporti (quintali, data, mezzo) che hanno provincia_mittente
+--      e provincia_destinatario diverse.
+SELECT t.quintali, t.data, m.descrizione, c1.nome, p1.descrizione, c2.nome, p2.descrizione
+FROM trasporto as t, mezzo as m,
+        citta as c1, citta as c2, 
+        provincia as p1, provincia as p2
+WHERE t.idMezzo = m.id AND 
+        c1.idProvincia = p1.id AND
+        c2.idProvincia = p2.id AND
+        t.idCittaMittente = c1.id AND
+        t.idCittaDestinatario = c2.id AND 
+        p1.id <> p2.id 
 
 --9) Visualizzare tutti i percorsi di 5 tappe.
-
+SELECT t.data, c1.nome, c2.nome, c3.nome, c4.nome, c5.nome
+FROM trasporto as t1, citta as c1, 
+    trasporto as t2, citta as c2,
+    trasporto as t3, citta as c3,
+    trasporto as t4, citta as c4,
+    trasporto as t5, citta as c5
+WHERE t1.idCittaDestinatario = t2.idCittaMittente AND
+        t2.idCittaDestinatario = t3.idCittaMittente AND
+        t2.data > t1.data AND
+        t3.data > t2.data 
 --9-bis) Visualizzare il percorso più lungo. 
