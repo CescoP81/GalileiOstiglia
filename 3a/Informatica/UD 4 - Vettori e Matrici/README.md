@@ -34,3 +34,6 @@ Esercitazione sull'uso dei vettori e delle funzioni.
 - [x] Richiede l'inserimento di valori univoci nel vettore senza un range.
 - [x] Ritorna il valore del vettore più vicino al valore passato come parametro.
 - [x] Funzione che stampa a video i valori di vet1 non presenti in vet2.
+
+**p06.c**
+Esercitazione eseguita sabato 22.04.2023
