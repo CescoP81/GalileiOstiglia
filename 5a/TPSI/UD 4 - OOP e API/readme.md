@@ -1,1 +1,0 @@
-Esercitazione sulla creazione di oggetti in PHP e relative API, commentatura ed esempi di utilizzo.

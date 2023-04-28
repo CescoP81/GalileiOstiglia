@@ -1,6 +1,10 @@
 <?php
 /**
  * Classe Studente di prova per mostrare l'uso di metodi, attributi pubblici e privati.
+ * @version 1.0.0
+ * @author Francesco pradella
+ * @license GPL
+ * @link http://www.github.com/cescop81
  */
 class Studente{
     private $nome;
@@ -12,6 +16,7 @@ class Studente{
      * @param string $_n Nome
      * @param string $_c Cognome
      * @param integer $_e Età
+     * @return void
      */
     public function __construct($_n, $_c, $_e){
             $this->nome = $_n;

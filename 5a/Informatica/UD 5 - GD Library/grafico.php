@@ -40,15 +40,6 @@ $gray = imageColorAllocate($im, 200,200,200);
 $red = imageColorAllocate($im, 200,0,0);
 $green = imageColorAllocate($im, 0,200,0);
 $blue = imageColorAllocate($im, 0,0,200);
-/**
- * Funzione di prova con phpDocumentor
- * @param integer $x Variabile 1 della funzione
- * @param integer $y Variabile 2 della funzioneù
- * @return integer Moltiplicazione tra x e y.
- */
-function miaFunzione($x, $y){
-    return($x*$y);
-}
 
 // disegno il perimetro della png.
 imageRectangle($im, 0, 0, $width-1, $height-1, $black);
@@ -65,12 +56,33 @@ for($i = 0; $i<$numberOfValues; $i++){
 }
 // */
 
+/* grafico le linee orizzontali di riferimento */
+$dy =   $availableHeight / 9;   // lo spazio tra una linea e l'altra, la prima linea coincide con l'asse y e l'ultima con il bordo dell'area grafico.
+$y = $height-$marginBottom;
+for($i = 1; $i<=10; $i++){
+    if($y < $marginTop) $y = $marginTop;
+    imageLine($im, $marginLeft-5, $y, $marginLeft+5, $y, $red);
+    $y = $y - $dy;
+}
+
+/* visualizzo le etichette valori di riferimento a fianco dell'asse y */
+$dy =   $availableHeight / 9;
+$y = $height-$marginBottom;
+$value = 0;
+for($i = 1; $i<=10; $i++){
+    if($y < $marginTop) $y = $marginTop;
+    $numberOfDigits = strlen((string)round($value));
+    imageString($im, 3, $marginLeft-($numberOfDigits*8)-10, $y-7, round($value), $black);
+    $y = $y - $dy;
+    $value = $value + ($maxValue/10);
+}
+
+
 /*  grafico i punti all'interno del grafico.
     la coordinata Y del punto la devo determinare come proporzione del valore massimo presente nel vettore con il valore massimo di altezza disponibile.
     $availableHeight:$maxValue = $y:$values[$i] -> $y = $availableHeight*$values[$i]/$maxValue
     Devo poi individuarla all'interno dell'area grafica sapendo che l'asse Y è invertito rispetto al normale.
 */
-
 $x = $marginLeft;
 for($i = 0; $i<$numberOfValues; $i++){
     $y = $availableHeight*$values[$i]/$maxValue;
@@ -81,7 +93,6 @@ for($i = 0; $i<$numberOfValues; $i++){
 
 /* Grafico le linee tra i punti, il ciclo che si muove sul vettore dei valori deve fermarsi sul penultimo valore,
     perchè una linea parte dal punti i e arriva al punto i+1. */
-
     $x = $marginLeft;
 for($i = 0; $i<$numberOfValues-1; $i++){
     $y1 = $availableHeight*$values[$i]/$maxValue;
@@ -92,7 +103,6 @@ for($i = 0; $i<$numberOfValues-1; $i++){
 }//*/
 
 /* Visualizzo le stringhe come didascalie dell'asse x. */
-
 $x = $marginLeft;
 for($i = 0; $i<$numberOfValues; $i++){
     imageString($im, 4, $x-12, $height-$marginBottom+10, $labels[$i], $black);
