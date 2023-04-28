@@ -5,6 +5,7 @@
  * @author Francesco pradella
  * @license GPL
  * @link http://www.github.com/cescop81
+ * @package GalileiOstiglia\5a\TPSI\UD4_OOP
  */
 class Studente{
     private $nome;
@@ -47,7 +48,12 @@ class Studente{
 }
 
 /**
- * Seconda classe di prova
+ * Classe Studente di prova per mostrare l'uso di metodi, attributi pubblici e privati.
+ * @version 1.0.0
+ * @author Francesco pradella
+ * @license GPL
+ * @link http://www.github.com/cescop81
+ * @package GalileiOstiglia\5a\TPSI\UD4_OOP
  */
 class Insegnante{
     private $nome;
