@@ -8,7 +8,7 @@
 header("Content-type: image/png");
 
 // Vettori contenenti i valori e le etichette da graficare.
-$values = Array(8,12,16,20,25,28,33,32,27,14,13,10);
+$values = Array(8,12,16,20,25,28,37,42,35,14,13,10);
 $labels = Array('Gen','Feb','Mar','Apr','Mag','Giu','Lug','Ago','Set','Ott','Nov','Dic');
 
 /*### DATI INIZIALI PER LA CREAZIONE DEL GRAFICO ###
@@ -76,7 +76,6 @@ for($i = 1; $i<=10; $i++){
     $y = $y - $dy;
     $value = $value + ($maxValue/10);
 }
-
 
 /*  grafico i punti all'interno del grafico.
     la coordinata Y del punto la devo determinare come proporzione del valore massimo presente nel vettore con il valore massimo di altezza disponibile.
