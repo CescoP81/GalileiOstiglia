@@ -6,30 +6,15 @@ else $anno = Date("Y"); // -> mi restituisci l'anno corrente.
 */
 header("Content-type: image/png");
 
+// recupero i dati dal database.
 $db = new mysqli("localhost","root","","scuola2223");
 $sql = "SELECT gen, feb, mar, apr, mag, giu FROM datigrafico WHERE anno='$anno'";
 $rs = $db->query($sql);
 $db->close();
-$fattibile = true;
-if($rs->num_rows == 0)
+
+$fattibile = true;          // fattibile lo uso come flag, vale true se la query mi ha estratto almeno un record, altrimenti vale false.
+if($rs->num_rows == 0)      // in base allo stato di 'fattibile' poi determino se fare il grafico o il messaggio di errore.
     $fattibile = false;
-
-if($fattibile){
-    $record = $rs->fetch_assoc();
-
-    // recupero e creo un vettore labels con i nomi delle colonne che compongono un record.
-    $labels = array_keys($record);
-    /*for($i=0; $i<count($labels); $i++)
-        echo($labels[$i]."<br />");
-    echo("<br />"); //*/
-    $values = Array();
-    for($i=0; $i<count($labels); $i++){
-        //echo($record[$labels[$i]]."<br />");
-        array_push($values, $record[$labels[$i]]);
-    }
-    /*
-    for($i=0; $i<count($values); $i++)
-        echo($values[$i]." - ");*/
 
     // RECUPERATI VALORI E ETICHETTE (VALUES, LABELS) COSTRUISCO IL GRAFICO.
     /*### DATI INIZIALI PER LA CREAZIONE DEL GRAFICO ###
@@ -44,6 +29,17 @@ if($fattibile){
     $marginLeft = 150;      // margine sinistro al grafico.
     $marginBottom = 130;     // margine inferiore al grafico.
     $marginRight = 70;      // margine destro al grafico.
+
+if($fattibile){
+    $record = $rs->fetch_assoc();
+
+    // recupero e creo un vettore labels con i nomi delle colonne che compongono un record.
+    $labels = array_keys($record);
+    $values = Array();
+    for($i=0; $i<count($labels); $i++){
+        //echo($record[$labels[$i]]."<br />");
+        array_push($values, $record[$labels[$i]]);
+    }    
 
     $availableHeight = $height - $marginTop - $marginBottom;        // calcolo dell'altezza massima del grafico, necessario per le proporzioni.
     $numberOfValues = count($values);                               // determino quanti elementi devo graficare.
@@ -130,15 +126,6 @@ if($fattibile){
     }// */
 }
 else{
-    // immagine non realizzabile perchè mancano i dati
-    $width = 640;           // larghezza totale dell'area immagine.
-    $height = 480;
-    $str = "ALERT!! IMMAGINE NON REALIZZABILE";
-    $im = imageCreate($width, $height);
-    $white = imageColorAllocate($im, 255,255,255);
-    $black = imageColorAllocate($im, 0,0,0);
-    $red = imageColorAllocate($im, 200,0,0);
-    // disegno il perimetro della png.
     imageRectangle($im, 0, 0, $width-1, $height-1, $black);
     imageString($im, 5, ($width/2)-(strlen($str)*8)/2, ($height/2), $str, $red);
 }
