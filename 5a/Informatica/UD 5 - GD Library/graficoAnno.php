@@ -30,6 +30,15 @@ if($rs->num_rows == 0)      // in base allo stato di 'fattibile' poi determino s
     $marginBottom = 130;     // margine inferiore al grafico.
     $marginRight = 70;      // margine destro al grafico.
 
+    /* ### CREAZIONE DELLA TELA GRAFICA E ALLOCAZIONE DI ALCUNI COLORI */
+    $im = imageCreate($width, $height);                             // creo l'area grafica.
+    $white = imageColorAllocate($im, 255,255,255);                  // alloco i colori necessari, il primo è il background dell'area grafica.
+    $black = imageColorAllocate($im, 0,0,0);
+    $gray = imageColorAllocate($im, 200,200,200);
+    $red = imageColorAllocate($im, 200,0,0);
+    $green = imageColorAllocate($im, 0,200,0);
+    $blue = imageColorAllocate($im, 0,0,200);
+
 if($fattibile){
     $record = $rs->fetch_assoc();
 
@@ -47,16 +56,7 @@ if($fattibile){
     for($i=1; $i<$numberOfValues; $i++)
         if($values[$i] > $maxValue)
             $maxValue = $values[$i];
-    $maxValue += 5;
-
-    /* ### CREAZIONE DELLA TELA GRAFICA E ALLOCAZIONE DI ALCUNI COLORI */
-    $im = imageCreate($width, $height);                             // creo l'area grafica.
-    $white = imageColorAllocate($im, 255,255,255);                  // alloco i colori necessari, il primo è il background dell'area grafica.
-    $black = imageColorAllocate($im, 0,0,0);
-    $gray = imageColorAllocate($im, 200,200,200);
-    $red = imageColorAllocate($im, 200,0,0);
-    $green = imageColorAllocate($im, 0,200,0);
-    $blue = imageColorAllocate($im, 0,0,200);
+    $maxValue += 5;    
 
     // disegno il perimetro della png.
     imageRectangle($im, 0, 0, $width-1, $height-1, $black);
@@ -126,6 +126,7 @@ if($fattibile){
     }// */
 }
 else{
+    $str = "ALERT - ERRORE NEI DATI O DATI INESISTENTI".
     imageRectangle($im, 0, 0, $width-1, $height-1, $black);
     imageString($im, 5, ($width/2)-(strlen($str)*8)/2, ($height/2), $str, $red);
 }
