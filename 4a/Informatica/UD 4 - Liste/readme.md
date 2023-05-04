@@ -22,10 +22,13 @@ Example of a list with nodes containing a structure.
 - [x] writeToFile Open a file and write the structures of the list in it.
 - [x] loadFromFile Open a file and read each structure and create a list with them.
 
-**p03.c**
+**p03.c**   
 Example of a list with nodes containing a structure.
 - [x] Add a new node to the head of the list.
 - [x] Show all nodes of a list.
 - [x] Order all elements in a list.
 - [x] Order all elements in a list by surname. User can choose the order type Ascendig or Descending.
 - [x] Ordered add of an element to the list.
+
+**p04.c**   
+Esempio di funzioni addTesta e addCoda utilizzando un puntatore di puntatore per indicizzare la testa della lista evitando la return.
