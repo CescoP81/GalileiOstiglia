@@ -1,0 +1,42 @@
+<!--
+    Esempio di base sull'utilizzo di Javascript innestato in una pagina HTML, utilizzando elementi base come Bottoni e una DIV
+    per la visualizzazione di messaggi.
+    Reference Javascript: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+-->
+<html>
+    <head>
+        <title>Prova di Javascript</title>
+    </head>
+    <body>
+        A: <input type="text" id="txtField1"> B: <input type="text" id="txtField2"><br />
+        <input type="button" value="Visualizza" id="btn1" onclick="functionClick()">
+        <input type="button" value="Somma" id="btnSomma" onClick="functionSomma()">
+        <div id="myWindow" style="width: 640px; height: 480px; border: solid 2px rgb(0,0,0);">
+            Output Windows is ready<br />
+        </div>
+
+        <script language=""Javascript">
+            function functionClick(){
+                let a;
+                let b;
+
+                a = document.querySelector("#txtField1").value;
+                b = document.querySelector("#txtField2").value;
+                document.querySelector("#myWindow").innerHTML += "A:" + a + " B:" + b;
+                document.querySelector("#myWindow").innerHTML += "<br />";
+            }
+            
+            function functionSomma(){
+                let a = document.querySelector("#txtField1").value;
+                let b = document.querySelector("#txtField2").value;
+
+                a = parseInt(a);
+                b = parseInt(b);
+                
+                document.querySelector("#myWindow").innerHTML += a + " + " + b + " = "+ (a+b);
+                document.querySelector("#myWindow").innerHTML += "<br />";
+
+            }
+        </script>
+    </body>
+</html>
