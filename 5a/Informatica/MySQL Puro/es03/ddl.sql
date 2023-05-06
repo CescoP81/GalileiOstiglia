@@ -97,3 +97,17 @@ insert into specieFauna(idOrdine, specie, anniAdulto, nEsemplariRischio) values 
 insert into specieFauna(idOrdine, specie, anniAdulto, nEsemplariRischio) values (2, 'vipera', 1, 50);
 insert into specieFauna(idOrdine, specie, anniAdulto, nEsemplariRischio) values (3, 'falco', 3, 30);
 insert into specieFauna(idOrdine, specie, anniAdulto, nEsemplariRischio) values (3, 'aquila', 3, 10);
+
+insert into parcoFlora(idSpecieFlora, idParco) values(1, 2);
+insert into parcoFlora(idSpecieFlora, idParco) values(1, 4);
+insert into parcoFlora(idSpecieFlora, idParco) values(1, 7);
+insert into parcoFlora(idSpecieFlora, idParco) values(2, 3);
+insert into parcoFlora(idSpecieFlora, idParco) values(2, 5);
+insert into parcoFlora(idSpecieFlora, idParco) values(2, 7);
+insert into parcoFlora(idSpecieFlora, idParco) values(5, 1);
+insert into parcoFlora(idSpecieFlora, idParco) values(5, 2);
+insert into parcoFlora(idSpecieFlora, idParco) values(5, 4);
+insert into parcoFlora(idSpecieFlora, idParco) values(5, 5);
+insert into parcoFlora(idSpecieFlora, idParco) values(8, 5);
+insert into parcoFlora(idSpecieFlora, idParco) values(8, 6);
+insert into parcoFlora(idSpecieFlora, idParco) values(8, 7);
