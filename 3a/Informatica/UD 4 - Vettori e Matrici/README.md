@@ -37,3 +37,6 @@ Esercitazione sull'uso dei vettori e delle funzioni.
 
 **p06.c**
 Esercitazione eseguita sabato 22.04.2023
+
+**p07.c**   
+Esercitazione sull'utilizzo delle matrici.
