@@ -1,7 +1,6 @@
-### *LIST OF EXERCISES* :+1:
-:smiling_face_with_three_hearts:
+### *LIST OF EXERCISES* 
 
-**p01.c**  :+1:
+**p01.c**  
 Example about definition and menagement of a list.
 - [x] addTesta Add a new node to the head of the list.
 - [x] showLista Show all nodes of a list.
@@ -16,14 +15,14 @@ Example about definition and menagement of a list.
 - [x] loadFromFile Create a list with values from a specific file.
 - [x] mergeList Merge the second list into the first list.
 
-**p02.c**  :+1:
+**p02.c**  
 Example of a list with nodes containing a structure.
 - [x] addTesta Add a new node to the head of the list.
 - [x] showLista Show all nodes of a list.
 - [x] writeToFile Open a file and write the structures of the list in it.
 - [x] loadFromFile Open a file and read each structure and create a list with them.
 
-**p03.c**  :+1: 
+**p03.c**   
 Example of a list with nodes containing a structure.
 - [x] Add a new node to the head of the list.
 - [x] Show all nodes of a list.
@@ -31,5 +30,5 @@ Example of a list with nodes containing a structure.
 - [x] Order all elements in a list by surname. User can choose the order type Ascendig or Descending.
 - [x] Ordered add of an element to the list.
 
-**p04.c**  :+1:  
+**p04.c**    
 Esempio di funzioni addTesta e addCoda utilizzando un puntatore di puntatore per indicizzare la testa della lista evitando la return.
