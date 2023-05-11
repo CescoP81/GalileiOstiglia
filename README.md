@@ -5,8 +5,11 @@ Materiale didattico sviluppato per gli studenti del triennio Informatica e Telec
 + Anni scolastici precedenti vengono archiviati spostando le cartelle classe nella relativa cartella dell'anno, così da avere: Anno Scolastico/Classe/Materia/Unità Didattica.
 
 ### Commit Messages
-+ **UPL**: Nuovo materiale è caricato dopo una lezione o a supporto di una lezione ancora da svolgere.   
-+ **UPD**: Materiale esistente ha subito un aggiornameto (es. esercizi completati o incrementati, schemi ER con nuove tabelle, etc...)
++ **UPL**oad: Nuovo materiale è caricato dopo una lezione o a supporto di una lezione ancora da svolgere.   
++ **UPD**ate: Materiale esistente ha subito un aggiornameto (es. esercizi completati o incrementati, schemi ER con nuove tabelle, etc...)
 
 ### Issues   
 Nella sezione Issue è possibile postare richieste di aggiornamento/chiarimento su esercitazioni presenti. Ogni Issue **deve** contenere il riferimento all'esercizio in oggetto e una spiegazione chiara della richiesta.
+
+### Wiki   
+E' attualmente in fase di organizzazione e verrà implementata a partire dell'anno scolastico 2023/24.
