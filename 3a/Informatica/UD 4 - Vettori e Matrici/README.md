@@ -60,3 +60,6 @@ Esercitazione sull'utilizzo delle matrici.
 - [x] Ricerca un valore nella matrice e stampa tutte le posizioni (i,j)in cui compare
 - [x] Sostituisce un valore presente nella matrice con un nuovo valore passato come parametro
 - [x] Ricerca e stampa le coordinate del valore massimo presente nella matrice
+
+**p08.c**
+Esercitazione del 13.05.2023

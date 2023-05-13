@@ -20,7 +20,6 @@ WHERE
 tf.tipologia = 'piante erbacee';
 
 -- numero di parchi che hanno del rosmarino (Marcheselli production @Marcheselli)
-
 SELECT COUNT(p.id) as 'numero parchi'
 FROM specieFlora AS s , parcoFlora as pf , parco as p
 WHERE s.id = pf.idSpecieFlora AND pf.idParco = p.id

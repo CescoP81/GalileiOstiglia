@@ -69,7 +69,7 @@ insert into tipoFlora(tipologia) values('piante erbacee');
 
 insert into parco(parco, regione) values('Colli Euganei', 'Veneto');
 insert into parco(parco, regione) values('Dolomiti Bellunesi', 'Veneto');
-insert into parco(parco, regione) values('Dolomiti D\'Ampezzo', 'Veneto');
+insert into parco(parco, regione) values('Dolomiti D''Ampezzo', 'Veneto');
 insert into parco(parco, regione) values('Lessinia', 'Veneto');
 
 insert into parco(parco, regione) values('Adamello', 'Lombardia');
@@ -111,3 +111,18 @@ insert into parcoFlora(idSpecieFlora, idParco) values(5, 5);
 insert into parcoFlora(idSpecieFlora, idParco) values(8, 5);
 insert into parcoFlora(idSpecieFlora, idParco) values(8, 6);
 insert into parcoFlora(idSpecieFlora, idParco) values(8, 7);
+
+-- da terminare e da caricare.
+insert into esemplareFauna (idParco, idSpecie, nome, dataNascita, sesso, salute)
+values (1, 1, 'Artemio', '2023/01/01', 'm', 'Buona');
+insert into esemplareFauna (idParco, idSpecie, nome, dataNascita, sesso, salute)
+values (1, 2, 'Lilith', '2021/02/10', 'f', 'Buona');
+insert into esemplareFauna (idParco, idSpecie, nome, dataNascita, sesso, salute)
+values (1, 5, 'Rigolo', '2022/06/18', 'm', 'Guarigione ala dx');
+
+insert into esemplareFauna (idParco, idSpecie, nome, dataNascita, sesso, salute)
+values (2, 1, 'Artemio', '2023/01/01', 'm', 'Buona');
+insert into esemplareFauna (idParco, idSpecie, nome, dataNascita, sesso, salute)
+values (2, 2, 'Lilith', '2021/02/10', 'f', 'Buona');
+insert into esemplareFauna (idParco, idSpecie, nome, dataNascita, sesso, salute)
+values (3, 5, 'Rigolo', '2022/06/18', 'm', 'Guarigione ala dx');
