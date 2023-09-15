@@ -14,4 +14,5 @@ Materiale didattico sviluppato per gli studenti del triennio Informatica e Telec
 Nella sezione Issue è possibile postare richieste di aggiornamento/chiarimento su esercitazioni presenti. Ogni Issue **deve** contenere il riferimento all'esercizio in oggetto e una spiegazione chiara della richiesta.
 
 ### Wiki   
-E' attualmente in fase di organizzazione e verrà implementata a partire dell'anno scolastico 2023/24.
+In questa sezione troverai un'indicazione degli argomenti che verranno trattati durante l'anno scolastico così da avere sempre una visione
+chiara sul percorso intrapreso.
