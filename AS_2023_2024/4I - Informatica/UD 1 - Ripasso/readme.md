@@ -9,3 +9,5 @@ Programma di allenamento su vettori e funzioni.
 - [x] Stampa un vettore di DIM elementi interi.
 - [x] Calcola e restituisce la media di un vettore di DIM elementi interi.
 - [x] Trova e restituisce il valore maggiore presente nel vettore.
+
+**p03.c**
