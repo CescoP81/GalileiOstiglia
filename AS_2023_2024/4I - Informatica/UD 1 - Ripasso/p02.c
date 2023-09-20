@@ -9,7 +9,10 @@
 
 const int DIM=10;
 
+<<<<<<< HEAD
 /*-- PROTOTIPI --*/
+=======
+>>>>>>> 360724f564134fa976513e907a6486042f72dc6b
 /**
  * Inizializza un vettore di DIM elementi interi con valori tra 1 e 20 estremi compresi.
  * @param int[] Vettore di riferimento
@@ -37,7 +40,11 @@ float mediaVettore(int[], int);
 */
 int massimoVettore(int[], int);
 
+<<<<<<< HEAD
 /*-- MAIN PROGRAM --*/
+=======
+
+>>>>>>> 360724f564134fa976513e907a6486042f72dc6b
 int main(){
     int vet[DIM];
     initVettore(vet, DIM);
@@ -48,7 +55,10 @@ int main(){
     return(0);
 }
 
+<<<<<<< HEAD
 /*-- FUNZIONI --*/
+=======
+>>>>>>> 360724f564134fa976513e907a6486042f72dc6b
 void initVettore(int _vet[], int _dim){
     int i;
     srand(time(NULL));
