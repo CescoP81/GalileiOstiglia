@@ -15,7 +15,7 @@ $user = "root";
 $password = "";
 $db_name = "scuola2223";
 
-require("../../../fpdf184/fpdf.php");
+require("../../../../fpdf184/fpdf.php");
 $mypdf = new FPDF;                  // creo l'oggetto fpdf
 $mypdf->AddPage();                  // alloco una pagina bianca
 $mypdf->SetFont('Arial','',12);    // imposto il font iniziale

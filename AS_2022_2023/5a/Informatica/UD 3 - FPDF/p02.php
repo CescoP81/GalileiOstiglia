@@ -5,7 +5,7 @@
     http://www.fpdf.org
     Ver 1.84
 */
-require("../../../fpdf184/fpdf.php");
+require("../../../../fpdf184/fpdf.php");
 
 $mypdf = new FPDF();
 $mypdf->AddPage();
