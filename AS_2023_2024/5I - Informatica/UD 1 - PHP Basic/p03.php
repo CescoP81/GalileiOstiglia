@@ -1,6 +1,6 @@
 <?php
     echo("<HTML>
-    <HEAD><TITLE>Prove con i Vettori</TITLE></HEAD>
+    <HEAD><TITLE>Prove di passaggio valori con HTTP Request</TITLE></HEAD>
     <BODY>
     ");
 
