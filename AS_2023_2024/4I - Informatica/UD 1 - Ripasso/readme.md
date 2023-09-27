@@ -11,3 +11,10 @@ Programma di allenamento su vettori e funzioni.
 - [x] Trova e restituisce il valore maggiore presente nel vettore.
 
 **p03.c**
+Programma di ripasso su vettori e gestione con funzioni di ordinamento, scambio, ricerca e sostituzione.
+- [x] Inizializzazione di un vettore di 10 elementi con valori random compresi tra 1 e 25 (estremi compresi).
+- [x] Visualizzazione vettore.
+- [x] Ordinamento vettore Crescente-decrescente.
+- [x] Swap tra posizioni.
+- [ ] Ricerca valore.
+- [ ] Sostituzione valore.

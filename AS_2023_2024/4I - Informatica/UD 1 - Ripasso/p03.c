@@ -11,9 +11,29 @@
 #include <time.h>
 
 const int DIM=10;
+/**
+ * Inizializza un vettore con valori random compresi tra 1 e 25 estremi compresi.
+ * @param int[] Vettore di riferimento.
+ * @param int Dimensione del vettore.
+*/
 void initVettore(int[], int);
+/**
+ * Stampa un vettore a video
+ * @param int[] Vettore di riferimento.
+ * @param int Dimensione del vettore.
+*/
 void printVettore(int[], int);
+/**
+ * Ordina in modo crescente un vettore di interi.
+ * @param int[] Vettore di riferimento.
+ * @param int Dimensione del vettore.
+*/
 void orderAscending(int[], int);
+/**
+ * Ordina in modo decrescente un vettore di interi.
+ * @param int[] Vettore di riferimento.
+ * @param int Dimensione del vettore.
+*/
 void orderDescending(int[], int);
 /**
  * Ordina un vettore in modo crescente o decrescente a scelta dell'utente
@@ -35,21 +55,21 @@ int swapPosizioniVettore(int[], int, int, int);
 int main(){
     int vettore[DIM];
 
-    initVettore(vettore, DIM);
-    printVettore(vettore, DIM);
+    initVettore(vettore, DIM);          // genero un vettore.
+    printVettore(vettore, DIM);         // stampo il vettore.
 
-    orderAscending(vettore, DIM);
-    printVettore(vettore, DIM);
+    orderAscending(vettore, DIM);       // ordino il vettore in modo crescene.
+    printVettore(vettore, DIM);         // stampo il vettore.
 
-    initVettore(vettore, DIM);
-    orderDescending(vettore, DIM);
-    printVettore(vettore, DIM);
+    initVettore(vettore, DIM);          // genero il vettore con nuovi valori.
+    orderDescending(vettore, DIM);      // ordino il vettore in modo decrescente.
+    printVettore(vettore, DIM);         // stampo il vettore.
 
     printf("\n");
-    initVettore(vettore, DIM);
-    printVettore(vettore, DIM);
-    orderVettore(vettore, DIM, 1);
-    printVettore(vettore, DIM);
+    initVettore(vettore, DIM);          // genero il vetore con nuovi valori.
+    printVettore(vettore, DIM);         // stampo il vettore.
+    orderVettore(vettore, DIM, 1);      // ordino il vettore in modo decrescente con parametro 1.
+    printVettore(vettore, DIM);         // stampo il vettore.
 
     printf("\n");
     // prima chiamata della swap con indici validi
