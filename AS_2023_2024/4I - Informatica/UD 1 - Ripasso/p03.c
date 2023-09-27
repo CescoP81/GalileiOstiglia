@@ -15,7 +15,6 @@ void initVettore(int[], int);
 void printVettore(int[], int);
 void orderAscending(int[], int);
 void orderDescending(int[], int);
-
 /**
  * Ordina un vettore in modo crescente o decrescente a scelta dell'utente
  * @param int[] Vettore di riferimento.
@@ -23,6 +22,15 @@ void orderDescending(int[], int);
  * @param int Scelta ordinamento 0->Crescente / 1->Decrescente
 */
 void orderVettore(int[], int, int);
+/**
+ * Scambia i valori contenuti in due posizioni scelte dall'utente.
+ * @param int[] Vettore di riferimento.
+ * @param int Dimensione del vettore.
+ * @param int Posizione 1.
+ * @param int Posizione 2.
+ * @return 0->Se lo scambio non è possibile, 1->Se lo scambio è stato effettuato.
+*/
+int swapPosizioniVettore(int[], int, int, int);
 
 int main(){
     int vettore[DIM];
@@ -43,6 +51,18 @@ int main(){
     orderVettore(vettore, DIM, 1);
     printVettore(vettore, DIM);
 
+    printf("\n");
+    // prima chiamata della swap con indici validi
+    if(swapPosizioniVettore(vettore, DIM, 2, 6))
+        printVettore(vettore, DIM);
+    else
+        printf("Errore negli indici...\n");
+
+    // seconda chiamata della swap con indici non validi, la funzione ritorna 0->False
+    if(swapPosizioniVettore(vettore, DIM, 2, 12))
+        printVettore(vettore, DIM);
+    else
+        printf("Errore negli indici...\n");
     return(0);
 }
 
@@ -88,7 +108,6 @@ void orderDescending(int _vet[], int _dim){
         }
     }
 }
-
 void orderVettore(int _vet[], int _dim, int _order){
     int i, j;
     int tmp;
@@ -115,4 +134,16 @@ void orderVettore(int _vet[], int _dim, int _order){
             }
         }
     }
+}
+int swapPosizioniVettore(int _vet[], int _dim, int _pos1, int _pos2){
+    int tmp;
+    if(_pos1<0 || _pos1>=_dim)
+        return(0);
+    if(_pos2<0 || _pos2>=_dim)
+        return(0);
+
+    tmp = _vet[_pos1];
+    _vet[_pos1] = _vet[_pos2];
+    _vet[_pos2] = tmp;
+    return(1);
 }
