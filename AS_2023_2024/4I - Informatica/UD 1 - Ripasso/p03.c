@@ -52,8 +52,25 @@ void orderVettore(int[], int, int);
 */
 int swapPosizioniVettore(int[], int, int, int);
 
+/**
+*cerca la mediana
+*@param int[] vettore da usare
+*@param int dimensione del vettore
+*@return float mediana
+*/
+float srcMediana(int [], int);
+
+/**
+*creca la moda 
+*@param int[] vettpre da utilizzare
+*@param int dimensione del vettore
+*@return int moda
+*/
+int srcModa(int [], int);
+
 int main(){
     int vettore[DIM];
+    float mediana;
 
     initVettore(vettore, DIM);          // genero un vettore.
     printVettore(vettore, DIM);         // stampo il vettore.
@@ -83,6 +100,9 @@ int main(){
         printVettore(vettore, DIM);
     else
         printf("Errore negli indici...\n");
+        
+    mediana=srcMediana(vettore, DIM);
+    printf("%.2f", mediana);
     return(0);
 }
 
@@ -166,4 +186,26 @@ int swapPosizioniVettore(int _vet[], int _dim, int _pos1, int _pos2){
     _vet[_pos1] = _vet[_pos2];
     _vet[_pos2] = tmp;
     return(1);
+}
+
+float srcMediana(int _vet[], int _dim){
+	int i;
+	float m;
+	int pos=_dim/2;		//finds the middle of the vector
+	
+	orderAscending(_vet, _dim);		//orders the vector
+	if(_dim % 2 == 1){
+		m=_vet[pos];
+	}else{
+		m=(float)(_vet[pos]+_vet[pos-1])/2;
+	}
+	
+	return(m);
+}
+
+int srcModa(int _vet[], int _dim){
+	int i;
+	int moda=0;
+	
+	if()
 }
