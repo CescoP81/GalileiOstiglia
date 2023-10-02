@@ -1,0 +1,43 @@
+<mxfile host="65bd71144e">
+    <diagram id="6S3kMw867aCkZ4dyhE8o" name="Page-1">
+        <mxGraphModel dx="1087" dy="907" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="18" value="&lt;h1&gt;I blocchi grafici da utilizzare&lt;/h1&gt;&lt;p&gt;Elenco dei principali blocchi che verranno utilizzati nella schematizzazione flow-chart.&lt;/p&gt;" style="text;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="40" width="440" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" target="27">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="270" y="240.0000000000001" as="targetPoint"/>
+                        <mxPoint x="200" y="160" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="20" value="inizio / fine" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_1;whiteSpace=wrap;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="140" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="output" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="220" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="&lt;br&gt;input" style="html=1;strokeWidth=2;shape=manualInput;whiteSpace=wrap;rounded=1;size=26;arcSize=11;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="300" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="decisione / domanda" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="380" width="100" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="500" width="20" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="operazione, assegnazione, inizializzazione" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="540" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="Connettore tra rami Vero e Falso" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="120" y="495" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="Linea di connessione con freccia terminale" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="250" width="80" height="80" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
