@@ -1,4 +1,6 @@
 <?php
+// p04_1.php ? baseUtente=6 & altezzaUtente=8 & scelta=perimetro
+
 /* check variabili */
 if(isset($_REQUEST['baseUtente'])) $b=$_REQUEST['baseUtente']; else $b=0;
 if(isset($_REQUEST['altezzaUtente'])) $h=$_REQUEST['altezzaUtente']; else $h=0;
