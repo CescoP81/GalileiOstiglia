@@ -30,7 +30,10 @@ void exportSingleLetterCSV(char[], char[]);
 
 // === MAIN PROGRAM ==
 int main(){
-    int scelta;
+    int scelta;     // variabile per la scelta utente nel menu.
+    Libro l;        // struttura per memorizzare i dati in input da tastiera o da file.
+    FILE *fpout;    // puntatore a file in scrittura.
+    FILE *fpin;     // puntatore a file in lettura.
     do{
         printf("-- MENU --\n");
         printf("1. Inserisci nuovo libro.\n");
@@ -43,6 +46,18 @@ int main(){
 
         switch(scelta){
             case 1:{
+                // richiedo i dati del libro.
+                printf("Titolo: ");
+                scanf("%s", l.titolo);
+                printf("Autore: ");
+                scanf("%s", l.autore);
+                printf("Numero Pagine: ");
+                scanf("%d", &l.nrPagina);
+                printf("Prezzo: ");
+                scanf("%s", &l.prezzo);
+                fflush(stdin);
+                
+                addNewBook(l, "libreria.dat");
                 break;
             }
             case 2:{
@@ -60,3 +75,9 @@ int main(){
     return(0);
 }
 // == Sviluppo funzioni ==
+void addNewBook(Libro _l, char _filename[]){
+    FILE *fpout;    // puntatore a file in scrittura.
+    fpout = fopen(_filename, "a+b");
+    fwrite(&_l, sizeof(Libro), 1, fpout);
+    fclose(fpout);
+}
