@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Try Json Files</title>
+    </head>
+    <body>
+        <script>
+            async function logMovies() {
+                const response = await fetch("http://scuola.localhost/libreria.json");
+                const movies = await response.json();
+                alert("Sono dentro");
+            }
+        </script>
+    </body>
+</html>
