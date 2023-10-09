@@ -21,7 +21,7 @@ Estensione dell'esercizio precedente mettendo però il codice html iniziale e fi
 **p04_3.php**
 Come esercizio precedente ma è stata inserita la sintassi BootStrap per l'utilizzo del framework che utilizzeremo per le interfacce delle web applications.
 
-### **TRY YOURSEFL**
+### **TRY YOURSELF**
 Utilizza il linguaggio PHP e la sintassi bootstrap per realizzare le seguenti pagine e verificare i contenuti fin qui visti.
 
 **p05.php**
