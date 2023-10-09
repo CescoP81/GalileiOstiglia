@@ -20,3 +20,15 @@ Estensione dell'esercizio precedente mettendo però il codice html iniziale e fi
 
 **p04_3.php**
 Come esercizio precedente ma è stata inserita la sintassi BootStrap per l'utilizzo del framework che utilizzeremo per le interfacce delle web applications.
+
+### **TRY YOURSEFL**
+Utilizza il linguaggio PHP e la sintassi bootstrap per realizzare le seguenti pagine e verificare i contenuti fin qui visti.
+
+**p05.php**
+Realizza una pagina php che richiede tre valori, alla pressione del bottone di submit verifica se sono in ordine crescente oppure no.
+
+**p06.php**
+Realizza una pagina php che richiede un valore all'untente, alla pressione del bottone di submit: 1. genera un vettore di N (N inserito dall'utente) valori casuali compresi tra 10 e 25; 2. visualizza il vettore; determina quali valori nel vettori sono numeri primi.
+
+**p07.php**
+Realizza una pagina php che richiede un valore all'utente, alla pressione del bottone di submit genera una tabella HTML di tante righe e tante colonne quanto è il valore inserito e dove in ogni cella sia inserito il risultato (RIGA x COLONNA)
