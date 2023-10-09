@@ -4,7 +4,7 @@ require("head.php");
 
     // realizzo il form per la richiesta dei dati...
     echo("
-        <form action=\"p05.php\" method=\"get\">
+        <form action=\"p05.php\" method=\"post\">
             <div class=\"mb-3\">
                 <label for=\"numeroUno\" class=\"form-label\">Numero 1:</label>
                 <input type=\"text\" class=\"form-control\" id=\"numeroUno\" name=\"numeroUno\" placeholder=\"Insert a number\">
@@ -23,7 +23,8 @@ require("head.php");
             <button type=\"submit\" class=\"btn btn-primary\">Verifica ordine crescenza</button>
         </form>
     ");
-// p05.php?numeroUno=5&numeroDue=7&numeroTre=9
+// p05.php?numeroUno=5&numeroDue=7&numeroTre=9 USANDO GET
+// p05.php // USANDO POST
     // realizzo la parte che controlla i dati se la pagina è richiamata dal bottone del form
     if(isset($_REQUEST['numeroUno'])) $n1 = $_REQUEST['numeroUno']; else $n1 = null;
     if(isset($_REQUEST['numeroDue'])) $n2 = $_REQUEST['numeroDue']; else $n2 = null;
