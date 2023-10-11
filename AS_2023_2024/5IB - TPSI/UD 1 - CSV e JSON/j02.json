@@ -1,0 +1,30 @@
+{
+    "uomini":[
+        {
+            "cognome": "Rossi",
+            "nome": "Mario",
+            "data_nascita": "12/05/1999",
+            "numero_figli": 3
+        },
+        {
+            "cognome": "Verdi",
+            "nome": "Alberto",
+            "data_nascita": "03/02/2000",
+            "numero_figli": 1
+        }
+    ],
+    "donne":[
+        {
+            "cognome": "Bianchi",
+            "nome": "Annamaria",
+            "data_nascita": "12/05/1989",
+            "numero_figli": 0
+        },
+        {
+            "cognome": "Rossi",
+            "nome": "Agata",
+            "data_nascita": "03/02/2001",
+            "numero_figli": 1
+        }
+    ]
+}

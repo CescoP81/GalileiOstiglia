@@ -1,0 +1,14 @@
+[
+    {
+        "cognome": "Rossi",
+        "nome": "Mario",
+        "data_nascita": "12/05/1999",
+        "numero_figli": 3
+    },
+    {
+        "cognome": "Verdi",
+        "nome": "Alberto",
+        "data_nascita": "03/02/2000",
+        "numero_figli": 1
+    }
+]
