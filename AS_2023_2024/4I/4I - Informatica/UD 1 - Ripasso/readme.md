@@ -31,3 +31,7 @@ Programma di gestione matrice
 - [ ] Calcolo e stampa della somma di ogni colonna.
 - [ ] Sostituzione di un valore 'src' con un altro 'dst' in tutta la matrice.
     ## ogni punto è una funzione!
+
+**p05.c**
+Programma di stampa di un vettore di interi con l'utilizzo di una funzione
+ricorsiva. Nella funzione sono presenti sia la stampa da sinistra a destra che da destra a sinistra, basta commentare o meno uno dei due blocchi.
