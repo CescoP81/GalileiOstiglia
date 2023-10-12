@@ -5,11 +5,22 @@
     </head>
     <body>
         <script>
-            async function logMovies() {
-                const response = await fetch("http://scuola.localhost/libreria.json");
-                const movies = await response.json();
-                alert("Sono dentro");
+            /*function logMovies() {
+                const response = fetch("http://scuola.localhost/libreria.json");
+                const movies = response.json();
+                document.write("Ok...");
             }
+            logMovies();*/
+            fetch('libreria.json')
+            .then(response => response.json())
+            .then(mioRisultato => {
+                //alert(mioRisultato.titolo);
+                document.write(mioRisultato.titolo+"<br />");                  
+                document.write(mioRisultato.autore+"<br />");
+                document.write(mioRisultato.pagine+"<br />");
+                document.write(mioRisultato.prezzo+"<br />");
+                }
+            );
         </script>
     </body>
 </html>
