@@ -1,16 +1,56 @@
 <!doctype html>
 <html>
     <head>
-        <title>Try Json Files</title>
+        <title>Try JSON Files</title>
     </head>
     <body>
         <script>
-            /*function logMovies() {
-                const response = fetch("http://scuola.localhost/libreria.json");
-                const movies = response.json();
-                document.write("Ok...");
+            /* await funziona SOLO se innestata in una funzione async!*/
+
+            async function provaSingleJson(){
+                const response = await fetch('libreria.json');  // recupero la promise -> il file contiene un singolo json
+                const libro = await response.json();            // ottengo il json dalla promise
+                console.log(libro);                             // stampo il json in console
+
+                // stampo il json nel browser
+                document.write("<h2>Apertura Libreria.json -> Singolo Json</h2> ");
+                document.write(libro.titolo+"<br>");
+                document.write(libro.autore+"<br>");
+                document.write(libro.pagine+"<br>");
+                document.write(libro.prezzo+"<br>");
+                
+            } 
+            
+            async function provaArrayJson(){
+                const response = await fetch('libreriavet.json');   // recupero la promise -> il file contiene 3 json.
+                const libro = await response.json();                // ottengo il vettore di json
+                console.log(libro);                                 // stampo i json in console
+
+                // con un ciclo stampo i json nel browser
+                document.write("<h1>Apertura Libreriavet.json -> Array di Json</h1>");
+                let arrayLen = libro.length;
+                document.write("Json presenti: "+arrayLen+"<br>");
+                for(let i=0; i<arrayLen; i++){
+                    document.write("#"+i+"<br>");
+                    document.write(libro[i].titolo+"<br />");                  
+                    document.write(libro[i].autore+"<br />");
+                    document.write(libro[i].pagine+"<br />");
+                    document.write(libro[i].prezzo+"<br />"); //*/
+                    document.write("<br>"); 
+                }
             }
-            logMovies();*/
+
+            /* o richiamo le funzioni direttamente nella sezione script o le richiamo dentro ad una ulteriore async */
+            async function test(){
+                provaSingleJson();
+                provaArrayJson();
+            }
+
+            test();
+
+
+            /* funzionante con fetch() e costrutto .then() */
+            /*
             fetch('libreria.json')
             .then(response => response.json())
             .then(mioRisultato => {
@@ -20,7 +60,7 @@
                 document.write(mioRisultato.pagine+"<br />");
                 document.write(mioRisultato.prezzo+"<br />");
                 }
-            );
+            );*/
         </script>
     </body>
 </html>
