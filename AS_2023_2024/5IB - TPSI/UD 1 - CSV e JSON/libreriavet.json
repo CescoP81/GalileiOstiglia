@@ -1,0 +1,26 @@
+[
+    {
+        "titolo": "Il barone rampante",
+        "autore": "Italo Cavolino",
+        "pagine": 165,
+        "prezzo": 8.55
+    },
+    {
+        "titolo": "It",
+        "autore": "Stephen King",
+        "pagine": 400,
+        "prezzo": 18.55
+    },
+    {
+        "titolo": "Ventimila Leghe Sotto ai Mari",
+        "autore": "Jules Verne",
+        "pagine": 220,
+        "prezzo": 5.55
+    },
+    {
+        "titolo": "Green Mile",
+        "autore": "Stephen King",
+        "pagine": 320,
+        "prezzo": 15.55
+    }
+]
