@@ -8,8 +8,10 @@
     <body>
         <div class="container">
             <div class="alert alert-success">JSON</div>
-            <div id="vista"></div>
+            <div id="vista" style="border: solid 2px rgb(200,0,0);"></div>
         </div>
+
+        
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script>
         async function loadArrayJson(){
@@ -17,19 +19,25 @@
             const libro = await response.json();                // ottengo il vettore di json
             console.log(libro);                                 // stampo i json in console
 
+            let v = document.querySelector("#vista");
+            let t = "";
+            t += "<div class='alert alert-primary'>Tabella</div>";
+            t += "<table class='table table-striped'>";
+            t += "<thead><tr><th>ID</th><th>Titolo</th><th>Autore</th><th>Pagine</th><th>Prezzo</th></tr></thead>";
+            t += "<tbody>";
             
-            // con un ciclo stampo i json nel browser
-            document.write("<h1>Apertura Libreriavet.json -> Array di Json</h1>");
             let arrayLen = libro.length;
-            document.write("Json presenti: "+arrayLen+"<br>");
             for(let i=0; i<arrayLen; i++){
-                document.write("#"+i+"<br>");
-                document.write(libro[i].titolo+"<br />");                  
-                document.write(libro[i].autore+"<br />");
-                document.write(libro[i].pagine+"<br />");
-                document.write(libro[i].prezzo+"<br />"); 
-                document.write("<br>"); 
+                t += "<tr>";
+                t += "<td>#"+i+"</td>";
+                t += "<td>"+libro[i].titolo+"</td>";
+                t += "<td>"+libro[i].autore+"</td>";
+                t += "<td>"+libro[i].pagine+"</td>"; 
+                t += "<td>"+libro[i].prezzo+"</td>";               
+                t += "</tr>";
             }//*/
+            t += "</tbody></table>";
+            v.innerHTML += t;
         }
         loadArrayJson();
     </script>

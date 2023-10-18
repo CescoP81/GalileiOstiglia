@@ -16,5 +16,11 @@
         "autore": "Jules Verne",
         "pagine": 220,
         "prezzo": 5.55
+    },
+    {
+        "titolo": "Green Mile",
+        "autore": "Stephen King",
+        "pagine": 320,
+        "prezzo": 15.55
     }
 ]
