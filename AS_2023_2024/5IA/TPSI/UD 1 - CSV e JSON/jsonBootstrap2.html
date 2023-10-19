@@ -17,7 +17,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script>
         async function loadArrayJson(){
-            const response = await fetch('libreriavet.json');   // recupero la promise -> il file contiene 3 json.
+            const response = await fetch('getJsonLibreria.php');   // recupero la promise -> il file contiene 3 json.
             const libro = await response.json();                // ottengo il vettore di json
             console.log(libro);                                 // stampo i json in console
             let arrayLen = libro.length;
@@ -27,21 +27,21 @@
             
             t += "<div class='alert alert-primary'>Tabella Libri</div>";
             t += "<table class='table table-striped'>";
-            t += "<thead><tr><th>ID</th><th>Titolo</th><th>Autore</th><th>Pagine</th><th>Prezzo</th></tr></thead>";
+            t += "<thead><tr><th>ID</th><th>Nome</th><th>Cognome</th><th>Anni</th><th>Paese</th></tr></thead>";
             t += "<tbody>";
             
             //alert(arrayLen);
             for(let i=0; i<arrayLen; i++){
                 t += "<tr>";
-                t += "<td>#"+i+"</td>";
-                t += "<td>"+libro[i].titolo+"</td>";
-                t += "<td>"+libro[i].autore+"</td>";
-                t += "<td>"+libro[i].pagine+"</td>"; 
-                t += "<td>"+libro[i].prezzo+"</td>";               
+                t += "<td>#"+libro[i].id+"</td>";
+                t += "<td>"+libro[i].nome+"</td>";
+                t += "<td>"+libro[i].cognome+"</td>";
+                t += "<td>"+libro[i].anni+"</td>"; 
+                t += "<td>"+libro[i].paese+"</td>";               
                 t += "</tr>";
             }//*/
             t += "</tbody>";
-            t += "<caption>Elenco libri da Json file</caption></table>";
+            t += "<caption>Elenco Uomini da tabella mysql in JSON</caption></table>";
             v.innerHTML += t;
         }
         function emptyVista(){
