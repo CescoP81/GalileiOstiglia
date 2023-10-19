@@ -87,11 +87,14 @@
                 <td>".$record['nome']."</td>
                 <td>".$record['cognome']."</td>
                 <td>".$record['anni']."</td>
-                <td>".$record['paese']."</td>
+                <td>".mb_convert_encoding($record['paese'], "utf-8")."</td>
             ");
         }
         echo("</tbody>");
         echo("<caption>Elenco uomini presenti nel database</caption>");
     echo("</table>");
  require("foot.php");
+
+ $str = "pinco pallo";
+ $str = mb_convert_encoding($str, "utf-8");
 ?>

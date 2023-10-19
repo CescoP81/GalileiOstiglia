@@ -32,3 +32,6 @@ Realizza una pagina php che richiede un valore all'untente, alla pressione del b
 
 **p07.php**
 Realizza una pagina php che richiede un valore all'utente, alla pressione del bottone di submit genera una tabella HTML di tante righe e tante colonne quanto è il valore inserito e dove in ogni cella sia inserito il risultato (RIGA x COLONNA)
+
+**uomo.php**
+Pagina di esempio che visualizza un form per inserimento dati e conseguente inserimento nel database con sintassi mySQL. La pagina esegui l'inserimento di un nuovo record e la visualizzazione del contenuto della tabella nel database.
