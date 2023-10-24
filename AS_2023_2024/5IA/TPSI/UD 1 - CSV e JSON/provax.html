@@ -1,12 +1,15 @@
 <html>
-    <head><title>DOM</title></head>
+    <head>
+        <title>DOM</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    </head>
     <body>
         <div id="vista"></div>
         <script>
-            function f(){
+            function f(c){
                 //alert("x");
                 let v = document.querySelector("#vista");
-                v.setAttribute("style","color: rgb(200,0,0);");
+                v.setAttribute("style","color: rgb("+c+");");
         
                 const h = document.createElement("h1");
                 const t = document.createTextNode("Hello World");
@@ -14,13 +17,11 @@
                 h.appendChild(t);
                 v.appendChild(h);
                 // */
-
-                //let x = document.createElement("td");
-                //x.setAttribute("class", "col");
-
-
             }
-            f();
+            f("200,0,0");
+            f("0,200,0");
+            f("0,0,200");
         </script>
-    </body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+       </body>
 </html>
