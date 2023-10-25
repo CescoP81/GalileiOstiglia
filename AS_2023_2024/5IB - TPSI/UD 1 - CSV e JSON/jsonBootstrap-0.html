@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <title>Json con Bootstrap</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="alert alert-success">JSON</div>
+            <div id="vista" style="border: solid 2px rgb(200,0,0);"></div>
+        </div>
+
+        
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+        async function loadArrayJson(){
+            const response = await fetch('libreriavet.json');   // recupero la promise -> il file contiene 3 json.
+            const libro = await response.json();                // ottengo il vettore di json
+            console.log(libro);                                 // stampo i json in console
+
+            let v = document.querySelector("#vista");
+            let t = "";
+            t += "<div class='alert alert-primary'>Tabella</div>";
+            t += "<table class='table table-striped'>";
+            t += "<thead><tr><th>ID</th><th>Titolo</th><th>Autore</th><th>Pagine</th><th>Prezzo</th></tr></thead>";
+            t += "<tbody>";
+            
+            let arrayLen = libro.length;
+            for(let i=0; i<arrayLen; i++){
+                t += "<tr>";
+                t += "<td>#"+i+"</td>";
+                t += "<td>"+libro[i].titolo+"</td>";
+                t += "<td>"+libro[i].autore+"</td>";
+                t += "<td>"+libro[i].pagine+"</td>"; 
+                t += "<td>"+libro[i].prezzo+"</td>";               
+                t += "</tr>";
+            }//*/
+            t += "</tbody></table>";
+            v.innerHTML += t;
+        }
+        loadArrayJson();
+    </script>
+    </body>
+</html>
