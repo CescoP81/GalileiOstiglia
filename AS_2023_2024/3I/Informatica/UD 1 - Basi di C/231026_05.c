@@ -1,7 +1,7 @@
 /*
     Author: Francesco P.
     Date:   2023.10.26
-    file:   231026_04.c
+    file:   231026_05.c
     Desc:   Richiedi in input un valore intero (ipotizza sia una somma in euro),
             calcola e comunica a quanto corrispondono in Dollari (USD), YEN, Fiorino Ungherese.
 */
