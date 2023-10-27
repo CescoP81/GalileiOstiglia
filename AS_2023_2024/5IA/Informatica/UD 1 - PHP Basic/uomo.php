@@ -141,7 +141,4 @@
         echo("</table>");
     }
  require("foot.php");
-
- $str = "pinco pallo";
- $str = mb_convert_encoding($str, "utf-8");
 ?>
