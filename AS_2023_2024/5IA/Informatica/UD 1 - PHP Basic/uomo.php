@@ -13,28 +13,73 @@
 
  require("head.php");
 
+    echo("<nav class=\"navbar navbar-expand-lg bg-body-tertiary\">
+            <div class=\"container-fluid\">
+            
+                <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
+                    <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">
+                        <li class=\"nav-item\">
+                            <a class=\"nav-link active\" aria-current=\"page\" href=\"uomo.php\">Home</a>
+                        </li>
+                    
+                        <li class=\"nav-item dropdown\">
+                            <a class=\"nav-link dropdown-toggle\" href=\"#\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
+                                Tabella Uomo
+                            </a>
+                        <ul class=\"dropdown-menu\">
+                            <li><a class=\"dropdown-item\" href=\"uomo.php?scelta=formUomo\">Aggiungi Uomo</a></li>
+                            <li><a class=\"dropdown-item\" href=\"uomo.php?scelta=vediUomo\">Vedi tabella</a></li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+        </nav>   
+    ");
+    /*
+    <li><hr class=\"dropdown-divider\"></li>
+                    <li><a class=\"dropdown-item\" href=\"#\">Something else here</a></li>
+                    </ul>
+    <li class=\"nav-item\">
+                    <a class=\"nav-link\" href=\"#\">Link</a>
+                </li>
+    <a class=\"navbar-brand\" href=\"#\">Navbar</a>
+            <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+                <span class=\"navbar-toggler-icon\"></span>
+            </button>
+
+    <li class=\"nav-item\">
+                    <a class=\"nav-link disabled\" aria-disabled=\"true\">Disabled</a>
+                </li>
+
+        <form class=\"d-flex\" role=\"search\">
+                <input class=\"form-control me-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">
+                <button class=\"btn btn-outline-success\" type=\"submit\">Search</button>
+                </form>
+    */
     // costruisco il form bootstrap per l'inserimento dei dati di un nuovo record.
-    echo("<div class=\"alert alert-primary\"><h3>Form inserimento nuovo record</h3></div>");
-    echo("<form action=\"uomo.php\">
-        <div class=\"mb-3\">
-            <label for=\"nomeUomo\" class=\"form-label\">Nome:</label>
-            <input type=\"text\" class=\"form-control\" id=\"nomeUomo\" name=\"nomeUomo\" placeholder=\"Insert a name\">
-        </div>
-        <div class=\"mb-3\">
-            <label for=\"cognomeUomo\" class=\"form-label\">Cognome:</label>
-            <input type=\"text\" class=\"form-control\" id=\"cognomeUomo\" name=\"cognomeUomo\" placeholder=\"Insert a surname\">
-        </div>
-        <div class=\"mb-3\">
-            <label for=\"anniUomo\" class=\"form-label\">Anni:</label>
-            <input type=\"text\" class=\"form-control\" id=\"anniUomo\" name=\"anniUomo\" placeholder=\"Insert an age\">
-        </div>
-        <div class=\"mb-3\">
-            <label for=\"paeseUomo\" class=\"form-label\">Paese:</label>
-            <input type=\"text\" class=\"form-control\" id=\"paeseUomo\" name=\"paeseUomo\" placeholder=\"Insert a place\">
-        </div>
-        <input type=\"hidden\" name=\"scelta\" value=\"addUomo\">
-        <button type=\"submit\" class=\"btn btn-primary\">Inserisci nuovo record</button>
-    </form>");
+    if($sc=="formUomo"){
+        echo("<div class=\"alert alert-primary\"><h3>Form inserimento nuovo record</h3></div>");
+        echo("<form action=\"uomo.php\">
+            <div class=\"mb-3\">
+                <label for=\"nomeUomo\" class=\"form-label\">Nome:</label>
+                <input type=\"text\" class=\"form-control\" id=\"nomeUomo\" name=\"nomeUomo\" placeholder=\"Insert a name\">
+            </div>
+            <div class=\"mb-3\">
+                <label for=\"cognomeUomo\" class=\"form-label\">Cognome:</label>
+                <input type=\"text\" class=\"form-control\" id=\"cognomeUomo\" name=\"cognomeUomo\" placeholder=\"Insert a surname\">
+            </div>
+            <div class=\"mb-3\">
+                <label for=\"anniUomo\" class=\"form-label\">Anni:</label>
+                <input type=\"text\" class=\"form-control\" id=\"anniUomo\" name=\"anniUomo\" placeholder=\"Insert an age\">
+            </div>
+            <div class=\"mb-3\">
+                <label for=\"paeseUomo\" class=\"form-label\">Paese:</label>
+                <input type=\"text\" class=\"form-control\" id=\"paeseUomo\" name=\"paeseUomo\" placeholder=\"Insert a place\">
+            </div>
+            <input type=\"hidden\" name=\"scelta\" value=\"addUomo\">
+            <button type=\"submit\" class=\"btn btn-primary\">Inserisci nuovo record</button>
+        </form>");
+    }
 
     // se $sc testata all'inizio della pagina è diversa da null e vale "addUomo" allora recupero le altre variabili dalla HTTP Request.
     // poi eseguo la query di inserimento del nuovo record.
@@ -62,37 +107,39 @@
     }
 
     // creo una tabella bootstrap per visualizzare i dati presenti nel DB e selezionati dalla SELECT.
-    echo("<div class=\"alert alert-primary\"><h3>Contenuto della tabella nel database</h3></div>");
-    $db = new mysqli("localhost","root","","scuola2324"); // apro uno stream dati con il database -> mysql
-    $sql = "SELECT *        
-             FROM uomo";
-    $resultSet = $db->query($sql);
-    $db->close();
+    if($sc=="vediUomo"){
+        echo("<div class=\"alert alert-primary\"><h3>Contenuto della tabella nel database</h3></div>");
+        $db = new mysqli("localhost","root","","scuola2324"); // apro uno stream dati con il database -> mysql
+        $sql = "SELECT *        
+                FROM uomo";
+        $resultSet = $db->query($sql);
+        $db->close();
 
-    echo("<table class=\"table table-striped\"> 
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Cognome</th>
-                <th>Anni</th>
-                <th>Paese</th>
-            </tr>
-        </thead>
-        <tbody>
-    ");
-        while($record = $resultSet->fetch_assoc()){
-            echo("<tr>
-                <th>".$record['id']."</th>
-                <td>".$record['nome']."</td>
-                <td>".$record['cognome']."</td>
-                <td>".$record['anni']."</td>
-                <td>".mb_convert_encoding($record['paese'], "utf-8")."</td>
-            ");
-        }
-        echo("</tbody>");
-        echo("<caption>Elenco uomini presenti nel database</caption>");
-    echo("</table>");
+        echo("<table class=\"table table-striped\"> 
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Cognome</th>
+                    <th>Anni</th>
+                    <th>Paese</th>
+                </tr>
+            </thead>
+            <tbody>
+        ");
+            while($record = $resultSet->fetch_assoc()){
+                echo("<tr>
+                    <th>".$record['id']."</th>
+                    <td>".$record['nome']."</td>
+                    <td>".$record['cognome']."</td>
+                    <td>".$record['anni']."</td>
+                    <td>".mb_convert_encoding($record['paese'], "utf-8")."</td>
+                ");
+            }
+            echo("</tbody>");
+            echo("<caption>Elenco uomini presenti nel database</caption>");
+        echo("</table>");
+    }
  require("foot.php");
 
  $str = "pinco pallo";
