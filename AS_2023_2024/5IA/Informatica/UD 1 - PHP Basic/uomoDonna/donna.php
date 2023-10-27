@@ -10,66 +10,14 @@
  */
 
 if(isset($_REQUEST['scelta'])) $sc = $_REQUEST['scelta']; else $sc = null;
-require("lib.php"); // carico il file di libreria con varie funzioni.
-require("head.php");
+require("include/lib.php");
+require("include/head.php");
+    // richiamo la funzione presente in /include/lib.php per scrivere il codice della navbar.
     scriviNavBar();
-    /*echo("<nav class=\"navbar navbar-expand-lg bg-body-tertiary\">
-            <div class=\"container-fluid\">
-            
-                <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
-                    <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">
-                        <li class=\"nav-item\">
-                            <a class=\"nav-link active\" aria-current=\"page\" href=\"uomo.php\">Home</a>
-                        </li>
-                    
-                        <li class=\"nav-item dropdown\">
-                            <a class=\"nav-link dropdown-toggle\" href=\"#\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
-                                Tabella Uomo
-                            </a>
-                            <ul class=\"dropdown-menu\">
-                                <li><a class=\"dropdown-item\" href=\"uomo.php?scelta=formUomo\">Aggiungi Uomo</a></li>
-                                <li><a class=\"dropdown-item\" href=\"uomo.php?scelta=vediUomo\">Vedi tabella</a></li>
-                            </ul>
-                        </li>
 
-                        <li class=\"nav-item dropdown\">
-                            <a class=\"nav-link dropdown-toggle\" href=\"#\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
-                                Tabella Donna
-                            </a>
-                            <ul class=\"dropdown-menu\">
-                                <li><a class=\"dropdown-item\" href=\"donna.php?scelta=formDonna\">Aggiungi Donna</a></li>
-                                <li><a class=\"dropdown-item\" href=\"donna.php?scelta=vediDonna\">Vedi tabella</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>   
-    ");*/
-    /*
-    <li><hr class=\"dropdown-divider\"></li>
-                    <li><a class=\"dropdown-item\" href=\"#\">Something else here</a></li>
-                    </ul>
-    <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"#\">Link</a>
-                </li>
-    <a class=\"navbar-brand\" href=\"#\">Navbar</a>
-            <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
-                <span class=\"navbar-toggler-icon\"></span>
-            </button>
-
-    <li class=\"nav-item\">
-                    <a class=\"nav-link disabled\" aria-disabled=\"true\">Disabled</a>
-                </li>
-
-        <form class=\"d-flex\" role=\"search\">
-                <input class=\"form-control me-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">
-                <button class=\"btn btn-outline-success\" type=\"submit\">Search</button>
-                </form>
-    */
     // costruisco il form bootstrap per l'inserimento dei dati di un nuovo record.
-    if($sc=="formUomo"){
-        echo("<div class=\"alert alert-primary\"><h3>Form inserimento nuovo record</h3></div>");
+    if($sc=="formDonna"){
+        echo("<div class=\"alert alert-danger\"><h3>Form inserimento nuovo record</h3></div>");
         echo("<form action=\"uomo.php\">
             <div class=\"mb-3\">
                 <label for=\"nomeUomo\" class=\"form-label\">Nome:</label>
@@ -94,7 +42,7 @@ require("head.php");
 
     // se $sc testata all'inizio della pagina è diversa da null e vale "addUomo" allora recupero le altre variabili dalla HTTP Request.
     // poi eseguo la query di inserimento del nuovo record.
-    if($sc == "addUomo"){
+    if($sc == "addDonna"){
         $n = $_REQUEST['nomeUomo'];
         $c = $_REQUEST['cognomeUomo'];
         $a = $_REQUEST['anniUomo'];
@@ -118,11 +66,11 @@ require("head.php");
     }
 
     // creo una tabella bootstrap per visualizzare i dati presenti nel DB e selezionati dalla SELECT.
-    if($sc=="vediUomo"){
-        echo("<div class=\"alert alert-primary\"><h3>Contenuto della tabella nel database</h3></div>");
+    if($sc=="vediDonna"){
+        echo("<div class=\"alert alert-danger\"><h3>Contenuto della tabella nel database</h3></div>");
         $db = new mysqli("localhost","root","","scuola2324"); // apro uno stream dati con il database -> mysql
         $sql = "SELECT *        
-                FROM uomo";
+                FROM donna";
         $resultSet = $db->query($sql);
         $db->close();
 
@@ -148,8 +96,8 @@ require("head.php");
                 ");
             }
             echo("</tbody>");
-            echo("<caption>Elenco uomini presenti nel database</caption>");
+            echo("<caption>Elenco donne presenti nel database</caption>");
         echo("</table>");
     }
- require("foot.php");
+require("include/foot.php");
 ?>

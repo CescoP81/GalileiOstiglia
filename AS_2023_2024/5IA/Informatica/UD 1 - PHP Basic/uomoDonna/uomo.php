@@ -9,43 +9,43 @@
  * - Visualizza un messaggio di conferma di avvenuto inserimento record.
  */
 
- if(isset($_REQUEST['scelta'])) $sc = $_REQUEST['scelta']; else $sc = null;
-require("lib.php");
- require("head.php");
- scriviNavBar();
-/*
- echo("<nav class=\"navbar navbar-expand-lg bg-body-tertiary\">
-    <div class=\"container-fluid\">
-    
-        <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
-            <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">
-                <li class=\"nav-item\">
-                    <a class=\"nav-link active\" aria-current=\"page\" href=\"uomo.php\">Home</a>
-                </li>
+if(isset($_REQUEST['scelta'])) $sc = $_REQUEST['scelta']; else $sc = null;
+require("include/lib.php"); // carico il file di libreria con varie funzioni.
+require("include/head.php");
+    // richiamo la funzione presente in /include/lib.php per scrivere il codice della navbar.
+    scriviNavBar();
+    /*echo("<nav class=\"navbar navbar-expand-lg bg-body-tertiary\">
+            <div class=\"container-fluid\">
             
-                <li class=\"nav-item dropdown\">
-                    <a class=\"nav-link dropdown-toggle\" href=\"#\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
-                        Tabella Uomo
-                    </a>
-                    <ul class=\"dropdown-menu\">
-                        <li><a class=\"dropdown-item\" href=\"uomo.php?scelta=formUomo\">Aggiungi Uomo</a></li>
-                        <li><a class=\"dropdown-item\" href=\"uomo.php?scelta=vediUomo\">Vedi tabella</a></li>
-                    </ul>
-                </li>
+                <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
+                    <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">
+                        <li class=\"nav-item\">
+                            <a class=\"nav-link active\" aria-current=\"page\" href=\"uomo.php\">Home</a>
+                        </li>
+                    
+                        <li class=\"nav-item dropdown\">
+                            <a class=\"nav-link dropdown-toggle\" href=\"#\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
+                                Tabella Uomo
+                            </a>
+                            <ul class=\"dropdown-menu\">
+                                <li><a class=\"dropdown-item\" href=\"uomo.php?scelta=formUomo\">Aggiungi Uomo</a></li>
+                                <li><a class=\"dropdown-item\" href=\"uomo.php?scelta=vediUomo\">Vedi tabella</a></li>
+                            </ul>
+                        </li>
 
-                <li class=\"nav-item dropdown\">
-                    <a class=\"nav-link dropdown-toggle\" href=\"#\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
-                        Tabella Donna
-                    </a>
-                    <ul class=\"dropdown-menu\">
-                        <li><a class=\"dropdown-item\" href=\"donna.php?scelta=formDonna\">Aggiungi Donna</a></li>
-                        <li><a class=\"dropdown-item\" href=\"donna.php?scelta=vediDonna\">Vedi tabella</a></li>
+                        <li class=\"nav-item dropdown\">
+                            <a class=\"nav-link dropdown-toggle\" href=\"#\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
+                                Tabella Donna
+                            </a>
+                            <ul class=\"dropdown-menu\">
+                                <li><a class=\"dropdown-item\" href=\"donna.php?scelta=formDonna\">Aggiungi Donna</a></li>
+                                <li><a class=\"dropdown-item\" href=\"donna.php?scelta=vediDonna\">Vedi tabella</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
-    </nav>   
+                </div>
+            </div>
+        </nav>   
     ");*/
     /*
     <li><hr class=\"dropdown-divider\"></li>
@@ -69,7 +69,7 @@ require("lib.php");
                 </form>
     */
     // costruisco il form bootstrap per l'inserimento dei dati di un nuovo record.
-    if($sc=="formDonna"){
+    if($sc=="formUomo"){
         echo("<div class=\"alert alert-primary\"><h3>Form inserimento nuovo record</h3></div>");
         echo("<form action=\"uomo.php\">
             <div class=\"mb-3\">
@@ -95,7 +95,7 @@ require("lib.php");
 
     // se $sc testata all'inizio della pagina è diversa da null e vale "addUomo" allora recupero le altre variabili dalla HTTP Request.
     // poi eseguo la query di inserimento del nuovo record.
-    if($sc == "addDonna"){
+    if($sc == "addUomo"){
         $n = $_REQUEST['nomeUomo'];
         $c = $_REQUEST['cognomeUomo'];
         $a = $_REQUEST['anniUomo'];
@@ -119,11 +119,11 @@ require("lib.php");
     }
 
     // creo una tabella bootstrap per visualizzare i dati presenti nel DB e selezionati dalla SELECT.
-    if($sc=="vediDonna"){
+    if($sc=="vediUomo"){
         echo("<div class=\"alert alert-primary\"><h3>Contenuto della tabella nel database</h3></div>");
         $db = new mysqli("localhost","root","","scuola2324"); // apro uno stream dati con il database -> mysql
         $sql = "SELECT *        
-                FROM donna";
+                FROM uomo";
         $resultSet = $db->query($sql);
         $db->close();
 
@@ -152,5 +152,5 @@ require("lib.php");
             echo("<caption>Elenco uomini presenti nel database</caption>");
         echo("</table>");
     }
- require("foot.php");
+ require("include/foot.php");
 ?>
