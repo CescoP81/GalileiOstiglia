@@ -17,6 +17,23 @@ VALUES('Maria', 'Rossi', 'Ostiglia', 41);
 INSERT INTO Uomo(nome, cognome, paese, anni)
 VALUES('Mirko', 'Bonavoglia', 'Governolo', 18);
 
+-- INSERIMENTO RECORD TABELLA DONNA
+INSERT INTO Donna(nome, cognome, paese, anni)
+VALUES('Maria', 'Rossi', 'Ostiglia', 47);
+
+INSERT INTO Donna(nome, cognome, paese, anni)
+VALUES('Gina', 'Verdi', 'Poggio Rusco', 27);
+
+INSERT INTO Donna(nome, cognome, paese, anni)
+VALUES('Luisa', 'Bianchi', 'Nuvolato', 45);
+
+INSERT INTO Donna(nome, cognome, paese, anni)
+VALUES('Maria', 'Rossi', 'Ostiglia', 41);
+
+INSERT INTO Donna(nome, cognome, paese, anni)
+VALUES('Alessandra', 'Bentivoglio', 'Governolo', 28);
+
+
 /* non dovrebbe eseguirla perchè mancante il valore del cognome */
 INSERT INTO Uomo(nome, paese, anni)
 VALUES('Rosario', 'Nuvolato', 33);

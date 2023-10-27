@@ -12,3 +12,13 @@ CREATE TABLE Uomo(
 
     PRIMARY KEY(id)
 );
+
+CREATE TABLE Donna(
+    id integer unsigned auto_increment,
+    nome varchar(30) NUT NULL,
+    cognome varchar(15) NOT NULL,
+    paese varchar(15),
+    anni TINYINT,
+
+    PRIMARY KEY(id)
+);
