@@ -81,7 +81,7 @@ void initVettore(int _vet[], int _dim, int _min){
 
     max = _min * 2;
     for(i=0; i<_dim; i++){
-        _vet[i] = _min + rand()%(max - _min + 1);
+        _vet[i] = _min + 1 + rand()%(max - _min);
     }
 }
 void printVettore(int _vet[], int _dim){

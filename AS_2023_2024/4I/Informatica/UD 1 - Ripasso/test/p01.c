@@ -89,7 +89,7 @@ void printVettore(int _vet[], int _dim, int _choice){
     int i;
 
     for(i=0; i<_dim; i++){
-        if(_choice == 0)
+        if(!_choice)
             printf("%3d", _vet[i]);
         if(_choice)
             printf("%3d", _vet[_dim-i-1]);
