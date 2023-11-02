@@ -8,4 +8,6 @@
  * - [] Per ogni lettera calcola e stampa il numero di occorrenze (quante volte ogni lettera compare).
  * - [] Crea stringa inversa. (st1 è l'originale, st2 è l'inversa).
  * - [] Verifica se due stringhe sono anagrammi (st2 è anagramma di st1, anagramma: parole diverse ma formate dalle stesse lettere)
+ * 
+ * Utilizzare le funzioni già esistenti nel file lib.c/lib.h, le nuove funzioni prima farne un test nel main e poi spostarle nel file libreria.
 */
