@@ -8,10 +8,12 @@
     - [x] Conteggio di quante vocali compaiono nella stringa.
     - [x] Sostituzione di una lettera src con una lettera sostitutiva dst.
     - [x] Visualizzazione di una stringa al contrario.
-    - [] Verifica se una parola inserita è palindroma.
+    - [x] Verifica se una parola inserita è palindroma.
 
     Ogni singolo punto è da realizzare con una specifica funzione, relativi parametri
-    passati per valore/riferimento e con ritorno void o non-void. 
+    passati per valore/riferimento e con ritorno void o non-void.
+
+    DIFFERISCE DA P02.C PER L'USO DELLA LIBRERIA CONTENENTE LE FUNZIONI SVILUPPATE.
 */
 #include <stdio.h>
 #include "lib.c"    // include il file con la definizione delle funzioni.
