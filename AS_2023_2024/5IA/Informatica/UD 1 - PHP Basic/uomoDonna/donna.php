@@ -35,7 +35,7 @@ require("include/head.php");
                 <label for=\"paeseUomo\" class=\"form-label\">Paese:</label>
                 <input type=\"text\" class=\"form-control\" id=\"paeseUomo\" name=\"paeseUomo\" placeholder=\"Insert a place\">
             </div>
-            <input type=\"hidden\" name=\"scelta\" value=\"addUomo\">
+            <input type=\"hidden\" name=\"scelta\" value=\"addDonna\">
             <button type=\"submit\" class=\"btn btn-primary\">Inserisci nuovo record</button>
         </form>");
     }
