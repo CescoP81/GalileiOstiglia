@@ -48,7 +48,7 @@ require("include/head.php");
         $a = $_REQUEST['anniUomo'];
         $p = $_REQUEST['paeseUomo'];
 
-        $sql = "INSERT INTO Uomo(nome, cognome, anni, paese)
+        $sql = "INSERT INTO Donna(nome, cognome, anni, paese)
                 VALUES('$n','$c',$a,'$p');";
 
         $db = new mysqli("localhost", "root","","scuola2324");
