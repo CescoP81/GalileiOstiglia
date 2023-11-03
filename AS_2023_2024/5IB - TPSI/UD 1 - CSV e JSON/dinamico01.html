@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Prova HTML dinamico - Uso del DOM</title>
+    </head>
+    <body>
+        <button onClick="disegnaH1();">Scrivi un titolo H1</button><br />
+        <button onClick="creaTitolo();">Aggiunta titolo in DOM</button><br />
+        <button onClick="creaTabella();">Crea tabellina 5x5</button><br />
+        <div id="mioContainer"></div>
+
+        <script>
+            function disegnaH1(){
+                let c = document.querySelector("#mioContainer");
+                c.innerHTML = "<h1>Titolo in grassetto</h1>";
+            }
+            function creaTitolo(){
+                alert("Appendo con il DOM");
+                let c = document.querySelector("#mioContainer");
+                c.innerHTML = "";
+
+                let h = document.createElement("h1");
+                let t = document.createTextNode("Titolo in grassetto - DOM");
+
+                h.appendChild(t);
+                c.appendChild(h);
+            }
+            function creaTabella(){
+                let c = document.querySelector("#mioContainer");
+
+                // creare una tabellina 5x5 dove in ogni casella ci sia il prodotto riga per colonna
+                let tab = document.createElement("table");
+                let tbody = document.createElement("tbody");
+                let i, j;
+                for(i=1; i<=5; i++){
+                    let trow = document.createElement("tr");
+                    for(j=1; j<=5; j++){
+                        let tcol = document.createElement("td");
+                        let text = document.createTextNode(i*j);
+                        tcol.appendChild(text);
+                        trow.appendChild(tcol);
+                    }
+                    tbody.appendChild(trow);
+                }
+                tab.appendChild(tbody);
+                c.appendChild(tab);
+            }
+        </script>
+    </body>
+</html>
