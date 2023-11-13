@@ -26,14 +26,14 @@ Ogni singolo punto è da realizzare con una specifica funzione, relativi paramet
 
 **p03.c**   
 Creare un programma C che soddisfi le seguenti richieste:
-- [ ] input di una stringa.
-- [ ] stampa di una stringa a video con funzione ricorsiva.
-- [ ] Conteggio delle lettere maiuscole e minuscole in una stringa.
-- [ ] Verifica se esistono doppie in una stringa 'otto', 'sette'.
-- [ ] Prima lettera sempre maiuscola (se la stringa inizia con una minuscola, la trasforma in maiuscola).
-- [ ] Per ogni lettera calcola e stampa il numero di occorrenze (quante volte ogni lettera compare).
-- [ ] Crea stringa inversa. (st1 è l'originale, st2 è l'inversa).
-- [ ] Verifica se due stringhe sono anagrammi (st2 è anagramma di st1, anagramma: parole diverse ma formate dalle stesse lettere)
+- [x] input di una stringa.
+- [x] stampa di una stringa a video con funzione ricorsiva.
+- [x] Conteggio delle lettere maiuscole e minuscole in una stringa.
+- [x] Verifica se esistono doppie in una stringa 'otto', 'sette'.
+- [x] Prima lettera sempre maiuscola (se la stringa inizia con una minuscola, la trasforma in maiuscola).
+- [x] Per ogni lettera calcola e stampa il numero di occorrenze (quante volte ogni lettera compare).
+- [x] Crea stringa inversa. (st1 è l'originale, st2 è l'inversa).
+- [x] Verifica se due stringhe sono anagrammi (st2 è anagramma di st1, anagramma: parole diverse ma formate dalle stesse lettere)
 
 Utilizzare le funzioni già esistenti nel file lib.c/lib.h, le nuove funzioni prima farne un test nel main e poi spostarle nel file libreria.
 */
