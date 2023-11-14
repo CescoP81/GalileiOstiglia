@@ -47,3 +47,51 @@ void stampaContrarioStringa(char[]);
  * @return 1->True / 0->False 
 */
 int verificaPalindroma(char[]);
+
+// -- Realizzate per p03.c --
+/**
+ * Recursive printing of a string
+ * @param char[] Reference to string.
+ * @param int Starting index.
+*/
+void stampaStringaRicorsiva(char[], int);
+/**
+ * Counting of uppercase and lowercase chatarters.
+ * @param char[] Reference to string.
+*/
+void contaMaiuscoleMinuscole(char[]);
+/**
+ * Check for double letters
+ * @param char[] Reference to string.
+*/
+int verificaDoppie(char[]);
+/** 
+ * First letter capitalized
+ * @param char[] Reference to string.
+*/
+void primaLetteraMaiuscola(char[]);
+/**
+ * Count of each single letter, uppercase and lowercase letter increment the same counter
+ * @param char[] Reference to string.
+*/
+void contaSingoleLettere(char[]);
+/**
+ * Create a second string as the first reversed
+ * example:
+ * str_1 = ciao - str_2 = oaic
+ * @param char[] Reference to the original string.
+ * @param char[] Reference to the reversed string.
+*/
+void stringaInversa(char[], char[]);
+/**
+ * Check if the second string is an anagram of the first one
+ * @param char[] Reference to first string.
+ * @param char[] Reference to second string.
+*/
+int verificaAnagrammi(char[], char[]);
+/**
+* Genera un anagramma di str e lo restituisce in str_2
+* @param char[] Riferimento a stringa orginale _str
+* @param char[] Riferimento alla stringa anagramma _str2
+*/
+void generaAnagramma(char[], char[]);
