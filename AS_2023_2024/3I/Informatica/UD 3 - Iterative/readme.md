@@ -12,7 +12,7 @@ Richiedere all'utente un numero intero N positivo, stampare a video tutti i nume
 
 **p04.c**   
 Realizzare un algoritmo che, come una cassiera del supermercato, richiede l'importo di singoli prodotti.
-Quando l'importo inserito � 0 allora comunica il totale della spesa, il numero di prodotti ed il prezzo medio.   
+Quando l'importo inserito è 0 allora comunica il totale della spesa, il numero di prodotti ed il prezzo medio.   
 
 **p05.c**   
 Richiedere un numero in input accettando solo numeri dispari, una volta accettato un numero dispari calcolare e comunicare il suo doppio.

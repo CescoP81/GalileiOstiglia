@@ -4,7 +4,7 @@
 *	File: p04.c
 * 	Desc: Realizzare un algoritmo che, come una cassiera del supermercato,
 *	richiede l'importo di singoli prodotti.
-*	Quando l'importo inserito è 0 allora comunica il totale della spesa,
+*	Quando l'importo inserito Ã¨ 0 allora comunica il totale della spesa,
 *	il numero di prodotti ed il prezzo medio.
 */
 #include <stdio.h>
@@ -24,7 +24,7 @@ int main(){
 		scanf("%d", &prezzo);
 		fflush(stdin);
 		
-		if(prezzo != 0){					// se il prezzo inserito è diverso da 0.
+		if(prezzo != 0){					// se il prezzo inserito ï¿½ diverso da 0.
 			totale = totale + prezzo;		// aggiungo il prezzo al totale.
 			cntProdotti = cntProdotti + 1;	// incremento il numero di prezzi inseriti.
 		}
