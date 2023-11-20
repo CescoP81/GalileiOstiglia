@@ -37,3 +37,15 @@ Creare un programma C che soddisfi le seguenti richieste:
 
 Utilizzare le funzioni già esistenti nel file lib.c/lib.h, le nuove funzioni prima farne un test nel main e poi spostarle nel file libreria.
 */
+
+**p04.c**
+Esempio di utilizzo di un vettore di stringhe, concettualmente è una matrice di caratteri dove ogni singola riga rappresenta una stringa.
+Commentando il codice da riga 15 a riga 30 comprese, dopo averlo provato, sviluppare i seguenti punti:
+- [ ] Acquisire 5 stringhe da tastiera.
+- [ ] Stampare le 5 stringhe inserite come verifica.
+- [ ] Per ogni stringa stampare la sua lunghezza.
+- [ ] Determinare e stampare la stringa più lunga e la stringa più corta.
+- [ ] Verificare se tra le parole sono presenti palindrome.
+- [ ] Inserita una lettera da tastiera, determinare la parola che la contiene più volte.
+- [ ] Modificare l'iniziale di ogni parola mettendola in maiuscolo.
+- [ ] Visualizzare ogni parola al contrario.

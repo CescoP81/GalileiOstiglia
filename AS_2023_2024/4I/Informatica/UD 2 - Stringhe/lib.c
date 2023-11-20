@@ -169,7 +169,7 @@ int verificaAnagrammi(char _str[], char _str2[]){
 			occorrenze[i] = 0;
 	
 		// calcolo per ogni lettera di _str quante volte compare.
-		lungStringa = lunghezzaStringa(str);
+		lungStringa = lunghezzaStringa(_str);
 		for(i=0; i<lungStringa; i++){
 			if(_str[i]>='a' && _str[i]<='z')
 				occorrenze[_str[i]-'a']++;
