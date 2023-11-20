@@ -38,7 +38,7 @@ Creare un programma C che soddisfi le seguenti richieste:
 Utilizzare le funzioni già esistenti nel file lib.c/lib.h, le nuove funzioni prima farne un test nel main e poi spostarle nel file libreria.
 */
 
-**p04.c**
+**p04.c**  
 Esempio di utilizzo di un vettore di stringhe, concettualmente è una matrice di caratteri dove ogni singola riga rappresenta una stringa.
 Commentando il codice da riga 15 a riga 30 comprese, dopo averlo provato, sviluppare i seguenti punti:
 - [ ] Acquisire 5 stringhe da tastiera.
