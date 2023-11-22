@@ -1,0 +1,11 @@
+-- marcaAutomobile --
+1 FIAT		IT 		www.fiat.it
+2 VW		DE 		www.volkswagen.de
+3 SKODA		DE 		www.skoda.de
+4 MERCEDES 	DE 		www.mercedes.de
+
+-- ModelloAutomobile --
+1 DOBLO'	2001	2.0		1
+2 T-ROC		2022	2.0		2
+3 GOLF		2020	1.6		2
+4 SLK		2015	2.0		4
