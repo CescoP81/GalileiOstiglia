@@ -5,7 +5,7 @@ CREATE TABLE MarcaAutomobile(
     sitoWeb varchar(200),
 
     primary key(id)
-)
+) ENGINE=InnoDB;
 
 CREATE TABLE ModelloAutomobile(
     id integer unsigned auto_increment,
@@ -16,4 +16,4 @@ CREATE TABLE ModelloAutomobile(
 
     primary key(id),
     foreign key(idMarcaAutomobile) references MarcaAutomobile(id)
-)
+) ENGINE=InnoDB;
