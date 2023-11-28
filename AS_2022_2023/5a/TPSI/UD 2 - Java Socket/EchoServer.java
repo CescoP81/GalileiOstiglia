@@ -13,13 +13,14 @@ class EchoServer {
 		Socket socket = ss.accept(); // aspettiamo connessione client
 		InputStream is = socket.getInputStream();
 		OutputStream os = socket.getOutputStream();
-		os.write("hello, I'm EchoServer!\n".getBytes());
+
+		os.write("hello, I'm EchoServer!\r\n".getBytes());
 		//byte buffer[] = new byte[256];
 		//is.read(buffer); // wait for client input
 		BufferedReader bf = new BufferedReader(new InputStreamReader(is));
 		String line = new String(bf.readLine());
 		// add '?' to input
-		line += "?\n";
+		line += "?\r\n";
 		os.write(line.getBytes()); // write reponse
 		log("have a nice day... " + socket);
 	}
