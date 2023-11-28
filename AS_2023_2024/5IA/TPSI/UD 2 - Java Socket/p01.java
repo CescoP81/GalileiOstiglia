@@ -6,7 +6,16 @@ import java.util.*;
 // - DEVE contenere il metodo MAIN()
 public class p01{
     public static void main(String[] args){
-        System.out.print("Hello World");
+        System.out.println("Hello World");
+        System.out.println("Hello World");
+
+        for(int i=1; i<=10; i++){
+            System.out.println(i);
+        }
+        
+        for(int i=1; i<=10; i++){
+            System.out.println("Indice: "+i+" e il doppio: "+(i*2));
+        }
     }
 }
 /*
