@@ -30,3 +30,7 @@ Utilizzo delle iterative per problemi matematici. Programma che richiesti due nu
 Utilizzo delle iterative per problemi matematici. Programma che richiede un numero e determina se il numero è PRIMO oppure no.
 Un numero risulta essere primo quando è divisibile solo	per 1 e per se stesso.
 Es: 7 è primo, 13 è primo, 20 non è primo.
+
+**p10.c**
+Programma che richiede un numero in input da tastiera, quindi determina e comunica se il numero è PERFETTO oppure no. Un numero si dice perfetto quando la somma dei suoi divisori, escluso il numero stesso, è pari al numero inserito.
+es. 6 è perfetto perchè i divisori sono 1-2-3 e la loro somma è appunto 6.
