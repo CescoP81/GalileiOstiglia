@@ -49,3 +49,18 @@ Commentando il codice da riga 15 a riga 30 comprese, dopo averlo provato, svilup
 - [ ] Inserita una lettera da tastiera, determinare la parola che la contiene più volte.
 - [ ] Modificare l'iniziale di ogni parola mettendola in maiuscolo.
 - [ ] Visualizzare ogni parola al contrario.
+
+**p06.c**
+Creare un programma che genera una stringa casuale x5 volte rispettando il formato:  
+	m, M, N, M - N, m, M, J  
+	dove N indica un numero casuale tra 0 e 9;  
+	dove m indica una lettera casuale tra 'a' e 'z';  
+	dove M indica una lettera dell'alfabeto maiuscolo;  
+	dove J indica un carattere jolly tra i seguenti:  
+	- @;
+	- #;
+	- !;
+	- &;
+	- ?;  
+	ESEMPIO:  
+		a C 7 T - 2 s X #
