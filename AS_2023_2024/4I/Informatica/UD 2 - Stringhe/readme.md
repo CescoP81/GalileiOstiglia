@@ -57,10 +57,10 @@ Creare un programma che genera una stringa casuale x5 volte rispettando il forma
 	dove m indica una lettera casuale tra 'a' e 'z';  
 	dove M indica una lettera dell'alfabeto maiuscolo;  
 	dove J indica un carattere jolly tra i seguenti:  
-	- @;
-	- #;
-	- !;
-	- &;
-	- ?;  
+	- @;  
+	- #;  
+	- !;  
+	- &;  
+	- ?;   
 	ESEMPIO:  
 		a C 7 T - 2 s X #
