@@ -3,7 +3,7 @@ import java.io.*;
 public class p03 {
     public static void main(String[] args) throws IOException{
         String str;
-        BufferedReader br = new BufferedReader(new clsInputStreamReader(System.in));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("Inserisci una parola: ");
         str = br.readLine();
 
