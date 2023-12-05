@@ -21,7 +21,7 @@ function scriviNavbar(){
                             Città
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="citta.php">Nuova Città</a></li>
+                                <li><a class="dropdown-item" href="citta.php?scelta=formNuovaCitta">Nuova Città</a></li>
                                 <li><a class="dropdown-item" href="citta.php?scelta=listaCitta">Lista Città</a></li>
                             </ul>
                         </li>

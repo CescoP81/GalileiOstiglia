@@ -16,15 +16,33 @@ require("../include/head.php");
     echo('<div class="alert alert-primary">Siamo nella sezione Città - Ver 1.0</div>');
     switch($sc){
         case "formNuovaCitta":{
+            echo('<form action="citta.php">
+                <div class="mb-3">
+                    <label for="nomeCitta" class="form-label">Nome Città:</label>
+                    <input type="text" class="form-control" id="nomeCitta" name="nomeCitta" placeholder="Inserisci il nome di una città">
+                </div>
+                <input type="hidden" name="scelta" value="addNuovaCitta">
+                <button type="submit" class="btn btn-primary">Inserisci nel Database</button>
+            </form>');
             break;
         }
         case "addNuovaCitta":{
+            $n = $_REQUEST['nomeCitta'];
+            $db = new mysqli("localhost", "root", "", "scuola2324");
+            $sql = "INSERT INTO citta (nomeCitta) VALUES('$n')";
+            if($db->query($sql)){
+                echo('<div class="alert alert-success">Città '.$n.' inserita con successo</div>');
+            }
+            else{
+                echo('<div class="alert alert-danger">Attenzione! Città '.$n.' non caricata.</div>');
+            }
             break;
         }
         case "listaCitta":{
             $db = new mysqli("localhost", "root", "", "scuola2324");
             $sql = "SELECT * FROM citta";
             $rs = $db->query($sql);
+            $db->close();
             if($rs){
                 echo('<table class="table table-striped">
                     <thead>
