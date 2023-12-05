@@ -18,7 +18,7 @@ function scriviNavbar(){
                     Città
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Nuova Città</a></li>
+                        <li><a class="dropdown-item" href="citta.php">Nuova Città</a></li>
                         <li><a class="dropdown-item" href="#">Lista Città</a></li>
                     </ul>
                 </li>
@@ -28,7 +28,7 @@ function scriviNavbar(){
                     Reparto
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Nuovo Reparto</a></li>
+                        <li><a class="dropdown-item" href="reparto.php">Nuovo Reparto</a></li>
                         <li><a class="dropdown-item" href="#">Lista Reparti</a></li>
                     </ul>
                 </li>
@@ -38,7 +38,7 @@ function scriviNavbar(){
                     Dipendente
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Nuovo Dipendente</a></li>
+                        <li><a class="dropdown-item" href="dipendente.php">Nuovo Dipendente</a></li>
                         <li><a class="dropdown-item" href="#">Lista Dipendenti</a></li>
                     </ul>
                 </li>

@@ -6,7 +6,10 @@
  * [] 'listaCitta' - Visualizzazione delle città presenti nel database.
  * [] 'deleteCitta' - Cancellazione di una città dal database.
  */
-require("../include/head.php");
+require("../include/libGenerale.php");
 
+require("../include/head.php");
+    scriviNavBar();
+    echo('<div class="alert alert-primary">Siamo nella sezione Città - Ver 1.0</div>');
 require("../include/foot.php");
 ?>
