@@ -51,5 +51,6 @@ function scriviNavbar(){
             </div>
         </nav>
     ');
+    return;
 }
 ?>
