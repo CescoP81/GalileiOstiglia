@@ -31,8 +31,8 @@ function scriviNavbar(){
                             Reparto
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="reparto.php">Nuovo Reparto</a></li>
-                                <li><a class="dropdown-item" href="#">Lista Reparti</a></li>
+                                <li><a class="dropdown-item" href="reparto.php?scelta=formNuovoReparto">Nuovo Reparto</a></li>
+                                <li><a class="dropdown-item" href="reparto.php?scelta=listaReparto">Lista Reparti</a></li>
                             </ul>
                         </li>
 
