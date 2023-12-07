@@ -1,11 +1,15 @@
-CREATE TABLE Citta(
+DROP TABLE Citta;
+DROP TABLE Reparto;
+DROP TABLE Dipendente;
+
+CREATE TABLE IF NOT EXISTS Citta(
     id integer unsigned auto_increment,
     nomeCitta varchar(20),
 
     primary key(id)
 ) ENGINE=InnoDB;
 
-CREATE TABLE Reparto(
+CREATE TABLE IF NOT EXISTS Reparto(
     id integer unsigned auto_increment,
     nomeReparto varchar(20),
     idCittaReparto integer unsigned,
@@ -14,7 +18,7 @@ CREATE TABLE Reparto(
     foreign key(idCittaReparto) references Citta(id)
 ) ENGINE=InnoDB;
 
-CREATE TABLE Dipendente(
+CREATE TABLE IF NOT EXISTS Dipendente(
     id integer unsigned auto_increment,
     Cognome varchar(30),
     Nome varchar(30),
