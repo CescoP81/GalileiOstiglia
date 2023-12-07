@@ -1,9 +1,9 @@
 <?php 
 /**
  * Gestione della tabella reparto sul database, operazioni ammesse:
- * [] 'formNuovoReparto' - Mostra il form di inserimento di un nuovo reparto.
- * [] 'addNuovoReparto' - Aggiunge i dati di un nuovo reparto al database.
- * [] 'listaReparto' - Visualizza la lista dei reparti presenti e relative città.
+ * [x] 'formNuovoReparto' - Mostra il form di inserimento di un nuovo reparto.
+ * [x] 'addNuovoReparto' - Aggiunge i dati di un nuovo reparto al database.
+ * [x] 'listaReparto' - Visualizza la lista dei reparti presenti e relative città.
  * [] 'deleteReparto' - Cancella un reparto dal database.
  */
 // include eventuali librerie utili alla UI.
@@ -46,7 +46,7 @@ require("../include/head.php");
             $iC = $_REQUEST['idCitta'];
 
             $sql = "INSERT INTO Reparto(nomeReparto, idCittaReparto) VALUES('$nR',$iC)";
-            echo($sql);
+            //echo($sql);
             $db = new mysqli("localhost", "root", "", "scuola2324");
             if($db->query($sql)){
                 echo('<div class="alert alert-success">Inserimento del nuovo reparto avvenuto con successo</div>');    
@@ -85,7 +85,7 @@ require("../include/head.php");
                 }
                 echo('</tbody>');
                 echo('<caption>Lista reparti presenti a database');
-                echo('</table>');
+            echo('</table>');
             break;
         }
         case "deleteReparto":{

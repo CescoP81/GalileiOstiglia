@@ -41,8 +41,8 @@ function scriviNavbar(){
                             Dipendente
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="dipendente.php">Nuovo Dipendente</a></li>
-                                <li><a class="dropdown-item" href="#">Lista Dipendenti</a></li>
+                                <li><a class="dropdown-item" href="dipendente.php?scelta=formNuovoDipendente">Nuovo Dipendente</a></li>
+                                <li><a class="dropdown-item" href="dipendente.php?scelta=listaDipendente">Lista Dipendenti</a></li>
                             </ul>
                         </li>
                     
