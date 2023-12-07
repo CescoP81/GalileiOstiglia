@@ -17,52 +17,60 @@ require("../include/head.php");
     switch($sc){
         case "formNuovoDipendente":{
             echo('<form action="dipendente.php">
-                <div class="mb-3">
-                    <label for="cognomeDipendente" class="form-label">Cognome Dipendente:</label>
-                    <input type="text" class="form-control" id="cognomeDipendente" name="cognomeDipendente" placeholder="Inserisci il cognome di un dipendente">
-                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="alert alert-success">1- Anagrafica Dipendente</div>
+                        <div class="mb-3">
+                            <label for="cognomeDipendente" class="form-label">Cognome Dipendente:</label>
+                            <input type="text" class="form-control" id="cognomeDipendente" name="cognomeDipendente" placeholder="Inserisci il cognome di un dipendente">
+                        </div>
+                    
+                        <div class="mb-3">
+                            <label for="nomeDipendente" class="form-label">Nome Dipendente:</label>
+                            <input type="text" class="form-control" id="nomeDipendente" name="nomeDipendente" placeholder="Inserisci il nome di un dipendente">
+                        </div>
+                    </div>');
+                    echo('<div class="col">
+                        <div class="alert alert-success">2- Residenza</div>');
+                        // Select per selezionare la città di residenza.
+                        $db = new mysqli("localhost", "root", "", "scuola2324");
+                        $sql = "SELECT * FROM Citta";
+                        $rs = $db->query($sql);
+                        $db->close();
 
-                <div class="mb-3">
-                    <label for="nomeDipendente" class="form-label">Nome Dipendente:</label>
-                    <input type="text" class="form-control" id="nomeDipendente" name="nomeDipendente" placeholder="Inserisci il nome di un dipendente">
-                </div>');
-                
-                // Select per selezionare la città di residenza.
-                $db = new mysqli("localhost", "root", "", "scuola2324");
-                $sql = "SELECT * FROM Citta";
-                $rs = $db->query($sql);
-                $db->close();
+                        echo('<div class="mb-3">
+                            <label for="idCitta" class="form-label">Città di residenza:</label>
+                            <select class="form-select" id="idCitta" name="idCitta" aria-label="Città del reparto">');
+                            while($record = $rs->fetch_assoc()){
+                                echo('<option value="'.$record['id'].'">'.$record['nomeCitta'].'</option>');
+                            }
+                        echo('</select>
+                        </div>');
+                    echo("</div>");
+                    echo('<div class="col">
+                        <div class="alert alert-success">3- Dati del Reparto</div>');
+                        // Select per selezionare il reparto di impiego.
+                        $db = new mysqli("localhost", "root", "", "scuola2324");
+                        $sql = "SELECT r.id, r.nomeReparto AS 'reparto', c.nomeCitta AS 'citta' 
+                                FROM Reparto AS r, Citta as c 
+                                WHERE r.idCittaReparto = c.id";
+                        $rs = $db->query($sql);
+                        //echo($sql);
+                        $db->close();
 
-                echo('<div class="mb-3">
-                    <label for="idCitta" class="form-label">Città di residenza:</label>
-                    <select class="form-select" id="idCitta" name="idCitta" aria-label="Città del reparto">');
-                    while($record = $rs->fetch_assoc()){
-                        echo('<option value="'.$record['id'].'">'.$record['nomeCitta'].'</option>');
-                    }
-                echo('</select>
-                </div>');
-
-                // Select per selezionare il reparto di impiego.
-                $db = new mysqli("localhost", "root", "", "scuola2324");
-                $sql = "SELECT r.id, r.nomeReparto AS 'reparto', c.nomeCitta AS 'citta' 
-                        FROM Reparto AS r, Citta as c 
-                        WHERE r.idCittaReparto = c.id";
-                $rs = $db->query($sql);
-                //echo($sql);
-                $db->close();
-
-                echo('<div class="mb-3">
-                    <label for="idReparto" class="form-label">Reparto di impiego:</label>
-                    <select class="form-select" id="idReparto" name="idReparto" aria-label="Nome del reparto">');
-                    while($record = $rs->fetch_assoc()){
-                        echo('<option value="'.$record['id'].'">'.$record['reparto'].' - '.$record['citta'].'</option>');
-                    }
-                echo('</select>
-                </div>');
-
-            echo('
-                <input type="hidden" name="scelta" value="addNuovoDipendente">
-                <button type="submit" class="btn btn-primary">Inserisci nel Database</button>
+                        echo('<div class="mb-3">
+                            <label for="idReparto" class="form-label">Reparto di impiego:</label>
+                            <select class="form-select" id="idReparto" name="idReparto" aria-label="Nome del reparto">');
+                            while($record = $rs->fetch_assoc()){
+                                echo('<option value="'.$record['id'].'">'.$record['reparto'].' - '.$record['citta'].'</option>');
+                            }
+                        echo('</select>
+                        </div>');
+                    echo("</div>");
+                echo('<div class="col">
+                        <input type="hidden" name="scelta" value="addNuovoDipendente">
+                        <button type="submit" class="btn btn-primary">Inserisci nel Database</button>
+                    </div>
             </form>');
             break;
         }
