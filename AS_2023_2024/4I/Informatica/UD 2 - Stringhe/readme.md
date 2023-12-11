@@ -64,3 +64,6 @@ Creare un programma che genera una stringa casuale x5 volte rispettando il forma
 	- ?;   
 	ESEMPIO:  
 		a C 7 T - 2 s X #
+
+**p07.c**
+Realizzare un programma C che richiede ripetutamente stringe(di max 10 char) all'utente e ogni stringa inserita la aggiunge ad una stringa totale di lunghezza 32 caratteri. Il programma termina quando l'utente riempie i 32 caratteri totali. Se li ha riempiti in modo perfetto (senza resto) comunica "Bravo", altrimenti comunica la stringa totale e le lettere eccedenti la misura di 32 caratteri.
