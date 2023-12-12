@@ -19,6 +19,7 @@ int main(){
     index2 = 0;
     do{
         printf("Output: %s (%d)\n------\n", strOutput, lunghezzaStringa(strOutput));
+        
         inputStringa(strInput);
 
         if(lunghezzaStringa(strOutput) + lunghezzaStringa(strInput) <= DIM_TWO){

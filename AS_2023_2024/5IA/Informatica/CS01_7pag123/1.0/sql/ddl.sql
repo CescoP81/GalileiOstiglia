@@ -1,6 +1,6 @@
-DROP TABLE Citta;
-DROP TABLE Reparto;
-DROP TABLE Dipendente;
+DROP TABLE IF EXISTS Dipendente;
+DROP TABLE IF EXISTS Reparto;
+DROP TABLE IF EXISTS Citta;
 
 CREATE TABLE IF NOT EXISTS Citta(
     id integer unsigned auto_increment,
