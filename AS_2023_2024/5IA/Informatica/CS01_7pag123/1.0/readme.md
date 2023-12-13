@@ -1,0 +1,1 @@
+Questa cartella contiene gli Assets del progetto, cioè tutte le risorse divise per tipologia e raccolte nelle rispettive cartelle.
