@@ -22,7 +22,8 @@ require("../include/head.php");
                     <input type="text" class="form-control" id="nomeReparto" name="nomeReparto" placeholder="Inserisci il nome di un reparto">
                 </div>');
                 
-                $db = new mysqli("localhost", "root", "", "scuola2324");
+                //$db = new mysqli("localhost", "root", "", "scuola2324");
+                $db = new mysqli($dbHost, $dbUser, $dbPassword, $dbName);
                 $sql = "SELECT * FROM Citta";
                 $rs = $db->query($sql);
                 $db->close();
@@ -47,7 +48,8 @@ require("../include/head.php");
 
             $sql = "INSERT INTO Reparto(nomeReparto, idCittaReparto) VALUES('$nR',$iC)";
             //echo($sql);
-            $db = new mysqli("localhost", "root", "", "scuola2324");
+            //$db = new mysqli("localhost", "root", "", "scuola2324");
+            $db = new mysqli($dbHost, $dbUser, $dbPassword, $dbName);
             if($db->query($sql)){
                 echo('<div class="alert alert-success">Inserimento del nuovo reparto avvenuto con successo</div>');    
             }
@@ -58,7 +60,8 @@ require("../include/head.php");
             break;
         }
         case "listaReparto":{
-            $db = new mysqli("localhost", "root", "", "scuola2324");
+            //$db = new mysqli("localhost", "root", "", "scuola2324");
+            $db = new mysqli($dbHost, $dbUser, $dbPassword, $dbName);
             $sql = "SELECT Reparto.id, Reparto.nomeReparto AS 'Reparto', Citta.nomeCitta AS 'Citta' 
                     FROM Reparto, Citta 
                     WHERE Reparto.idCittaReparto = Citta.id";

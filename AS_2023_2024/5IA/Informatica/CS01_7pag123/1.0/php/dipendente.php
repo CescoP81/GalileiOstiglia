@@ -33,7 +33,8 @@ require("../include/head.php");
                     echo('<div class="col">
                         <div class="alert alert-success">2- Residenza</div>');
                         // Select per selezionare la città di residenza.
-                        $db = new mysqli("localhost", "root", "", "scuola2324");
+                        //$db = new mysqli("localhost", "root", "", "scuola2324");
+                        $db = new mysqli($dbHost, $dbUser, $dbPassword, $dbName);
                         $sql = "SELECT * FROM Citta";
                         $rs = $db->query($sql);
                         $db->close();
@@ -81,7 +82,8 @@ require("../include/head.php");
             $iR = $_REQUEST['idReparto'];
             $sql = "INSERT INTO Dipendente(cognome, nome, idReparto, idCittaResidenza) 
                     VALUES('$c', '$n', $iR, $iC)";
-            $db = new mysqli("localhost", "root", "", "scuola2324");
+            //$db = new mysqli("localhost", "root", "", "scuola2324");
+            $db = new mysqli($dbHost, $dbUser, $dbPassword, $dbName);
             if($db->query($sql)){
                 echo('<div class="alert alert-success">Inserimento del nuovo dipendente avvenuto con successo</div>');    
             }
@@ -96,7 +98,8 @@ require("../include/head.php");
                     FROM Dipendente AS d, Citta AS c, Reparto AS r, Citta AS c1 
                     WHERE d.idCittaResidenza=C.id AND d.idReparto=r.id AND r.idCittaReparto=c1.id";
             
-            $db = new mysqli("localhost", "root", "", "scuola2324");
+            //$db = new mysqli("localhost", "root", "", "scuola2324");
+            $db = new mysqli($dbHost, $dbUser, $dbPassword, $dbName);
             $rs = $db->query($sql);
             $db->close();
 

@@ -1,4 +1,8 @@
 <?php
+$dbHost = "localhost";
+$dbUser = "root";
+$dbPassword = "";
+$dbName = "scuola2324";
 /**
  * Funzione per la creazione della navBar comune a tutte le pagine della UI.
  */

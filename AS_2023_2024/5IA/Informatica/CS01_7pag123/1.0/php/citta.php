@@ -28,7 +28,8 @@ require("../include/head.php");
         }
         case "addNuovaCitta":{
             $n = $_REQUEST['nomeCitta'];
-            $db = new mysqli("localhost", "root", "", "scuola2324");
+            //$db = new mysqli("localhost", "root", "", "scuola2324");
+            $db = new mysqli($dbHost, $dbUser, $dbPassword, $dbName);
             $sql = "INSERT INTO citta (nomeCitta) VALUES('$n')";
             if($db->query($sql)){
                 echo('<div class="alert alert-success">Città '.$n.' inserita con successo</div>');
@@ -39,7 +40,8 @@ require("../include/head.php");
             break;
         }
         case "listaCitta":{
-            $db = new mysqli("localhost", "root", "", "scuola2324");
+            //$db = new mysqli("localhost", "root", "", "scuola2324");
+            $db = new mysqli($dbHost, $dbUser, $dbPassword, $dbName);
             $sql = "SELECT * FROM citta";
             $rs = $db->query($sql);
             $db->close();
