@@ -1,0 +1,1 @@
+Questo folder contiene eventuali file *.js nei quali vi sono funzioni sviluppate in JavaScript.
