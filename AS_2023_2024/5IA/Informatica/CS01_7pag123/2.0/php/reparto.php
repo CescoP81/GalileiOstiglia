@@ -13,7 +13,7 @@ if(isset($_REQUEST['scelta'])) $sc = $_REQUEST['scelta']; else $sc = null;
 
 require("../include/head.php");
     scriviNavBar();
-    echo('<div class="alert alert-primary">Sono nella sezione Reparto - Ver 1.0</div>');
+    echo('<div class="alert alert-primary">Sono nella sezione Reparto - Ver 2.0</div>');
     switch($sc){
         case "formNuovoReparto":{
             echo('<form action="reparto.php">
