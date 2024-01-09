@@ -7,6 +7,6 @@ require("../include/libGenerale.php"); // carico la libreria con funzioni varie 
 
 require("../include/head.php");
     scriviNavBar();
-    echo('<div class="alert alert-primary">Da qui si inizia a costruire la UI - Ver 2.0</div>');
+    echo('<div class="alert alert-danger">Da qui si inizia a costruire la UI - Ver 2.0</div>');
 require("../include/foot.php");
 ?>
