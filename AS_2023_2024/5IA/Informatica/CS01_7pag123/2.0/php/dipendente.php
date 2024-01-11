@@ -111,6 +111,7 @@ require("../include/head.php");
                             <th scope="col">Nome</th>
                             <th scope="col">Città di Residenza</th>
                             <th scope="col">Reparto di Impiego</th>
+                            <th scope="col">Gestione</th>
                         </tr>
                     </thead>
                 ');
@@ -122,6 +123,7 @@ require("../include/head.php");
                         <td>'.$record['nome'].'</td>
                         <td>'.$record['nomeCitta'].'</td>
                         <td>'.$record['nomeReparto'].' di '.$record['cittaReparto'].'</td>
+                        <td><a class="btn btn-danger" role="button" href="dipendente.php?scelta=deleteDipendente&idDipendente='.$record['id'].'">Cancella</a></td>
                         </tr>
                     ');
                 }
@@ -131,6 +133,20 @@ require("../include/head.php");
             break;
         }
         case "deleteDipendente":{
+            $idD = $_REQUEST['idDipendente']; // id del dipendente che voglio cancellare.
+            //echo("Voglio cancellare il dipendente con ID: ".$idD."<br />");
+            $db = new mysqli($dbHost, $dbUser, $dbPassword, $dbName);
+
+            $sql = "DELETE FROM dipendente WHERE id='$idD'";
+            //echo($sql);
+            if($db->query($sql)){
+                echo('<div class="alert alert-success">Cancellazione dipendente avvenuta con successo</div>');    
+            }
+            else{
+                echo('<div class="alert alert-warning">Cancellazionedipendente non avvenuta</div>');    
+            }
+
+            $db->close();
             break;
         }
         default:{
