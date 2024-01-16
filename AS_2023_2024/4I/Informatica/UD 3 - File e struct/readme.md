@@ -14,6 +14,7 @@ Utilizzo la funzione fscanf(..) la quale si comporta come la scanf() quindi term
 Esempio di lettura di valori da file, utilizzanod %d nella fscanf così come farei a video e da tastiera.
 NB: Il file DEVE contenere solo numeri interi con %d e in virgola si %f.
 
+---
 
 File binari, post pcto, con strutture.
 - [ ] Definizione di struttura e dichiarazione ed utilizzo.
