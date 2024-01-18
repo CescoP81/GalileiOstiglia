@@ -14,6 +14,9 @@ Utilizzo la funzione fscanf(..) la quale si comporta come la scanf() quindi term
 Esempio di lettura di valori da file, utilizzanod %d nella fscanf così come farei a video e da tastiera.
 NB: Il file DEVE contenere solo numeri interi con %d e in virgola si %f.
 
+**p04.c**
+Programma che richiede parole all'utente ed in caso siano di un numero di caratteri dispari allora le salva in un file denominato 'parole.txt' separandole da uno spazio. L'inserimento termina con la parola chiave "fine". Il programma deve comunicare all'utente quante parole sono inserite nel file, la lunghezza più corta e quella più lunga.
+
 ---
 
 File binari, post pcto, con strutture.
