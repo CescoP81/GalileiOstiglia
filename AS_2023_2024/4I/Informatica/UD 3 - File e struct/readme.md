@@ -17,6 +17,12 @@ NB: Il file DEVE contenere solo numeri interi con %d e in virgola si %f.
 **p04.c**
 Programma che richiede parole all'utente ed in caso siano di un numero di caratteri dispari allora le salva in un file denominato 'parole.txt' separandole da uno spazio. L'inserimento termina con la parola chiave "fine". Il programma deve comunicare all'utente quante parole sono inserite nel file, la lunghezza più corta e quella più lunga.
 
+**p05.c**
+Creare un file di testo "parole.txt" contenente alcune parole di lunghezza non superiore a 15 caratteri, divise da un "invio" (andata a capo). L'ultima parola non ha l'invio finale. Il programma apre in lettura il file e determina:
+- [ ] Numero di parole presenti.
+- [ ] Lunghezza media delle parole.
+- [ ] Stampa a video delle eventuali parole palindrome.
+
 ---
 
 File binari, post pcto, con strutture.
