@@ -19,9 +19,9 @@ Programma che richiede parole all'utente ed in caso siano di un numero di caratt
 
 **p05.c**
 Creare un file di testo "parole.txt" contenente alcune parole di lunghezza non superiore a 15 caratteri, divise da un "invio" (andata a capo). L'ultima parola non ha l'invio finale. Il programma apre in lettura il file e determina:
-- [ ] Numero di parole presenti.
-- [ ] Lunghezza media delle parole.
-- [ ] Stampa a video delle eventuali parole palindrome.
+- [x] Numero di parole presenti.
+- [x] Lunghezza media delle parole.
+- [x] Stampa a video delle eventuali parole palindrome.
 
 **p06.c**
 Realizzare un file "valori.txt" con all'interno 20 valori casuali interi compresi tra 10 e 25, i valori devono essere scritti a mano nel file. Realizzare quindi un programma che aperto il file in lettura:
