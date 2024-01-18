@@ -23,6 +23,14 @@ Creare un file di testo "parole.txt" contenente alcune parole di lunghezza non s
 - [ ] Lunghezza media delle parole.
 - [ ] Stampa a video delle eventuali parole palindrome.
 
+**p06.c**
+Realizzare un file "valori.txt" con all'interno 20 valori casuali interi compresi tra 10 e 25, i valori devono essere scritti a mano nel file. Realizzare quindi un programma che aperto il file in lettura:
+- [ ] Visualizza a video tutti i valori presenti nel file.
+- [ ] Determina e comunica a video il valore maggiore e minore.
+- [ ] Determina la media dei valori presenti.
+- [ ] Visualizza a video tutti i valori superiori alla media e in una riga successiva tutti i valori inferiori alla media.
+- [ ] Richiede da tastiera un valore compreso tra 10 e 25 quindi salva in un secondo file "numeri2.txt" solo i valori maggiori o uguali al valore inserito, presenti nel file iniziale.
+
 ---
 
 File binari, post pcto, con strutture.
