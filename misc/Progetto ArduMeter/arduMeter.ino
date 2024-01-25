@@ -25,7 +25,7 @@
 #define DHT11_PIN 5
 unsigned long startMillis; 
 unsigned long currentMillis;
-const unsigned long period = 900000;  //15 minuti 1000*60*15
+const unsigned long period = 1800000;  //15 minuti 1000*60*15
 
 float temp;
 float hum;
