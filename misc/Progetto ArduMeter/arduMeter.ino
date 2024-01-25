@@ -1,5 +1,5 @@
 /*
-  Author: Baroni Mattia
+  Author: Baroni Mattia, Tomirotti Nicholas, Magnani Alessandro
   Date:   25.01.2024
   Description:
   Applicazione per la rilevazione di temperatura e umidità con cadenza oraria e salvataggio in una tabella su database.
