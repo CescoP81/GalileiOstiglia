@@ -94,28 +94,34 @@ require("../include/head.php");
             break;
         }
         case "checkReparto":{
+            /* in questo case verifico che l'id del reparto selezionato compare oppure no
+            nella tabella dipendente, se non compare allora eseguo una cancellazione diretta del reparto,
+            se invece compare allora predispongo un bottone per dare all'utente la possibilità di confermare la cancellazione
+            dei record associati anche nella tabella dipendente. L'operazione di cancellazione nella tabella dipendente 
+            avviene nel case 'deleteReparto' che esegue la cancellazione PRIMA sulla tabella 'dipendente' e POI sulla tabella 'reparto'.
+            */
             $idR = $_REQUEST['idReparto'];
-            echo("Devo controllare se il reparto scelto interessa uno o più dipendenti...<br />");
+            echo("Sto controllando se il reparto scelto interessa uno o più dipendenti...<br />");
 
             $db = new mysqli($dbHost, $dbUser, $dbPassword, $dbName);
             $sql = "SELECT * FROM dipendente WHERE idReparto=$idR";
             $rs = $db->query($sql);
 
-            echo("Record trovati: ".$rs->num_rows);
+            echo("Record trovati: ".$rs->num_rows."<br />");
             if($rs->num_rows == 0){
                 // nessun dipendente è associato al reparto che voglio cancellare.
                 // quindi posso eseguire direttamente la cancellazione del reparto.
                 $sql = "DELETE FROM reparto WHERE id=$idR";
                 if($db->query($sql))
-                    echo("Reparto cancellato con successo.");
+                    echo("Reparto cancellato con successo.<br />");
                 else
-                    echo("Problema in cancellazione.");
+                    echo("Problema in cancellazione.<br />");
             }
             else{
                 // in questo caso l'id del reparto che voglio cancellare
                 // interessa una o più righe nella tabella dipendente
                 // quindi chiedo all'utente se cancellare anche i dipendenti.
-                echo('<a class="btn btn-danger" role="button" href="reparto.php?scelta=deleteReparto&idReparto='.$idR.'">Cancella Reparto e Dipendenti</a>');
+                echo('<a class="btn btn-danger" role="button" href="reparto.php?scelta=deleteReparto&idReparto='.$idR.'">Conferma cancellazione Reparto e Dipendenti associati</a>');
             }
 
             $db->close();
