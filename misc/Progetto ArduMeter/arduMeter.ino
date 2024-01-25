@@ -52,7 +52,7 @@ void setup() {
 void loop() {
   if((startMillis==0) || (millis() - startMillis >= period)){
     getTemp(&temp, &hum);
-    if (int e = cli.connect(serverRemote, 80)){
+    /*if (int e = cli.connect(serverRemote, 80)){
       Serial.println("connected");
       httpUrl = "GET /arduino/temperatura.php?scelta=addtemp&temp=";
       httpUrl += temp;
@@ -67,7 +67,19 @@ void loop() {
     else{
       Serial.print("uscita con errore: ");
       Serial.println(e);
-    }
+    }*/
+
+    while(!cli.connect(serverRemote, 80));
+    Serial.println("connected");
+      httpUrl = "GET /arduino/temperatura.php?scelta=addtemp&temp=";
+      httpUrl += temp;
+      httpUrl += "&umid=";
+      httpUrl += hum;
+      httpUrl += " HTTP/1.0";
+      Serial.println(httpUrl);
+      cli.println(httpUrl);
+      cli.println("Host: www.francescopradella.it");  //aggiunto header finale per server remoto.
+      cli.println();
 
     /* Attendo due secondi la risposta del server remoto, quindi stampo la risposta ottenuta char-by-char nel monitor seriale della IDE */
     delay(2000);
