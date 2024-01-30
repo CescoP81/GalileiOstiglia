@@ -16,13 +16,18 @@ require("../include/head.php");
     echo('<div class="alert alert-primary">Sono nella sezione Reparto - Ver 2.0</div>');
     switch($sc){
         case "formNuovoReparto":{
+            /* Visualizzo il form per l'inserimento di un nuovo reparto, arrivo in questo case cliccando il link nella navBar generale nella sezione Reparto.*/
             echo('<form action="reparto.php">
                 <div class="mb-3">
                     <label for="nomeReparto" class="form-label">Nome Reparto:</label>
                     <input type="text" class="form-control" id="nomeReparto" name="nomeReparto" placeholder="Inserisci il nome di un reparto">
                 </div>');
                 
-                //$db = new mysqli("localhost", "root", "", "scuola2324");
+                /* la selezione della città viene fatta tramite una <SELECT name=""> creata con tutte le città presenti nel database,
+                ogni <option ..> della select è composta da due parti <option value="..">Testo visualizzato.
+                Nel value devo inserire l'id della città, mentre nella parte "testo visualizzato" inserirò il nome esatto della città.
+                Righe dalla 39 alla 41 per creare la <SELECT> dinamicamente.
+                */
                 $db = new mysqli($dbHost, $dbUser, $dbPassword, $dbName);
                 $sql = "SELECT * FROM Citta";
                 $rs = $db->query($sql);
@@ -43,6 +48,10 @@ require("../include/head.php");
             break;
         }
         case "addNuovoReparto":{
+            /* recupero i dati nome del reparto e id della città dall'indirizzo URL generato dalla pressione del bottone "Inserisci" nel form iniziale.
+                Creo la query di INSERT e la eseguo per registrare i dati.
+                NB: non viene datto alcun controllo che la città sia già presente o meno.
+            */
             $nR = $_REQUEST['nomeReparto'];
             $iC = $_REQUEST['idCitta'];
 
@@ -60,7 +69,11 @@ require("../include/head.php");
             break;
         }
         case "listaReparto":{
-            //$db = new mysqli("localhost", "root", "", "scuola2324");
+            /* Visualizzo con una tabella bootstrap tutti i reparti presenti a database, nella query mySQL eseguo una JOIN tra Reparto e Città così da non visualizzare
+                gli ID delle città ma bensì i nomi.
+                L'ultima colonna è dedicata alle operazioni di gestione, viene creato un link URL per la cancellazione indicando la scelta che sarà gestita nello switch-case
+                e l'id del reparto che voglio cancellare.
+            */
             $db = new mysqli($dbHost, $dbUser, $dbPassword, $dbName);
             $sql = "SELECT Reparto.id, Reparto.nomeReparto AS 'Reparto', Citta.nomeCitta AS 'Citta' 
                     FROM Reparto, Citta 
@@ -94,11 +107,12 @@ require("../include/head.php");
             break;
         }
         case "checkReparto":{
-            /* in questo case verifico che l'id del reparto selezionato compare oppure no
-            nella tabella dipendente, se non compare allora eseguo una cancellazione diretta del reparto,
-            se invece compare allora predispongo un bottone per dare all'utente la possibilità di confermare la cancellazione
+            /* in questo case verifico se l'id del reparto selezionato compare oppure no
+            nella tabella dipendente, se non compare allora eseguo una cancellazione diretta del reparto (l'id del reparto non è FK nella tabella dipendente),
+            se invece compare(l'id del reparto compare almeno una volta come FK in dipendente) allora predispongo un bottone per dare all'utente la possibilità di confermare la cancellazione
             dei record associati anche nella tabella dipendente. L'operazione di cancellazione nella tabella dipendente 
-            avviene nel case 'deleteReparto' che esegue la cancellazione PRIMA sulla tabella 'dipendente' e POI sulla tabella 'reparto'.
+            avviene nel case 'deleteReparto' che esegue la cancellazione PRIMA sulla tabella 'dipendente' e POI sulla tabella 'reparto', procedimento per garantine l'integrità referenziale del
+            database.
             */
             $idR = $_REQUEST['idReparto'];
             echo("Sto controllando se il reparto scelto interessa uno o più dipendenti...<br />");
@@ -109,8 +123,10 @@ require("../include/head.php");
 
             echo("Record trovati: ".$rs->num_rows."<br />");
             if($rs->num_rows == 0){
-                // nessun dipendente è associato al reparto che voglio cancellare.
-                // quindi posso eseguire direttamente la cancellazione del reparto.
+                /* num_rows mi restituisce il numero di righe che soddisfano la query SELECT eseguita (cioè il numero di record)
+                    se 0 nessun dipendente è associato al reparto che voglio cancellare.
+                    quindi posso eseguire direttamente la cancellazione del reparto.
+                */
                 $sql = "DELETE FROM reparto WHERE id=$idR";
                 if($db->query($sql))
                     echo("Reparto cancellato con successo.<br />");

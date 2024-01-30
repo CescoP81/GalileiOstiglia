@@ -16,6 +16,7 @@ require("../include/head.php");
     echo('<div class="alert alert-primary">Siamo nella sezione Città - Ver 2.0</div>');
     switch($sc){
         case "formNuovaCitta":{
+            /* Visualizzo il form per l'inserimento di una nuova città, arrivo in questo case cliccando il link nella navBar generale nella sezione Città.*/
             echo('<form action="citta.php">
                 <div class="mb-3">
                     <label for="nomeCitta" class="form-label">Nome Città:</label>
@@ -27,8 +28,9 @@ require("../include/head.php");
             break;
         }
         case "addNuovaCitta":{
+            /* recupero il nome della città che l'utente vuole inserire dalle variabili nell'indirizzo URL generato quando si preme sul bottone "Inserisci" nel form
+                creo quindi la stringa mySQL da eseguire per l'inserimento nel database e la eseguo */
             $n = $_REQUEST['nomeCitta'];
-            //$db = new mysqli("localhost", "root", "", "scuola2324");
             $db = new mysqli($dbHost, $dbUser, $dbPassword, $dbName);
             $sql = "INSERT INTO citta (nomeCitta) VALUES('$n')";
             if($db->query($sql)){
@@ -40,7 +42,7 @@ require("../include/head.php");
             break;
         }
         case "listaCitta":{
-            //$db = new mysqli("localhost", "root", "", "scuola2324");
+            /* VIsualizzo tutte le città presenti nel database, questo case viene richiamato dal link presente nella navBar generale nella sezione Città */
             $db = new mysqli($dbHost, $dbUser, $dbPassword, $dbName);
             $sql = "SELECT * FROM citta";
             $rs = $db->query($sql);
