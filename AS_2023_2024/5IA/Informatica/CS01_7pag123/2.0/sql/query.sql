@@ -13,7 +13,9 @@ SELECT d.nome, d.Cognome
 FROM Citta AS c, Dipendente AS d, Reparto AS rep
 WHERE d.idReparto = rep.id AND rep.idCittaReparto = c.id AND c.nomeCitta = 'Vicenza';
 
+
 -- Query del 01/02/2024 esempi con funzioni di aggregazione.
+------------------------------------------------------------
 -- Visualizzare il numero di pagamenti totali effettuati.
 SELECT COUNT(id)
 FROM Pagamento;
