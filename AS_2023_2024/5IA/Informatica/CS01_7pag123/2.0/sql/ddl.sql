@@ -29,3 +29,15 @@ CREATE TABLE IF NOT EXISTS Dipendente(
     foreign key(idReparto) references Reparto(id),
     foreign key(idCittaResidenza) references Citta(id)
 ) ENGINE=InnoDB;
+
+-- aggiunta in data 1.02.24
+CREATE TABLE IF NOT EXISTS Pagamento(
+    id integer unsigned auto_increment,
+    data date,
+    causale varchar(255),
+    importo float,
+    idDipendente integer unsigned,
+
+    primary key(id),
+    foreign key(idDipendente) references Dipendente(id)
+) ENGINE=InnoDB;
