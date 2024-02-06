@@ -24,11 +24,27 @@ int getValueLessThan(int _max);
 */
 int getValueBetween(int _min, int _max);
 
+/**
+ * Ritorna un valore random compreso tra 0 e un valore positivo passato come parametro.
+ * @param int Valore massimo del random.
+ * @return Valore random generato.
+*/
+int getRandomValue(int _max);
+
+/**
+ * Ritorna un valore random compreso tra gli estremi min e max passati come parametri.
+ * @param int Valore dell'estremo minore.
+ * @param int Valore dell'estremo maggiore.
+ * @return Valore random generato.
+*/
+int getRandomValueBetween(int _min, int _max);
+
 /* -- sezione del main program -- */
 int main(){
     int x;
 
     // Verifica funzione
+
     x = getValueLessThan(20);
     printf("E' stato inserito il valore: %d\n", x);
 
@@ -36,7 +52,17 @@ int main(){
     printf("Valore di x: %d\n", x);
     x = getValueBetween(1, 10);
     printf("Valore di x: %d\n", x);
+    
+    printf("\n-- Esempi del generatore random. --\n\n");
 
+    x = getRandomValue(20);
+    printf("Valore random generato: %d\n", x);
+
+    x = getRandomValueBetween(9, 1);
+    printf("Valore random generato: %d\n", x);
+
+    x = getRandomValueBetween(5, 10);
+    printf("Valore random generato: %d", x);
     return(0);
 }
 
@@ -68,6 +94,30 @@ int getValueBetween(int _min, int _max){
     }
     else{
         printf("Attenzione! controllare estremi del range.\n");
+        valore = -1;
+    }
+
+    return(valore);
+}
+
+int getRandomValue(int _max){
+    int valore;
+
+    srand(time(NULL));
+    valore = rand()%(_max + 1);
+
+    return(valore);    
+}
+
+int getRandomValueBetween(int _min, int _max){
+    int valore;
+    srand(time(NULL));
+
+    if(_min < _max){
+        valore = _min + rand()%(_max - _min + 1);
+    }
+    else{
+        printf("Attenzione! gli estremi del random non validi.");
         valore = -1;
     }
 
