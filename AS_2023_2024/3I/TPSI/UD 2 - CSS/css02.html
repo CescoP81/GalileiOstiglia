@@ -1,0 +1,77 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>Esempio di menu custom con CSS</title>
+        <style type="text/css">
+            /* Impostazioni per una barra del menu su singola riga.*/
+            .vNavBar{
+                font-size: 1.2em;
+                border: solid 0px rgb(200,0,0);
+                text-align: center;
+            }
+            .vNavBar A:LINK{
+                padding-left: 10px;
+                padding-right: 10px;
+                text-decoration: none;
+                background: rgb(255,255,255);
+                border-bottom: solid 6px rgb(180,180,180);
+            }
+            .vNavBar A:VISITED{
+                text-decoration: none;
+                background: rgb(255,255,255);
+            }
+            .vNavBar A:HOVER{
+                text-decoration: none;
+                background: rgb(240,240,240);
+                border-bottom: solid 3px rgb(0,255,0);
+            }
+
+            /* Impostazioni per una barra menu su colonna */
+            .hNavBar{
+                width: 125px;
+                font-size: 1.2em;
+                border: solid 0px rgb(200,0,0);
+                text-align: left;
+            }
+            .hNavBar A:LINK{
+                display: block;
+                padding-left: 10px;
+                padding-right: 10px;
+                text-decoration: none;
+                background: rgb(255,255,255);
+                border-left: solid 6px rgb(180,180,180);
+
+            }
+            .hNavBar A:VISITED{
+                text-decoration: none;
+                background: rgb(255,255,255);
+            }
+            .hNavBar A:HOVER{
+                text-decoration: none;
+                background: rgb(240,240,240);
+                border-left: solid 6px rgb(0,255,0);
+            }
+        </style>
+    </head>
+    <body>
+        <!-- creazione di un menu su singola riga, centrato. -->
+        <div class="vNavbar">
+            <a href="#">Home</a>
+            <a href="#">Chi Siamo</a>
+            <a href="#">Mission</a>
+            <a href="#">Contatti</a>
+            <a href="#">FAQ</a>
+        </div>
+
+        <br /><br />
+        
+        <!-- creazione di un menu su colonna laterale sinistra con larghezza 125pixels -->
+        <div class="hNavbar">
+                <a href="#">Home</a>
+                <a href="#">Chi Siamo</a>
+                <a href="#">Mission</a>
+                <a href="#">Contatti</a>
+                <a href="#">FAQ</a>
+        </div>
+    </body>
+</html>
