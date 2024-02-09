@@ -10,9 +10,9 @@ Esercitazione di sviluppo e utilizzo funzioni:
 - [x] sommaDivisori
 
 **p03.c**
-Esempio di funzioni per:
-    - input valori controllati.
-    - generazione valori random con range controllati.
+Esempio di funzioni per:  
+- [x] input valori controllati.
+- [x] generazione valori random con range controllati.
 
 **p04.c**
 Creare un programma che utilizzando funzioni appositamente create permetta le seguenti operazioni:
