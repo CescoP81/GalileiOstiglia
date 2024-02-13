@@ -3,8 +3,7 @@ Sviluppo Versione 2.0, apporta modifiche al database e implementa nuove funziona
 Change Log:
 - [ ] Aggiunta del campo Matricola nella tabella 'dipendente'
 - [ ] Aggiunta modifica di un singolo record.
-- [ ] Aggiunta cancellazione singolo record.
-- [ ] Sviluppo funzione generale per visualizzare la risultante di una query.
+- [x] Aggiunta cancellazione singolo record.
+- [ ] Aggiunta sezione Pagamenti.
 - [ ] Sviluppo di report in PDF (utilizzo della libreria free fpdf).
-- [ ] Inserimento icone nelle voci dei menu (navBar, etc...);
-
+- [x] Inserimento icone nelle voci dei menu (navBar, etc...);

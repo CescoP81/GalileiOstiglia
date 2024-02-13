@@ -25,10 +25,16 @@ function scriviNavbar(){
                             Città
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="citta.php?scelta=formNuovaCitta">
-                                <i class="bi-plus-circle" style="font-size: 1rem; color: cornflowerblue;"></i>
-                                Nuova Città</a></li>
-                                <li><a class="dropdown-item" href="citta.php?scelta=listaCitta">Lista Città</a></li>
+                                <li>
+                                    <a class="dropdown-item" href="citta.php?scelta=formNuovaCitta">
+                                    <i class="bi-plus-circle" style="font-size: 1rem; color: black;"></i>
+                                    Nuova Città</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="citta.php?scelta=listaCitta">
+                                    <i class="bi-list-ol" style="font-size: 1rem; color: black;"></i>
+                                    Lista Città</a>
+                                </li>
                             </ul>
                         </li>
 
@@ -37,8 +43,16 @@ function scriviNavbar(){
                             Reparto
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="reparto.php?scelta=formNuovoReparto">Nuovo Reparto</a></li>
-                                <li><a class="dropdown-item" href="reparto.php?scelta=listaReparto">Lista Reparti</a></li>
+                                <li>
+                                    <a class="dropdown-item" href="reparto.php?scelta=formNuovoReparto">
+                                    <i class="bi-plus-circle" style="font-size: 1rem; color: black;"></i>
+                                    Nuovo Reparto</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="reparto.php?scelta=listaReparto">
+                                    <i class="bi-list-ol" style="font-size: 1rem; color: black;"></i>
+                                    Lista Reparti</a>
+                                </li>
                             </ul>
                         </li>
 
@@ -47,8 +61,16 @@ function scriviNavbar(){
                             Dipendente
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="dipendente.php?scelta=formNuovoDipendente">Nuovo Dipendente</a></li>
-                                <li><a class="dropdown-item" href="dipendente.php?scelta=listaDipendente">Lista Dipendenti</a></li>
+                                <li>
+                                    <a class="dropdown-item" href="dipendente.php?scelta=formNuovoDipendente">
+                                    <i class="bi-plus-circle" style="font-size: 1rem; color: black;"></i>
+                                    Nuovo Dipendente</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="dipendente.php?scelta=listaDipendente">
+                                    <i class="bi-list-ol" style="font-size: 1rem; color: black;"></i>
+                                    Lista Dipendenti</a>
+                                </li>
                             </ul>
                         </li>
                     

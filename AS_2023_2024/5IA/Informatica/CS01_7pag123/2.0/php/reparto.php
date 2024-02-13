@@ -79,7 +79,7 @@ require("../include/head.php");
                     FROM Reparto, Citta 
                     WHERE Reparto.idCittaReparto = Citta.id";
             $rs = $db->query($sql);
-            $db->close();
+            
 
             echo('<table class="table table-striped">
                     <thead>
@@ -87,6 +87,7 @@ require("../include/head.php");
                             <th scope="col">#</th>
                             <th scope="col">Nome Reparto</th>
                             <th scope="col">Città Reparto</th>
+                            <th scope="col">Dipendenti Presenti</th>
                             <th scope="col">Gestione</th>
                         </tr>
                     </thead>
@@ -96,14 +97,24 @@ require("../include/head.php");
                     echo('<tr>
                         <th scope="row">'.$record['id'].'</th>
                         <td>'.$record['Reparto'].'</td>
-                        <td>'.$record['Citta'].'</td>
-                        <td><a class="btn btn-danger" role="button" href="reparto.php?scelta=checkReparto&idReparto='.$record['id'].'">Cancella</a></td>
+                        <td>'.$record['Citta'].'</td>');
+
+                        // conto quanti dipendenti sono presenti nel reparto.
+                        $sql = "SELECT COUNT(d.id) AS recordTrovati 
+                                FROM dipendente AS d 
+                                WHERE d.idReparto=".$record['id'];
+                        $rs2 = $db->query($sql);
+                        $record2 = $rs2->fetch_assoc();
+                        echo("<td>".$record2['recordTrovati']."</td>");                    
+                    
+                    echo('<td><a class="btn btn-danger" role="button" href="reparto.php?scelta=checkReparto&idReparto='.$record['id'].'">Cancella</a></td>
                         </tr>
                     ');
                 }
                 echo('</tbody>');
                 echo('<caption>Lista reparti presenti a database');
             echo('</table>');
+            $db->close();
             break;
         }
         case "checkReparto":{
@@ -129,15 +140,16 @@ require("../include/head.php");
                 */
                 $sql = "DELETE FROM reparto WHERE id=$idR";
                 if($db->query($sql))
-                    echo("Reparto cancellato con successo.<br />");
+                    echo('<div class="alert alert-success">Reparto cancellato con successo.</div>');
                 else
-                    echo("Problema in cancellazione.<br />");
+                    echo('<div class="alert alert-warning">Problema in cancellazione.</div>');
             }
             else{
                 // in questo caso l'id del reparto che voglio cancellare
                 // interessa una o più righe nella tabella dipendente
                 // quindi chiedo all'utente se cancellare anche i dipendenti.
-                echo('<a class="btn btn-danger" role="button" href="reparto.php?scelta=deleteReparto&idReparto='.$idR.'">Conferma cancellazione Reparto e Dipendenti associati</a>');
+                // echo('<a class="btn btn-danger" role="button" href="reparto.php?scelta=deleteReparto&idReparto='.$idR.'">Conferma cancellazione Reparto e Dipendenti associati</a>');
+                echo('<div class="alert alert-warning">ATTENZIONE: Questo reparto interessa uno i più Dipendenti.<br />Procedere alla loro cancellazione quindi riprovare.</div>');
             }
 
             $db->close();
@@ -155,9 +167,9 @@ require("../include/head.php");
             // cancellati i dipendenti cancello il reparto selezionato.
             $sql = "DELETE FROM reparto WHERE id=$idR";
             if($db->query($sql))
-                echo("Reparto cancellato con successo.");
+                echo('<div class="alert alert-success">Reparto cancellato con successo.</div>');
             else
-                echo("Problema in cancellazione");
+                echo('<div class="alert alert-warning">Problema in cancellazione</div>');
             $db->close();
             break;
         }

@@ -101,8 +101,7 @@ require("../include/head.php");
             //$db = new mysqli("localhost", "root", "", "scuola2324");
             $db = new mysqli($dbHost, $dbUser, $dbPassword, $dbName);
             $rs = $db->query($sql);
-            $db->close();
-
+            
             echo('<table class="table table-striped">
                     <thead>
                         <tr>
@@ -111,6 +110,7 @@ require("../include/head.php");
                             <th scope="col">Nome</th>
                             <th scope="col">Città di Residenza</th>
                             <th scope="col">Reparto di Impiego</th>
+                            <th scope="col">Pagamenti Presenti</th>
                             <th scope="col">Gestione</th>
                         </tr>
                     </thead>
@@ -122,14 +122,24 @@ require("../include/head.php");
                         <td>'.$record['cognome'].'</td>
                         <td>'.$record['nome'].'</td>
                         <td>'.$record['nomeCitta'].'</td>
-                        <td>'.$record['nomeReparto'].' di '.$record['cittaReparto'].'</td>
-                        <td><a class="btn btn-danger" role="button" href="dipendente.php?scelta=deleteDipendente&idDipendente='.$record['id'].'">Cancella</a></td>
+                        <td>'.$record['nomeReparto'].' di '.$record['cittaReparto'].'</td>');
+
+                        // eseguo conteggio pagamenti associati al dipendente.
+                        $sql = "SELECT COUNT(p.id) AS recordTrovati 
+                                FROM pagamento AS p 
+                                WHERE idDipendente=".$record['id'];
+                        $rs2 = $db->query($sql);
+                        $record2 = $rs2->fetch_assoc();
+                        echo('<td>'.$record2['recordTrovati'].'</td>');
+
+                        echo('<td><a class="btn btn-danger" role="button" href="dipendente.php?scelta=deleteDipendente&idDipendente='.$record['id'].'">Cancella</a></td>
                         </tr>
                     ');
                 }
                 echo('</tbody>');
                 echo('<caption>Lista dipendenti presenti a database');
             echo('</table>');
+            $db->close();
             break;
         }
         case "deleteDipendente":{
@@ -137,13 +147,22 @@ require("../include/head.php");
             //echo("Voglio cancellare il dipendente con ID: ".$idD."<br />");
             $db = new mysqli($dbHost, $dbUser, $dbPassword, $dbName);
 
+            // devo cancellare tutti i pagamenti relativi a questo dipendente (per rispetto tra PK e FK).
+            $sql = "DELETE FROM pagamento WHERE idDipendente='$idD'";
+            if($db->query($sql)){
+                echo('<div class="alert alert-success">Cancellazione dei pagamenti avvenuta con successo</div>');    
+            }
+            else{
+                echo('<div class="alert alert-warning">Cancellazione pagamenti non avvenuta</div>');    
+            }
+
+            // quindi posso procedere alla cancellazione del dipendente.
             $sql = "DELETE FROM dipendente WHERE id='$idD'";
-            //echo($sql);
             if($db->query($sql)){
                 echo('<div class="alert alert-success">Cancellazione dipendente avvenuta con successo</div>');    
             }
             else{
-                echo('<div class="alert alert-warning">Cancellazionedipendente non avvenuta</div>');    
+                echo('<div class="alert alert-warning">Cancellazione dipendente non avvenuta</div>');    
             }
 
             $db->close();
