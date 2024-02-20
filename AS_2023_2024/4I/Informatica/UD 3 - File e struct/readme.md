@@ -35,7 +35,7 @@ Realizzare un file "valori.txt" con all'interno 20 valori casuali interi compres
 
 File binari, post pcto, con strutture.
 - [x] Definizione di struttura e dichiarazione ed utilizzo.
-- [ ] Scrittura di strutture con fwrite.
+- [x] Scrittura di strutture con fwrite.
 - [ ] Lettura di strutture con fread.
 - [ ] Gestione rubrica telefonica, elenco prodotti, catalogo dischi.
 - [ ] Vettore di strutture [forse].
