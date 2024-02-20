@@ -41,4 +41,7 @@ File binari, post pcto, con strutture.
 - [ ] Vettore di strutture [forse].
 
 **p07.c**
-Esempio di definizione della struttura e relativa dichiarazione come variabile o come puntatore, esempio di input.
+Esempio di definizione della struttura e relativa dichiarazione come variabile o come puntatore, esempio di input.  
+
+**p08.c**
+Esempio di scrittura di una struttura su file binario con funzione fwrite.
