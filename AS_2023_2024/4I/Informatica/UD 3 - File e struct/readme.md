@@ -39,3 +39,6 @@ File binari, post pcto, con strutture.
 - [ ] Scrittura di strutture con fwrite.
 - [ ] Lettura di strutture con fread.
 - [ ] Gestione rubrica telefonica, elenco prodotti, catalogo dischi.
+
+**p07.c**
+Esempio di definizione della struttura e relativa dichiarazione come variabile o come puntatore, esempio di input.
