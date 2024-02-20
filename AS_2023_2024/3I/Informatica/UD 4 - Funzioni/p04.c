@@ -42,6 +42,14 @@ int main(){
 
     // richiamo terza funzione
     printf("Somma dei divisori: %d\n", sommaDivisori(val));
+
+    // richiamo ottava funzione
+    if(verificaQuadratoPerfetto(val) == 1){
+        printf("Il valore e' un quadrato perfetto.\n")
+    }
+    else{
+        printf("Il valore non e' un quadrato perfetto.\n");
+    }
     return(0);
 }
 
