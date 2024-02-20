@@ -61,7 +61,7 @@ int main(){
     // scrivo la persona su file
     fwrite(p, sizeof(Persona), 1, fpout);
       
-    // chiudo il file, da fare sempre altrimenti potrei non avere il file o averlo incompleto.
+    // chiudere il file o averlo incompleto.
     fclose(fpout);  
     return(0);
 }
