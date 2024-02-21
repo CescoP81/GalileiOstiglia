@@ -28,6 +28,8 @@ void visualizzaDivisori(int _val);
 
 int sommaDivisori(int _val);
 
+int verificaNumeroPrimo(int _val);
+
 int verificaQuadratoPerfetto(int _val);
 
 // --------------
@@ -42,6 +44,14 @@ int main(){
 
     // richiamo terza funzione
     printf("Somma dei divisori: %d\n", sommaDivisori(val));
+
+    // richiamo quarta funzione
+    if(verificaNumeroPrimo(val) == 1){
+        printf("Il numero %d e' un valore primo.\n", val);
+    }
+    else{
+        printf("Il valore %d non e' un valore primoa.\n", val);
+    }
 
     // richiamo ottava funzione
     if(verificaQuadratoPerfetto(val) == 1){
@@ -64,7 +74,6 @@ int inputValoreControllato(int _min, int _max){
 
     return(valore);
 }
-
 void visualizzaDivisori(int _val){
     int divisore;
     divisore = 1;
@@ -75,7 +84,6 @@ void visualizzaDivisori(int _val){
         divisore = divisore + 1;
     }
 }
-
 int sommaDivisori(int _val){
     int divisore;
     int somma;
@@ -90,7 +98,6 @@ int sommaDivisori(int _val){
     }
     return(somma);
 }
-
 int verificaQuadratoPerfetto(int _val){
     int tmp;    // valore temporaneo, parte da 1 e arriva massimo alla metà di _val
 
@@ -102,4 +109,27 @@ int verificaQuadratoPerfetto(int _val){
         tmp = tmp + 1;
     }
     return(0);
+}
+
+int verificaNumeroPrimo(int _val){
+    int divisore;
+    int cntDivisoriTrovati;
+
+    divisore = 1;
+    cntDivisoriTrovati = 0;
+    while(divisore <= _val){
+        if(_val%divisore == 0){
+            cntDivisoriTrovati = cntDivisoriTrovati + 1;
+        }
+        divisore = divisore + 1;
+    }
+
+    if(cntDivisoriTrovati <= 2){
+        // in questo caso _val è un numero primo quindi ritorno 1.
+        return(1);
+    }
+    else{
+        // in questo caso _val non è un numero primo, quindi ritorno 0.
+        return(0);
+    }
 }
