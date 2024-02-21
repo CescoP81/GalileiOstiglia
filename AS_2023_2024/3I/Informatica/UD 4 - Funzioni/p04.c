@@ -4,7 +4,7 @@
     - [x] Inserimento di un valore val1 compreso tra 1 e 999.
     - [x] Visualizzazione di tutti i divisori di val1.
     - [x] Calcolo e ritorno al main della somma divisori di val1.
-    - [ ] Verifica se val1 è PRIMO (divisibile solo per 1 e per se stesso), la funzione
+    - [x] Verifica se val1 è PRIMO (divisibile solo per 1 e per se stesso), la funzione
     ritorna 1 se è primo, 0 se non lo è.
     - [ ] Verifica se val1 è PERFETTO (la somma dei divisori è uguale a se stesso), la funzione
     ritorna 1 se è perfetto, 0 se non lo è. [6 è perfetto -> 1+2+3=6]
@@ -30,6 +30,8 @@ int sommaDivisori(int _val);
 
 int verificaNumeroPrimo(int _val);
 
+int verificaNumeroPerfetto(int _val);
+
 int verificaQuadratoPerfetto(int _val);
 
 // --------------
@@ -53,6 +55,14 @@ int main(){
         printf("Il valore %d non e' un valore primoa.\n", val);
     }
 
+    // richiamo quinta funzione
+    if(verificaNumeroPerfetto(val) == 1){
+        printf("Il valore %d e' un numero perfetto.", val);
+    }
+    else{
+        printf("Il valore %d non e' un numero perfetto.\n", val);
+    }
+    
     // richiamo ottava funzione
     if(verificaQuadratoPerfetto(val) == 1){
         printf("Il valore e' un quadrato perfetto.\n");
@@ -110,7 +120,6 @@ int verificaQuadratoPerfetto(int _val){
     }
     return(0);
 }
-
 int verificaNumeroPrimo(int _val){
     int divisore;
     int cntDivisoriTrovati;
@@ -130,6 +139,14 @@ int verificaNumeroPrimo(int _val){
     }
     else{
         // in questo caso _val non è un numero primo, quindi ritorno 0.
+        return(0);
+    }
+}
+int verificaNumeroPerfetto(int _val){
+    if(sommaDivisori(_val) == (_val*2)){
+        return(1);
+    }
+    else{
         return(0);
     }
 }
