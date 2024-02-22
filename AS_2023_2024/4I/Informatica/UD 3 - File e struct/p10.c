@@ -20,7 +20,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 // struttura
-typedef struct{
+typedef struct Disco{
     char cognome[20];
     char nome[20];
     char titolo[30]; // acquisire con gets
@@ -46,6 +46,8 @@ int mainMenu();
 // MAIN PROGRAM
 int main(){
     int scelta;
+    Disco* d;
+    d = malloc(sizeof(Disco));
     do{
         scelta = mainMenu();
         switch(scelta){
