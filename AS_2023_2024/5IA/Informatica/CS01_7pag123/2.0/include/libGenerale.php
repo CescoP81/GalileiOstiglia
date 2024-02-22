@@ -73,6 +73,24 @@ function scriviNavbar(){
                                 </li>
                             </ul>
                         </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Pagamento - Stipendio
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                    <i class="bi-plus-circle" style="font-size: 1rem; color: black;"></i>
+                                    Nuovo Pagamento</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="pagamento.php?scelta=listaPagamenti">
+                                    <i class="bi-list-ol" style="font-size: 1rem; color: black;"></i>
+                                    Lista Pagamenti</a>
+                                </li>
+                            </ul>
+                        </li>
                     
                     </ul>
                 </div>
