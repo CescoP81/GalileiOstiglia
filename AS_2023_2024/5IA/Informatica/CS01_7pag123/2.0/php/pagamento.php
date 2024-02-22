@@ -58,7 +58,7 @@ require("../include/head.php");
                         echo('<td>'.$record2['recordTrovati'].'</td>');
 
                         echo('<td>
-                            <a class="btn btn-success" role="button" href="pagamento.php?scelta=creaPdfPagamento&idDipendente='.$record['id'].'">
+                            <a class="btn btn-success" role="button" target="new" href="creaPdfPagamento.php?idDipendente='.$record['id'].'">
                             Stampa Cedolino</a>
                             </td>
                         </tr>
@@ -70,13 +70,13 @@ require("../include/head.php");
             $db->close();
             break;
         }
-        case "creaPdfPagamento":{
+        /*case "creaPdfPagamento":{
             // interrogazione del database e creazione della tabella
             // con i pagamenti specifici del dipendente scelto.
             $idD = $_REQUEST['idDipendente'];
             echo("Voglio il cedolino del dipendente con id: $idD");
             break;
-        }
+        }*/
     }
 require("../include/foot.php");
 ?>
