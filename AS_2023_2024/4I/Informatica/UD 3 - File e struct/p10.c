@@ -47,6 +47,7 @@ int mainMenu();
 int main(){
     int scelta;
     Disco* d;
+    
     d = malloc(sizeof(Disco));
     do{
         scelta = mainMenu();
