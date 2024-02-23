@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>Prova 3 di CSS - layout</title>
+        <style type="text/css">
+            .header{
+                border: solid 1px rgb(200,0,0);
+                height: 100px;
+            }
+
+            .navBar{
+                font-size: 1.2em;
+                border: solid 1px rgb(0,200,0);
+                text-align: right;
+            }
+            .navBar A:LINK{
+                padding-left: 10px;
+                padding-right: 10px;
+                text-decoration: none;
+                background: rgb(255,255,255);
+                border-bottom: solid 6px rgb(180,180,180);
+            }
+            .navBar A:VISITED{
+                text-decoration: none;
+                background: rgb(255,255,255);
+            }
+            .navBar A:HOVER{
+                text-decoration: none;
+                background: rgb(240,240,240);
+                border-bottom: solid 3px rgb(0,255,0);
+            }
+
+            .contentPane{
+                border: dotted 2px rgb(0,0,255);
+            }
+
+            .floatPane{
+                float: right;
+                width: 250px;
+                border: dotted 2px rgb(200,0,255);
+            }
+
+            .masterPane{
+                margin-right: 260px;
+                border: dotted 2px rgb(100,255,200);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            Contiene l'intestazione generale (logo, nome sito, etc...)
+        </div>
+
+        <div class="navBar">
+            <a href="#">Home</a>
+            <a href="#">Chi Siamo</a>
+            <a href="#">Mission</a>
+            <a href="#">Contatti</a>
+            <a href="#">FAQ</a>
+        </div>
+
+        <div class="contentPane">
+            <div class="floatPane">
+                Contiene informazioni secondarie alla nostra pagina
+                <br /><br /><br /><br />
+            </div>
+            <div class="masterPane">
+                Contiene le informazioni principali della pagina.
+                <br /><br /><br /><br />
+                Seconda riga
+                <br /><br /><br /><br />
+                Fine contenuti.
+            </div>
+        </div>
+    </body>
+</html>
