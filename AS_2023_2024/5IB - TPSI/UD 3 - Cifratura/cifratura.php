@@ -57,7 +57,7 @@ switch($sc){
     }
     default:{
         // caso in cui l'utente non abbia eseguito ancora nessuna operazione
-        // quindi presento il form di inserimento dati da cifrare.
+        // quindi presento il form di inserimento dati da cifrare .
         echo('
             <table style="width: 100%">
                 <tr style="text-align: center;"><th>REGISTRAZIONE</th><th>LOGIN UTENTE</th></tr>
