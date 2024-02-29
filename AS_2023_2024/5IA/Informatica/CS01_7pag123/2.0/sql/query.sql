@@ -83,3 +83,19 @@ FROM Dipendente AS d, Pagamento AS p
 WHERE d.id = p.idDipendente AND p.data>='2024/01/01' AND p.data<='2024/01/31'
 GROUP BY d.id
 HAVING SUM(importo) > 1200;
+
+-- Visualizzare Cognome e Nome di ogni dipendente, la città di residenza
+-- il reparto di impiego e la relativa città del reparto.
+SELECT d.Cognome, d.Nome, c.NomeCitta, r.NomeReparto, c.NomeCitta 
+FROM dipendente AS d, Citta AS c, Reparto as r 
+WHERE d.idCittaResidenza=c.id AND d.idReparto=r.id AND r.idCittaReparto=c.id
+
+-- quella sopra è ERRATA, bisogna rinominare due volte la tabella citta, come sotto:
+
+SELECT d.Cognome, d.Nome, c.NomeCitta AS 'residenza',
+         r.NomeReparto, c1.NomeCitta AS 'Citta Reparto' 
+FROM dipendente AS d,
+     Citta AS c, 
+     Citta AS c1, 
+     Reparto AS r 
+WHERE d.idCittaResidenza=c.id AND d.idReparto=r.id AND r.idCittaReparto=c1.id
