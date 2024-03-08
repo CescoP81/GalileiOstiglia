@@ -55,6 +55,7 @@ int main(){
     Disco* d;
     FILE *fpout;    //utilizzo per scrivere
     FILE *fpin;     //utilizzo per leggere
+    char *cognomeRicerca;
     
     d = malloc(sizeof(Disco));
     do{
@@ -71,7 +72,10 @@ int main(){
                 break;
             }
             case 3:{
-                searchByCognome(d, "discografia.dat", "Vecchioni");
+                printf("Cognome da ricercare: ");
+                scanf("%s", cognomeRicerca);
+                fflush(stdin);
+                searchByCognome(d, "discografia.dat", cognomeRicerca);
                 break;
             }
             case 4:{
@@ -92,8 +96,12 @@ int main(){
         }
         system("PAUSE");
     }while(scelta != 0);
+
+    // libero la memoria allocata.
+    free(d);
     return(0);
 }
+
 // Definizione delle funzioni.
 int mainMenu(){
     int s;
