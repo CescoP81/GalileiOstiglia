@@ -1,0 +1,21 @@
+- printf("%s %d",var1, var2); -> stampa a VIDEO una stringa e un intero.
+- 
+
+pippo.txt
+ciao casa mare bici
+
+scanf -> legge da tastiera (dal monitor)
+printf -> stampa sul monitor.
+
+fscanf -> legge dal file (puntatore al file aperto in lettura "rt" oppure "r+t")
+fprintf -> stampa sul file (puntatore al file aperto in scrittura "wt" oppure "at")
+
+fread -> legge un blocco di memoria dal file binario
+    ->se voglio vedere i dati letti a video uso delle printf.
+fwrite -> scrive un blocco di memoria su un file binario
+    -> se voglio acquisire i dati prima da monitor uso scanf.
+
+EXTRA:
+fgets -> legge una stringa da un file di testo.
+fputs -> scrive una stringa su un file di testo.
+fseek -> sposta il puntatore ad un file di un determinato numero di byte; il file deve essere aperto in "r+".
