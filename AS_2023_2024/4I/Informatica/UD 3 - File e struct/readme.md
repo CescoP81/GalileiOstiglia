@@ -45,3 +45,23 @@ Esempio di definizione della struttura e relativa dichiarazione come variabile o
 
 **p08.c**
 Esempio di scrittura di una struttura su file binario con funzione fwrite.
+
+**p09.c**
+Esempio di lettura di strutture su file binario con funzione fread. Riutilizzo sempre il puntatore p dopo aver scritto la struttura sul file.
+
+**p10.c**
+Applicazione sviluppata in C per la catalogazione di una collezione privata di Dischi.
+Ogni disco è identificato dalle seguenti informazioni:
+- Artista -> Cognome e Nome  
+- Titolo  
+- Anno  
+- Giri -> 45 o 33  
+L'applicazione deve permettere le seguenti funzionalità utilizzando come archivio il file binario 'discografia.dat':
+    - [x] Aggiunta di un nuovo Disco alla collezione.
+    - [x] Visualizzazione dei Disco della collezione.
+    - [x] Ricerca di un Disco basata su Cognome Artista.
+    - [ ] Ricerca di un Disco basata su Anno o intervallo anni.
+    - [ ] Modifica dei dati di un Disco.
+    - [x] Cancellazione di un Disco dall'elenco discografico.
+
+NB: il MAIN PROGRAM prevede un menu, uno switch case e la chiamata di una FUNZIONE per ogni punto da sviluppare.
