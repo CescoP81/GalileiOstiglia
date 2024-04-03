@@ -10,8 +10,8 @@
     - [x] Aggiunta di un nuovo Disco alla collezione.
     - [x] Visualizzazione dei Disco della collezione.
     - [x] Ricerca di un Disco basata su Cognome Artista.
-    - [ ] Ricerca di un Disco basata su Anno o intervallo anni.
-    - [ ] Modifica dei dati di un Disco.
+    - [x] Ricerca di un Disco basata su Anno o intervallo anni.
+    - [x] Modifica dei dati di un Disco.
     - [x] Cancellazione di un Disco dall'elenco discografico.
 
     NB: il MAIN PROGRAM prevede un menu, uno switch case e la chiamata di una FUNZIONE
@@ -48,6 +48,8 @@ void insertNewDisco(Disco*, char*);
 void listAllDisco(Disco*, char*);
 void searchByCognome(Disco*, char*, char*);
 void deleteDisco(Disco*, char*);
+void searchByYear(int, int, Disco*, char*);
+void updateDisco(Disco*, char*);
 
 // MAIN PROGRAM
 int main(){
@@ -56,6 +58,7 @@ int main(){
     FILE *fpout;    //utilizzo per scrivere
     FILE *fpin;     //utilizzo per leggere
     char *cognomeRicerca;
+    int annoIniziale, annoFinale;
     
     d = malloc(sizeof(Disco));
     do{
@@ -79,9 +82,18 @@ int main(){
                 break;
             }
             case 4:{
+                printf("Ricerca per Anno o Intervallo\n");
+                printf("Inserisci Anno iniziale: ");
+                scanf("%d", &annoIniziale);
+                fflush(stdin);
+                printf("Inserisci Anno finale oppure 0: ");
+                scanf("%d", &annoFinale);
+                fflush(stdin);
+                searchByYear(annoIniziale, annoFinale, d, "discografia.dat");
                 break;
             }
             case 5:{
+                updateDisco(d, "discografia.dat");
                 break;
             }
             case 6:{
@@ -195,6 +207,90 @@ void deleteDisco(Disco *_d, char *_filename){
     fclose(fpin);
     fclose(fpout);
 
+    // ricopio tmp su discografia.
+    fpin = fopen("tmp.dat", "rb");
+    fpout = fopen(_filename, "wb");
+    while(fread(_d, sizeof(Disco), 1, fpin)){
+        fwrite(_d, sizeof(Disco), 1, fpout);
+    }
+    fclose(fpin);
+    fclose(fpout);
+}
+
+void searchByYear(int _start, int _end, Disco *_d, char *_filename){
+    FILE *fpin;
+    fpin = fopen(_filename, "rb");
+
+    // ricerco per intervallo, devono essere specificati due anni e il vincolo
+    // è che start deve essere minore o uguale a end.
+    if(_start != 0 && _end!=0 && _start<=_end){
+        while(fread(_d, sizeof(Disco), 1, fpin)){
+            if(_d->anno >= _start && _d->anno<=_end){
+                printf("%s %s %s %d %d\n", _d->cognome, _d->nome, _d->titolo, _d->giri, _d->anno);
+            }
+        }
+    }
+    else{
+        // se viene specificato solo l'anno iniziale, cerco per anno specifico.
+        if(_start != 0 && _end==0){
+            while(fread(_d, sizeof(Disco), 1, fpin)){
+                if(_d->anno == _start){
+                    printf("%s %s %s %d %d\n", _d->cognome, _d->nome, _d->titolo, _d->giri, _d->anno);
+                }
+            }
+        }
+        else{
+            printf("Specifica anni non valida.");
+        }
+    }
+    fclose(fpin);
+}
+
+void updateDisco(Disco *_d, char *_filename){
+    FILE *fpin, *fpout;
+    int nrDisco;
+    int cnt;
+    printf("Seleziona il disco da modificare per numero:\n");
+    listAllDisco(_d, _filename);
+    printf("\nDisco numero: ");
+    scanf("%d", &nrDisco);
+    fflush(stdin);
+
+    fpin = fopen(_filename, "rb");
+    fpout = fopen("tmp.dat", "wb");
+    cnt = 0;
+    while(fread(_d, sizeof(Disco), 1, fpin)){
+        cnt++;
+        if(cnt != nrDisco){
+            fwrite(_d, sizeof(Disco), 1, fpout);
+        }
+        else{
+            printf("== Nuovi dati del disco ==\n");
+            printf("Cognome Artista: ");
+            scanf("%s", _d->cognome);
+            fflush(stdin);
+            printf("Nome Artista: ");
+            scanf("%s", _d->nome);
+            fflush(stdin);
+            printf("Titolo album: ");
+            gets(_d->titolo);
+            fflush(stdin);
+            printf("Giri: ");
+            scanf("%d", &(_d->giri));
+            fflush(stdin);
+            printf("Anno: ");
+            scanf("%d", &(_d->anno));
+            fflush(stdin);
+            // scrivo i nuovi dati nel file temporaneo.
+            fwrite(_d, sizeof(Disco), 1, fpout);
+        }
+    }
+    // chiudo entrambi i file, nel foput cioè temp.dat ho i vecchi dati e la modifica fatta,
+    // devo ricopiarlo su discrografia.dat
+    fclose(fpin);
+    fclose(fpout);
+
+    // riapro i due file e ricopio il contenuto di temp dentro a discografia.
     // ricopio tmp su discografia.
     fpin = fopen("tmp.dat", "rb");
     fpout = fopen(_filename, "wb");

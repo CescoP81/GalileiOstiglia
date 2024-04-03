@@ -25,19 +25,19 @@ Creare un file di testo "parole.txt" contenente alcune parole di lunghezza non s
 
 **p06.c**
 Realizzare un file "valori.txt" con all'interno 20 valori casuali interi compresi tra 10 e 25, i valori devono essere scritti a mano nel file. Realizzare quindi un programma che aperto il file in lettura:
-- [ ] Visualizza a video tutti i valori presenti nel file.
-- [ ] Determina e comunica a video il valore maggiore e minore.
-- [ ] Determina la media dei valori presenti.
-- [ ] Visualizza a video tutti i valori superiori alla media e in una riga successiva tutti i valori inferiori alla media.
-- [ ] Richiede da tastiera un valore compreso tra 10 e 25 quindi salva in un secondo file "numeri2.txt" solo i valori maggiori o uguali al valore inserito, presenti nel file iniziale.
+- [x] Visualizza a video tutti i valori presenti nel file.
+- [x] Determina e comunica a video il valore maggiore e minore.
+- [x] Determina la media dei valori presenti.
+- [x] Visualizza a video tutti i valori superiori alla media e in una riga successiva tutti i valori inferiori alla media.
+- [x] Richiede da tastiera un valore compreso tra 10 e 25 quindi salva in un secondo file "numeri2.txt" solo i valori maggiori o uguali al valore inserito, presenti nel file iniziale.
 
 ---
 
 File binari, post pcto, con strutture.
 - [x] Definizione di struttura e dichiarazione ed utilizzo.
 - [x] Scrittura di strutture con fwrite.
-- [ ] Lettura di strutture con fread.
-- [ ] Gestione rubrica telefonica, elenco prodotti, catalogo dischi.
+- [x] Lettura di strutture con fread.
+- [x] Gestione rubrica telefonica, elenco prodotti, catalogo dischi.
 - [ ] Vettore di strutture [forse].
 
 **p07.c**
@@ -60,8 +60,8 @@ L'applicazione deve permettere le seguenti funzionalità utilizzando come archiv
     - [x] Aggiunta di un nuovo Disco alla collezione.
     - [x] Visualizzazione dei Disco della collezione.
     - [x] Ricerca di un Disco basata su Cognome Artista.
-    - [ ] Ricerca di un Disco basata su Anno o intervallo anni.
-    - [ ] Modifica dei dati di un Disco.
+    - [x] Ricerca di un Disco basata su Anno o intervallo anni.
+    - [x] Modifica dei dati di un Disco.
     - [x] Cancellazione di un Disco dall'elenco discografico.
 
 NB: il MAIN PROGRAM prevede un menu, uno switch case e la chiamata di una FUNZIONE per ogni punto da sviluppare.
