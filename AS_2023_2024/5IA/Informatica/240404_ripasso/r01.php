@@ -10,10 +10,20 @@
             $v2 = $_REQUEST['inputTxt2'];
 
             echo('Valore 1: '.$v1.' Valore 2: '.$v2.'<br />
-                <a href="r01.php">Torna indietro</a>');
+                <a href="r01.php">Torna indietro</a><br /><br />');
 
             // realizzare un piccolo algoritmo che visualizza i divisori comuni dei due numeri ricevuti.
-            
+            $min = 0;
+            if($v1 < $v2)
+                $min = $v1;
+            else
+                $min = $v2;
+
+            for($i=1; $i<=$min; $i++){
+                if(($v1%$i == 0) && ($v2%$i == 0)){
+                    echo('Divisore comune: '.$i.'<br />');
+                }
+            }
             break;
         }
         default:{
