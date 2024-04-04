@@ -11,6 +11,9 @@
 
             echo('Valore 1: '.$v1.' Valore 2: '.$v2.'<br />
                 <a href="r01.php">Torna indietro</a>');
+
+            // realizzare un piccolo algoritmo che visualizza i divisori comuni dei due numeri ricevuti.
+            
             break;
         }
         default:{
