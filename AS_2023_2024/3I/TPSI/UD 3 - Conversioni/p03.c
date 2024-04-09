@@ -29,7 +29,5 @@ int main(){
         if(hex[i] == 14) printf("E");
         if(hex[i] == 15) printf("F");
     }
-
-
     return(0);
 }
