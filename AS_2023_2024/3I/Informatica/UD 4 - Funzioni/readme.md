@@ -26,3 +26,9 @@ Creare un programma che utilizzando funzioni appositamente create permetta le se
     0 se non lo sono.
 - [x] Verifica se val1 è un quadrato perfetto, restituisce 1 se lo è, 0 se non lo è.
     Quadrato perfetto: 16, 25, 36, 49, 81, etc...
+
+**p05.c**
+Realizzare un programma che utilizzando Funzioni, switch-case e cicli realizzi i seguenti algoritmi:
+- [x] Visualizza e conta i divisori di un numero (usando il FOR).
+- [x] Genera N numeri casuali maggiori di zero e minori di 100, con N passato come parametro.
+- [x] Visualizza un rettangolo di '#' con base e altezza ricevuti come parametri.
