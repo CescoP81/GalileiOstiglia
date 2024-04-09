@@ -32,3 +32,29 @@ Realizzare un programma che utilizzando Funzioni, switch-case e cicli realizzi i
 - [x] Visualizza e conta i divisori di un numero (usando il FOR).
 - [x] Genera N numeri casuali maggiori di zero e minori di 100, con N passato come parametro.
 - [x] Visualizza un rettangolo di '#' con base e altezza ricevuti come parametri.
+
+**p06.c**
+Realizzare l'algoritmo per creare questi disegni a video:  
+G    
+GG  
+GGG  
+GGGG  
+GGGGG  
+
+O  
+OO  
+OOO  
+OO  
+O
+
+----E  
+---EE  
+--EEE  
+-EEEE  
+EEEEE  
+
+----D  
+---DDD  
+--DDDDD  
+-DDDDDDD  
+DDDDDDDDD  
