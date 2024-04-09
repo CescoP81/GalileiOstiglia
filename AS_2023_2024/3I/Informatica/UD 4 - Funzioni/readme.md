@@ -34,7 +34,7 @@ Realizzare un programma che utilizzando Funzioni, switch-case e cicli realizzi i
 - [x] Visualizza un rettangolo di '#' con base e altezza ricevuti come parametri.
 
 **p06.c**
-Realizzare l'algoritmo per creare questi disegni a video:  
+Realizzare l'algoritmo per creare questi disegni a video utilizzando cicli e doppi cicli:  
 G    
 GG  
 GGG  
