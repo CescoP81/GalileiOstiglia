@@ -58,3 +58,6 @@ EEEEE
 --DDDDD  
 -DDDDDDD  
 DDDDDDDDD  
+
+**p07.c**
+Realizzare un programma C che richiede un numero all'utente che sia compresto tra 10 e 30, estremi compresi, quindi con una funzione visualizza tutti i numeri pari dal numero inserito fino a 50, e per ogni numero pari con una seconda funzione, visualizza tutti i divisori.
