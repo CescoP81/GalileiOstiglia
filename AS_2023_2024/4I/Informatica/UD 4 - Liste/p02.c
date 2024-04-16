@@ -35,6 +35,13 @@ Nodo* popTesta(Nodo *_t);
  * @return Numero nodi della lista.
 */
 int contaElementiLista(Nodo *_t);
+/**
+ * Trova a restituisce la posizione del valore _src all'interno della lista
+ * @param Nodo* Puntatore alla testa attuale.
+ * @param int Valore da ricercare.
+ * @return Posizione del nodo che contiene _src, altrimenti -1.
+*/
+int ricercaElemento(Nodo *_t, int _src);
 
 int main(){
     Nodo *head;     // creo un puntatore al primo nodo della lista.
@@ -44,7 +51,7 @@ int main(){
     // push in testa di 3 valori
     head = pushTesta(head, 22);
     showLista(head);
-    head = pushTesta(head, 35);
+    head = pushTesta(head, 10);
     showLista(head);
     head = pushTesta(head, 40);
     showLista(head);
@@ -52,13 +59,29 @@ int main(){
     showListaRicorsiva(head);
     printf("\n\n");
     printf("Nodi presenti: %d\n", contaElementiLista(head));
-
+    
+    /*
     head = popTesta(head);  // toglie il 40
     showLista(head);
     head = popTesta(head);  // toglie il 35
     head = popTesta(head);  // toglie il 22 -> head avrà valore 0
     head = popTesta(head);  // dovrei vedere Lista vuota.
     printf("Nodi presenti: %d\n", contaElementiLista(head));
+    */
+
+    printf("\n\n");
+    if(ricercaElemento(head, 15) != -1)
+        printf("Elemento 15 trovato in posizione %d\n", ricercaElemento(head, 15));
+    else
+        printf("Valore non trovato\n");
+
+    if(ricercaElemento(head, 10) != -1)
+        printf("Elemento 10 trovato in posizione %d\n", ricercaElemento(head, 10));
+    else
+        printf("Valore non trovato\n");
+
+    
+
     return(0);
 }
 
@@ -121,4 +144,20 @@ int contaElementiLista(Nodo *_t){
         tmp = tmp->next;
     }
     return(cnt);
+}
+
+int ricercaElemento(Nodo *_t, int _src){
+    Nodo *tmp;
+    int pos;
+
+    tmp = _t;
+    pos = 0;
+    while(tmp != 0){
+        pos = pos + 1;
+        if(tmp->valore == _src){
+            return(pos);
+        }
+        tmp = tmp->next;
+    }
+    return(-1);
 }
