@@ -17,9 +17,8 @@ viene sviluppato con funzioni.
 
 **p03.c**
 Realizzare un programma C che gestendo una lista permetta le seguenti operazioni:
-- [ ] generaLista -> Richiede il numero di elementi all'utente, quindi genera n-elementi con valore random compreso tra 1 e 99.
-- [ ] showLista -> Visualizza la lista presente.
-- [ ] popTesta -> Estrae un elemento dalla testa della lista.
-- [ ] minMaxLista -> Ricerca e restituisce i valori minimo e massimo presenti nella lista.
-- [ ] deleteLista -> Cancella tutti gli elementi della lista.
-
+- [x] generaLista -> Richiede il numero di elementi all'utente, quindi genera n-elementi con valore random compreso tra 1 e 99.
+- [x] showLista -> Visualizza la lista presente.
+- [x] popTesta -> Estrae un elemento dalla testa della lista.
+- [x] minMaxLista -> Ricerca e restituisce i valori minimo e massimo presenti nella lista.
+- [x] deleteLista -> Cancella tutti gli elementi della lista.
