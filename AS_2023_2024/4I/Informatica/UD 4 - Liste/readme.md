@@ -6,7 +6,7 @@ Esempio di utilizzo di puntatore a puntatore.
 Esempio base relativo ad una lista. Creazione del nodo, gestione dei puntatori, inserimento e visualizzazione dei nodi.
 
 **p02.c**
-Programma di esempio per aggoiunta ed estrazione di un nodo dalla testa della lista. Il programma
+Programma di esempio per aggiunta ed estrazione di un nodo dalla testa della lista. Il programma
 viene sviluppato con funzioni.
 - [x] pushTesta -> Inserisce un nodo in testa e restituisce la nuova testa della lista.
 - [x] showLista -> Visualizza tutti i nodi della lista.
@@ -22,3 +22,10 @@ Realizzare un programma C che gestendo una lista permetta le seguenti operazioni
 - [x] popTesta -> Estrae un elemento dalla testa della lista.
 - [x] minMaxLista -> Ricerca e restituisce i valori minimo e massimo presenti nella lista.
 - [x] deleteLista -> Cancella tutti gli elementi della lista.
+
+**p04.c**
+Programma di esempio di aggiunta ed estrazione di un nodo dalla coda della lista. Il programma
+viene sviluppato con funzioni.
+- [ ] pushCoda -> Inserisce un nodo in coda alla lista e restituisce la testa della lista.
+- [ ] showLista -> Visualizza tutti i nodi della lista.
+- [ ] popCoda -> Estrae un nodo dalla coda della lista, restituisce la testa della lista.

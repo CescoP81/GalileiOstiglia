@@ -64,7 +64,7 @@ int main(){
                 break;
             }
             case 4:{
-                if(minMaxLista(head, &min, &max)){
+                if(minMaxLista(head, &min, &max)){ // equivanete a minMax(head,&min,&max) == 1
                     printf("Minimo presente: %d\n", min);
                     printf("Massimo presente: %d\n",max);
                 }
@@ -165,7 +165,7 @@ int minMaxLista(Nodo *_t, int *_min, int *_max){
     Nodo *tmp;
 
     tmp = _t;
-    if(!tmp){
+    if(!tmp){       //equivalente a tmp==0
         printf("Lista vuota...\n");
         *_min = -1;
         *_max = -1;
