@@ -12,8 +12,19 @@ typedef struct Nodo{
  * @param Nodo* Puntatore alla testa attuale.
 */
 void showLista(Nodo *_t);
-
+/**
+ * Aggiunge un nodo in coda alla lista.
+ * @param Nodo* Riferimento alla testa.
+ * @param int Valore numeri da inserire nella parte *->valore.
+ * @return Riferimento alla nuova testa della lista.
+*/
 Nodo* pushCoda(Nodo *_t, int _v);
+/**
+ * Estrae un nodo dalla cosa della lista, verifica se la lista esiste, se è composta da un solo nodo
+ * o se composta da più nodi.
+ * @param Nodo* Riferimento alla testa della lista.
+ * @return Riferimento alla nuova testa della lista.
+*/
 Nodo* popCoda(Nodo *_t);
 // == MAIN ==
 int main(){

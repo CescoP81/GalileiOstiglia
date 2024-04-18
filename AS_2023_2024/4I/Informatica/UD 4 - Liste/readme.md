@@ -26,6 +26,6 @@ Realizzare un programma C che gestendo una lista permetta le seguenti operazioni
 **p04.c**
 Programma di esempio di aggiunta ed estrazione di un nodo dalla coda della lista. Il programma
 viene sviluppato con funzioni.
-- [ ] pushCoda -> Inserisce un nodo in coda alla lista e restituisce la testa della lista.
-- [ ] showLista -> Visualizza tutti i nodi della lista.
-- [ ] popCoda -> Estrae un nodo dalla coda della lista, restituisce la testa della lista.
+- [x] pushCoda -> Inserisce un nodo in coda alla lista e restituisce la testa della lista.
+- [x] showLista -> Visualizza tutti i nodi della lista.
+- [x] popCoda -> Estrae un nodo dalla coda della lista, restituisce la testa della lista.

@@ -32,9 +32,30 @@ Nodo* popTesta(Nodo *_t);
 */
 int contaElementiLista(Nodo *_t);
 
+/**
+ * Visualizza un menu operativo e restituisce la scelta effettuata dall'utente.
+ * @param Scelta effettuata dall'utente.
+*/
 int showMenu();
+/**
+ * Richiede il numero di nodi da generare ed utilizza la pushTesta epr generare i nodi.
+ * @param Nodo* Riferimento alla testa.
+ * @return Riferimento alla testa.
+*/
 Nodo* generaLista(Nodo *_t);
+/**
+ * Determina il valore minimo e massimo presenti nella lista.
+ * @param Nodo* Riferimento alla testa della lista.
+ * @param int* Riferimento alla variabile intera per il minimo.
+ * @param int* Riferimento alla variabile intera per il massimo.
+ * @return 1 se la funzione opera su lista esistente, 0 se viene passata una lista vuota.
+*/
 int minMaxLista(Nodo *_t, int *_min, int *_max);
+/**
+ * Dealloca tutti i nodi presenti nella lista passata, utilizza contaElementi e popTesta.
+ * @param Nodo* Riferimento alla testa della lista.
+ * @return Riferimento alla nuova testa della lista.
+*/
 Nodo* deleteLista(Nodo *_t);
 
 
