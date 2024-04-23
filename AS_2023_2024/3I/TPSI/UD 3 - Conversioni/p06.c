@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-const int NBIT = 16;
+const int NBIT = 8;
 
 //== prototipi
 
@@ -58,6 +58,39 @@ void visualizzaBinario(int _v[], int _dim){
        7   6   5   4   3   2   1   0
 */
 void visualizzaBinarioGrafico(int _v[], int _dim){
-    printf("%c\n", 180);
-    printf("%c\n", 191);
+    int i;
+    printf("%c %c %c %c %c\n", 191, 192, 196, 217, 218);
+    
+    printf("%c", 218);
+    for(i=0; i<_dim; i++){
+        printf("%c%c%c", 196,196,196);
+        if(i!=_dim-1)
+            printf("%c", 194);
+    }
+    printf("%c", 191);
+    
+    printf("\n");
+
+    printf("%c", 179);
+    for(i=_dim-1; i>=0; i--){
+        printf("%3d", _v[i]);
+        printf("%c", 179);
+    }
+
+    printf("\n");
+
+    printf("%c", 192);
+    for(i=0; i<_dim; i++){
+        printf("%c%c%c", 196,196,196);
+        if(i!=_dim-1)
+            printf("%c", 193);
+    }
+    printf("%c", 217);
+    printf("\n");
+    
+    for(i=_dim-1; i>=0; i--)
+        printf("%4d", i);
+    
+    printf("\n");
+
 }
