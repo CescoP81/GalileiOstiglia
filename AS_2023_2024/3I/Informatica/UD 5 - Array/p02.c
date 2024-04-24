@@ -5,13 +5,40 @@
 const int DIM = 10;
 
 //== Prototipi
+/**
+ * Azzera tutte le celle di un vettore di interi
+ * @param int[] Vettore da utilizzare.
+ * @param int Dimensione del vettore
+*/
 void initVettore(int _v[], int _dim);
+/**
+ * Inizializza le celle di un vettore con valori random
+ * @param int[] Vettore da utilizzare.
+ * @param int Dimensione del vettore.
+*/
 void generaVettore(int _v[], int _dim);
+/**
+ * Visualizza un vettore contornando ogni cella e il suo contenuto con caratteri della tabella Ascii.
+ * @param int[] Vettore da utilizzare.
+ * @param int Dimensione del vettore.
+*/
 void vediVettoreGrafico(int _v[], int _dim);
-// funzione che scambia il valore di due celle passate come parametro, indice1, indice2
-// la funzione ritorna 1 se lo scambio è avvenuto, 0 se non è avvenuto.
+/**
+ * Scambia i valori di due celle identificate dagli indici passati come parametri.
+ * @param int[] Vettore da utilizzare.
+ * @param int Dimensione del vettore.
+ * @param int Indice 1
+ * @param int Indice 2
+ * @return Ritorna 0 se lo scambio non è avvenuto, 1 se lo scambio è avvenuto con successo.
+*/
 int scambiaCelle(int _v[], int _dim, int _indice1, int _indice2);
-// funzione che conta quanti valori sono superiori ad un valore passato per parametro
+/**
+ * Conta quanti valori nel vettore sono maggiori o uguali al valore passato src.
+ * @param int[] Vettore da utilizzare.
+ * @param int Dimensione del vettore.
+ * @param int Valore di riferimento.
+ * @return Numero di valori che rispettano il criterio.
+*/
 int contaValore(int _v[], int _dim, int _src);
 // MAIN
 int main(){
@@ -100,7 +127,6 @@ int scambiaCelle(int _v[], int _dim, int _indice1, int _indice2){
     _v[_indice2] = tmp;
     return(1);
 }
-
 int contaValore(int _v[], int _dim, int _src){
     int conta;
     int i;

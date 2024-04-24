@@ -6,15 +6,50 @@
 // dichiaro una costante intera per la dimensione del vettore
 const int DIM = 13;
 // SEZIONE DEI PROTOTIPI
+/**
+ * Azzera tutte le celle di un vettore di interi
+ * @param int[] Vettore da utilizzare.
+ * @param int Dimensione del vettore
+*/
 void initVettore(int _v[], int _dim);
+/**
+ * Visualizza il contenuto delle celle di un vettore su singola riga.
+ * @param int[] Vettore da utilizzare.
+ * @param int Dimensione del vettore.
+*/
 void vediVettore(int _v[], int _dim);
+/**
+ * Inizializza le celle di un vettore con valori random
+ * @param int[] Vettore da utilizzare.
+ * @param int Dimensione del vettore.
+*/
 void generaVettore(int _v[], int _dim);
+/**
+ * Visualizza un vettore contornando ogni cella e il suo contenuto con caratteri della tabella Ascii.
+ * @param int[] Vettore da utilizzare.
+ * @param int Dimensione del vettore.
+*/
 void vediVettoreGrafico(int _v[], int _dim);
-// funzione che determina e stampa il valore massimo presente nel vettore
+/**
+ * Funzione che cerca e comunica il valore massimo presente nel vettore.
+ * @param int[] Vettore da utilizzare.
+ * @param int Dimensione del vettore.
+*/
 void ricercaMassimo(int _v[], int _dim);
-// funzione che sostituisce un valore con uno scelto dall'utente.
+/**
+ * Sostituisce nel vettore tutti i valori uguali a src con dest.
+ * @param int[] Vettore da utilizzare.
+ * @param int Dimensione del vettore.
+ * @param int Valore da ricercare e da sostituire.
+ * @param int Valore sostitutivo.
+*/
 void sostituisciValore(int _v[], int _dim, int _src, int _dest);
-// calcola e restituisce la media dei valori del vettore !NON STAMPA NULLA AL SUO INTERNO!
+/**
+ * Calcola e restituisce la media dei valori del vettore.
+ * @param int[] Vettore da utilizzare.
+ * @param int Dimensione del vettore.
+ * @return Media dei valori.
+*/
 float mediaVettore(int _v[], int _dim);
 
 // SEZIONE DEL MAIN
