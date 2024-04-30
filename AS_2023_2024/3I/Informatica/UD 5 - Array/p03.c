@@ -32,11 +32,41 @@ void generaVettore(int _v[], int _dim);
  * @param int Dimensione del vettore.
 */
 void vediVettoreGrafico(int _v[], int _dim);
-
+/**
+ * Calcola e restituisce la media dei valori presenti nel vettore
+ * @param int[] Vettore da utilizzare.
+ * @param int Dimensione del vettore.
+ * @return Media calcolata in formato float.
+*/
 float mediaVettore(int _v[], int _dim);
+/** 
+ * Conta e restituisce il numero di valori superiori alla media passata.
+ * @param int[] Vettore da utilizzare.
+ * @param int Dimensione del vettore.
+ * @param float Media di riferimento.
+ * @return Numero di valori superiori alla media.
+*/
 int contaSuperioriMedia_1(int _v[], int _dim, float _m);
+/** 
+ * Conta e restituisce il numero di valori superiori alla media calcolata internamente.
+ * @param int[] Vettore da utilizzare.
+ * @param int Dimensione del vettore.
+ * @return Numero di valori superiori alla media.
+*/
 int contaSuperioriMedia_2(int _v[], int _dim);
+/** 
+ * Confronta ogni valore con X, se il valore presente è inferiore allora aggiunge X
+ * altrimenti se il valore è superiore sottrae X.
+ * @param int[] Vettore da utilizzare.
+ * @param int Dimensione del vettore.
+ * @param int Valore X di riferimento.
+*/
 void usaValoreX(int _v[], int _dim, int _x);
+/** 
+ * Visualizza tutti i valori pari e successivamente su una nuova riga tutti i valori dispari.
+ * @param int[] Vettore da utilizzare.
+ * @param int Dimensione del vettore.
+*/
 void vediPariDispari(int _v[], int _dim);
 
 int main(){
@@ -61,7 +91,7 @@ int main(){
     fflush(stdin);
     usaValoreX(vet, DIM, varX);
     vediVettoreGrafico(vet, DIM);
-    // punto 6
+    // punto 6 OK
     vediPariDispari(vet, DIM);
     return(0);
 }
