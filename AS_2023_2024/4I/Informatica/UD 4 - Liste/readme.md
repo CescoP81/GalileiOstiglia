@@ -29,3 +29,8 @@ viene sviluppato con funzioni.
 - [x] pushCoda -> Inserisce un nodo in coda alla lista e restituisce la testa della lista.
 - [x] showLista -> Visualizza tutti i nodi della lista.
 - [x] popCoda -> Estrae un nodo dalla coda della lista, restituisce la testa della lista.
+
+**p05.c**
+Programma di esempio di aggiunta ed estrazione in una determinata posizione della lista.
+Le funzioni di push e pop devono ricevere la lista, il valore da inserire e la posizione scelta.
+Le posizioni sono intese >=1, quindi posizione 1 è la testa.
