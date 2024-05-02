@@ -33,7 +33,8 @@ if($sc == "LOGOUT"){
 if($_SESSION['loggato'] == true){
     // mostro un messaggio di utente loggato
     echo('Bentornato '.$_SESSION['nome'].' '.$_SESSION['cognome'].'<br />');
-    echo('<a href="index.php?scelta=LOGOUT">ESCO</a>');
+    echo('<a href="index.php?scelta=LOGOUT">ESCO</a><br />');
+    echo('<a href="pagina2.php">Passa a pagina 2</a>');
 }
 else{
     // mostro il form per eseguire il login.
