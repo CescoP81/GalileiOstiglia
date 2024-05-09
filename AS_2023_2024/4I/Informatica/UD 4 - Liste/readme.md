@@ -34,3 +34,7 @@ viene sviluppato con funzioni.
 Programma di esempio di aggiunta ed estrazione in una determinata posizione della lista.
 Le funzioni di push e pop devono ricevere la lista, il valore da inserire e la posizione scelta.
 Le posizioni sono intese >=1, quindi posizione 1 è la testa.
+- [x] pushInPosizione -> Inserisce un nuovo nodo nella posizione scelta.
+- [x] popInPosizione -> Estrae un nodo dalla posizione scelta  
+
+Il programma riutilizza le funzioni push/pop in testa, push/pop coda, contaElementiLista per gestire i casi particolari.
