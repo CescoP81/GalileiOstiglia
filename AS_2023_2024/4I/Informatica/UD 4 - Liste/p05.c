@@ -57,6 +57,17 @@ int contaElementiLista(Nodo *_t);
  * @return Riferimento alla nuova testa della lista.
 */
 Nodo* pushInPosizione(Nodo *_t, int _pos, int _val);
+/**
+ * Estrae un nodo nella posizione scelta, le posizioni devono essere specificate come 
+ * numero intero positivo >=1. Se la posizione scelta è la 1 viene usata una popTesta, se la posizione
+ * è l'ultima disponibile viene usata la popCoda, in tutti gli altri casi si raggiunge
+ * la posizione precedente a quella scelta e si modifica il puntatore al nodo successivo.
+ * Richiede l'utilizzo della funzione contaElementiLista().
+ * @param Nodo* Puntatore alla testa attuale.
+ * @param int Posizione scelta per l'inserimento.
+ * @return Riferimento alla nuova testa della lista.
+*/
+Nodo* popInPosizione(Nodo *_t, int _pos);
 // == MAIN PROGRAM
 int main(){
     Nodo *testa;
@@ -74,6 +85,15 @@ int main(){
     showLista(testa);
     testa = pushInPosizione(testa, 7, 27);
     showLista(testa);
+    // -- test della popInPosizione.
+    testa = popInPosizione(testa, 1);
+    showLista(testa);
+    testa = popInPosizione(testa, contaElementiLista(testa));
+    showLista(testa);
+    testa = popInPosizione(testa, 10);
+    showLista(testa);
+    testa = popInPosizione(testa, 3);
+    
     return(0);
 }
 
@@ -176,8 +196,8 @@ Nodo* pushInPosizione(Nodo *_t, int _pos, int _val){
     Nodo *head; // utilizzato per scorrere la lista e non perdere la testa ricevuta che dovrò ritornare.
     int i;
     if(_pos<=0 || _pos>(contaElementiLista(_t)+1)){
-        // se verificato l'indice è sbagliato perchè o minore di zero, o superire all'ultima posizione della lista
-        printf("Impossibile inserire, posizione inesistente.\n");
+        // se verificato l'indice è sbagliato perchè o minore di zero, o superiore all'ultima posizione della lista
+        printf("Impossibile inserire, posizione errata o inesistente.\n");
         return(_t);
     }
     // se mi viene chiesto di inserire in posizione 1, quindi in testa, utilizzo la funzione già creata.
@@ -200,5 +220,39 @@ Nodo* pushInPosizione(Nodo *_t, int _pos, int _val){
     tmp->next = head->next;
     tmp->valore = _val;
     head->next = tmp;
+    return(_t);
+}
+Nodo* popInPosizione(Nodo *_t, int _pos){
+    Nodo *tmp;
+    Nodo *head;
+    int i;
+
+    if(_pos<=0 || _pos>contaElementiLista(_t)){
+        // se verificato l'indice è sbagliato perchè o minore di zero, o superiore all'ultima posizione della lista
+        printf("Impossibile estrarre, posizione errata o inesistente.\n");
+        return(_t);
+    }
+    if(_pos == 1){
+        // se voglio togliere la prima posizione utilizzo la poptesta già realizzata.
+        _t = popTesta(_t);
+        return(_t);
+    }
+    if(_pos == contaElementiLista(_t)){
+        // se voglio togliere l'ultimo elemento utilizzo la popCoda già realizzata.
+        _t = popCoda(_t);
+        return(_t);
+    }
+
+    // se arrivo qui la posizione è interna alla lista, raggiungo il nodo precedente a quello da
+    // eliminare e modifico i puntatori.
+    head = _t;
+    for(i=1; i<_pos-1; i++){
+        head = head->next;
+    }
+    tmp = head->next;
+    head->next = tmp->next;
+    printf("Esce il valore: %d\n", tmp->valore);
+    free(tmp);
+
     return(_t);
 }
