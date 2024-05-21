@@ -1,0 +1,20 @@
+ASSOCIATO
+-------------------------
+Rossi Luigi
+Verdi Mario
+
+
+MODELLO
+-------------------------
+Tucano      EFlite          1
+P51         Phoenix Model   1 
+F4U Corsair GreatPlanes     1
+ASW28       FMS             2
+
+
+BATTERIA
+-------------------------
+Turnigy     3   2200    2023/12/12      1
+Turnigy     6   5400    2023/10/25      1
+FullPower   4   1500    2024/01/15      2
+GensAce     6   1350    2024/02/28      2
