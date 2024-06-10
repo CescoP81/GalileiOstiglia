@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Aggiunta di nuovi font e supporto codifica</title>
+<link type="text/css" rel="stylesheet" href="../fpdf.css">
+</head>
+<body>
+<h1>Aggiunta di nuovi font e supporto codifica</h1>
+Questo tutorial spiega come usare i font TrueType, OpenType e Type1 in modo da non essere più limitati ai
+font standard predefiniti. L'altro beneficio è che si può scegliere una codifica del testo, permettendo
+di utilizzare altre lingue oltre a quelle occidentali (i font standard supportano solo cp1252, anche noto come windows-1252).
+<br>
+<br>
+Per OpenType, è supportato solo il formato basato su TrueType (non quello basato su Type1).<br>
+Per Type1, c'è bisogno del corrispondente file AFM (di solito è fornito insieme al font).
+<br>
+<br>
+Aggiungere un nuovo font richiede due passi:
+<ul>
+<li>Generazione di un file di definizione</li>
+<li>Dichiarazione di un font nello script</li>
+</ul>
+
+<h2>Generatore di un file di definizione</h2>
+Il primo passo consiste nel generare un file PHP contenente tutte le informazioni che necessita FPDF;
+in aggiunta, il file del font è compresso. Per farlo, uno script di aiuto è fornito nella cartella makefont
+del pacchetto: makefont.php. Contiene le seguenti funzioni:
+<br>
+<br>
+<code>MakeFont(<b>string</b> fontfile [, <b>string</b> enc [, <b>boolean</b> embed [, <b>boolean</b> subset]]])</code>
+<dl class="param" style="margin-bottom:2em">
+<dt><code>fontfile</code></dt>
+<dd>
+<p>Percorso del file .ttf, .otf or .pfb.</p>
+</dd>
+<dt><code>enc</code></dt>
+<dd>
+<p>Nome della codifica in uso. Predefinito: <code>cp1252</code>.</p>
+</dd>
+<dt><code>embed</code></dt>
+<dd>
+<p>Se incorporare il font o meno. Predefinito: <code>true</code>.</p>
+</dd>
+<dt><code>subset</code></dt>
+<dd>
+<p>Se inserire il sottoinsieme del font o meno. Predefinito: <code>true</code>.</p>
+</dd>
+
+</dl>
+Il primo parametro è il nome del file del font. L'estensione può essere sia .ttf, .otf o .pfb e
+determina il tipo di font. Se si utilizza il font Type1 con il formato è ASCII (.pfa), puoi convertirlo in binario
+(.pfb) con l'aiuto di <a href="http://www.lcdf.org/~eddietwo/type/#t1utils" target="_blank">t1utils</a>.
+<br>
+<br>
+Per i font Type1, il file .afm corrispondente deve essere presente nella stessa cartella.
+<br>
+<br>
+La codifica definisce l'associazione fra un codice (da 0 a 255) ed il carattere. I primi 128 sono
+sempre gli stessi corrispondenti all'ASCII; i successivi sono disponibili. Le codifiche sono salvate in file .map.
+Quelle disponibili sono:
+<ul>
+<li>cp1250 (Central Europe)</li>
+<li>cp1251 (Cyrillic)</li>
+<li>cp1252 (Western Europe)</li>
+<li>cp1253 (Greek)</li>
+<li>cp1254 (Turkish)</li>
+<li>cp1255 (Hebrew)</li>
+<li>cp1257 (Baltic)</li>
+
+<li>cp1258 (Vietnamese)</li>
+<li>cp874 (Thai)</li>
+<li>ISO-8859-1 (Western Europe)</li>
+<li>ISO-8859-2 (Central Europe)</li>
+
+<li>ISO-8859-4 (Baltic)</li>
+<li>ISO-8859-5 (Cyrillic)</li>
+<li>ISO-8859-7 (Greek)</li>
+<li>ISO-8859-9 (Turkish)</li>
+<li>ISO-8859-11 (Thai)</li>
+<li>ISO-8859-15 (Western Europe)</li>
+<li>ISO-8859-16 (Central Europe)</li>
+<li>KOI8-R (Russian)</li>
+
+<li>KOI8-U (Ukrainian)</li>
+</ul>
+Ovviamente il font deve contenere i caratteri corrispondenti alla codifica selezionata.
+<br>
+
+<br>
+Il terzo parametro indica se il font debba essere incorporato nel PDF o meno. Quando un font non è
+incorporato, sarà cercato nel sistema. Il vantaggio è che il file PDF è più leggero; se però
+il font non fosse disponibile, sarà utilizzato un font sostitutivo. Occorre verificare che
+il font richiesto sia installato sui sistemi dei destinatari. L'incorporazione è l'opzione raccomandata per garantire
+la portabilità.
+<br>
+<br>
+
+L'ultimo parametro indica se utilizzare un sottoinsieme o meno, il chè significa che solo
+i caratteri della codifica seelezionata saranno mantenuti nel font incorporato. Come risultato,
+la dimensione del PDF può essere ridotta di molto, specialmente se il font originale era pesante.
+<br>
+<br>
+Dopo aver chiamato la funzione (per fare questo crea un nuovo file e includi makefont.php), sarà creato un file .php,
+con lo stesso nome del file del font. Puoi rinominarlo se lo desideri. Per incorporarlo,
+il file del font è compresso e si ottiene un secondo file con estensione .z (tranne se la funzione per la compressione
+non sia disponibile, dato che richiede Zlib). Puoi rinominare anche quest'ultimo, ma in questo caso occorre cambiare
+la variabile <code>$file</code> del file .php di conseguenza.
+<br>
+<br>
+Esempio:
+<div class="source">
+<pre><code>&lt;?php
+<span class="kw">require(</span><span class="str">'makefont/makefont.php'</span><span class="kw">);
+
+</span>MakeFont<span class="kw">(</span><span class="str">'C:\\Windows\\Fonts\\comic.ttf'</span><span class="kw">,</span><span class="str">'cp1252'</span><span class="kw">);
+</span>?&gt;</code></pre>
+</div>
+
+che genera i file comic.php e comic.z.
+<br>
+<br>
+Copiare i file generati nella cartella font. Se il font non può essere compresso, copialo
+direttamente al posto della versione .z.
+<br>
+<br>
+In altro modo è utilizzare MakeFont() da linea di comando:
+
+<br>
+<br>
+<kbd>php makefont\makefont.php C:\Windows\Fonts\comic.ttf cp1252</kbd>
+<br>
+
+<br>
+Concludendo, per i font TrueType e OpenType fonts, puoi anche generare i file
+<a href="http://www.fpdf.org/makefont/">online</a> invece che farlo manualmente.
+
+
+<h2>Dichiarazione dei font nello script</h2>
+Il secondo file è semplice. C'è solo bisogno di chiamare il metodo <a href='../doc/addfont.htm'>AddFont()</a>:
+<div class="source">
+<pre><code>$pdf<span class="kw">-&gt;</span>AddFont<span class="kw">(</span><span class="str">'Comic'</span><span class="kw">,</span><span class="str">''</span><span class="kw">,</span><span class="str">'comic.php'</span><span class="kw">);
+</span></code></pre>
+</div>
+Il font sarà ora disponibile (in forma di stili regolare e sottolineato), utilizzabile come gli altri. Se abbiamo
+lavorato con Comic Sans MS Bold (comicbd.ttf), dovremmo avere scritto:
+<div class="source">
+<pre><code>$pdf<span class="kw">-&gt;</span>AddFont<span class="kw">(</span><span class="str">'Comic'</span><span class="kw">,</span><span class="str">'B'</span><span class="kw">,</span><span class="str">'comicbd.php'</span><span class="kw">);
+</span></code></pre>
+</div>
+
+<h2>Esempio</h2>
+Ora proviamo un esempio completo. Sarà usato il font <a href="https://fonts.google.com/specimen/Ceviche+One" target="_blank">Ceviche One</a>.
+Il primo passo è la generazione dei file del font:
+<div class="source">
+<pre><code>&lt;?php
+<span class="kw">require(</span><span class="str">'makefont/makefont.php'</span><span class="kw">);
+
+</span>MakeFont<span class="kw">(</span><span class="str">'CevicheOne-Regular.ttf'</span><span class="kw">,</span><span class="str">'cp1252'</span><span class="kw">);
+</span>?&gt;</code></pre>
+</div>
+Lo script scaturirà alcuni avvisi:
+<br>
+<br>
+Font file compressed: CevicheOne-Regular.z<br>
+Font definition file generated: CevicheOne-Regular.php<br>
+<br>
+Alternativamente possiamo usare la linea di comando:
+<br>
+<br>
+<kbd>php makefont\makefont.php CevicheOne-Regular.ttf cp1252</kbd>
+<br>
+<br>
+o utilizzando il generatore online.
+<br>
+<br>
+Ora è possibile copiare i due file generati nella cartella font e scrivere lo script:
+<div class="source">
+<pre><code>&lt;?php
+<span class="kw">require(</span><span class="str">'fpdf.php'</span><span class="kw">);
+
+</span>$pdf <span class="kw">= new </span>FPDF<span class="kw">();
+</span>$pdf<span class="kw">-&gt;</span>AddFont<span class="kw">(</span><span class="str">'CevicheOne'</span><span class="kw">,</span><span class="str">''</span><span class="kw">,</span><span class="str">'CevicheOne-Regular.php'</span><span class="kw">);
+</span>$pdf<span class="kw">-&gt;</span>AddPage<span class="kw">();
+</span>$pdf<span class="kw">-&gt;</span>SetFont<span class="kw">(</span><span class="str">'CevicheOne'</span><span class="kw">,</span><span class="str">''</span><span class="kw">,</span>45<span class="kw">);
+</span>$pdf<span class="kw">-&gt;</span>Write<span class="kw">(</span>10<span class="kw">,</span><span class="str">'Enjoy new fonts with FPDF!'</span><span class="kw">);
+</span>$pdf<span class="kw">-&gt;</span>Output<span class="kw">();
+</span>?&gt;</code></pre>
+</div>
+<p class='demo'><a href='tuto7.php' target='_blank' class='demo'>[Eseguire]</a></p>
+</body>
+</html>
