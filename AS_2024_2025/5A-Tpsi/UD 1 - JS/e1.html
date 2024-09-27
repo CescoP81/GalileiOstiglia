@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Prova JS</title>
+    </head>
+    <body>
+        <!--
+            Realizzare due caselle di testo per acquisire due
+            valori numerici, tramite un bottone viene richiamata
+            una funzione JS che calcola somma e differenza
+            tra i due valori.
+        -->
+        <form>
+            Valore 1: <input type="text" id="val1"><br />
+            Valore 2: <input type="text" id="val2"><br />
+            <input type="button" value="Calcola Somma" id="btn1"><br />
+            <input type="button" value="Visualizza divisori comuni" id="btn2"><br />
+        </form>
+        <div id="view1" style="border: solid 1px rgb(200,0,0);">
+            In attesa di input...
+        </div>
+    
+        <script>
+            let btn = document.querySelector("#btn1");
+            let btn2 = document.querySelector("#btn2");
+
+            function calcolaValori(){
+                let v1 = document.querySelector("#val1").value;
+                let v2 = document.querySelector("#val2").value;
+                let w = document.querySelector("#view1");
+
+                let r = parseInt(v1) + parseInt(v2);
+
+                w.innerHTML = v1+" + "+v2 + " = "+r;
+            }
+
+            function divisoriComuni(){
+                let w = document.querySelector("#view1");
+                let v1 = parseInt(document.querySelector("#val1").value);
+                let v2 = parseInt(document.querySelector("#val2").value);
+
+                // determino il minimo tra i due valori
+                let min = 0;
+                if(v1 < v2) min = v1;
+                else min = v2;
+
+                // ciclo dei divisori fino al minimo trovato.
+                w.innerHTML = "Divisori comuni: ";
+                for(let d=1; d<=min; d++){
+                    if((v1%d == 0) && (v2%d == 0))
+                        w.innerHTML += d+" ";
+                }                
+            }
+            btn.onclick = calcolaValori;
+            btn2.onclick = divisoriComuni;
+        </script>
+    </body>
+</html>
