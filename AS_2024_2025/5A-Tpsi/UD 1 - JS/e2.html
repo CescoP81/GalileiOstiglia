@@ -7,3 +7,68 @@ chiamata "view" i seguenti valori:
 3. se uno dei due numeri è un primo;
 4. tutti i valori compresi tra i due valori inseriti, estremi compresi.
 -->
+<!doctype HTML>
+<html>
+    <head>
+        <title>Esercitazione 2 su JavaScript</title>
+    </head>
+    <body>
+        <!-- costruisco le due caselle di testo e il bottone e a finire la div di visualizzazione -->
+        Val1: <input type="text" id="Val1"><br />
+        Val2: <input type="text" id="Val2"><br />
+        <input type="button" value="Esegui Operazioni" id="btn1"><br />
+        <br />
+        <div id="view" style="border: solid 1px rgb(0,200,0);">
+            In attesa di input...
+        </div>
+
+        <script>
+            // recupero il riferimento al bottone nel body
+            let btn = document.querySelector("#btn1");
+
+            // sviluppo la prima funzione
+            function minoreMaggiore(){
+                let v1 = parseInt(document.querySelector("#Val1").value);
+                let v2 = parseInt(document.querySelector("#Val2").value);
+                let w = document.querySelector("#view");
+
+                if(v1 > v2)
+                    w.innerHTML = "Il primo valore e' il maggiore<br />";
+                if(v2 > v1)
+                    w.innerHTML = "Il secondo valore e' il maggiore.<br />";
+                if(v1 == v2)
+                    w.innerHTML = "I due valori sono uguali.<br />";
+            }
+
+            function numeroDivisori(){
+                let v1 = parseInt(document.querySelector("#Val1").value);
+                let v2 = parseInt(document.querySelector("#Val2").value);
+                let w = document.querySelector("#view");
+
+                let cnt1 = 0;
+                let cnt2 = 0;
+                for(let i=1; i<=v1; i++){
+                    if(v1%i == 0)
+                        cnt1++;
+                }
+                for(let i=1; i<v2; i++){
+                    if(v2%i == 0)
+                        cnt2++;
+                }
+
+                if(cnt1 > cnt2)
+                    w.innerHTML += "Il primo numero ha più divisori.<br />";
+                if(cnt2 > cnt1)
+                    w.innerHTML += "Il secondo numero ha più divisori.<br />";
+                if(cnt1 == cnt2)
+                    w.innerHTML += "I due valori hanno lo stesso numero di divisori.<br />";
+            }
+
+            function scatenaEventi(){
+                minoreMaggiore();
+                numeroDivisori();
+            }
+            btn.onclick = scatenaEventi;
+        </script>
+    </body>
+</html>

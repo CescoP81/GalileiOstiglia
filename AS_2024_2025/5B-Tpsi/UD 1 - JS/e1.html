@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Prove di JS e Moduli</title>
+    </head>
+    <body>
+        <form>
+            Valore A: <input type="text" id="Val1"><br />
+            Valore B: <input type="text" id="Val2"><br />
+            <input type="button" value="Esegui" id="btn1"><br />
+            <br />
+            <div id="view" style="border: dotted 2px rgb(0,200,0);">
+                In attesa di input...
+            </div>
+        </form>
+        
+        <!-- 
+            1. Determinare e comunicare quale dei due valori è il maggiore. 
+            2. Visualizzare i divisori di ognuno dei due numeri.
+            3. Verificare se Val1 o Val2 sono numeri primi.
+            4. Visualizzare i divisori comuni dei due numeri.
+
+            Sviluppare per ogni punto una funzione specifica e creare un bottone nel FORM
+            per richiare ogni singola funzione.
+            Nella DIV ogni funzione AGGIUNGE il proprio output.
+        -->
+        <script>
+            function minoreMaggiore(){
+                //alert("ciao");
+                // recuperare i riferimenti ai componenti del form
+                let v1 = parseInt(document.querySelector("#Val1").value);
+                let v2 = parseInt(document.querySelector("#Val2").value);
+
+                let w = document.querySelector("#view");
+                
+                if(v1 > v2)
+                    w.innerHTML = "Valore 1 è maggiore di Valore 2.<br />";
+                
+                if(v2 > v1)
+                    w.innerHTML = "Valore 2 è maggiore di Valore 1.<br />";
+                
+                if(v1 == v2)
+                    w.innerHTML = "I due valori sono uguali<br />";
+            }
+            
+            function divisoriNumero(){
+                // punto 2.
+            }
+            function verificaPrimi(){
+                // punto 3.
+            }
+            function divisoriComuni(){
+                // punto 4.
+            }
+
+            let btn1 = document.querySelector("#btn1");
+            btn1.onclick = minoreMaggiore;
+            
+        </script>
+    </body>
+</html>
+
