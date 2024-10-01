@@ -66,11 +66,53 @@ chiamata "view" i seguenti valori:
                     w.innerHTML += "I due valori hanno lo stesso numero di divisori.<br />";
             }
 
+            function verificaPrimo(){
+                let v1 = parseInt(document.querySelector("#Val1").value);
+                let v2 = parseInt(document.querySelector("#Val2").value);
+                let w = document.querySelector("#view");
+                
+                w.innerHTML +="<br /><b>Punto 3</b><br />";
+                // verifico se il primo valore è un numero primo.
+                let cnt = 0;
+                for(let i=1; i<=v1; i++){
+                    if(v1%i == 0)
+                        cnt++;
+                }
+                if(cnt <= 2)
+                    w.innerHTML += "Il numero "+v1+" è un primo.<br />";
+
+                // verifico se il secondo valore è un numero primo.
+                cnt = 0;
+                for(let i=1; i<=v2; i++){
+                    if(v2%i == 0)
+                        cnt++;
+                }
+                if(cnt <= 2)
+                    w.innerHTML += "Il numero "+v2+" è un primo.<br />";
+            }
+
+            function serieNumerica(){
+                let v1 = parseInt(document.querySelector("#Val1").value);
+                let v2 = parseInt(document.querySelector("#Val2").value);
+                let w = document.querySelector("#view");
+                
+                w.innerHTML +="<br /><b>Punto 3</b><br />";
+                if(v1<v2){
+                    for(let i=v1; i<=v2; i++)
+                        w.innerHTML += i+" ";
+                }
+                else{
+                    w.innerHTML += "<i>Serie numerica non possibile.<br />";
+                }
+            }
+
             function scatenaEventi(){
                 let w = document.querySelector("#view");
                 w.innerHTML = "";
                 minoreMaggiore();
                 numeroDivisori();
+                verificaPrimo();
+                serieNumerica();
             }
             btn.onclick = scatenaEventi;
         </script>

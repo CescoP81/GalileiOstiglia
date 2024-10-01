@@ -1,0 +1,45 @@
+<!doctype HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Esercitazione 2 su JavaScript</title>
+    </head>
+    <body>
+        <!-- costruisco le due caselle di testo e il bottone e a finire la div di visualizzazione -->
+        Val1: <input type="text" id="Val1"><br />
+        Val2: <input type="text" id="Val2"><br />
+        <input type="button" value="Esegui Operazioni" id="btn1"><br />
+        <br />
+        <div id="view" style="border: solid 1px rgb(0,200,0);">
+            In attesa di input...
+        </div>
+
+        <script>
+            // funzione che riceve due parametri da utilizzare, un valore e il riferimento
+            // alla view in cui visualizzare i risultati.
+            function f1(x, w){
+                w.innerHTML += "F1: "+x+"<br />";                
+            }
+            // funzione che riceve due parametri da utilizzare, un valore e il riferimento
+            // alla view in cui visualizzare i risultati.
+            function f2(x, w){
+                w.innerHTML += "F2: "+(x*2)+"<br />";
+            }
+
+            function esegui(){
+                // recupero quanto mi serve dal form
+                let v1 = parseInt(document.querySelector("#Val1").value);
+                let w = document.querySelector("#view");
+
+                // azzero il contenuto della view
+                w.innerHTML = "";
+                // richiamo le due funzioni PASSANDO i parametri di cui hanno bisogno.
+                f1(v1, w);
+                f2(v1, w);
+            }
+
+            let btn = document.querySelector("btn1");
+            btn1.onclick = esegui
+        </script>
+    </body>
+</html>
