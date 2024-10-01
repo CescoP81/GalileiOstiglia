@@ -8,4 +8,4 @@ CREATE TABLE Artisti(
     nazione char(2),
 
     primary key(id)
-)
+)ENGINE=InnoDB;
