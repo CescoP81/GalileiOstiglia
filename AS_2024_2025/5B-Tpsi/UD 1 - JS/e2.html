@@ -10,5 +10,43 @@
         una tabella composta da tante righe e colonne quante sono quelle specificate ed in ogni
         cella inserisce il prodotto riga*colonna.
         -->
+        <input type="text" id="Col"><br />
+        <input type="text" id="Row"><br />
+        <input type="button" value="Crea" id="btn">
+        <div id="view"></div>
+
+        <script>
+            function tabelline(){
+                alert("Eseguo");
+                let c= parseInt(document.querySelector("#Col").value);
+                let r= parseInt(document.querySelector("#Row").value);
+                let w= document.querySelector("#view");
+                
+                /*
+                for(let i=1; i<=r; i++){
+                    for(j=1; j<=c; j++){
+                        w.innerHTML += (i*j)+" ";
+                    }
+                    w.innerHTML += "<br />";
+                }*/
+
+                let t="<table border=1>";
+                for(let i=1; i<=r; i++){
+                    t += "<tr>";
+                    for(j=1; j<=c; j++){
+                        t += "<td>";
+                        t += (i*j);
+                        t += "</td>";
+                    }
+                    t += "</tr>";
+                    
+                }
+                t += "</table>";
+                w.innerHTML = t;
+            }
+
+            let b = document.querySelector("#btn");
+            b.onclick = tabelline;
+        </script>
     </body>
 </html>
