@@ -18,6 +18,14 @@ void visualizzaRovescio(char _str[]);
  * @param char[] Stringa da utilizzare.
  */
 void ribaltaStringa(char _str[]);
+/**
+ * Funzione che riceve una stringa e veerifica se è palindroma oppure no.
+ * Una parola si dice palindroma quando è possibile leggerla sia da sinistra verso destra che
+ * da destra verso sinistra.
+ * @param char[] Stringa di riferimento da verificare.
+ * @return Booleano 0/1 in caso negativo o affermativo.
+ */
+int isPalindroma(char _str[]);
 
 // sezione del main program.
 int main(){
@@ -38,7 +46,14 @@ int main(){
     visualizzaRovescio(str);
     printf("\n\n");
     ribaltaStringa(str);
-    printf("Stringa capovolta: %s", str);
+    printf("Stringa capovolta: %s\n", str);
+
+    if(isPalindroma(str) == 1){
+        printf("La parola %s e' palindroma.\n", str);
+    }
+    else{
+        printf("La parola %s non e' palindroma.\n", str);
+    }
     return(0);
 
 }
@@ -77,4 +92,19 @@ void ribaltaStringa(char _str[]){
         _str[i] = _str[lunghezza-i-1];
         _str[lunghezza-i-1] = tmp;
     }
+}
+
+int isPalindroma(char _str[]){
+    int i; // variabile per il ciclo.
+    int lung; // contiene la lunghezza della stringa.
+    int palindroma; // flag 0/1 a seconda che sia o meno palindroma.
+
+    lung = lunghezzaStringa(_str);
+    palindroma = 1;
+    for(i=0; i<lung; i++){
+        if(_str[i] != _str[lung-i-1])
+            palindroma = 0;
+        // GUAI A VOI SE METTETE UNA ELSE CON palindroma = 1;
+    }
+    return(palindroma);
 }
