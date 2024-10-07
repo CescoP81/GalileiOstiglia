@@ -11,5 +11,39 @@
          Il gioco termina quando si è indovinato il numero random, comunicando anche il numero di
          tentativi.
         -->
+        Tenta la fortuna: <input type="text" id="guess"><br />
+        <input type="button" value="Prova" id="btn"><br />
+        <div id="view">Benvenuto a Alto/Basso<br /></div>
+        <script>
+            // Genero il numero random da indovinare.
+            // Math.random genera un numero float compreso tra 0 e 1.
+            // Math.floor arrotonda il numero float all'intero inferiore.
+            let random = Math.floor(Math.random() * (100-1) + 1);
+            let w = document.querySelector("#view");
+            let counter = 0;
+            let indovinato = 0;
+            //alert(random);
+            w.innerHTML += random + "<br />";
+
+            function guessTheNumber(){
+                let userNumber = parseInt(document.querySelector("#guess").value);
+                counter++;
+                if(indovinato == 0){
+                    if(userNumber != random){
+                        w.innerHTML += indovinato+"Errato..<br />";
+                    }
+                    else{
+                        w.innerHTML += indovinato+"Indovato con "+counter+" tentativi.<br />";
+                        indovinato += 1;
+                    }
+                }
+                else{
+                    w.innerHTML += indovinato+"Numero già indovinato, ricarica la pagina!<br />";
+                }
+            }
+            
+            let btn = document.querySelector("#btn");
+            btn.onclick = guessTheNumber;
+        </script>
     </body>
 </html>
