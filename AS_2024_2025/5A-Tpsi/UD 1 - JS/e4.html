@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Esercizio 4 JS</title>
+    </head>
+    <body>
+        Righe: <input type="text" id="v1"><br />
+        Colonne: <input type="text" id="v2"><br />
+        <input type="button" id="btn" value="Crea Tabelline"><br />
+        <div id="view">View</div>    
+        <script>
+            function tabella(){
+                // recupero dai campi di testo i valori inseriti dall'utente.
+                let r = parseInt(document.querySelector("#v1").value);
+                let c = parseInt(document.querySelector("#v2").value);
+                let w = document.querySelector("#view");
+
+                // stampo le dimensioni della tabella per verifica.
+                w.innerHTML = "Tabella "+r+"x"+c+"<br /><br />";
+
+                // provo i due cicli per creare le tabelline
+                for(let i=1; i<=r; i++){
+                    for(j=1; j<=c; j++){
+                        w.innerHTML += (i*j)+" ";
+                    }
+                    w.innerHTML += "<br />";
+                }
+
+            }
+            let btn = document.querySelector("#btn");
+            btn.onclick=tabella;
+        </script>
+    </body>
+</html>
