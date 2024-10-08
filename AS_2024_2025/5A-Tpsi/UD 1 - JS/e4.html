@@ -24,7 +24,24 @@
                     }
                     w.innerHTML += "<br />";
                 }
-
+                w.innerHTML += "<br /><br />";
+                
+                // creo un variabile 'table' nella quale andrò a concatenare volta per volta
+                // il codice HTML necessario alla visualizzazione di una tabella con
+                // i valori riga*colonna in ogni singola cella.
+                // Al termine della creazione della stringa la vado ad aggiungere 
+                // alla view.
+                let table="";
+                table += "<table border=1 style='text-align: right;'>";
+                for(let i=1; i<=r; i++){
+                    table += "<tr>";
+                    for(let j=1; j<=c; j++){
+                        table += "<td>"+(i*j)+"</td>";
+                    }
+                    table += "</tr>";
+                }
+                table += "</table>";
+                w.innerHTML += table;
             }
             let btn = document.querySelector("#btn");
             btn.onclick=tabella;
