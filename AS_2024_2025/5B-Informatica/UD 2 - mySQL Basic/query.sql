@@ -24,3 +24,10 @@ SELECT Brano.*, Artista.*
 FROM Brano, Artista
 WHERE Brano.idArtista = Artista.id
 ORDER BY Artista.cognome;
+
+-- Q3.2
+SELECT Brano.*, Artista.*
+FROM Brano
+INNER JOIN Artista
+ON Brano.idArtista = Artista.id
+ORDER BY Artista.cognome;
