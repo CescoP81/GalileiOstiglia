@@ -9,3 +9,14 @@ CREATE TABLE Artista(
 
     primary key(id)
 )ENGINE=InnoDB;
+
+CREATE TABLE Brano(
+    id integer unsigned auto_increment,
+    titolo varchar(20) not null,
+    anno integer not null,
+    genere varchar(15) not null,
+    idArtista integer unsigned,
+
+    primary key(id),
+    foreign key(idArtista) references Artista(id)
+)ENGINE=InnoDB;
