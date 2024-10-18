@@ -16,6 +16,12 @@ int lunghezzaStringa(char _str[]);
  */
 char charAt(char _str[], int _index);
 
+/**
+ * Sostituisce un carattere in una stringa all'indice indicato.
+ * @param char[] Stringa di riferimento.
+ * @param char Carattere da inserire nella stringa.
+ * @param int Indice del carattere da sostituire 0->(len-1).
+ */
 void changeCharAt(char _str[], char _c, int _index);
 
 int main(){
