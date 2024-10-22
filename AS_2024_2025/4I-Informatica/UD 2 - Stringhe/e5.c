@@ -22,19 +22,46 @@ const int DIM = 20;
  * @return Numero di caratteri che compongono la stringa.
  */
 int lunghezzaStringa(char _str[]);
-
+/**
+ * Verifica se una parola è palindroma, restituendo un valore compreso tra 0 e 1.
+ * @param char[] Stringa di riferimento.
+ * @return Valore 1-True / 0-False
+ */
 int isPalindroma(char _str[]);
-
+/**
+ * Conta e visualizza le vocali presenti nella stringa.
+ * @param char[] Stringa di riferimento.
+ */
 void contaVocali(char _str[]);
-
+/**
+ * Restituisce la vocale che compare più volte nella stringa passata.
+ * @param char[] Stringa di riferimento.
+ * @return Vocale con frequenza maggiore.
+*/
 char vocalePiuPresente(char _str[]);
-
+/**
+ * Determina e visualizza le lettere di str1 che compaiono in str2
+ * @param char[] Riferimento alla stringa 1.
+ * @param char[] Riferimento alla stringa 2
+ */
 void lettereComuni(char _str1[], char _str2[]);
-
+/**
+ * Determina e visualizza le lettere di str2 che non compaiono in str1
+ * @param char[] Riferimento alla stringa 1.
+ * @param char[] Riferimento alla stringa 2
+ */
 void lettereNonComuni(char _str1[], char _str2[]);
+/**
+ * Cifra una stringa con un fattore K mantenendo inalterata la stringa originale.
+ * @param char[] Riferimento alla stringa 1
+ * @param int Fattore k da applicare.
+ * @param char[] Riferimento alla stringa cifrata da costruire.
+ */
+void cifraStringa(char _str1[], int _k, char _str2[]);
 // MAIN
 int main(){
     char st1[DIM], st2[DIM];
+    char st3[DIM];
     int len1, len2;
 
     printf("Stringa 1: ");
@@ -87,6 +114,10 @@ int main(){
     // punto 6.
     lettereNonComuni(st1, st2);
     printf("\n");
+
+    // punto 7
+    cifraStringa(st1, 3, st3);
+    printf("Stringa originale %s -> Cifrata: %s\n", st1, st3);
     return(0);
 }
 
@@ -231,4 +262,19 @@ void lettereNonComuni(char _str1[], char _str2[]){
             printf("%c\n", _str2[i]);
         }
     }
+}
+void cifraStringa(char _str1[], int _k, char _str2[]){
+    int i;
+    int len;
+
+    //for(i=0; i<DIM; i++)
+    //    _str2[i] = '\0';
+    len = lunghezzaStringa(_str1);
+    for(i=0; i<len; i++){
+        _str2[i] = _str1[i] + _k;
+        if(_str2[i] > 'z'){
+            _str2[i] = 'a' + (_str2[i] - 'z');
+        }
+    }
+    _str2[i] = '\0';
 }
