@@ -63,6 +63,8 @@ int main(){
     char st1[DIM], st2[DIM];
     char st3[DIM];
     int len1, len2;
+    int fattoreK;
+    char junk;
 
     printf("Stringa 1: ");
     gets(st1);
@@ -116,6 +118,11 @@ int main(){
     printf("\n");
 
     // punto 7
+    do{
+        printf("Inserisci il fattore crittografico(intero tra 5 e 10): ");
+        scanf("%d", &fattoreK);
+        junk = getchar();
+    }while((fattoreK<5) || (fattoreK>10));
     cifraStringa(st1, 3, st3);
     printf("Stringa originale %s -> Cifrata: %s\n", st1, st3);
     return(0);
