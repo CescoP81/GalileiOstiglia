@@ -20,7 +20,6 @@ int main(){
     }
     return(0);
 }
-
 void input(char _parole[RIGHE][COLONNE]){
     int i;
     for(i=0; i<RIGHE; i++){
