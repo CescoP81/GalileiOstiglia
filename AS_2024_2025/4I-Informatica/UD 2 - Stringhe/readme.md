@@ -35,9 +35,9 @@ l'input delle diverse parole, una per ogni riga della matrice.
 **e7.c**
 Realizzare un programma che gestendo una matrice di caratteri 5 righe 25 colonne, realizzare
 i seguenti punti con una funzione specifica:
-- [ ] setParole(): Input delle 5 parole.
-- [ ] listaParole(): Visualizza l'elenco delle parole.
-- [ ] contaVocali(): Conteggio delle vocali per ogni parola.
+- [x] setParole(): Input delle 5 parole.
+- [x] listaParole(): Visualizza l'elenco delle parole.
+- [x] contaVocali(): Conteggio delle vocali per ogni parola.
 - [ ] ricercaLettera: Ricerca in ogni parola la lettera passata e comunica quante volte compare.
 - [ ] ricercaStringa(): ricerca nella lista parola una stringa chiesta in input da tastiera.
 - [ ] ricercaAnagramma(): ricerca se nella lista parola è presente una parola che sia anagramma di una stringa richiesta in input.
