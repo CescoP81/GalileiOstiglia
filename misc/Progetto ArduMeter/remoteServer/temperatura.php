@@ -32,6 +32,37 @@ if(isset($_REQUEST['scelta'])) $sc = $_REQUEST['scelta']; else $sc = null;
             echo('Case disabilitato, togliere scelta oppure cliccare <a href="temperatura.php">Qui.</a>');
             break;
         }
+        case "exportCSV":{
+            $db = new mysqli($dbHost, $dbUser, $dbPassword, $dbName);
+            $sql = "SELECT * 
+                    FROM temperatura 
+                    ORDER BY id DESC";
+            //        LIMIT 50";
+            $rs = $db->query($sql);
+
+            header('Content-Type: text/csv');
+            
+            $record = $rs->fetch_assoc();
+            $keys = array_keys($record);
+            for($i=0; $i<count($keys); $i++){
+                echo($keys[$i]);
+                if($i<count($keys)-1)
+                    echo(',');
+                else
+                    echo("\n");
+            }
+            while($record = $rs->fetch_assoc()){
+                echo($record['id'].','
+                .$record['datamisura'].','
+                .$record['ora'].','
+                .$record['temperatura'].','
+                .$record['umidita']);          
+                
+                echo("\n");
+            }
+            $db->close();
+            break;
+        }
         default:{
             $db = new mysqli($dbHost, $dbUser, $dbPassword, $dbName);
             require("head.php");

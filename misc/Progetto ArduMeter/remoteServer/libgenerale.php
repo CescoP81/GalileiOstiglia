@@ -5,7 +5,7 @@
 $dbHost = "localhost";
 $dbUser = "root";
 $dbPassword = "";
-$dbName = "scuola_2324";
+$dbName = "scuola2324";
 /*
 function scriviNavbar(){
     echo('
