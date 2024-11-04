@@ -42,3 +42,15 @@ i seguenti punti con una funzione specifica:
 - [ ] ricercaStringa(): ricerca nella lista parola una stringa chiesta in input da tastiera.
 - [ ] ricercaAnagramma(): ricerca se nella lista parola è presente una parola che sia anagramma di una stringa richiesta in input.
 NB: i parametri delle funzioni sono lasciati a tua scelta, così come i valori di ritorno se diversi da void.
+
+**e8.c**
+Realizzare un programma in C che richieda all'utente quante password generare, quindi grazie ad una funzione le genera casualmente secondo il seguente schema:  
+nnCcCn-NcJ  
+n: indica un numero intero compreso tra 0 e 9  
+c: indica un carattere minuscolo.  
+C: indica un carattere maiuscolo.  
+-: da impostare manualmente.  
+J: indica un carattere Jolly tra i seguenti * ( ) $ # !  
+- [ ] Creare le singole password e visualizzarle a video.  
+- [ ] Memorizzare le password in una matrice che ne può contenere massimo 20 (quindi controllo sull'input utente).
+- [ ] Versione PRO, nella generazione delle password EVITARE che ce ne siano due uguali.
