@@ -45,7 +45,7 @@ NB: i parametri delle funzioni sono lasciati a tua scelta, così come i valori d
 
 **e8.c**
 Realizzare un programma in C che richieda all'utente quante password generare, quindi grazie ad una funzione le genera casualmente secondo il seguente schema:  
-nnCcCn-NcJ  
+nnCcCn-ncJ  
 n: indica un numero intero compreso tra 0 e 9  
 c: indica un carattere minuscolo.  
 C: indica un carattere maiuscolo.  
