@@ -5,7 +5,8 @@
     </head>
     <body>
         <div id="view" style="border: solid 1px rgb(200,0,0);"><b>Visualizzazione JSON:</b><br /></div>
-
+        <div id="view2" style="border: solid 1px rgb(0,200,0);"><b>Visualizzazione Vettore di JSON:</b><br /></div>
+    
         <script>
             /*
                 Ricercare funzione Javacript fetch, async, await
@@ -15,7 +16,7 @@
                 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await
                 
             */
-           async function leggiSingoloJSon(){
+            async function leggiSingoloJSon(){
                 const response = await fetch('rubrica.json');
                 const contatto = await response.json();
 
@@ -26,8 +27,25 @@
                 v.innerHTML += contatto.mail + "<br />";
            }
 
+           async function leggiVettoreJSon(){
+                const response = await fetch('rubrica2.json');
+                const contatto = await response.json();
+
+                let nrJSon = contatto.length;
+                alert(nrJSon);
+                let v = document.querySelector("#view2");
+                for(let i=0; i<nrJSon; i++){
+                    v.innerHTML += contatto[i].nome + "<br />";
+                    v.innerHTML += contatto[i].cognome + "<br />";
+                    v.innerHTML += contatto[i].telefono + "<br />";
+                    v.innerHTML += contatto[i].mail + "<br />";
+                    v.innerHTML += "<br />";
+                }
+           }
+
            async function leggiRubrica(){
-                leggiSingoloJSon();
+                leggiSingoloJSon(); // si basa sul file rubrica con UN SINGOLO JSON.
+                leggiVettoreJSon(); // si basa sul file rubrica2 contenente più JSON.
            }
 
            leggiRubrica();

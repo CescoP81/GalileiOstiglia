@@ -1,0 +1,20 @@
+[
+    {
+        "nome": "Francesco",
+        "cognome": "Pradella",
+        "telefono": "555-38798",
+        "mail": "francesco.pradella@galileiostiglia.edu.it"
+    },
+    {
+        "nome": "Verdi",
+        "cognome": "Simonini",
+        "telefono": "555-38798",
+        "mail": "francesco.pradella@galileiostiglia.edu.it"
+    },
+    {
+        "nome": "Maria",
+        "cognome": "Pappagallo",
+        "telefono": "555-38798",
+        "mail": "francesco.pradella@galileiostiglia.edu.it"
+    }
+]
