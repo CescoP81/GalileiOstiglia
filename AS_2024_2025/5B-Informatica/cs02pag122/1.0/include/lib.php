@@ -2,7 +2,7 @@
 $DBHOST = "localhost";
 $DBUSER = "root";
 $DBPASSWORD = "";
-$DBNAME = "5IB_AS2425"; // cs02pag122 se lo avete chiamato così!
+$DBNAME = "5B_AS2425"; // cs02pag122 se lo avete chiamato così!
 
 function writeHeader(){
     echo('
