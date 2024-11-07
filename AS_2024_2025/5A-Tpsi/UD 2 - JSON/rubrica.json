@@ -1,0 +1,17 @@
+[
+    {
+        "nome": "Pino",
+        "cognome": "Rossi",
+        "telefono": "553213"
+    },
+    {
+        "nome": "Luca",
+        "cognome": "Verdi",
+        "telefono": "554432"
+    },
+    {
+        "nome": "Giada",
+        "cognome": "",
+        "telefono": "345678"
+    }
+]
