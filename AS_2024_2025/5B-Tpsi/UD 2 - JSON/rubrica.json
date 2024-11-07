@@ -1,26 +1,6 @@
-[
-    {
-        "nome": "Francesco",
-        "cognome": "Pradella",
-        "Telefono": "555-38798",
-        "mail": "francesco.pradella@galileiostiglia.edu.it"
-    },
-    {
-        "nome": "Franco",
-        "cognome": "Rossi",
-        "Telefono": "555-31222",
-        "mail": "franco@rossi.it"
-    },
-    {
-        "nome": "Simona",
-        "cognome": "Bianchi",
-        "telefono": "",
-        "mail": ""
-    },
-    {
-        "nome": "ALberto",
-        "cognome": "Verdi",
-        "Telefono": "555-31345",
-        "mail": "alberto@verdi.it"
-    }
-]
+{
+    "nome": "Francesco",
+    "cognome": "Pradella",
+    "telefono": "555-38798",
+    "mail": "francesco.pradella@galileiostiglia.edu.it"
+}

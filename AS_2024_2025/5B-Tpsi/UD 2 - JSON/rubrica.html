@@ -4,6 +4,8 @@
         <title>Visualizzazione di una rubrica JSON</title>
     </head>
     <body>
+        <div id="view" style="border: solid 1px rgb(200,0,0);"><b>Visualizzazione JSON:</b><br /></div>
+
         <script>
             /*
                 Ricercare funzione Javacript fetch, async, await
@@ -13,6 +15,22 @@
                 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await
                 
             */
+           async function leggiSingoloJSon(){
+                const response = await fetch('rubrica.json');
+                const contatto = await response.json();
+
+                let v = document.querySelector("#view");
+                v.innerHTML += contatto.nome + "<br />";
+                v.innerHTML += contatto.cognome + "<br />";
+                v.innerHTML += contatto.telefono + "<br />";
+                v.innerHTML += contatto.mail + "<br />";
+           }
+
+           async function leggiRubrica(){
+                leggiSingoloJSon();
+           }
+
+           leggiRubrica();
         </script>
     </body>
 </html>
