@@ -1,4 +1,6 @@
 <?php
+/** Questa pagina sarà adibita alla gestione della tabella PRODOTTO */
+
 if(isset($_REQUEST['scelta'])) $sc = $_REQUEST['scelta']; else $sc = null;
 
 // includo la libreria con funzioni necessarie all'interfaccia.
