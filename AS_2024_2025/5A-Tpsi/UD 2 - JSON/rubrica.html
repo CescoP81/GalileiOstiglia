@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Rubrica JSon con Javascript</title>
+    </head>
+    <body>
+        <div id="view" style="border: solid 2px rgb(200,0,0); padding: 5px;">
+            <b>Contenuto del file JSON:</b><br />
+        </div>
+
+        <script>
+            async function leggiRubrica(){
+                const response = await fetch('rubrica.json');
+                const contatti = await response.json();
+
+                let v = document.querySelector("#view");
+                v.innerHTML += "Contatti presenti: " + contatti.length + "<br />";
+            }
+
+            leggiRubrica();
+        </script>
+    </body>
+</html>
