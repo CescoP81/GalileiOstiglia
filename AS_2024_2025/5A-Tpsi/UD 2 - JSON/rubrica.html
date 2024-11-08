@@ -14,7 +14,13 @@
                 const contatti = await response.json();
 
                 let v = document.querySelector("#view");
-                v.innerHTML += "Contatti presenti: " + contatti.length + "<br />";
+                v.innerHTML += "Contatti presenti: " + contatti.length + "<br /><br />";
+
+                for(let i=0; i<contatti.length; i++){
+                    v.innerHTML += contatti[i].nome + " ";
+                    v.innerHTML += contatti[i].cognome + " ";
+                    v.innerHTML += contatti[i].telefono + "<br />";
+                }
             }
 
             leggiRubrica();
