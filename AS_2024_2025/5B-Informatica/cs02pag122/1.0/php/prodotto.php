@@ -34,6 +34,20 @@ writeMenu();
                 $db->close();
                 break;
             }
+            case "formNuovoProdotto":{
+                // crea il form HTML/Bootstrap per l'inserimento dei dati di un prodotto.
+                echo('
+                    <form>
+                        <div class="mb-3">
+                            <label for="inputDescrizione" class="form-label">Descrizione Prodotto:</label>
+                            <input type="text" class="form-control" id="inputDescrizione" aria-describedby="descrizioneHelp">
+                            <div id="descrizioneHelp" class="form-text">Inserisci la descrizione del prodotto da inserire</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                ');
+                break;
+            }
         }
     // << end fo your code >>
 

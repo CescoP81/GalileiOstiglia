@@ -57,7 +57,7 @@ function writeMenu(){
                                 PRODOTTO
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="prodotto.php?scelta=formProdotto">Add Prodotto</a></li>
+                                <li><a class="dropdown-item" href="prodotto.php?scelta=formNuovoProdotto">Add Prodotto</a></li>
                                 <li><a class="dropdown-item" href="prodotto.php?scelta=listaProdotto">List Prodotto</a></li>
                             </ul>
                         </li>
