@@ -12,16 +12,35 @@ writeMenu();
     // << your code start here >>
         switch($sc){
             case "listaProdotto":{
-                echo('Contenuto della tabella Prodotto:<br />');
+                //echo('Contenuto della tabella Prodotto:<br />');
                 // questo case deve aprire un flusso con mysql, quindi eseguire una query
                 // per visualizzare il contenuto della tabella PRODOTTO, con o senza tabella bootstrap.
                 $db = new mysqli($DBHOST, $DBUSER, $DBPASSWORD, $DBNAME);
                 $sql = "SELECT * FROM prodotto";
                 $resultSet = $db->query($sql);
 
-                while($record = $resultSet->fetch_assoc()){
+                /*while($record = $resultSet->fetch_assoc()){
                     echo($record['id'].' '.$record['descrizione'].'<br />');    
-                }
+                }*/
+                echo('<table class="table table-striped table-hover ">
+                    <caption>Lista dei prodotti disponibili</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Descrizione</th>
+                        </tr>
+                    </thead>
+                    <tbody>                
+                ');
+                    while($record = $resultSet->fetch_assoc()){
+                        echo('<tr>
+                                <th scope="row">'.$record['id'].'</th>
+                                <td>'.$record['descrizione'].'</td>
+                            </tr>
+                        ');  
+                    }
+                echo('</tbody>
+                </table>');
 
                 /* per poter veddere di nuovo i risultati devo ri-eseguire di nuovo la query 
                     e ri-creare di nuovo la resultSet
