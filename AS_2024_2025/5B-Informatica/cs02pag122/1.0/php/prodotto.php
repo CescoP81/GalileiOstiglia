@@ -28,6 +28,7 @@ writeMenu();
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Descrizione</th>
+                            <th scope="col">Gestione</th>
                         </tr>
                     </thead>
                     <tbody>                
@@ -36,6 +37,10 @@ writeMenu();
                         echo('<tr>
                                 <th scope="row">'.$record['id'].'</th>
                                 <td>'.$record['descrizione'].'</td>
+                                <td><a href="prodotto.php?scelta=deleteProdotto&idProdotto='.$record['id'].'">
+                                        <button type="button" class="btn btn-primary">Cancella</button>
+                                    </a>
+                                </td>
                             </tr>
                         ');  
                     }
@@ -83,6 +88,19 @@ writeMenu();
                 else{
                     echo('<div class="alert alert-warning">Problema in aggiunta nuovo prodotto.</div>');
                 }
+                $db->close();
+                break;
+            }
+            case "deleteProdotto":{
+                $idP = $_REQUEST['idProdotto'];
+                $db = new mysqli($DBHOST, $DBUSER, $DBPASSWORD, $DBNAME);
+
+                $sql = "DELETE FROM prodotto WHERE id='$idP'";
+                if($db->query($sql))
+                    echo('<div class="alert alert-success">Prodotto Cancellato Correttamente.</div>');
+                else
+                    echo('<div class="alert alert-warning">Prodotto inesistente o errore in cancellazione.</div>');
+                
                 $db->close();
                 break;
             }
