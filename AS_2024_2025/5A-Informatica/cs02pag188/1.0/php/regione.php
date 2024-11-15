@@ -25,10 +25,34 @@ writeMenu();
             $sql = "SELECT * FROM regione";
             $resultSet = $db->query($sql);
 
-            while($record = $resultSet->fetch_assoc()){
+            /*while($record = $resultSet->fetch_assoc()){
                 echo($record['id']." ".$record['nome']."<br />");
+            }*/
+            // scrivo la parte statica di creazione di una tabella con BootS
+            echo('
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nome Regione</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            ');
+            // le righe le genero dinamicamente con PHP e il ciclo while
+            while($record = $resultSet->fetch_assoc()){
+                echo('
+                        <tr>
+                            <th scope="row">'.$record['id'].'</th>
+                            <td>'.$record['nome'].'</td>
+                        </tr>
+                ');
             }
-
+            // scriv la parte statica di chiusura della tabella con BootS.
+            echo('
+                    </tbody>
+                </table>
+            ');
             break;
         }
     }
