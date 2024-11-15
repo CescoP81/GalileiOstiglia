@@ -6,3 +6,4 @@ INSERT INTO regione(nome) VALUES('Piemonte');
 INSERT INTO regione(nome) VALUES('Emilia Romagna');
 INSERT INTO regione(nome) VALUES('Liguria');
 INSERT INTO regione(nome) VALUES('Trentino Alto Adige');
+INSERT INTO regione(nome) VALUES('Lazio');
