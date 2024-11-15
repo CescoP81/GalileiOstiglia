@@ -1,5 +1,10 @@
 <?php
 // questo file contiene funzioni e variabili utili in più pagine per non doverle ricopiare.
+$DBHOST = "localhost";
+$DBUSER = "root";
+$DBPASSWORD = ""; // per voi è root
+$DBNAME = "cs02pag188";
+
 function writeHeader(){
     echo('
         <!DOCTYPE HTML>
@@ -41,8 +46,8 @@ function writeMenu(){
                                 Regione
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Nuova Regione</a></li>
-                                <li><a class="dropdown-item" href="#">Lista Regioni</a></li>
+                                <li><a class="dropdown-item" href="regione.php?scelta=formRegione">Nuova Regione</a></li>
+                                <li><a class="dropdown-item" href="regione.php?scelta=listaRegioni">Lista Regioni</a></li>
                             </ul>
                         </li>
                     </ul>
