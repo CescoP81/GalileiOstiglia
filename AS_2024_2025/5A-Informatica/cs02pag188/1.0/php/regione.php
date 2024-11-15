@@ -10,14 +10,25 @@ writeMenu();
         $sc = $_REQUEST['scelta'];
     else 
         $sc = null;
-    
+
     switch($sc){
         case "formRegione":{
             echo('Voglio inserire una nuova regione...');
             break;
         }
         case "listaRegioni":{
-            echo('Voglio vedere le regioni presenti a database...');
+            // step 1. creo uno strem al database mysql
+            $db = new mysqli($DBHOST, $DBUSER, $DBPASSWORD, $DBNAME);
+
+            // step 2. creo e eseguo la query sql per selezionare tutti i record
+            // della tabella regione
+            $sql = "SELECT * FROM regione";
+            $resultSet = $db->query($sql);
+
+            while($record = $resultSet->fetch_assoc()){
+                echo($record['id']." ".$record['nome']."<br />");
+            }
+
             break;
         }
     }
