@@ -67,8 +67,18 @@ function writeMenu(){
                                 MAGAZZINO
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="prodotto.php?scelta=formNuovoProdotto">Add Prodotto</a></li>
-                                <li><a class="dropdown-item" href="prodotto.php?scelta=listaProdotto">List Prodotto</a></li>
+                                <li><a class="dropdown-item" href="magazzino.php?scelta=formNuovoMagazzino">Add Prodotto</a></li>
+                                <li><a class="dropdown-item" href="magazzino.php?scelta=listaMagazzino">List Prodotto</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                ACQUISTO
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="acquisto.php?scelta=formNuovoAcquisto">Add Acquisto</a></li>
+                                <li><a class="dropdown-item" href="acquisto.php?scelta=listaAcquisto">List Acquisto</a></li>
                             </ul>
                         </li>
                     </ul>
