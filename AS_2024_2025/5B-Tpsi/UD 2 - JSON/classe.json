@@ -2,21 +2,25 @@
     {
         "nome": "Luigi",
         "cognome": "Rossi",
+        "paeseDiResidenza": "Serravalle a Po",
         "dataNascita": "2005/02/23"
     },
     {
         "nome": "Maria",
         "cognome": "Verdi",
+        "paeseDiResidenza": "San Benedetto Po",
         "dataNascita": "2005/03/15"
     },
     {
         "nome": "Anna",
-        "cognome": "Sacchi",
+        "cognome": "Rossi",
+        "paeseDiResidenza": "Ostiglia",
         "dataNascita": "2005/07/03"
     },
     {
         "nome": "Alberto",
         "cognome": "Miracoli",
+        "paeseDiResidenza": "Revere",
         "dataNascita": "2005/11/12"
     }
 ]

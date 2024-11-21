@@ -38,6 +38,7 @@
                 for(let i=0; i<studenti.length; i++){
                     v.innerHTML += studenti[i].nome + " ";
                     v.innerHTML += studenti[i].cognome + " ";
+                    v.innerHTML += studenti[i].paeseDiResidenza + " ";
                     v.innerHTML += studenti[i].dataNascita + "<br /><br />";
                 }
             }
@@ -61,6 +62,7 @@
                     if(studenti[i].dataNascita>=dataIniziale && studenti[i].dataNascita<=dataFinale){
                         v.innerHTML += studenti[i].nome + " ";
                         v.innerHTML += studenti[i].cognome + " ";
+                        v.innerHTML += studenti[i].paeseDiResidenza + " ";
                         v.innerHTML += studenti[i].dataNascita + "<br /><br />";
                     }
                 }
@@ -85,6 +87,7 @@
                     if(studenti[i].cognome.toUpperCase() == cognomeSrc.toUpperCase()){
                         v.innerHTML += studenti[i].nome + " ";
                         v.innerHTML += studenti[i].cognome + " ";
+                        v.innerHTML += studenti[i].paeseDiResidenza + " ";
                         v.innerHTML += studenti[i].dataNascita + "<br /><br />";   
                     }
                 }
