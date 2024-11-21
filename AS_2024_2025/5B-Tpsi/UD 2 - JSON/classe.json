@@ -1,0 +1,22 @@
+[
+    {
+        "nome": "Luigi",
+        "cognome": "Rossi",
+        "dataNascita": "2005/02/23"
+    },
+    {
+        "nome": "Maria",
+        "cognome": "Verdi",
+        "dataNascita": "2005/03/15"
+    },
+    {
+        "nome": "Anna",
+        "cognome": "Sacchi",
+        "dataNascita": "2005/07/03"
+    },
+    {
+        "nome": "Alberto",
+        "cognome": "Miracoli",
+        "dataNascita": "2005/11/12"
+    }
+]
