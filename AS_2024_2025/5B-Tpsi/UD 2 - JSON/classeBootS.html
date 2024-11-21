@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JSON classe e ricerche</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <button type="button" class="btn btn-primary" id="btn1">Lista Completa Studenti</button><br /><br />
+            
+            <div class="mb-3">
+                <label for="txtDataI" class="form-label">Data Iniziale:</label>
+                <input type="text" class="form-control" id="txtDataI" placeholder="aaaa/mm/gg">
+            </div>
+            <div class="mb-3">
+                <label for="txtDataF" class="form-label">Data Finale:</label>
+                <input type="text" class="form-control" id="txtDataF" placeholder="aaaa/mm/gg">
+            </div>
+            <button type="button" class="btn btn-primary" id="btn2">Ricerca per Data</button><br /><br />
+            
+            
+            <div class="mb-3">
+                <label for="txtCognomeSrc" class="form-label">Cognome da ricercare:</label>
+                <input type="text" class="form-control" id="txtCognomeSrc" placeholder="Inserisci un cognome">
+            </div>
+            <button type="button" class="btn btn-primary" id="btn3">Ricerca per cognome</button><br /><br />
+            
+            <div id="view" style="border: solid 0px rgb(200,200,200);">
+                Risultati delle funzioni...
+            </div>
+        </div>
+    
+        <script>
+            /**
+             * ###########################################
+             * # USARE QUESTO FILE INSIEME A CLASSE.JSON #
+             * ###########################################
+             */
+
+            /**
+             * funzione async che carica tutta la lista JSON presente nel file classe.json
+             * e la visualizza nella div #view predisposta.
+             */
+            async function listaCompleta(){
+                const response = await fetch('classe.json');
+                const studenti = await response.json();
+
+                let v = document.querySelector("#view");
+                let table;
+
+                table = '<table class="table table-striped">';
+                table +='<thead>';
+                        table+='<tr>';
+                            table+='<th scope="col">#</th>';
+                            table+='<th scope="col">Nome</th>';
+                            table+='<th scope="col">Cognome</th>';
+                            table+='<th scope="col">Paese di residenza</th>';
+                            table+='<th scope="col">Data di Nascita</th>';
+                        table+='</tr>';
+                table+='</thead>';
+                table+='<tbody>';
+                for(let i=0; i<studenti.length; i++){
+                        table+='<tr>';
+                            table+='<th scope="row">'+(i+1)+'</th>';
+                            table+='<td>'+studenti[i].nome+'</td>';
+                            table+='<td>'+studenti[i].cognome+'</td>';
+                            table+='<td>'+studenti[i].paeseDiResidenza+'</td>';
+                            table+='<td>'+studenti[i].dataNascita+'</td>';
+                        table+='</tr>';
+                }
+                table+='</tbody>'; 
+                table+='<caption>Lista studenti presenti</caption>';
+                table += '</table>';
+                v.innerHTML = table;
+            }
+
+            /** 
+             * funzione async che carica tutti i JSON presenti nel file classe.json
+             * li scorre con il ciclo for, ma aggiunge alla div #view solamente quegli studenti
+             * che hanno data di nascita compresa tra le due date inserite nelle relative
+             * caselle di testo predisposte
+             */
+            async function listaPerData(){
+                const response = await fetch('classe.json');
+                const studenti = await response.json();
+                
+                let v = document.querySelector("#view");
+                let dataIniziale = document.querySelector("#txtDataI").value;
+                let dataFinale = document.querySelector("#txtDataF").value;
+                
+                v.innerHTML = "<h2>Elenco studenti nati tra il <span style='color: rgb(0,200,0);'>"+dataIniziale+"</span> e il <span style='color: rgb(200,0,0);'>"+dataFinale+":</span></h2><br />";
+                table = '<table class="table table-striped">';
+                table +='<thead>';
+                        table+='<tr>';
+                            table+='<th scope="col">#</th>';
+                            table+='<th scope="col">Nome</th>';
+                            table+='<th scope="col">Cognome</th>';
+                            table+='<th scope="col">Paese di residenza</th>';
+                            table+='<th scope="col">Data di Nascita</th>';
+                        table+='</tr>';
+                table+='</thead>';
+                table+='<tbody>';
+                for(let i=0; i<studenti.length; i++){
+                    if(studenti[i].dataNascita>=dataIniziale && studenti[i].dataNascita<=dataFinale){
+                        table+='<tr>';
+                            table+='<th scope="row">'+(i+1)+'</th>';
+                            table+='<td>'+studenti[i].nome+'</td>';
+                            table+='<td>'+studenti[i].cognome+'</td>';
+                            table+='<td>'+studenti[i].paeseDiResidenza+'</td>';
+                            table+='<td>'+studenti[i].dataNascita+'</td>';
+                        table+='</tr>';
+                    }
+                }
+                table+='</tbody>'; 
+                table+='<caption>Lista studenti presenti</caption>';
+                table += '</table>';
+                v.innerHTML = table;
+            }
+
+            /**
+             * funzione async che carica tutti i JSON presenti nel file classe.json
+             * li scorre tutti con il ciclo for e aggiunge alla div #view solamente 
+             * gli studenti che hanno cognome uguale a quello inserito nella casella predisposta.
+             * NB: nel confronto tra il cognome inserito dall'utente e quello dello studenti eseguo
+             * un toUpperCase di entrambi per evitare differenze date da maiuscolo-minuscolo
+             * (es. Rossi e rossi sono due stringhe diverse! con toUpperCase confronta ROSSI con ROSSI)
+             */
+            async function ricercaPerCognome(){
+                const response = await fetch('classe.json');
+                const studenti = await response.json();
+                let cognomeSrc = document.querySelector("#txtCognomeSrc").value;
+                let v = document.querySelector("#view");
+
+                v.innerHTML = "<h2>Elenco studenti con cognome <span style='color: rgb(0,200,0);'>"+cognomeSrc+"</span>:</h2><br />";
+                table = '<table class="table table-striped">';
+                table +='<thead>';
+                        table+='<tr>';
+                            table+='<th scope="col">#</th>';
+                            table+='<th scope="col">Nome</th>';
+                            table+='<th scope="col">Cognome</th>';
+                            table+='<th scope="col">Paese di residenza</th>';
+                            table+='<th scope="col">Data di Nascita</th>';
+                        table+='</tr>';
+                table+='</thead>';
+                table+='<tbody>';
+                for(let i=0; i<studenti.length; i++){
+                    if(studenti[i].cognome.toUpperCase() == cognomeSrc.toUpperCase()){
+                        table+='<tr>';
+                            table+='<th scope="row">'+(i+1)+'</th>';
+                            table+='<td>'+studenti[i].nome+'</td>';
+                            table+='<td>'+studenti[i].cognome+'</td>';
+                            table+='<td>'+studenti[i].paeseDiResidenza+'</td>';
+                            table+='<td>'+studenti[i].dataNascita+'</td>';
+                        table+='</tr>';
+                    }
+                }
+                table+='</tbody>'; 
+                table+='<caption>Lista studenti presenti</caption>';
+                table += '</table>';
+                v.innerHTML = table;
+            }
+
+            /*  mi recupero i rifermenti ai bottoni predisposti e assegno le relative funzioni
+            *   in caso di onclick
+            */
+            let btn1 = document.querySelector("#btn1");
+            btn1.onclick = listaCompleta;
+
+            let btn2 = document.querySelector("#btn2");
+            btn2.onclick = listaPerData;
+
+            let btn3 = document.querySelector("#btn3");
+            btn3.onclick = ricercaPerCognome;
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    </body>
+</html>
