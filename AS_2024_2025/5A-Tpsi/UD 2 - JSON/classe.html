@@ -1,20 +1,109 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
     <head>
-        <title>Json classe</title>
+        <title>JSON classe e ricerche</title>
     </head>
     <body>
-        <input type="button" id="btn1" value="Carica Studenti">
-        <div id="view">
-            Lista studenti...
+        <button id="btn1">Lista Completa Studenti</button><br /><br />
+        
+        Data iniziale:<input type="text" id="txtDataI">
+        Data finale:<input type="text" id="txtDataF">
+        <button id="btn2">Ricerca per Data</button><br /><br />
+        
+        Cognome da ricercare:
+        <input type="text" id="txtCognomeSrc">
+        <button id="btn3">Ricerca per cognome</button><br /><br />
+        
+        <div id="view" style="border: solid 1px rgb(200,200,200);">
+            Risultati delle funzioni...
         </div>
+    
         <script>
-            function caricaClasse(){
-                // inserire qui il codice di visualizzazione json
+            /**
+             * ###########################################
+             * # USARE QUESTO FILE INSIEME A CLASSE.JSON #
+             * ###########################################
+             */
+
+            /**
+             * funzione async che carica tutta la lista JSON presente nel file classe.json
+             * e la visualizza nella div #view predisposta.
+             */
+            async function listaCompleta(){
+                const response = await fetch('classe.json');
+                const studenti = await response.json();
+
+                let v = document.querySelector("#view");
+                v.innerHTML = "<h2>Lista completa studenti:</h2><br />";
+                for(let i=0; i<studenti.length; i++){
+                    v.innerHTML += studenti[i].nome + " ";
+                    v.innerHTML += studenti[i].cognome + " ";
+                    v.innerHTML += studenti[i].paeseDiResidenza + " ";
+                    v.innerHTML += studenti[i].dataNascita + "<br /><br />";
+                }
             }
 
-            let btn = document.querySelector("#btn1");
-            btn.onclick = caricaClasse;
+            /** 
+             * funzione async che carica tutti i JSON presenti nel file classe.json
+             * li scorre con il ciclo for, ma aggiunge alla div #view solamente quegli studenti
+             * che hanno data di nascita compresa tra le due date inserite nelle relative
+             * caselle di testo predisposte
+             */
+            async function listaPerData(){
+                const response = await fetch('classe.json');
+                const studenti = await response.json();
+                
+                let v = document.querySelector("#view");
+                let dataIniziale = document.querySelector("#txtDataI").value;
+                let dataFinale = document.querySelector("#txtDataF").value;
+                
+                v.innerHTML = "<h2>Elenco studenti nati tra il <span style='color: rgb(0,200,0);'>"+dataIniziale+"</span> e il <span style='color: rgb(200,0,0);'>"+dataFinale+":</span></h2><br />";
+                for(let i=0; i<studenti.length; i++){
+                    if(studenti[i].dataNascita>=dataIniziale && studenti[i].dataNascita<=dataFinale){
+                        v.innerHTML += studenti[i].nome + " ";
+                        v.innerHTML += studenti[i].cognome + " ";
+                        v.innerHTML += studenti[i].paeseDiResidenza + " ";
+                        v.innerHTML += studenti[i].dataNascita + "<br /><br />";
+                    }
+                }
+            }
+
+            /**
+             * funzione async che carica tutti i JSON presenti nel file classe.json
+             * li scorre tutti con il ciclo for e aggiunge alla div #view solamente 
+             * gli studenti che hanno cognome uguale a quello inserito nella casella predisposta.
+             * NB: nel confronto tra il cognome inserito dall'utente e quello dello studenti eseguo
+             * un toUpperCase di entrambi per evitare differenze date da maiuscolo-minuscolo
+             * (es. Rossi e rossi sono due stringhe diverse! con toUpperCase confronta ROSSI con ROSSI)
+             */
+            async function ricercaPerCognome(){
+                const response = await fetch('classe.json');
+                const studenti = await response.json();
+                let cognomeSrc = document.querySelector("#txtCognomeSrc").value;
+                let v = document.querySelector("#view");
+
+                v.innerHTML = "<h2>Elenco studenti con cognome <span style='color: rgb(0,200,0);'>"+cognomeSrc+"</span>:</h2><br />";
+                for(let i=0; i<studenti.length; i++){
+                    if(studenti[i].cognome.toUpperCase() == cognomeSrc.toUpperCase()){
+                        v.innerHTML += studenti[i].nome + " ";
+                        v.innerHTML += studenti[i].cognome + " ";
+                        v.innerHTML += studenti[i].paeseDiResidenza + " ";
+                        v.innerHTML += studenti[i].dataNascita + "<br /><br />";   
+                    }
+                }
+            }
+
+            /*  mi recupero i rifermenti ai bottoni predisposti e assegno le relative funzioni
+            *   in caso di onclick
+            */
+            let btn1 = document.querySelector("#btn1");
+            btn1.onclick = listaCompleta;
+
+            let btn2 = document.querySelector("#btn2");
+            btn2.onclick = listaPerData;
+
+            let btn3 = document.querySelector("#btn3");
+            btn3.onclick = ricercaPerCognome;
         </script>
     </body>
 </html>
