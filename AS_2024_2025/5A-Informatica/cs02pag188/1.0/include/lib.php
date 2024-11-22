@@ -50,6 +50,16 @@ function writeMenu(){
                                 <li><a class="dropdown-item" href="regione.php?scelta=listaRegioni">Lista Regioni</a></li>
                             </ul>
                         </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Prodotto
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="prodotto.php?scelta=formProdotto">Nuovo Prodotto</a></li>
+                                <li><a class="dropdown-item" href="prodotto.php?scelta=listaProdotti">Lista Prodotti</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
