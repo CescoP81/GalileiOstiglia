@@ -13,7 +13,30 @@ writeMenu();
 
     switch($sc){
         case "formRegione":{
-            echo('Voglio inserire una nuova regione...');
+            //echo('Voglio inserire una nuova regione...');
+            echo('
+                <form action="regione.php">
+                    <div class="mb-3">
+                        <label for="inputNomeRegione" class="form-label">Nome della Regione</label>
+                        <input type="text" name="nomeRegione" class="form-control" id="inputNomeRegione" aria-describedby="emailHelp">
+                    </div>
+                    <input type="hidden" name="scelta" value="addNuovaRegione">
+                    <button type="submit" class="btn btn-primary">Inserisci la Regione</button>
+                </form>');
+            break;
+        }
+        case "addNuovaRegione":{
+            // case nel quale arrivo se viene premuto il bottone nel form di inserimento di una nuova regione
+            $nomeR = $_REQUEST['nomeRegione'];
+            $sql = "INSERT INTO regione(nome) VALUE('$nomeR')";
+
+            echo($sql);
+            $db = new mysqli($DBHOST, $DBUSER, $DBPASSWORD, $DBNAME);
+            if($db->query($sql))
+                echo('<div class="alert alert-success">Nuova regione aggiunta!</div>');
+            else
+                echo('<div class="alert alert-danger">Problema in inserimento nuova regione!</div>');
+            $db->close();
             break;
         }
         case "listaRegioni":{
@@ -35,6 +58,7 @@ writeMenu();
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Nome Regione</th>
+                            <th scope="col">Gestisci</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -45,6 +69,7 @@ writeMenu();
                         <tr>
                             <th scope="row">'.$record['id'].'</th>
                             <td>'.$record['nome'].'</td>
+                            <td><a class="btn btn-primary" href="regione.php?scelta=deleteRegione&idRegione='.$record['id'].'">Cancella</a>
                         </tr>
                 ');
             }
@@ -53,6 +78,19 @@ writeMenu();
                     </tbody>
                 </table>
             ');
+            break;
+        }
+        case "deleteRegione":{
+            $idR = $_REQUEST['idRegione'];
+            $sql = "DELETE FROM regione WHERE id=$idR";
+            echo($sql);
+
+            $db = new mysqli($DBHOST, $DBUSER, $DBPASSWORD, $DBNAME);
+            if($db->query($sql))
+                echo('<div class="alert alert-success">Regione cancellata correttamente.</div>');
+            else
+                echo('<div class="alert alert-danger">Problema in cancellazione regione.</div>');
+            $db->close();
             break;
         }
     }

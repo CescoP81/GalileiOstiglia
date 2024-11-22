@@ -3,7 +3,7 @@
 $DBHOST = "localhost";
 $DBUSER = "root";
 $DBPASSWORD = ""; // per voi è root
-$DBNAME = "cs02pag188";
+$DBNAME = "5a_as2425";
 
 function writeHeader(){
     echo('
