@@ -64,7 +64,7 @@ writeMenu();
                     <form action="prodotto.php">
                         <div class="mb-3">
                             <label for="inputDescrizione" class="form-label">Descrizione Prodotto:</label>
-                            <input type="text" name="descrizione" class="form-control" id="inputDescrizione" aria-describedby="descrizioneHelp">
+                            <input type="text" name="descrizione" class="form-control form-control-sm" id="inputDescrizione" aria-describedby="descrizioneHelp">
                             <div id="descrizioneHelp" class="form-text">Inserisci la descrizione del prodotto da inserire</div>
                         </div>
                         <input type="hidden" name="scelta" value="aggiungiProdotto">
