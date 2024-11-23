@@ -10,7 +10,7 @@ CREATE TABLE prodotto(
     id integer unsigned auto_increment,
     descrizione varchar(30) not null,
     prezzoUnitario float not null,
-    note varchar(255)
-
+    note varchar(255),
+    
     primary key(id)
 )ENGINE=InnoDB;
