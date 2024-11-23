@@ -20,49 +20,52 @@ writeMenu();
             }
             case "formNuovoAcquisto":{
                 $db = new mysqli($DBHOST, $DBUSER, $DBPASSWORD, $DBNAME);
-                echo('Form nuovo magazzino<br />');
                 echo('
                     <form action="acquisto.php">
-                        <b>Prodotto:</b><br />
-                        <select class="form-select" name="idProdotto" aria-label="Default select example">');
-                            $sql = "SELECT * FROM prodotto";
+                        <div class="mb-3">
+                            <label class="form-label">Prodotto</label>
+                            <select class="form-select form-select-sm" name="idProdotto" aria-label="Default select example">');
+                                $sql = "SELECT * FROM prodotto";
+                                $resultSet = $db->query($sql);
+                            
+                                while($record = $resultSet->fetch_assoc()){
+                                    echo('<option value='.$record['id'].'>'.$record['descrizione'].'</option>');
+                                }
+                                
+                            echo('</select>
+                            <div id="descrizioneHelp" class="form-text">Seleziona il prodotto</div>
+                        </div>');
+
+                        echo('<div class="mb-3">
+                            <label class="form-label">Magazzino</label>');
+                            $sql = "SELECT * FROM magazzino";
                             $resultSet = $db->query($sql);
-                        
+                            echo('<select class="form-select form-select-sm" name="idMagazzino" aria-label="Default select example">');
                             while($record = $resultSet->fetch_assoc()){
-                                echo('<option value='.$record['id'].'>'.$record['descrizione'].'</option>');
+                                echo('<option value='.$record['id'].'>'.$record['nome'].' - '
+                                .$record['citta'].'('.$record['provincia'].')</option>');
                             }
-                            //<option selected>Open this select menu</option>
-                            //<option value="1">One</option>
-                            //<option value="2">Two</option>
-                            //<option value="3">Three</option>
-                        echo('</select><br />
-                        <b>Magazzino</b><br />');
-                        $sql = "SELECT * FROM magazzino";
-                        $resultSet = $db->query($sql);
-                        echo('<select class="form-select" name="idMagazzino" aria-label="Default select example">');
-                        while($record = $resultSet->fetch_assoc()){
-                            echo('<option value='.$record['id'].'>'.$record['nome'].' - '
-                            .$record['citta'].'('.$record['provincia'].')</option>');
-                        }
                         echo('</select>
+                            <div id="descrizioneHelp" class="form-text">Seleziona il Magazzino</div>
+                        </div>
                         <div class="mb-3">
                             <label for="inputDataAcquisto" class="form-label">Data Acquisto:</label>
-                            <input type="text" name="dataAcquisto" class="form-control" id="inputDataAcquisto" aria-describedby="descrizioneHelp">
+                            <input type="text" name="dataAcquisto" class="form-control form-control-sm" id="inputDataAcquisto" aria-describedby="descrizioneHelp">
                             <div id="descrizioneHelp" class="form-text">Inserisci la descrizione del prodotto da inserire</div>
                         </div>
                         <div class="mb-3">
                             <label for="inputQuantita" class="form-label">Quantità acquistata:</label>
-                            <input type="text" name="quantita" class="form-control" id="inputQuantita" aria-describedby="descrizioneHelp">
+                            <input type="text" name="quantita" class="form-control form-control-sm" id="inputQuantita" aria-describedby="descrizioneHelp">
                             <div id="descrizioneHelp" class="form-text">Inserisci la descrizione del prodotto da inserire</div>
                         </div>
                         <div class="mb-3">
                             <label for="inputPrezzo" class="form-label">Prezzo di acquisto:</label>
-                            <input type="text" name="prezzo" class="form-control" id="inputPrezzo" aria-describedby="descrizioneHelp">
+                            <input type="text" name="prezzo" class="form-control form-control-sm" id="inputPrezzo" aria-describedby="descrizioneHelp">
                             <div id="descrizioneHelp" class="form-text">Inserisci la descrizione del prodotto da inserire</div>
                         </div>
                         
                         <input type="hidden" name="scelta" value="aggiungiAcquisto">
-                        <button type="submit" class="btn btn-primary">Aggiunti un Acquisto</button>
+                        <button type="submit" class="btn btn-primary btn-sm">Aggiunti un Acquisto</button>
                     </form> 
                 ');
                 
