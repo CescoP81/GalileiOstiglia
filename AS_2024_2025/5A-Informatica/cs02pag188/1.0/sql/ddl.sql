@@ -14,3 +14,15 @@ CREATE TABLE prodotto(
     
     primary key(id)
 )ENGINE=InnoDB;
+
+CREATE TABLE ufficio(
+    id integer unsigned auto_increment,
+    citta varchar(25) not null,
+    indirizzo varchar(30) not null,
+    telefono varchar(15),
+    email varchar(100),
+    idRegione integer unsigned,
+
+    primary key(id),
+    foreign key (idRegione) references regione(id)
+)ENGINE=InnoDB;
