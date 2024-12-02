@@ -21,3 +21,6 @@ VALUES ('Mantova', 'via Risorgimento nr. 4', '0376-12345', '', 1),
 ('Trento', 'via C. Colombo nr. 13', '0345-12345', '', 6),
 ('Ladispoli', 'via Verdi nr. 4', '', 'ladispoli@sede.it', 7),
 ('Genova', 'via Gramsci nr. 8', '', 'genova@sede.it', 10);
+
+INSERT INTO ufficio(citta, indirizzo, telefono, email, idRegione)
+VALUES ('Mantova', 'via Risorgimento nr. 4', '0376-12345', '', 1),
