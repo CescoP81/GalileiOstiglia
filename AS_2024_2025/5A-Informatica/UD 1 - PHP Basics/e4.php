@@ -40,5 +40,4 @@ $div = 1;
         }while($cnt>2);
         echo("Il valore PRIMO precedente a quello inserito è: ".$valore);
     }
-
 ?>
