@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Auto Concessionaria JSON</title>
+    </head>
+    <body>
+        <button id="btn1">Lista Ordinata</button>
+        <div id="view">Risultati...</div>
+        <script>
+            async function listaOrdinata(){
+                const response = await fetch('http://www.francescopradella.it/arduino/getAutoJSON.php');
+                const auto = await response.json();
+
+                let v = document.querySelector("#view");
+                v.innerHTML = "Auto presenti: "+auto.length+"<br />";
+                // ordinamento basato su ID con Bubble Sort
+                for(let i=0; i<auto.length; i++){
+                    for(let j=i; j<auto.length; j++){
+                        if(parseInt(auto[i].id) > parseInt(auto[j].id)){
+                            const tmp = auto[i];
+                            auto[i] = auto[j];
+                            auto[j] = tmp;
+                        }          
+                    }
+                }
+
+                for(let i=0; i<auto.length; i++){
+                    v.innerHTML += auto[i].id+" "+auto[i].marca+" "+auto[i].modello+" "+auto[i].nazionalita+" "+auto[i].anno+" "+auto[i].kilometri+"<br />";
+                }
+
+                v.innerHTML += "<br /><br />";
+                // ordinamento basato su Kilometri con Bubble Sort
+                for(let i=0; i<auto.length; i++){
+                    for(let j=i; j<auto.length; j++){
+                        if(parseInt(auto[i].kilometri) > parseInt(auto[j].kilometri)){
+                            const tmp = auto[i];
+                            auto[i] = auto[j];
+                            auto[j] = tmp;
+                        }          
+                    }
+                }
+
+                for(let i=0; i<auto.length; i++){
+                    v.innerHTML += auto[i].id+" "+auto[i].marca+" "+auto[i].modello+" "+auto[i].nazionalita+" "+auto[i].anno+" "+auto[i].kilometri+"<br />";
+                }
+            }
+
+            let btn = document.querySelector("#btn1");
+            btn.onclick = listaOrdinata;
+        </script>
+    </body>
+</html>
