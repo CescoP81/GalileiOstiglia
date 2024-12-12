@@ -133,8 +133,12 @@ if(isset($_REQUEST['scelta'])) $sc = $_REQUEST['scelta']; else $sc = null;
                         echo('<div class="col">');
                             echo('<div class="alert alert-primary">Specifiche</div>');
                             echo('Il progetto è attivo nell\'aula nr. 43 - "Informatica primo piano", collocato a parete ad un\'altezza approssimativa
-                            di 150cm da terra. La board Arduino UNO R3 effettua un campionamento della temperatura e umidità ogni 30 minuti con
-                            relativo caricamento su database remoto.');
+                            di 150cm da terra. La board Arduino UNO R3 effettua un campionamento della temperatura e umidità con sensore DHT22 ogni 30 minuti con
+                            relativo caricamento su database remoto.
+                            <br />
+                            Link alle caratteristiche del sensore DHT22 utilizzato:
+                            <a href="https://www.az-delivery.de/it/products/dht22-temperatursensor-modul" target="new">AZ-Delivery Sensori</a>
+                            ');
                         echo('</div>');
                     echo('</div>');
                 echo('</div>'); // chiude la col-4 del riepilogo.
@@ -151,10 +155,10 @@ if(isset($_REQUEST['scelta'])) $sc = $_REQUEST['scelta']; else $sc = null;
                             <thead>
                                 <tr>
                                     <th scope="col">id</th>
-                                    <th scope="col">Temp °C</th>
-                                    <th scope="col">Umidità %</th>
                                     <th scope="col">data</th>
                                     <th scope="col">ora</th>
+                                    <th scope="col">Temp °C</th>
+                                    <th scope="col">Umidità %</th>                                    
                                 </tr>
                             </thead>
                         ');
@@ -162,10 +166,10 @@ if(isset($_REQUEST['scelta'])) $sc = $_REQUEST['scelta']; else $sc = null;
                         while($record = $rs->fetch_assoc()){
                             echo('<tr>
                                 <th scope="row">'.$record['id'].'</th>
-                                <td>'.$record['temperatura'].'</td>
-                                <td>'.$record['umidita'].'</td>
                                 <td>'.$record['datamisura'].'</td>
                                 <td>'.$record['ora'].'</td>
+                                <td>'.$record['temperatura'].'</td>
+                                <td>'.$record['umidita'].'</td>                                
                                 </tr>
                             ');
                         }
