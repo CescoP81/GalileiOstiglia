@@ -23,4 +23,18 @@ VALUES ('Mantova', 'via Risorgimento nr. 4', '0376-12345', '', 1),
 ('Genova', 'via Gramsci nr. 8', '', 'genova@sede.it', 10);
 
 INSERT INTO ufficio(citta, indirizzo, telefono, email, idRegione)
-VALUES ('Mantova', 'via Risorgimento nr. 4', '0376-12345', '', 1),
+VALUES ('Mantova', 'via Risorgimento nr. 4', '0376-12345', '', 1);
+
+-- prodotti 1 2 5 6
+-- ufficio 1 2 3 4 5
+INSERT INTO vendita(dataVendita, quantita, idProdotto, idUfficio)
+VALUES('2024-03-10', 3, 1, 2),
+('2024-03-25', 10, 6, 5),
+('2024-05-10', 20, 2, 3),
+('2024-05-25', 15, 5, 4),
+('2024-06-03', 50, 1, 2),
+('2024-06-30', 75, 5, 4),
+('2024-05-10', 30, 1, 5);
+
+INSERT INTO vendita(dataVendita, quantita, idProdotto, idUfficio)
+VALUES('2024-03-10', 3, 7, 6);

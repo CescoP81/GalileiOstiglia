@@ -26,3 +26,15 @@ CREATE TABLE ufficio(
     primary key(id),
     foreign key (idRegione) references regione(id)
 )ENGINE=InnoDB;
+
+CREATE TABLE vendita(
+    id integer unsigned auto_increment,
+    dataVendita date,
+    quantita tinyint,
+    idProdotto integer unsigned,
+    idUfficio integer unsigned,
+
+    primary key(id),
+    foreign key(idProdotto) references prodotto(id),
+    foreign key(idUfficio) references ufficio(id)
+)ENGINE=InnoDB;
