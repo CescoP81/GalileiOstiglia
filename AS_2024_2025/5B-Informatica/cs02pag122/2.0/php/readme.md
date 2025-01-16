@@ -1,2 +1,1 @@
-Questo folder contiene tutto il pacchetto di pagine che operano sul nostro gestionale,
-il Core della nostra applicazione.
+In questa cartella andremo a creare il set di pagine per la visualizzazione destinata all'utente non agli ADMIN.
