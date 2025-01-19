@@ -104,7 +104,7 @@ if(isset($_REQUEST['scelta'])) $sc = $_REQUEST['scelta']; else $sc = null;
                         $rs = $db->query($sql);
                         $record = $rs->fetch_assoc();
                         echo('<div class="col col-6">Temperatura Massima</div>');
-                        echo('<div class="col col-6">'.$record['massima'].' °C</div>');
+                        echo('<div class="col col-6">'.round($record['massima'], 2).' °C</div>');
                     echo('</div>');
 
                     echo('<div class="row">');

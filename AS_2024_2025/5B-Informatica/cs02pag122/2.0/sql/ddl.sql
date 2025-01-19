@@ -43,3 +43,4 @@ INSERT INTO admins(cognome, nome, mail, password)
 VALUES ('Luca', 'Cavallaro', 'l@c.it', MD5('01234567'));
 INSERT INTO admins(cognome, nome, mail, password)
 VALUES ('Tommaso', 'Rossi', 't@r.it', MD5('abcd1234'));
+
