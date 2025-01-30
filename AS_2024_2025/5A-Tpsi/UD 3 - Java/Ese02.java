@@ -10,5 +10,7 @@
  * somma divisori di n2 = n1
  */
 public class Ese02 {
-    
+    public static void main(String args[]){
+        
+    }
 }
