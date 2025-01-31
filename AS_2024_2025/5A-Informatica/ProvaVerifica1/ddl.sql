@@ -32,7 +32,7 @@ CREATE TABLE Animale(
     primary key (id),
     foreign key (idRazza) references Razza(id),
     foreign key (idZona) references Zona(id),
-    foreign key (idVolontariato) references Volontariato(id),
+    foreign key (idVolontariato) references Volontariato(id)
 )ENGINE=InnoDB;
 
 CREATE TABLE Visita(
@@ -40,7 +40,8 @@ CREATE TABLE Visita(
     dataVisita date not null,
     referto varchar(50) not null,
     costo float not null,
+    idAnimale integer unsigned,
 
     primary key(id),
     foreign key (idAnimale) references Animale(id)
-)ENGINE=InnoDB
+)ENGINE=InnoDB;
