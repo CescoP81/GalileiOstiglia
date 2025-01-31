@@ -13,7 +13,7 @@ CREATE TABLE Zona(
     primary key (id) 
 )ENGINE=InnoDB;
 
-CREATE TABLE Vonlontario(
+CREATE TABLE Volontariato(
     id integer unsigned auto_increment,
     Cognome varchar(20) not null,
     Nome varchar(20) not null,
@@ -25,11 +25,14 @@ CREATE TABLE Vonlontario(
 CREATE TABLE Animale(
     id integer unsigned auto_increment,
     Nome varchar(20) not null,
+    idRazza integer unsigned,
+    idZona integer unsigned, 
+    idVolontariato integer unsigned,
 
     primary key (id),
-    foreign key (idRazza) references Razza(id)
-    foreign key (idZona) references Zona(id)
-    foreign key (idVolontario) references Volontario(id)
+    foreign key (idRazza) references Razza(id),
+    foreign key (idZona) references Zona(id),
+    foreign key (idVolontariato) references Volontariato(id),
 )ENGINE=InnoDB;
 
 CREATE TABLE Visita(
@@ -40,4 +43,4 @@ CREATE TABLE Visita(
 
     primary key(id),
     foreign key (idAnimale) references Animale(id)
-)
+)ENGINE=InnoDB
