@@ -8,3 +8,10 @@ FROM animale AS a, volontario AS v, Zona AS z, razza AS r
 WHERE v.id = a.idvolontario AND v.nome = 'Marco' AND v.cognome = 'Rossi'
     AND a.idrazza = r.id
     AND a.idzona = z.id;
+
+-- Query 2: Selezionare tutti gli animali della zona “Steppa e Savana” ordinandoli per nome.
+SELECT a.nome, r.denominazione
+FROM animale AS a, zona AS z, razza AS r
+WHERE a.idzona = z.id AND z.denominazione = 'Steppa e Savana' 
+    AND a.idRazza = r.id
+ORDER BY a.nome;
