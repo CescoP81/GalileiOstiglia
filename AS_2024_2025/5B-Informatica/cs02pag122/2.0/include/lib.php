@@ -4,7 +4,7 @@ il file sarà incluso nei file php che si trovano in /php. */
 $DBHOST = "localhost";
 $DBUSER = "root";
 $DBPASSWORD = "";
-$DBNAME = "5B_AS2425"; // cs02pag122 se lo avete chiamato così!
+$DBNAME = "5b_as2425"; // cs02pag122 se lo avete chiamato così!
 
 /**
  * Funzione che genera la parte iniziale di ogni pagina, costruendo il corpo della pagina partendo dai tag fondamentali, genera il codice fino

@@ -15,19 +15,23 @@ $mypdf = new FPDF();
     $sql = "SELECT * FROM magazzino ORDER BY nome";
     $resultSet = $db->query($sql);
     
+    // creazione di tutte le celle per visualizzare i dati estratti.
     $mypdf->Cell(10,10,'ID',0,0,'C');
     $mypdf->Cell(70,10,'Nome',0,0,'C');
     $mypdf->Cell(80,10,'Città',0,0,'C');
     $mypdf->Cell(30,10,'Provincia',0,0,'C');
     $mypdf->Ln();
+    $i=0;
+    $cnt = $resultSet->num_rows;
     while($record = $resultSet->fetch_assoc()){
+        $i++;
         $mypdf->Cell(10, 10, $record['id'], 1, 0, 'C');
         $mypdf->Cell(70, 10, $record['nome'], 1, 0);
         $mypdf->Cell(80, 10, $record['citta'], 1, 0);
         $mypdf->Cell(30, 10, $record['provincia'], 1, 0, 'C');
         $mypdf->Ln();
     }
-    // creazione di tutte le celle per visualizzare i dati estratti.
+    $mypdf->Cell(90,10,'Magazzini presenti: '.$i.' oppure cnt:'.$cnt, 0,1);
 
     $mypdf->Output();
 ?>
