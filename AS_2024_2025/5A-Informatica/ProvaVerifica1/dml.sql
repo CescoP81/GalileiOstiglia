@@ -9,12 +9,12 @@ VALUES ('tropicale'),
 ('foresta pluviale'),
 ('zona asiatica');
 
-INSERT INTO Volontariato(Cognome, Nome, statoServizio)
+INSERT INTO Volontario(Cognome, Nome, statoServizio)
 VALUES ('Rossi', 'Mario', 'SN'),
 ('Bing', 'Qi Ling', 'JR'),
 ('Elkadiri', 'Aziz', 'SN');
 
-INSERT INTO Animale(Nome, idRazza, idZona, idVolontariato)
+INSERT INTO Animale(Nome, idRazza, idZona, idVolontario)
 VALUES ('jeppino', 2, 3, 2),
 ('gianfranco', 3, 1, 3),
 ('david' , 1, 4, 1);
