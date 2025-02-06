@@ -46,7 +46,7 @@ if($_SESSION['logged']){
                     }
                 echo('</tbody>
                 </table>');
-                echo('<a href="magazzinoPDF.php" target="new">
+                echo('<a href="magazzinoPDF2.php" target="new">
                         <button type="button" class="btn btn-warning">Genera PDF</button>
                 </a>');
                 $db->close();                

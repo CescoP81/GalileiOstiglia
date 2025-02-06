@@ -2,20 +2,35 @@
 require('../../../../../fpdf186/fpdf.php');
 require('../include/lib.php');
 
-$mypdf = new FPDF();
+class MYPDF extends FPDF{
+    /**
+     * Realizzo l'override della funzione Header, questa funzione viene richiamata di default
+     * ogni volta che viene chamata la AddPage oppure viene creata una nuova pagina in automatico.
+     */
+    function Header(){
+        $this->SetFont('Arial', '', 18);
+        $this->Cell(160, 10, 'Import-Export s.n.c.', 0, 1);
+        $this->SetFont('Arial', '', 14);
+        $this->Cell(160, 10, 'Sede Legale: Via della Resilienza, 18 - 46035 Ostiglia (MN)', 0, 1);
+        $this->SetFont('Arial', '', 12);
+        $this->Cell(160, 10, 'sito: http://www.impexp.it - mail: info@impexp.it', 0, 1);
+        $this->Image('../img/lion.png',160,10,30,30);
+        $this->Ln();
+    }
+    /**
+     * Override della funzione Footer aggiungendo la riga di chiusura
+     * al fondo della pagina.
+     */
+    function Footer(){
+        $this->SetXY(10,277);
+        $this->SetFont('Arial', '', 12);
+        $this->Cell(190,10,$this->PageNo(), 'T', 0, 'C');
+    }
+}
 
+$mypdf = new MYPDF();
 // Aggiungo una pagina al pdf.
     $mypdf->AddPage();
-
-    $mypdf->SetFont('Arial', '', 18);
-    $mypdf->Cell(160, 10, 'Import-Export s.n.c.', 0, 1);
-    $mypdf->SetFont('Arial', '', 14);
-    $mypdf->Cell(160, 10, 'Sede Legale: Via della Resilienza, 18 - 46035 Ostiglia (MN)', 0, 1);
-    $mypdf->SetFont('Arial', '', 12);
-    $mypdf->Cell(160, 10, 'sito: http://www.impexp.it - mail: info@impexp.it', 0, 1);
-    $mypdf->Image('../img/lion.png',160,10,30,30);
-
-    $mypdf->Ln();
 
     // imposto un carattere Arial a 14pt
     $mypdf->SetFont('Arial', '', 14);
@@ -42,8 +57,6 @@ $mypdf = new FPDF();
         $mypdf->Ln();
     }
     $mypdf->Cell(90,10,'Magazzini presenti: '.$i.' oppure cnt:'.$cnt, 0,1);
-
-    
 
     $mypdf->Output();
 ?>
