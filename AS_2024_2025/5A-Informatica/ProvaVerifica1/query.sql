@@ -68,3 +68,14 @@ SELECT a.nome, vi.costo
 FROM animale AS a, visita AS vi 
 WHERE a.id=vi.idAnimale 
     AND vi.costo > (SELECT AVG(visita.costo) FROM visita);
+
+-- Q11: selezionare tutte le visite comprensive di animale(nome, razza, zona) e volontario
+-- che abbiano visite con costo maggiore o uguale a 50.
+SELECT vi.dataVisita, vi.referto, vi.costo, a.nome, r.denominazione AS 'Razza', 
+        z.denominazione AS 'Zona', vo.cognome, vo.nome, vo.statoServizio
+FROM visita AS vi, animale AS a, zona AS z, razza AS r, volontario AS vo 
+WHERE vo.id = a.idVolontario
+    AND r.id = a.idRazza
+    AND z.id = a.idZona
+    AND a.id = vi.idAnimale
+    AND vi.costo >= 50;
