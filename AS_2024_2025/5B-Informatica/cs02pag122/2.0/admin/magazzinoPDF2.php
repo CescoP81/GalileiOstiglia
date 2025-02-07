@@ -19,7 +19,7 @@ class MYPDF extends FPDF{
     }
     /**
      * Override della funzione Footer aggiungendo la riga di chiusura
-     * al fondo della pagina.
+     * al fondo della pagina. X: 10 mm inizio pagina, 277mm è il fondo della pagina.
      */
     function Footer(){
         $this->SetXY(10,277);
@@ -57,6 +57,6 @@ $mypdf = new MYPDF();
         $mypdf->Ln();
     }
     $mypdf->Cell(90,10,'Magazzini presenti: '.$i.' oppure cnt:'.$cnt, 0,1);
-
+    $mypdf->AddPage();
     $mypdf->Output();
 ?>
