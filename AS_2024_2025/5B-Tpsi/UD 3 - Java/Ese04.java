@@ -10,3 +10,8 @@ public class Ese04 {
         System.out.println("Somma valori r2: "+r2.getSommaValues());
     }
 }
+/* Dicara
+20.02 tpsi
+20.03 tpsi
+10.04 tpsi
+*/
