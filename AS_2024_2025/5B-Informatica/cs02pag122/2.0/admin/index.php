@@ -52,6 +52,10 @@ if($_SESSION['logged'] == true){ // se sono loggato mostro il gestionale con men
         echo('<div class="alert alert-success">Pare funzionare tutto E sono pure loggato!</div>');
     // << end fo your code >>
 
+    echo('<a href="http://www.google.com">
+            <i class="bi bi-arrow-up-right-square-fill" style="font-size: 92px; color: rgb(0,200,0);"></i>
+        </a>');
+
 }
 else{
     // non sono loggato quindi mostro il form per eventuale login
