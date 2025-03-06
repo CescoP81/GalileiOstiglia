@@ -27,8 +27,9 @@ function scriviNavbar(){
                             <ul class="dropdown-menu">
                                 <li>
                                     <a class="dropdown-item" href="citta.php?scelta=formNuovaCitta">
-                                    <i class="bi-plus-circle" style="font-size: 1rem; color: black;"></i>
-                                    Nuova Città</a>
+                                        <i class="bi-alarm" style="font-size: 1rem; color: black;"></i>
+                                        Nuova Città
+                                    </a>
                                 </li>
                                 <li>
                                     <a class="dropdown-item" href="citta.php?scelta=listaCitta">
