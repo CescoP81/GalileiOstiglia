@@ -18,12 +18,30 @@ typedef struct{
 }Contatto;
 
 // == prototipi ==
-void addNominativo(char filename[], Contatto c);
-void visualizzaContatti(char filename[]);
+/**
+ * Aggiunge un contatto al file di elenco.
+ * @param char[] Nome del file da utilizzare come elenco.
+ * @param Contatto Struttura contenente i dati da scrivere nel file.
+ */
+void addContact(char filename[], Contatto c);
+/**
+ * Visualizza i contatti presenti nel file di elenco
+ * @param char[] Nome del file da utilizzare come elenco.
+ */
+void showContacts(char filename[]);
+/**
+ * Ricerca contatti basandosi su un anno passato come parametro.
+ * @param char[] Nome del file da utilizzare come elenco.
+ * @param int Anno su cui basare la ricerca dei contatti.
+ * @return Numero di contatti trovati nell'elenco con l'anno specificato.
+ */
+int searchByYear(char filename[], int _year);
 
 int main(){
     Contatto c1;
     int scelta;
+    int anno;
+    int trovati;
 
     do{
         printf("1. Aggiungi contatto\n");
@@ -45,16 +63,28 @@ int main(){
                 printf("Anno di nascita: ");
                 scanf("%d", &(c1.annoNascita));
 
-                addNominativo("elenco.dat", c1);
+                addContact("elenco.dat", c1);
                 break;
             }
             case 2:{
                 printf("\n\n-- ELENCO CONTATTI --\n");
-                visualizzaContatti("elenco.dat");
+                showContacts("elenco.dat");
                 printf(" ------\n\n");
                 break;
             }
             case 3:{
+                printf("Inserisci anno di ricerca: ");
+                scanf("%d", &anno);
+                fflush(stdin);
+
+                trovati = searchByYear("elenco.dat", anno);
+                if(trovati){
+                    printf("Risultati trovati: %d contatti.\n", trovati);
+                }
+                else
+                    printf("Nessun contatto trovato.\n");
+                
+                    printf(" ------\n\n");
                 break;
             }
             default:{
@@ -68,14 +98,14 @@ int main(){
     return(0);
 }
 
-void addNominativo(char filename[], Contatto c){
+void addContact(char filename[], Contatto c){
     FILE *fpOut;
     fpOut = fopen(filename, "ab");
     fwrite(&c, sizeof(Contatto), 1, fpOut);
     fclose(fpOut);
 }
 
-void visualizzaContatti(char filename[]){
+void showContacts(char filename[]){
     FILE *fpIn;
     Contatto tmp;
     fpIn = fopen(filename, "rb");
@@ -85,4 +115,22 @@ void visualizzaContatti(char filename[]){
         fread(&tmp, sizeof(Contatto), 1, fpIn);
     }
     fclose(fpIn);
+}
+
+int searchByYear(char filename[], int _year){
+    FILE *fpIn;
+    Contatto tmp;
+    int trovato = 0;
+
+    fpIn = fopen(filename, "rb");
+    fread(&tmp, sizeof(Contatto), 1, fpIn);
+    while(!feof(fpIn)){
+        if(tmp.annoNascita == _year){
+            printf("%s %s %d\n", tmp.cognome, tmp.nome, tmp.annoNascita);
+            trovato++;
+        }
+        fread(&tmp, sizeof(Contatto), 1, fpIn);
+    }
+    fclose(fpIn);
+    return(trovato);
 }

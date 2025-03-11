@@ -7,4 +7,4 @@ Introduzione alla scrittura e lettura di file binari con strutture.
 Realizzazione di un elenco di nominativi con salvataggio su file binario:  
 - [x] Aggiunta nuovo nominativo.
 - [x] Visualizzazione dei nominativi.
-- [ ] Ricerca per anno.
+- [x] Ricerca per anno.
