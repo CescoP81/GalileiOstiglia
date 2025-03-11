@@ -19,6 +19,7 @@ typedef struct{
 
 // == prototipi ==
 void addNominativo(char filename[], Contatto c);
+void visualizzaContatti(char filename[]);
 
 int main(){
     Contatto c1;
@@ -42,12 +43,15 @@ int main(){
                 scanf("%s", c1.nome);
                 fflush(stdin);
                 printf("Anno di nascita: ");
-                scanf("%d", c1.annoNascita);
+                scanf("%d", &(c1.annoNascita));
 
                 addNominativo("elenco.dat", c1);
                 break;
             }
             case 2:{
+                printf("\n\n-- ELENCO CONTATTI --\n");
+                visualizzaContatti("elenco.dat");
+                printf(" ------\n\n");
                 break;
             }
             case 3:{
@@ -69,4 +73,16 @@ void addNominativo(char filename[], Contatto c){
     fpOut = fopen(filename, "ab");
     fwrite(&c, sizeof(Contatto), 1, fpOut);
     fclose(fpOut);
+}
+
+void visualizzaContatti(char filename[]){
+    FILE *fpIn;
+    Contatto tmp;
+    fpIn = fopen(filename, "rb");
+    fread(&tmp, sizeof(Contatto), 1, fpIn);
+    while(!feof(fpIn)){
+        printf("%s %s %d\n", tmp.cognome, tmp.nome, tmp.annoNascita);
+        fread(&tmp, sizeof(Contatto), 1, fpIn);
+    }
+    fclose(fpIn);
 }
