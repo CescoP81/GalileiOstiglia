@@ -19,12 +19,17 @@ public class Swing02 extends JFrame{
         frame = new JFrame();
         panel = new JPanel();
 
+        panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
+
         l1 = new JLabel("Primo valore:");
         l2 = new JLabel("Secondo valore:");
         l3 = new JLabel("Risultato: ??");
+        
 
         txt1 = new JTextField(15);
         txt2 = new JTextField(15);
+        //txt2.setSize(20,200);
+        //txt2.setMaximumSize(new Dimension(60, 320));
 
         btn1 = new JButton("Calcolo");
 
@@ -46,7 +51,7 @@ public class Swing02 extends JFrame{
         // definisce il titolo della UI, viene scritto nella barra blu in alto.
         frame.setTitle("Calcolo somma di due valori");
         // Definisce le dimensioni in pixel della UI (dimensioni iniziali e ridimensionabile)
-        frame.setSize(640,480);
+        frame.setSize(640,200);
         // Imposta la visibilità della finestra come 'true';
         frame.setVisible(true);
     }
