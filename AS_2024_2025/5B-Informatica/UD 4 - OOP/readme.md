@@ -1,0 +1,1 @@
+Esercitazioni relative alla creazione di un oggetto grafico per la rappresentazione di valori numerici. La pagina PHP che genera il codice PNG poi può essere richiamata in una pagina web oppure in un report PDF.
