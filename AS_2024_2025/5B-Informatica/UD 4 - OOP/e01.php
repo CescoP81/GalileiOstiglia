@@ -1,6 +1,11 @@
 <?php
 class Oggetto{
+    // L'insieme delle variabili private rappresenta lo stato dell'oggetto.
     private $var;
+    
+    // L'insieme delle funzioni di un oggetto che vengono chiamate METODI rappresenta
+    // l'interfaccia con la quale si interagisce con l'oggetto stesso.
+    
     /**
      * Costruttore base, esegue un set iniziale delle variabili dell'oggetto.
      */
