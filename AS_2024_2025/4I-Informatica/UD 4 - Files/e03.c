@@ -11,6 +11,9 @@ contenente i nominativi dei rispettivi sessi.
 Ogni volta i file maschi e femmine vengono generati da zero. il file contatti viene gestito in aggiunta.
 
 Utilizzare una struct e le funzioni fread e fwrite per la gestione dei file.
+
+UPDATE:
+- Aggiungere opzione di modifica di un contatto nell'elenco generale. 
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -21,9 +24,23 @@ typedef struct{
     char sesso;
     int annoNascita;
 }Persona;
-
+/**
+ * Aggiunge una struttura al file generale di elenco.
+ * @param char[] Nome del file da utlizzare come elenco generale. 
+ * @param Persona Struttura contenente le informazioni da scrivere sul file.
+ */
 void aggiungiPersona(char _filename[], Persona _tmp);
+/**
+ * Visualizza la lista dei nominativi presenti nel file generale. 
+ * @param char[] Nome del file da utlizzare come elenco generale.
+ */
 void vediListaContatti(char _filename[]);
+/**
+ * Funzione che copia i nominativi in due file distinti in base al sesso. ù
+ * @param char[] Nome del file da utlizzare come elenco generale.
+ * @param char[] Nome del file da utlizzare come elenco MASCHI.
+ * @param char[] Nome del file da utlizzare come elenco FEMMINE.
+ */
 void dividiMaschiFemmine(char _filename1[], char _filename2[], char _filename3[]);
 
 int main(){
