@@ -12,6 +12,15 @@ if($sc == "login"){
 
     $sql = "SELECT * FROM utente WHERE mail='$u' AND passwd='".md5($p)."'";
     echo($sql);
+    $db = new mysqli("localhost","root","","5a_as2425");
+    $resultSet = $db->query($sql);
+    if($resultSet->num_rows == 1){
+        $record = $resultSet->fetch_assoc();
+        $_SESSION['userID'] = $record['id'];
+        $_SESSION['userName'] = $record['nome'].' '.$record['cognome'];
+        $_SESSION['loggato'] = true;
+    }
+    $db->close();
 }
 if($sc == "logout"){
     //imposto a false la variabile di sessione 'loggato
@@ -27,10 +36,10 @@ echo('<html>
 
         if($_SESSION['loggato'] == true){
             // sono nella condizione di un utente loggato.
-            echo('Utente: '.$_SESSION['nome'].' '.$_SESSION['cognome'].'
+            echo('Utente: '.$_SESSION['userID'].' '.$_SESSION['userName'].'
             <a href="index.php?scelta=logout">ESCI</a>');
         }
-        if($_SESSION['loggato' == false]){
+        if($_SESSION['loggato'] == false){
             // non sono un utente autenticato quindi mostro il form per eseguire l'autentica.
             echo('<form action="index.php" method="get">
                 Mail Utente: <input type="text" name="utente"><br />
