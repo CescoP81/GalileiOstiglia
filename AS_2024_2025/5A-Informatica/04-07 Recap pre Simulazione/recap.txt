@@ -1,0 +1,78 @@
+## MYSQL ##
+- CREATE TABLE
+- INSERT INTO (..) VALUES(..)
+- SELECT * FROM table
+- SELECT file-list
+    FROM tablename
+    WHERE (condizioni)
+-SELECT table1.field, table2.field
+    FROM table1, table2 
+    WHERE table1.PK = table2.FK AND ...(altri filtri)
+
+- SELECT ->
+    COUNT: conta quanti record rispettano il filtro impostato nella WHERE
+    SUM: somma il field richeisto tra tutti i record selezionati
+    AVG: calcola la media del field tra tutti i record selezionati
+    MIN: determina il valore minimo nel field tra tutti i record selezionati
+    MAX: come sopra ma per il valore massimo.
+
+- ORDER BY field [ASC/DESC]
+    ASC: ordince ascendente o crescente.
+    DESC: discendente o decrescente.
+    esempio:
+    SELECT studente.nome, studente.cognome, studente.annoNascita
+    FROM studente
+    ORDER BY studente.annoNascita DESC
+
+- GROUP BY che raggruppa sulla base di un field specificato (esempio ID)
+    se devo filtrare sul risultato del raggruppamento NON USO WHERE ma HAVING.
+    esempio:
+    ------------|
+    |DIPENDENTE |
+    -------------
+    |- id (PK)  |
+    |-nome      |
+    |-cognome   |
+    -------------
+
+    ---------------------|
+    |STIPENDI            |
+    ---------------------|
+    |- id (PK=)          |
+    |- idDipendente (FK) |
+    |- importo           |
+    ----------------------
+    SELECT SUM(s.importo) AS totale
+    FROM stipendi AS s, dipendente AS d
+    WHERE s.idDipendente=d.id
+    GROUP BY s.idDipendente
+        [HAVING totale>10000] -> WHERE totale>10000 (NO ASSOLUTAMENTE)
+
+- Scrivi il codice per l'inserimento dei dati di un nuovo dipendente.
+pagina.html
+<form action="pagina.php" method="get[POST]">
+    Label1: <input type="text" name="nomeDipendente"><br />
+    Label2: <input type="text" name="cognomeDipendente"><br />
+    <input type="scelta" value="aggiungiDipendente">
+    <input type="submit" value="Aggiungi">
+</form>
+
+Link creato quando premo il bottone submit
+[http://..../pagina.php?nomeDipendente=..&cognomeDipendente=..&scelta=aggiungiDipendente]
+
+pagina.php
+<?php
+if(isset($_REQUEST['scelta])) $sc = $_REQUEST['scelta]; else $sc = null;
+
+if($sc == "aggiungiDipendente){
+    $n = $_REQUEST['nomeDipendente'];
+    $c = $_REQUEST['cognomeDipendente'];
+
+    $db = new mysqli("localhost", "user", "password", "dbname");
+    $sql = "INSERT INTO dipendente(nome, cognome) VALUES('$n', '$c');
+    if($db->query($sql))
+        echo("Nuovo dipendente aggiunto con successo...");
+    else
+        echo("Ops, qualquadra non cosa.");
+    $db->close();
+}
