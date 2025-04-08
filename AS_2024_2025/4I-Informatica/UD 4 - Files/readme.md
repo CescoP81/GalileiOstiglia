@@ -23,5 +23,5 @@ Il file contatti viene gestito in aggiunta.
 Utilizzare una struct e le funzioni fread e fwrite per la gestione dei file.
 
 UPDATE:
-[ ] Aggiungere opzione di modifica di un contatto nell'elenco generale.  
-[x] Cancellazione di un contatto.
+- [ ] Aggiungere opzione di modifica di un contatto nell'elenco generale.  
+- [x] Cancellazione di un contatto.
