@@ -35,6 +35,8 @@ void aggiungiPersona(char _filename[], Persona _tmp);
  * @param char[] Nome del file da utlizzare come elenco generale.
  */
 void vediListaContatti(char _filename[]);
+
+int vediContaContatti(char _filename[]);
 /**
  * Funzione che copia i nominativi in due file distinti in base al sesso. ù
  * @param char[] Nome del file da utlizzare come elenco generale.
@@ -43,16 +45,21 @@ void vediListaContatti(char _filename[]);
  */
 void dividiMaschiFemmine(char _filename1[], char _filename2[], char _filename3[]);
 
+int cancellaContatto(char _filename[], int _index);
+
 int main(){
     int scelta;
     char junk;
     Persona p;
+    int cnt;
+    int deleteIndex;
 
     do{
-        printf("1-> Aggiungi persona\n");
-        printf("2-> Suddividi maschi-femmine\n");
-        printf("3-> Visualizza contatti presenti\n");
-        printf("0-> USCITA\n");
+        printf("1-> Aggiungi persona.\n");
+        printf("2-> Suddividi maschi-femmine.\n");
+        printf("3-> Visualizza contatti presenti.\n");
+        printf("4-> Cancella contatto.\n");
+        printf("0-> USCITA.\n");
         printf("Scelta: ");
         scanf("%d", &scelta);
         junk = getchar();
@@ -84,7 +91,24 @@ int main(){
                 break;
             }
             case 3:{
-                vediListaContatti("contatti2.dat");
+                //vediListaContatti("contatti2.dat");
+                cnt = vediContaContatti("contatti2.dat");
+                printf("Contatti presenti: %d\n\n", cnt);
+                break;
+            }
+            case 4:{
+                cnt = vediContaContatti("contatti2.dat");
+                printf("Nr. contatto da cancellare: ");
+                scanf("%d", &deleteIndex);
+                junk = getchar();
+                if(deleteIndex>0 && deleteIndex<=cnt){
+                    cancellaContatto("contatti2.dat", deleteIndex);
+                    printf("-- Contatto cancellato e File aggiornato --\n");
+                    vediContaContatti("contatti2.dat");
+                    printf("\n");
+                }
+                else
+                    printf("Indice del contatto non trovato.\n\n");
                 break;
             }
             default:{
@@ -116,6 +140,22 @@ void vediListaContatti(char _filename[]){
     printf("---\n\n");
 }
 
+int vediContaContatti(char _filename[]){
+    FILE *pContatti;
+    Persona tmp;
+    int cntContatti;
+    printf("\n\n-- CONTATTI PRESENTI --\n");
+    pContatti = fopen(_filename, "rb");
+    cntContatti = 0;
+    while(fread(&tmp, sizeof(Persona), 1, pContatti) > 0){
+        cntContatti++;
+        printf("%d->\t%s %s %c %d\n", cntContatti, tmp.cognome, tmp.nome, tmp.sesso, tmp.annoNascita);
+    }
+    fclose(pContatti);
+    printf("---\n");
+    return(cntContatti);
+}
+
 void dividiMaschiFemmine(char _filename1[], char _filename2[], char _filename3[]){
     FILE *pContatti;
     FILE *pMaschi;
@@ -143,4 +183,31 @@ void dividiMaschiFemmine(char _filename1[], char _filename2[], char _filename3[]
     fclose(pMaschi);
     fclose(pFemmine);
     printf("\n--Maschi %d - Femmine %d--\n\n", cntM, cntF);
+}
+
+int cancellaContatto(char _filename[], int _index){
+    FILE *fpIn;
+    FILE *fpOut;
+    int cnt;
+    Persona tmp;
+
+    cnt = 0;
+    fpIn = fopen(_filename, "rb");
+    fpOut = fopen("temp.dat", "wb");
+
+    while(fread(&tmp, sizeof(Persona), 1, fpIn) > 0){
+        cnt++;
+        if(cnt != _index)
+            fwrite(&tmp, sizeof(Persona), 1, fpOut);
+    }
+    fclose(fpIn);
+    fclose(fpOut);
+
+    fpIn = fopen("temp.dat", "r");
+    fpOut = fopen(_filename, "wb");
+    while(fread(&tmp, sizeof(Persona), 1, fpIn) > 0){
+        fwrite(&tmp, sizeof(Persona), 1, fpOut);
+    }
+    fclose(fpIn);
+    fclose(fpOut);
 }
