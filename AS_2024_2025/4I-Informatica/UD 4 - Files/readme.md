@@ -19,8 +19,12 @@ Dato un file di binario, le cui righe rappresentano ciascuna i dati di una perso
 scrivi un programma che permetta di inserire ripetutamente persone ad un file generale chiamato "contatti.dat', quando viene richiesto dall'utente, generare due file distinti maschi.dat e femmine.dat contenente i nominativi dei rispettivi sessi.  
 Ogni volta i file maschi e femmine vengono generati da zero.  
 Il file contatti viene gestito in aggiunta.
-
-Utilizzare una struct e le funzioni fread e fwrite per la gestione dei file.
+Utilizzare una struct e le funzioni fread e fwrite per la gestione dei file.  
+- [x] aggiungiPersona -> Aggiunge un nuovo contatto al file generale.  
+- [x] vediListaContatti -> Visualizza la lista dei contatti presenti nel file generale.  
+- [x] vediContaContatti -> Visualizza la lista contatti con un indice incrementale e restitusice il numero di contatti visualizzati.
+- [x] dividiMaschiFemmine -> Divide in due file separati i nominativi maschi da quelli femmine.
+- [x] cancellaContatto -> Cancella un contatto scelto per indice nel file generale.  
 
 UPDATE:
 - [ ] Aggiungere opzione di modifica di un contatto nell'elenco generale.  
