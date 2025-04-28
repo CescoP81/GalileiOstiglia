@@ -39,7 +39,7 @@ void vediLista(Nodo* _testa){
     // visualizzo la lista esistente con un ciclo
     tmp = _testa;                // faccio puntare TMP alla TESTA attuale della lista.
     printf("Testa: %d\n", tmp);
-    while(tmp){
+    while(tmp != NULL){
         printf("Addr: %d - Valore: %d - Next: %d\n", tmp, tmp->valore, tmp->next);
         tmp = tmp->next;
     }
