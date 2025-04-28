@@ -12,9 +12,20 @@ typedef struct Nodo{
     struct Nodo* next;
 }Nodo;
 
+/**
+ * Visualizza la lista
+ * @param Nodo* Riferimento alla testa della lista
+ */
 void vediLista(Nodo* _testa);
+/**
+ * Inserisce un nuovo nodo come testa della lista, riceve la testa e il valore da inserire come parametri. 
+ * @param Nodo* Riferimento alla testa della lista. 
+ * @param int Valore da inserire come informazione nel nodo. 
+ * @return Riferimento alla nuova testa della lista. 
+ */
 Nodo* pushTesta(Nodo* _testa, int _val);
 
+/*## MAIN PROGRAM ## */
 int main(){
     Nodo *testa;
     Nodo *tmp;
@@ -34,6 +45,7 @@ int main(){
     return(0);
 }
 
+/*## SVILUPPO FUNZIONI ## */
 void vediLista(Nodo* _testa){
     Nodo* tmp;
     // visualizzo la lista esistente con un ciclo
@@ -44,7 +56,6 @@ void vediLista(Nodo* _testa){
         tmp = tmp->next;
     }
 }
-
 Nodo* pushTesta(Nodo* _testa, int _val){
     Nodo *tmp;
     tmp = malloc(sizeof(Nodo)); // alloco in memoria un nuovo nodo e l'indirizzo lo assegno a tmp.
