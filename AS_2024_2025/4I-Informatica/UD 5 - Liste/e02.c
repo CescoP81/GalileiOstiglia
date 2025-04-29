@@ -37,6 +37,15 @@ int contaNodi(Nodo *_testa);
  * @return Riferimento alla nuova testa. 
  */
 Nodo* popTesta(Nodo *_testa, int *_val);
+/**
+ * Restituisce la prima posizione nella lista (il numero del nodo) in cui compare il valore
+ * ricercato e passato come parametro. 
+ * @param Nodo* Riferimento alla testa della lista. 
+ * @param int Valore da ricercare tra i nodi della lista. 
+ * @return Posizione del nodo in cui compare il valore, se non presente ritorna -1
+ */
+int cercaValoreLista(Nodo *_testa, int _src);
+
 
 /*## MAIN PROGRAM ## */
 int main(){
@@ -66,6 +75,11 @@ int main(){
     printf("Il valore estratto e': %d\n\n", vEstratto);
     vediLista(testa);
 
+    printf("\n\n");
+    printf("Valore 54 presente in posizione: %d\n", cercaValoreLista(testa, 54));
+    printf("Valore 22 presente in posizione: %d\n", cercaValoreLista(testa, 22));
+    printf("Valore 89 presente in posizione: %d\n", cercaValoreLista(testa, 89));
+    printf("Valore 12 presente in posizione: %d\n", cercaValoreLista(testa, 12));
     return(0);
 }
 
@@ -116,4 +130,22 @@ Nodo* popTesta(Nodo *_testa, int *_val){
         *_val = -1;
         return(NULL);
     }
+}
+int cercaValoreLista(Nodo *_testa, int _src){
+    int pos;
+    int cnt;
+    Nodo *tmp;
+
+    cnt = 0;
+    pos = -1;
+    tmp = _testa;
+    while(tmp){
+        cnt++;
+        if(tmp->valore == _src){
+            pos = cnt;
+            return(pos);
+        }
+        tmp = tmp->next;
+    }
+    return(pos);
 }
