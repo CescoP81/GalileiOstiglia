@@ -46,6 +46,11 @@ Nodo* popTesta(Nodo *_testa, int *_val);
  */
 int cercaValoreLista(Nodo *_testa, int _src);
 
+/* DA Aggiungere*/
+int ricercaMinMaxLista(); // ritorna il valore minimo o massimo della lista, dare la possibilità di scegliere se cercare il max o il min.
+float mediaValoriLista(); // calcola e restituisce il valore medio della lista.
+int sostitusciValoreLista(); // sostitusce nella lista tutti i valori uguali ad un valore x passato come parametro, con un valore y passato come parametro.
+
 
 /*## MAIN PROGRAM ## */
 int main(){
