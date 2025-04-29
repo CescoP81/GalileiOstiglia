@@ -30,13 +30,20 @@ Nodo* pushTesta(Nodo *_testa, int _val);
  * @return Numero intero, nodi che compongono la lista.
  */
 int contaNodi(Nodo *_testa);
-
+/**
+ * Funzione che estrae un nodo dalla testa della lista e restituisce al main il valore estratto.
+ * @param Nodo* Riferimento alla testa della lista.
+ * @param int Riferimento alla variabile in cui mettere il valore del nodo estratto. 
+ * @return Riferimento alla nuova testa. 
+ */
+Nodo* popTesta(Nodo *_testa, int *_val);
 
 /*## MAIN PROGRAM ## */
 int main(){
     Nodo *testa;
     Nodo *tmp;
     int nrNodi;
+    int vEstratto;
     testa = NULL;
 
     testa = pushTesta(testa, 45);
@@ -49,10 +56,16 @@ int main(){
     testa = pushTesta(testa, 100);
     testa = pushTesta(testa, 1055);
     vediLista(testa);
-
+//*/
     printf("\n\n");
     nrNodi = contaNodi(testa);
     printf("La lista e' composta da: %d Nodi\n", nrNodi);
+
+    printf("\n\n");
+    testa = popTesta(testa, &vEstratto);
+    printf("Il valore estratto e': %d\n\n", vEstratto);
+    vediLista(testa);
+
     return(0);
 }
 
@@ -86,4 +99,21 @@ int contaNodi(Nodo *_testa){
     }
 
     return(cnt);
+}
+Nodo* popTesta(Nodo *_testa, int *_val){
+    Nodo *tmp;
+    if(_testa != NULL){ // controllo se la lista è composta da almeno un nodo oppure se è vuota (NULL = vuota)
+        // salvo nella variabile del MAIN il valore del nodo che voglio togliere.
+        *_val = _testa->valore;
+
+        // fase di cancellazione del nodo
+        tmp = _testa;           // in un puntatore temporaneo mi salvo l'attuale testa della lista.
+        _testa = _testa->next;  // sposto la testa al nodo successivo.
+        free(tmp);              // dealloco la memoria allocata dalla malloc quando è stata fatta la pushTesta.
+        return(_testa);         // ritorno la nuova testa al MAIN.
+    }
+    else{
+        *_val = -1;
+        return(NULL);
+    }
 }
