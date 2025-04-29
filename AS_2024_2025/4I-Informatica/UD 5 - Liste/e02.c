@@ -16,19 +16,27 @@ typedef struct Nodo{
  * Visualizza la lista
  * @param Nodo* Riferimento alla testa della lista
  */
-void vediLista(Nodo* _testa);
+void vediLista(Nodo *_testa);
 /**
  * Inserisce un nuovo nodo come testa della lista, riceve la testa e il valore da inserire come parametri. 
  * @param Nodo* Riferimento alla testa della lista. 
  * @param int Valore da inserire come informazione nel nodo. 
  * @return Riferimento alla nuova testa della lista. 
  */
-Nodo* pushTesta(Nodo* _testa, int _val);
+Nodo* pushTesta(Nodo *_testa, int _val);
+/**
+ * Funziona che ritorna il numero di nodi presenti in una lista.
+ * @param Nodo* Riferimento alla lista. 
+ * @return Numero intero, nodi che compongono la lista.
+ */
+int contaNodi(Nodo *_testa);
+
 
 /*## MAIN PROGRAM ## */
 int main(){
     Nodo *testa;
     Nodo *tmp;
+    int nrNodi;
     testa = NULL;
 
     testa = pushTesta(testa, 45);
@@ -42,11 +50,14 @@ int main(){
     testa = pushTesta(testa, 1055);
     vediLista(testa);
 
+    printf("\n\n");
+    nrNodi = contaNodi(testa);
+    printf("La lista e' composta da: %d Nodi\n", nrNodi);
     return(0);
 }
 
 /*## SVILUPPO FUNZIONI ## */
-void vediLista(Nodo* _testa){
+void vediLista(Nodo *_testa){
     Nodo* tmp;
     // visualizzo la lista esistente con un ciclo
     tmp = _testa;                // faccio puntare TMP alla TESTA attuale della lista.
@@ -56,10 +67,23 @@ void vediLista(Nodo* _testa){
         tmp = tmp->next;
     }
 }
-Nodo* pushTesta(Nodo* _testa, int _val){
+Nodo* pushTesta(Nodo *_testa, int _val){
     Nodo *tmp;
     tmp = malloc(sizeof(Nodo)); // alloco in memoria un nuovo nodo e l'indirizzo lo assegno a tmp.
     tmp->valore = _val;           // assegno alla parte valore del nodo il numero 33.
     tmp->next = _testa;          // al puntatore al nodo successivo assegno la testa attuale.
     return(tmp); 
+}
+int contaNodi(Nodo *_testa){
+    int cnt;
+    Nodo *tmp;
+
+    tmp = _testa;
+    cnt=0;
+    while(tmp != NULL){ // ciclo per passare tutti i nodi della lista finche tmp non vale NULL.
+        cnt++;  // incremento il contatore dei nodi trovati.
+        tmp = tmp->next;    // sposto il puntatore sul nodo successivo, dopo l'ultimo il puntatore vale NULL!
+    }
+
+    return(cnt);
 }
