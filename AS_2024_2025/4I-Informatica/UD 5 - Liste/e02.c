@@ -53,8 +53,13 @@ int cercaValoreLista(Nodo *_testa, int _src);
  * @param int Criterio di ricerca 0->min 1->max.
  * @return Valore corrispondente al criterio impostato.
  */
-int ricercaMinMaxLista(Nodo *_testa, int tipo); 
-float mediaValoriLista(); // calcola e restituisce il valore medio della lista.
+int ricercaMinMaxLista(Nodo *_testa, int tipo);
+/**
+ * Resitutisce il valore medio tra tutti i valori contenuti nella lista. 
+ * @param Nodo* Riferimento alla testa della lista. 
+ * @return float Valor medio calcolato.
+ */
+float mediaValoriLista(Nodo *_testa);
 int sostitusciValoreLista(); // sostitusce nella lista tutti i valori uguali ad un valore x passato come parametro, con un valore y passato come parametro.
 
 
@@ -66,15 +71,15 @@ int main(){
     int vEstratto;
     testa = NULL;
 
-    testa = pushTesta(testa, 45);
-    testa = pushTesta(testa, 56);
-    testa = pushTesta(testa, 22);
-    testa = pushTesta(testa, 89);
+    testa = pushTesta(testa, 3);
+    testa = pushTesta(testa, 5);
+    testa = pushTesta(testa, 12);
+    testa = pushTesta(testa, 11);
     vediLista(testa);
 
     printf("\n\n");
-    testa = pushTesta(testa, 100);
-    testa = pushTesta(testa, 1055);
+    testa = pushTesta(testa, 3);
+    testa = pushTesta(testa, 5);
     vediLista(testa);
 //*/
     printf("\n\n");
@@ -98,6 +103,10 @@ int main(){
     printf("Valore minimo della lista: %d\n", ricercaMinMaxLista(testa, 5));
     tmp = NULL;
     printf("Valore minimo della lista: %d\n", ricercaMinMaxLista(tmp, 0));
+
+    printf("\n\n");
+    vediLista(testa);
+    printf("Valor medio della lista: %.3f\n", mediaValoriLista(testa));
     return(0);
 }
 
@@ -192,4 +201,20 @@ int ricercaMinMaxLista(Nodo *_testa, int tipo){
             return(-1);
     }
     return(-1);    
+}
+float mediaValoriLista(Nodo *_testa){
+    Nodo *tmp;
+    float somma;
+    int cnt;
+
+    somma = 0.0;
+    cnt = 0;
+    tmp = _testa;
+    while(tmp){
+        cnt++;
+        somma = somma + tmp->valore;
+        tmp = tmp->next;
+    }
+    printf("%f %d\n", somma, cnt);
+    return(somma / cnt); // return(somma/contaNodi(_testa)); equivalente senza dover usare il cnt per contare i nodi.
 }
