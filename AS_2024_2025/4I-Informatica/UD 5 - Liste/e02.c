@@ -47,7 +47,13 @@ Nodo* popTesta(Nodo *_testa, int *_val);
 int cercaValoreLista(Nodo *_testa, int _src);
 
 /* DA Aggiungere*/
-int ricercaMinMaxLista(); // ritorna il valore minimo o massimo della lista, dare la possibilità di scegliere se cercare il max o il min.
+/**
+ * Restituisce il valore minimo o massimo presente nella lista. 
+ * @param Nodo* Riferimento alla testa della lista.
+ * @param int Criterio di ricerca 0->min 1->max.
+ * @return Valore corrispondente al criterio impostato.
+ */
+int ricercaMinMaxLista(Nodo *_testa, int tipo); 
 float mediaValoriLista(); // calcola e restituisce il valore medio della lista.
 int sostitusciValoreLista(); // sostitusce nella lista tutti i valori uguali ad un valore x passato come parametro, con un valore y passato come parametro.
 
@@ -85,6 +91,13 @@ int main(){
     printf("Valore 22 presente in posizione: %d\n", cercaValoreLista(testa, 22));
     printf("Valore 89 presente in posizione: %d\n", cercaValoreLista(testa, 89));
     printf("Valore 12 presente in posizione: %d\n", cercaValoreLista(testa, 12));
+
+    printf("\n\n");
+    printf("Valore minimo della lista: %d\n", ricercaMinMaxLista(testa, 0));
+    printf("Valore minimo della lista: %d\n", ricercaMinMaxLista(testa, 1));
+    printf("Valore minimo della lista: %d\n", ricercaMinMaxLista(testa, 5));
+    tmp = NULL;
+    printf("Valore minimo della lista: %d\n", ricercaMinMaxLista(tmp, 0));
     return(0);
 }
 
@@ -153,4 +166,30 @@ int cercaValoreLista(Nodo *_testa, int _src){
         tmp = tmp->next;
     }
     return(pos);
+}
+int ricercaMinMaxLista(Nodo *_testa, int tipo){
+    int box;    // conterrà il minimo o il massimo in base alla ricerca da effettuare.
+    Nodo *tmp;
+
+    // imposto il tmp sull'attuale testa.
+    tmp = _testa;
+    if(tmp != NULL){
+        box = tmp->valore;
+          
+        while(tmp){ // regola è: 0 indica un falso, qualunque vsalore != da 0 indica un vero -23 oppure +34 = VERO.
+            if(tipo == 0)    // ricerco il minimo
+                if(tmp->valore < box)
+                    box = tmp->valore;
+            if(tipo == 1)
+                if(tmp->valore > box)
+                    box = tmp->valore;
+            
+            tmp = tmp->next;
+        }
+        if(tipo == 0 || tipo == 1)
+            return(box);
+        else
+            return(-1);
+    }
+    return(-1);    
 }
