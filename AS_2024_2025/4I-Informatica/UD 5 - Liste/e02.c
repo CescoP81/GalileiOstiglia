@@ -45,8 +45,6 @@ Nodo* popTesta(Nodo *_testa, int *_val);
  * @return Posizione del nodo in cui compare il valore, se non presente ritorna -1
  */
 int cercaValoreLista(Nodo *_testa, int _src);
-
-/* DA Aggiungere*/
 /**
  * Restituisce il valore minimo o massimo presente nella lista. 
  * @param Nodo* Riferimento alla testa della lista.
@@ -60,8 +58,19 @@ int ricercaMinMaxLista(Nodo *_testa, int tipo);
  * @return float Valor medio calcolato.
  */
 float mediaValoriLista(Nodo *_testa);
-int sostitusciValoreLista(); // sostitusce nella lista tutti i valori uguali ad un valore x passato come parametro, con un valore y passato come parametro.
+/**
+ * sostitusce nella lista tutti i valori uguali ad un valore x passato come parametro,
+ * con un valore y passato come parametro.
+ * @param Nodo* Riferimento alla testa della lista. 
+ * @param int Valore da sostituire. 
+ * @param int Valore sostitutivo. 
+ * @return Numero di sostituzioni eseguite.
+ */
+int sostituisciValoreLista(Nodo *_testa, int _x, int _y);
 
+// DA AGGIUNGERE
+Nodo* pushCoda(...);
+Nodo* popCoda(...);
 
 /*## MAIN PROGRAM ## */
 int main(){
@@ -107,6 +116,10 @@ int main(){
     printf("\n\n");
     vediLista(testa);
     printf("Valor medio della lista: %.3f\n", mediaValoriLista(testa));
+
+    printf("\n\n");
+    printf("Valori 5 sistutuiti con 99: %d\n", sostituisciValoreLista(testa, 5, 99));
+    vediLista(testa);
     return(0);
 }
 
@@ -216,5 +229,21 @@ float mediaValoriLista(Nodo *_testa){
         tmp = tmp->next;
     }
     printf("%f %d\n", somma, cnt);
-    return(somma / cnt); // return(somma/contaNodi(_testa)); equivalente senza dover usare il cnt per contare i nodi.
+    return(somma / cnt); 
+    // return(somma/contaNodi(_testa)); equivalente senza dover usare il cnt per contare i nodi.
+}
+int sostituisciValoreLista(Nodo *_testa, int _x, int _y){
+    Nodo *tmp;
+    int cnt;
+
+    cnt = 0;
+    tmp = _testa;
+    while(tmp){
+        if(tmp->valore == _x){
+            tmp->valore = _y;
+            cnt++;
+        }
+        tmp = tmp->next;
+    }
+    return(cnt);
 }
