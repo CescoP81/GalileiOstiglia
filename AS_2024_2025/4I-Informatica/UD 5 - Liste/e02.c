@@ -69,8 +69,8 @@ float mediaValoriLista(Nodo *_testa);
 int sostituisciValoreLista(Nodo *_testa, int _x, int _y);
 
 // DA AGGIUNGERE
-Nodo* pushCoda(...);
-Nodo* popCoda(...);
+Nodo* pushCoda(Nodo *_testa, int _val);
+//Nodo* popCoda(...);
 
 /*## MAIN PROGRAM ## */
 int main(){
@@ -119,6 +119,16 @@ int main(){
 
     printf("\n\n");
     printf("Valori 5 sistutuiti con 99: %d\n", sostituisciValoreLista(testa, 5, 99));
+    vediLista(testa);
+
+    printf("\n\n");
+    testa = pushCoda(testa, 666);
+    testa = pushCoda(testa, 777);
+    vediLista(testa);
+
+    printf("\n\n");
+    testa = NULL;
+    testa = pushCoda(testa, 555);
     vediLista(testa);
     return(0);
 }
@@ -246,4 +256,36 @@ int sostituisciValoreLista(Nodo *_testa, int _x, int _y){
         tmp = tmp->next;
     }
     return(cnt);
+}
+Nodo* pushCoda(Nodo *_testa, int _val){
+    Nodo *tmp;
+
+    tmp = _testa;
+    
+    if(tmp == NULL){
+        // se arrivo con una lista vuota, tmp assegno l'indirizzo di un nuovo nodo
+        tmp = malloc(sizeof(Nodo));
+        // nel nuovo nodo imposto le due parti next e valore.
+        tmp->next = NULL;
+        tmp->valore = _val;
+        // restituisco tmp perchè è la nuova testa della lista.
+        return(tmp);
+    }
+    else{
+        // con questo ciclo raggiungo l'ultimo nodo della lista presente.
+        while(tmp->next != NULL){
+            tmp = tmp->next;
+        }
+        // alloco un nuovo nodo e il suo indirizzo lo metto nel next dell'ultimo nodo della lista.
+        tmp->next = malloc(sizeof(Nodo));
+        // salto dentro al nuovo nodo appena creato.
+        tmp = tmp->next;
+
+        // imposto nell'ultimo nodo il puntatore a next con NULL (proprio perchè è l'ultimo nodo)
+        // e la parte valore con il numero ricevuto come parametro.
+        tmp->next = NULL;
+        tmp->valore = _val;
+        // siccome la testa non è cambiata, restituisco la testa ricevuta.
+        return(_testa);
+    }
 }
