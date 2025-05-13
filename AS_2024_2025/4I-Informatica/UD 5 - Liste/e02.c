@@ -59,7 +59,7 @@ int ricercaMinMaxLista(Nodo *_testa, int tipo);
  */
 float mediaValoriLista(Nodo *_testa);
 /**
- * sostitusce nella lista tutti i valori uguali ad un valore x passato come parametro,
+ * Sostitusce nella lista tutti i valori uguali ad un valore x passato come parametro,
  * con un valore y passato come parametro.
  * @param Nodo* Riferimento alla testa della lista. 
  * @param int Valore da sostituire. 
@@ -67,10 +67,20 @@ float mediaValoriLista(Nodo *_testa);
  * @return Numero di sostituzioni eseguite.
  */
 int sostituisciValoreLista(Nodo *_testa, int _x, int _y);
-
-// DA AGGIUNGERE
+/**
+ * Aggiunge un nodo in coda alla lista, se la lista è vuota allora crea il primo nodo. 
+ * @param Nodo* Riferimento alla testa della lista. 
+ * @param int Valore da inserire nella lista. 
+ * @return Riferimento alla testa della lista, precedente oppure nuova se creata. 
+ */
 Nodo* pushCoda(Nodo *_testa, int _val);
-//Nodo* popCoda(...);
+/**
+ * Estrae un valore dalla lista passata.
+ * @param Nodo* Riferimento alla testa della lista. 
+ * @param int* Riferimento alla variabile del main in cui mettere il valore estratto. 
+ * @return Nodo* Nuovo riferimento alla testa lista. 
+ */
+Nodo* popCoda(Nodo *_testa, int *_val);
 
 /*## MAIN PROGRAM ## */
 int main(){
@@ -287,5 +297,32 @@ Nodo* pushCoda(Nodo *_testa, int _val){
         tmp->valore = _val;
         // siccome la testa non è cambiata, restituisco la testa ricevuta.
         return(_testa);
+    }
+}
+Nodo* popCoda(Nodo *_testa, int *_val){
+    Nodo *tmp;
+    if(_testa == NULL){
+        // sono in presenza di una lista vuota, il puntatore vale NULL.
+        *_val = -1;
+        return(_testa);
+    }
+    else{
+        // sono in presenza di una lista con almeno un nodo.
+        tmp = _testa;
+        if(tmp->next == NULL){
+            // sono in presenza di un solo nodo, quindi il suo valore lo ripasso al MAIN e ritorno NULL come testa.
+            *_val = tmp->valore;
+            free(tmp);
+            tmp = NULL;
+            return(tmp);
+        }
+        else{
+            while(tmp->next->next != NULL)
+                tmp = tmp->next;
+            _val = tmp->next->valore;
+            free(tmp->next);
+            tmp->next = NULL;
+            retur(_testa);
+        }        
     }
 }

@@ -13,4 +13,6 @@ Esercizio pari al primo ma con definizione di funzioni per inserimento in testa 
 - [x] cercaValoreLista() Restituisce la prima posizione nella lista (il numero del nodo) in cui compare il valore ricercato e passato come parametro.
 - [x] ricercaMinMaxLista(); ritorna il valore minimo o massimo della lista, dare la possibilità di scegliere se cercare il max o il min.
 - [x] mediaValoriLista(); calcola e restituisce il valore medio della lista.
-- [x] sostitusciValoreLista(); sostitusce nella lista tutti i valori uguali ad un valore x passato come parametro, con un valore y passato come parametro.
+- [x] sostitusciValoreLista() sostitusce nella lista tutti i valori uguali ad un valore x passato come parametro, con un valore y passato come parametro.
+- [x] pushCoda() Aggiunge un nodo in coda alla lista, se la lista è vuota allora crea il primo nodo.
+- [x] popCoda() Estrae un valore dalla lista passata.
