@@ -35,4 +35,3 @@ Realizzare un programma C che utilizzando liste e file permetta le seguenti oper
 
 **e05.c**
 Realizzare un programma C che gestisca una rubrica di contatti, ogni contatto è catalogato con nome, cognome, anno di nascita. Il programma deve permettere di inserire nuovi contatti, visualizzare i contatti presenti nella lista, ricercare un contatto per cognome, ricercare per anno di nascita, eseguire il backup dei contatti su file, ripristinare i contatti presenti da file.
-
