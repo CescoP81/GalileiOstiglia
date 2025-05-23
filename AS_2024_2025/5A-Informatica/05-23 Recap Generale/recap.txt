@@ -1,0 +1,44 @@
+- HTML -> Linguaggio per costruire la struttura della pagina, linguaggio STATICO, che viene renderizzato o interpretato da un browser. E' uno standard quindi in linea di massima tutti i browser lo interpretano allo stesso modo.
+
+- Bootstrap -> L'utilizzo di un framework (ce ne sono altri es: Angular) permette di realizzare interfacce dinamiche e responsive (la visualizzazione e i componenti della pagina si addattano al device che visualizza). Un framework è un pacchetto creato e collaudato di regole CSS e funzionalità Javascript che permetto di realizzare look accattivanti delle proprie interfacce.
+    - Caricamento dei componenti tramite righe di codice nella sezione <head><head> e nella sezione </body></body>
+    - Componenti usati: Container, Alert, Table, NavBar, Link, FORM e componenti per input dati.
+
+- il linguaggio di scripting PHP -> è un linguaggio che per sintassi ricorda molto il C visto al terzo e quarto anno, quindi il passaggio a questo linguaggio risulta più semplice rispetto a iniziare un linguaggio totalmente nuovo. E' un linguaggio interpretato NON compilato! Il linguaggio PHP permette di dare dinamicità alle pagine, ovvero permette in base a determinati INPUT di produrre determinati OUTPUT.
+
+- FORM (moduli in pagine html) -> Permettono l'inserimento di dati da parte dell'utente utilizzatore per essere processati da script PHP(o Jvascript) da cui viene prodotto un risultato: 1. semplici visualizzazioni a video, 2. Inserimento o estrazione di dati da database.
+    - Un form è sempre racchiuso tra i tag <form>...</form>, è prevede due attributi: action="pagina_da_richiamare.php" e method="GET[POST]".
+    L'attributo action specifica la pagina da richiamare quando viene premuto un bottone particolare detto submit, l'azione scatena una richiesta HTTP verso il server in utilizzo.
+    L'attributo method impostato a GET indica che i dati vengono passati tramite stringa di URL nella formula pagina.php?chiave1=valore&chiave2=valore&...etc.. in modalità POST, invece, i dati cioè le coppie chiavee=valore vengono passate tramite una memoria "coperta" cioè un file scritto temporaneo su server.
+    <form action="pagina.php" method="get">
+        ....
+        ....
+        <input type="submit" value="Esegui la pagina">
+    </form>
+    - Casella di testo per inserimento stringhe e/o numeri:
+        <input type="text" name="chiave1"> 
+    - Tendina di selezione:
+        <select name="chiave1">
+            <option value="valore1">Voce da visualizzare 1</option>
+            <option value="valore2">Voce da visualizzare 2</option>
+            <option value="valore3">Voce da visualizzare 3</option>
+            ...
+        </select>
+    - Case rotonde di selezione unaria (una esclude le altre):
+        <input type="radio" name="chiave1">Opzione 1
+        <input type="radio" name="chiave1">Opzione 2
+        <input type="radio" name="chiave1">Opzione 3
+
+- Un modulo(form) inviato ad una pagina PHP fa sì che nella pagina PHP venga reso disponibile un vettore contenente le coppie chiave valore: $_REQUEST['chiave'];
+$_REQUEST['chiave1']
+$_REQUEST['chiave2'] e così via...
+
+- Per poter inserire i dati ricavati da un modulo in un database devo:
+    1. recuperare dal vettore request i valori da inserire nel db e li salvo in variabili semplici: $nome = $_REQUEST['nome']...
+    2. aprire uno stream con la base di dati mySQL:
+        $conn = new mysqli(host, user, password, db)
+            - host: generalmente è localhost se fosse in remoto è il suo I P es: 218.133.65.32:3336 [3306 è la porta standar del server/servizio mySQL]
+            - user: un utente abilitato sul db per eseguire insert, select etc...
+            - password: la password dell'utente
+            - db: indica il nome del database da utilizzare tra quelli disponibili sul server mySQL chiamato.
+        ad ogni new mysqli deve corrispondre una $conn->close() una volta finite le operazioni sul database.

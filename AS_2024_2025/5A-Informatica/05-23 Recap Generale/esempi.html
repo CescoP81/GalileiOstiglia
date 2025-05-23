@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>Prova dei componenti HTML per FORM</title>
+    </head>
+    <body>
+        <form action="pagina.php">
+            Casella di testo: <input type="text" name="chiave1">
+            <br />
+            <br />
+
+            Tendina di selezione:
+            <select name="chiave2">
+                <option value="valore1">Prima voce</option>
+                <option value="valore2">Seconda voce</option>
+                <option value="valore3">Terza voce</option>
+                <option value="valore4" selected>Quarta voce</option>
+            </select>
+            <br />
+            <br />
+
+            Gruppo di radio button 
+            <input type="radio" name="chiave3" value="valore 1">Primo
+            <input type="radio" name="chiave3" value="valore 2" checked>Secondo
+            <input type="radio" name="chiave3" value="valore 3">Terzo
+            <br />
+            <br />
+
+            Gruppo di radio button<br />
+            <input type="radio" name="chiave4" value="valore 1" checked>Polo<br />
+            <input type="radio" name="chiave4" value="valore 2">Fiesta<br />
+            <input type="radio" name="chiave4" value="valore 3">Panda<br />
+            <br />
+            <br />
+
+            Gruppo di caselle di testo selezionabili<br />
+            <input type="checkbox" name="chek1">Primo<br />
+            <input type="checkbox" name="chek2">Due<br />
+            <input type="checkbox" name="chek3">tre<br />
+            <input type="checkbox" name="chek4">Quattro<br />
+            <br />
+            <br />
+            Campo testuale per l'inserimento di una password<br />
+            <input type="password" name="chiave5">
+            <br />
+            <br />
+            
+            <input type="hidden" name="scelta" value="...">
+            <input type="submit" value="Esegue il form"> <!-- richiama la pagina specificata in action -->
+            <input type="reset" value="Resetta il form a valori iniziali">
+        </form>
+    </body>
+</html>
