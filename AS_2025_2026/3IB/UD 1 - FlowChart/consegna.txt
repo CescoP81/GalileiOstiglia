@@ -1,0 +1,6 @@
+1. creare un algoritmo che richieda l'inserimento di due valori in due variabili 'base' e 'altezza',
+calcola e comunica il perimetro e l'area dell'ipotetico rettangolo.
+
+2. creare un algoritmo che richiede l'inserimento di due valori in due variabili, comunica il valore maggiore e il valore minore tra i due.
+
+3. creare un algoritmo che richiede l'inserimento di tre valori (v1, v2, v3) e comunica se sono in ordine crescente.
