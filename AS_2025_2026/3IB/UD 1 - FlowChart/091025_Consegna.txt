@@ -1,0 +1,10 @@
+1. Creare un algoritmo che richieda in input tre valori interi positivi, dando per scontato che siano
+in ordine crescente, determinare e comunicare se i tre valori sono una terna pitagorica.
+(una terna pitagorica è formata da tre numeri dove la somma dei quadrati dei primi due è uguale al quadrato del terzo).
+  
+2. Creare un algoritmo che comunichi tutti i valori compresi tra 1 e 25 che siano multipli di 3 o di 5.
+
+3. Creare un algoritmo richieda in input un valore intero positivo; se il valore inserito è maggiore o uguale di 15 allora comunica tutti
+i valori tra 1 ed il valore inserito che siano pari e multipli di 3.
+
+4. Creare un algoritmo che richiede l'input di 5 valori interi, determina e comunica il valore maggiore, minore e medio.
