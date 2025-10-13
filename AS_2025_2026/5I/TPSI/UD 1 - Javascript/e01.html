@@ -20,7 +20,7 @@
             document.write(a);
 
             document.write("<br />");
-            a = 7;
+            a = 5;
             if(a <= 5){
                 document.write("A è inferiore o uguale a 5");
             }
@@ -29,9 +29,51 @@
             }
             
             document.write("<br >");
-
+            document.write("Ciclo for: ");
             for(let i=1; i<=a; i++){
-                document.write(i + "<br />");
+                document.write(i + " - ");
+            }
+
+            document.write("<br />");
+            document.write("Ciclo while: ");
+            let i = 1;
+            while(i <= a){
+                document.write(i+" - ");
+                i = i + 1;
+            }
+
+            document.write("<br />");
+            document.write("Ciclo do-while: ");
+            i = 1;
+            do{
+                document.write(i+" - ");
+                i = i+1;
+            }while(i<=a);
+            
+            document.write("<br />Ciclo con switch case:<br />");
+            for(let i=1; i<=a; i++){
+                switch(i){
+                    case 1:{
+                        document.write("I<br />");
+                        break;
+                    }
+                    case 2:{
+                        document.write("II<br />");
+                        break;
+                    }
+                    case 3:{
+                        document.write("III<br />");
+                        break;
+                    }
+                    case 4:{
+                        document.write("IV<br />");
+                        break;
+                    }
+                    case 5:{
+                        document.write("V<br />");
+                        break;
+                    }
+                }
             }
         </script>
     </body>
