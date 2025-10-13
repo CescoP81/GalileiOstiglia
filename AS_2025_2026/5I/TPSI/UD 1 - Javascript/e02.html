@@ -3,9 +3,15 @@
     <head>
         <title>Prime prove di Javascript</title>
     </head>
-
     <body>
+        <div id="vista" style="border: solid 2px rgb(200,0,0); padding: 5px;">
+            Questa è la vista di base...
+        </div>
         <script>
+            let view = document.querySelector("#vista");
+            view.innerHTML += "<br /><br />Scrivo qualcosa 1";
+            view.innerHTML += "<br /><br />Scrivo qualcosa 2";
+            view.innerHTML += "<br /><br />Scrivo qualcosa 3";
         </script>
     </body>
 </html>
