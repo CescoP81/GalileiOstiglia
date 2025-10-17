@@ -43,7 +43,8 @@
     
     echo("<br /><br />");
     // voglio realizzare in output una tabelline da 1 a 5
-    echo("<table border=\"2\">");
+    //echo("<table border=\"2\">");
+    echo('<table border="2">');
     for($i=1; $i<=5; $i++){
         echo("<tr>");
         for($j=1; $j<=5; $j++){
