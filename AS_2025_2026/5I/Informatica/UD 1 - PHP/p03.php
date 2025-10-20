@@ -15,13 +15,30 @@ echo('<DOCTYPE html>
     $v2 = $_REQUEST['valore2'];
     $v3 = $_REQUEST['valore3'];
 
+    echo('Valori inseriti: '.$v1.','.$v2.','.$v3.'<br /><br />');
+
     // test dell'ordine crescente
     if($v1<$v2 && $v2<$v3){
         echo('OK, i tre valori sono in ordine crescente!<br />');
     }
     else{
-        echo('I tre valori non sono in ordine crescen!');
+        echo('I tre valori non sono in ordine crescente!<br />');
     }
 
+    // calcolo del minimo.
+    $min = $v1;
+    if($v2 < $min)
+        $min = $v2;
+    if($v3 < $min)
+        $min = $v3;
+    echo('Il valore minimo passato con HTTP REQUEST è: '.$min.'<br />');
+
+    // calcolo del massimo.
+    $max = $v1;
+    if($v2 > $max)
+        $max = $v2;
+    if($v3 > $max)
+        $max = $v3;
+    echo('Il valore maggiore passato con HTTP REQUEST è: '.$max.'<br />');
 echo('</body></html>');
 ?>
