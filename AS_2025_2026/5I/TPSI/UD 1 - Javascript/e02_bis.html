@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Prime prove di Javascript</title>
+    </head>
+    <body>
+        <button id="btnClick">Click Me!</button>
+        <div id="vista" style="border: solid 2px rgb(200,0,0); padding: 5px;">
+            Questa è la vista di base...
+        </div>
+        <script>
+            function clickMe(){
+                let view = document.querySelector("#vista");
+                view.innerHTML += "<br /><br />Scrivo qualcosa 1";
+                view.innerHTML += "<br /><br />Scrivo qualcosa 2";
+                view.innerHTML += "<br /><br />Scrivo qualcosa 3";
+            }
+
+            let cm = document.querySelector("#btnClick");
+            cm.onclick = clickMe;
+        </script>
+    </body>
+</html>
