@@ -1,23 +1,53 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Prime prove di Javascript</title>
+        <title>Prova con inserimento dati in Javascript</title>
     </head>
     <body>
-        <button id="btnClick">Click Me!</button>
-        <div id="vista" style="border: solid 2px rgb(200,0,0); padding: 5px;">
-            Questa è la vista di base...
+        Semplice script che riceve in input base e altezza di un rettangolo,
+        quindi ne calcola area e perimetro. 
+
+        <form>
+            <b>Base: </b><input type="text" id="base"><br />
+            <b>Altezza: </b><input type="text" id="altezza"><br />
+            <input type="button" value="Calcola area-perimetro" id="btnCalcola">
+            <input type="button" value="Reset della view" id="btnResetView">
+        </form>
+        <div id="view" style="border: solid 2px rgb(200,200,200); padding: 5px;">
+            Area per i risultati...<br />
         </div>
+        
         <script>
-            function clickMe(){
-                let view = document.querySelector("#vista");
-                view.innerHTML += "<br /><br />Scrivo qualcosa 1";
-                view.innerHTML += "<br /><br />Scrivo qualcosa 2";
-                view.innerHTML += "<br /><br />Scrivo qualcosa 3";
+            function calcolaAreaPerimetro(){
+                // recupero i riferimento ai componenti della pagina
+                let b = document.querySelector("#base");
+                let h = document.querySelector("#altezza");
+                let v = document.querySelector("#view");
+
+                // recupero dalle text box i valori inseriti dall'utente.
+                let x = parseInt(b.value);
+                let y = parseInt(h.value);
+
+                // calcolo i risultati richiesti
+                let area = x * y;
+                let perimetro = (x+y) * 2;
+
+                // aggiungo alla div i messaggi per mostrare i risultati calcolati.
+                v.innerHTML += "Rettangolo: "+x+","+y+":<br />";
+                v.innerHTML += "Area: "+area+"<br />";
+                v.innerHTML += "Perimetro: "+perimetro+"<br />";
+                v.innerHTML += "<br />";
+            }
+            function resetView(){
+                let v = document.querySelector("#view");
+                v.innerHTML = "Area per i risultati...<br />";
             }
 
-            let cm = document.querySelector("#btnClick");
-            cm.onclick = clickMe;
+            let btnCalcola = document.querySelector("#btnCalcola");
+            btnCalcola.onclick = calcolaAreaPerimetro;
+
+            let btnReset = document.querySelector("#btnResetView");
+            btnReset.onclick = resetView;
         </script>
     </body>
 </html>
