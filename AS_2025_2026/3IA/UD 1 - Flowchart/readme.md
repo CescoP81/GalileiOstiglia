@@ -18,7 +18,7 @@ Descrizione: creare un algoritmo che richiede l'inserimento di due valori in due
 ## e06 ##  
 Descrizione: creare un algoritmo che richiede l'inserimento di tre valori (v1, v2, v3) e comunica se sono in ordine crescente.
 
-## 07 ##  
+## e07 ##  
 Rappresentazione grafica di due iterative una con controllo in testa una con controllo in coda.
 
 ## e08 ##  
