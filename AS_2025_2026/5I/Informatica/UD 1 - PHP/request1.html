@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<!-- Questo codice è inserito nel file: request1.html
+     -> richiede la pagina request1.php
+-->
+<html>
+    <head>
+        <title>Passaggio dati da FORM HTML a PHP</title>
+    </head>
+    <body>
+        Inserisci i dati base e altezza di un ipotetico rettangolo:<br />
+        <!-- il campo action deve indicare la pagina/file da richiamare quando viene premuto il tasto submit del form -->
+        <form action="request1.php" method="get">
+            Base: <input type="text" name="base"><br />
+            Altezza: <input type="text" name="altezza"><br />
+            <input type="submit" value="Esegui calcoli...">
+        </form>
+    </body>
+</html>
