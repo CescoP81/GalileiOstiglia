@@ -10,5 +10,31 @@
         In aggiunta un bottone che invoca una funzione che calcola e comunica i giorni
         rimanenti alla fine dell'anno.
         -->
+        <form>
+            Giorno: <input type="text" id="giorno"><br />
+            Mese: <input type="text" id="mese"><br />
+            Anno: <input type="text" id="anno"><br />
+            <input type="button" value="Calcola Rimanenti" id="btnCalcola"><br />  
+        </form>
+        <div id="view" style="border: solid 2px rgb(200,0,0);">Computing....<br /></div>
+        <script>
+            function calcolaGiorniRimanenti(){
+                alert("toctoc");
+                let g = document.querySelector("#giorno");
+                let m = document.querySelector("#mese");
+                let a = document.querySelector("#anno");
+                let v = document.querySelector("#view");
+
+                g = parseInt(g.value);
+                m = parseInt(m.value);
+                a = parseInt(a.value);
+                v.innerHTML += g+" "+m+" "+a;
+
+                
+                
+            }
+            let btn = document.querySelector("#btnCalcola");
+            btn.onclick = calcolaGiorniRimanenti;
+        </script>
     </body>
 </html>

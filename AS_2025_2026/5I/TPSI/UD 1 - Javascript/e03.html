@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Error on Console</title>
+    </head>
+    <body>
+        <input type="text" id="num">
+        <input type="button" id="btn" value="Click Me!">
+        <script>
+            function f(){
+                //alert("toc toc");
+                let n = document.querySelector("#num");
+                let val = parseInt(n.value);
+                n.value = (val*2);
+            }
+            let btn = document.querySelector("#btn");
+            btn.onclick = f;
+        </script>
+    </body>
+</html>
