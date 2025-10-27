@@ -1,0 +1,6 @@
+Consegna del 27.10.25
+
+1. Realizza una pagina HTML che presenti un form per l'inserimento di un valore intero ed un bottone che richiama una funzione la quale prende il valore inserito lo considera come area di un quadrato quindi determina il lato e il perimetro.
+
+2. Realizza una pagina HTML che presenti un form per l'inserimento di un valore intero ed un bottone, se premuto il bottone viene richiamata una funzione che determina se il numero è primo oppure no. In caso negativo calcola e comunica il numero primo successivo al numero inserito.
+
