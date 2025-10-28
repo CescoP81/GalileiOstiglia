@@ -1,0 +1,1 @@
+1. Realizza un algoritmo che richiede in input un numero intero positivo, determina e comunica il successivo numero divisibile per 3 e per 5.
