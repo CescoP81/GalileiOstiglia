@@ -1,1 +1,4 @@
 1. Realizza un algoritmo che richiede in input un numero intero positivo, determina e comunica il successivo numero divisibile per 3 e per 5.
+
+2. Realizza un algoritmo che richiede due valori interi v1 e v2, se v2 è maggiore di v1 allora
+comunica tutti i valori compresi tra v1 e v2 che siano multipli di 7 e la loro media.
