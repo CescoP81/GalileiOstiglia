@@ -7,14 +7,15 @@
         <input type="text" id="num">
         <input type="button" id="btn" value="Click Me!">
         <script>
+            let btn = document.querySelector("#btn");
+            btn.onclick = f;
+            
             function f(){
                 //alert("toc toc");
                 let n = document.querySelector("#num");
                 let val = parseInt(n.value);
                 n.value = (val*2);
-            }
-            let btn = document.querySelector("#btn");
-            btn.onclick = f;
+            }            
         </script>
     </body>
 </html>
