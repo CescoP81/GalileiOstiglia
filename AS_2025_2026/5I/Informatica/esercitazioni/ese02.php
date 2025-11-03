@@ -25,7 +25,7 @@ require("lib.php");
                             array_push($vet, $randomico);
                         }
 
-                        // stsampo il vettore generato con numeri random dispari.
+                        // stampo il vettore generato con numeri random dispari.
                         echo('<br >Vettore di '.$numCelle.' valori dispari: <br />');
                         for($i=0; $i<$numCelle; $i++){
                             echo($vet[$i].', ');
