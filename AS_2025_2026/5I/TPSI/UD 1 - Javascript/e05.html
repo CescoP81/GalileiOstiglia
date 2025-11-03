@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Creazione tabella in Javascript</title>
+    </head>
+    <body>
+        <b>Righe: <input type="text" id="righe"><br />
+        <b>Colonne: <input type="text" id="colonne"><br />
+        <input type="button" id="btnTabella" value="Genera tabella"><br />
+        <div id="view">
+            testo iniziale della div
+        </div>
+
+
+        <script>
+            function generaTabella(){
+                let r = document.querySelector("#righe");
+                let c = document.querySelector("#colonne");
+                let v = document.querySelector("#view");
+
+                let n_righe = parseInt(r.value);
+                let n_colonne = parseInt(c.value);
+
+                v.innerHTML = "";
+                v.innerHTML += "Generazione tabella "+n_righe+"x"+n_colonne+"<br />";
+                
+                let strTab="";  // creo una variabile che conterrà tutto il codice HTML della tabella
+                strTab = "<table border='2'>";
+                    for(let i=1; i<=n_righe; i++){  // creo la tabella riga per riga e con ogni colonna
+                        strTab += "<tr>";
+                        for(let j=1; j<=n_colonne; j++){
+                            strTab += "<td>"+(i*j)+"</td>";
+                        }
+                        strTab += "</tr>";
+                    }
+                strTab += "</table>";   // chiudo la tabella
+                v.innerHTML += strTab;  // inserito tutto il codice prodotto nella view scelta.
+                
+                /* Procedimento con logica "corretta" ma il browser non renderizza correttamente la tabella 
+                v.innerHTML = "<table border='2'>";
+                    for(let i=1; i<=n_righe; i++){
+                        v.innerHTML += "<tr>";
+                        for(let j=1; j<=n_colonne; j++){
+                            v.innerHTML += "<td>"+(i*j)+"</td>";
+                        }
+                        v.innerHTML += "</tr>";
+                    }
+                v.innerHTML += "</table>";
+                */
+            }
+
+            let btn = document.querySelector("#btnTabella");
+            btn.onclick = generaTabella;
+        </script>
+    </body>
+</html>
