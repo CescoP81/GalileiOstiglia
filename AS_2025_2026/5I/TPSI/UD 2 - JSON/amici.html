@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lista amici da JSON</title>
+    </head>
+    <body>
+        <input type="button" value="Carica lista amici" id="btnCarica"><br />
+        <div id="view" style="border: solid 2px rgb(200,200,200)">
+            Visualizzazione amici...
+        </div>
+        <script>
+            // reference alla funzione di fetch e concetti async-await
+            // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+            async function caricaAmiciJSON(){
+                // fetch('https://www.example.com/amici.json');
+                // fetch('https://www-example.com/amici.php'); -> la pagina PHP mi genera e 
+                //                                                  restiuisce un flusso di dati codificato come JSON
+                const response = await fetch('amici.json');
+                const vetAmici = await response.json();
+
+                let v = document.querySelector("#view");
+                v.innerHTML += vetAmici.length;
+                v.innerHTML += "<br />";
+                for(let i=0; i<vetAmici.length; i++){
+                    v.innerHTML += vetAmici[i].nome + " " + vetAmici[i].cognome + " " + vetAmici[i].sesso + " " + vetAmici[i].anni + "<br />";
+                }
+            }
+
+
+            let btn = document.querySelector("#btnCarica");
+            btn.onclick = caricaAmiciJSON;
+        </script>
+    </body>
+</html>

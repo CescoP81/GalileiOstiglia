@@ -1,0 +1,26 @@
+[
+    {
+        "nome": "Marco",
+        "cognome": "Bianchi",
+        "sesso": "m",
+        "anni": 18 
+    },
+    {
+        "nome": "Alberto",
+        "cognome": "Rossi",
+        "sesso": "m",
+        "anni": 21
+    },
+    {
+        "nome": "Maria",
+        "cognome": "Santaguida",
+        "sesso": "f",
+        "anni": 20
+    },
+    {
+        "nome": "Lucilla",
+        "cognome": "Boari",
+        "sesso": "f",
+        "anni": 23
+    }
+]
