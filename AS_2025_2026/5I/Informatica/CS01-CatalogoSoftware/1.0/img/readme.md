@@ -1,0 +1,3 @@
+## img
+Contiene eventuali immagini da inserire nell'applicazione web, esempio banner ads, immagini di prodotti/cose/persone etc...  
+png, jpeg, gif
