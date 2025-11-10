@@ -2,6 +2,8 @@
 <html>
     <head>
         <title>Lista amici da JSON</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">    
     </head>
     <body>
         <input type="button" value="Carica lista amici" id="btnCarica"><br />
@@ -26,9 +28,76 @@
                 }
             }
 
+            async function caricaTabellaAmiciJSON(){
+                // fetch('https://www.example.com/amici.json');
+                // fetch('https://www-example.com/amici.php'); -> la pagina PHP mi genera e 
+                //                                                  restiuisce un flusso di dati codificato come JSON
+                const response = await fetch('amici.json');
+                const vetAmici = await response.json();
+
+                let v = document.querySelector("#view");
+                let strTable="";
+
+                
+                v.innerHTML += vetAmici.length;
+                v.innerHTML += "<br />";
+                
+                strTable += "<table border='2'>";
+                for(let i=0; i<vetAmici.length; i++){
+                    strTable += "<tr>";
+                        strTable += "<td>"+vetAmici[i].nome+"</td>";
+                        strTable += "<td>"+vetAmici[i].cognome+"</td>";
+                        strTable += "<td>"+vetAmici[i].sesso+"</td>";
+                        strTable += "<td>"+vetAmici[i].anni+"</td>";
+                    strTable += "</tr>";
+                    //v.innerHTML += vetAmici[i].nome + " " + vetAmici[i].cognome + " " + vetAmici[i].sesso + " " + vetAmici[i].anni + "<br />";
+                }
+                strTable += "</table>";
+                v.innerHTML += strTable;
+            }
+
+            async function caricaTabellaBsAmiciJSON(){
+                // fetch('https://www.example.com/amici.json');
+                // fetch('https://www-example.com/amici.php'); -> la pagina PHP mi genera e 
+                //                                                  restiuisce un flusso di dati codificato come JSON
+                const response = await fetch('amici.json');
+                const vetAmici = await response.json();
+
+                let v = document.querySelector("#view");
+                let strTable="";
+
+                
+                v.innerHTML += vetAmici.length;
+                v.innerHTML += "<br />";
+                
+                strTable += "<table class='table table-striped'>";
+                strTable += "<thead>";
+                strTable += "<tr>";
+                    strTable +="<th scope='col'>#</th>";
+                    strTable +="<th scope='col'>Nome</th>";
+                    strTable +="<th scope='col'Cognome</th>";
+                    strTable +="<th scope='col'>Sesso</th>";
+                    strTable +="<th scope='col'>Anni</th>";
+                strTable +="</tr>";
+                strTable +="</thead><tbody>";
+                for(let i=0; i<vetAmici.length; i++){
+                    strTable += "<tr>";
+                        strTable += "<td>"+(i+1)+"</td>";
+                        strTable += "<td>"+vetAmici[i].nome+"</td>";
+                        strTable += "<td>"+vetAmici[i].cognome+"</td>";
+                        strTable += "<td>"+vetAmici[i].sesso+"</td>";
+                        strTable += "<td>"+vetAmici[i].anni+"</td>";
+                    strTable += "</tr>";
+                    //v.innerHTML += vetAmici[i].nome + " " + vetAmici[i].cognome + " " + vetAmici[i].sesso + " " + vetAmici[i].anni + "<br />";
+                }
+                strTable += "</tbody></table>";
+                v.innerHTML += strTable;
+            }
+
 
             let btn = document.querySelector("#btnCarica");
-            btn.onclick = caricaAmiciJSON;
+            btn.onclick = caricaTabellaBsAmiciJSON;
         </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>   
     </body>
 </html>
