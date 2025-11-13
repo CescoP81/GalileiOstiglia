@@ -6,7 +6,20 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">    
     </head>
     <body>
-        <input type="button" value="Carica lista amici" id="btnCarica"><br />
+        <input type="button" class="btn btn-primary" value="Carica lista amici" id="btnCaricaTutto"> 
+        <input type="button" class="btn btn-primary" value="Carica solo maschi" id="btnCaricaMaschi">
+        <input type="button" class="btn btn-primary" value="Carica solo femmine" id="btnCaricaFemmine"> 
+        <input type="button" class="btn btn-danger" value="Reset view" id="btnResetView">
+        <br /><br />
+        <div class="row">
+            <div class="col col-2">
+                <input class="form-control" type="text" id="txtAnniMinimi" placeholder="Inserisci eta' minima" aria-label="Inserimento età">
+            </div>
+            <div class="col">
+                <input type="button" class="btn btn-primary" value="Ricerca per eta' minima" id="btnCaricaDaAnni">
+            </div>
+        </div>
+        <br />
         <div id="view" style="border: solid 2px rgb(200,200,200)">
             Visualizzazione amici...
         </div>
