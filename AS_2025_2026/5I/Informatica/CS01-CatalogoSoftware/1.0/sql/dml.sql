@@ -1,3 +1,4 @@
+-- Popolazione tabella produttore (una query per ogni produttore)
 INSERT INTO produttore(nome, email, sitoweb, telefono)
 VALUES('Acme s.r.l.', 'info@acmesrl.it', 'acmesrl.it', '555-789327');
 
@@ -7,7 +8,7 @@ VALUES('Sitel s.r.l.', 'info@sitelsrl.it', 'sitel.com', '555-780087');
 INSERT INTO produttore(nome, email, sitoweb, telefono)
 VALUES('Rimor s.n.c.', 'info@rimor.it', 'rimor.it', '555-349932');
 
--- Popolazione della tabella 'categoria'
+-- Popolazione della tabella 'categoria' (query singola con più righe)
 INSERT INTO categoria(nome, descrizione)
 VALUES ('Progettazione CAD', 'Software per la progettazione 2D.'),
         ('Modellazione 3D', 'Software per la modellazione e stampa 3D'),
@@ -15,7 +16,7 @@ VALUES ('Progettazione CAD', 'Software per la progettazione 2D.'),
         ('Sistemi Operativi', 'Sistemi operativi Microsoft e Linux Based'),
         ('Fotoritocco', 'Software di creazione, editing, stampa di fotografie');
 
--- Popolane della tabella 'prodotto'
+-- Popolane della tabella 'prodotto' (query singola con più righe)
 INSERT INTO prodotto (nome, descrizione, prezzo, idProduttore, idCategoria)
 VALUES  ('Autodesk Autocad', 'Software CAD', 185.50, 1, 1),
         ('Avast Antivirus', 'Software per controllo virus', 35.00, 2, 3),
