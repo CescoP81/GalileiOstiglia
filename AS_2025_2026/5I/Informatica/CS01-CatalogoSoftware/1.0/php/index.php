@@ -1,3 +1,6 @@
 <?php
-echo('Index della webapp...');
+require("../include/lib.php");
+writeHeader();
+    writeMainMenu();
+writeFooter();
 ?>
