@@ -40,8 +40,6 @@ int main(){
             }
             tmp = tmp + 1;
         }
-<<<<<<< HEAD
-
         // stampa di tutti i valori pari, divisbili per 3.
         printf("\nPari e multipli di 3: ");
         tmp = val;
@@ -51,8 +49,6 @@ int main(){
             }
             tmp = tmp + 1;
         }
-=======
->>>>>>> 9be09e74d8d69e13105bf01b6276541ca336e598
     }
     else{
         printf("\nSerie numerica non realizzabile...");
