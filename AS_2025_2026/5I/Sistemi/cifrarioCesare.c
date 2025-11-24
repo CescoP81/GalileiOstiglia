@@ -14,7 +14,7 @@ int main(){
 
     printf("Stringa originale: %s\n", str);
 
-    chiave = 4;
+    chiave = 3;
     cript(str, chiave);
     //printf("Criptata:")
     return(0);
@@ -32,11 +32,21 @@ void cript(char _originale[], int _chiave){
     for(i=0; i<len; i++){
         carattere = _originale[i] - 'a';
         carattere = carattere + _chiave;
-        if(carattere > 26) carattere = carattere - 26;
+        if(carattere > 25) carattere = carattere - 26;
         
         strCriptata[i] = carattere + 'a';
         printf("%c -> %c\n", _originale[i], strCriptata[i]);
     }
     strCriptata[len] = '\0';
-    printf("Cripta: %s", strCriptata);
+    printf("Cripta: %s\n\n", strCriptata);
+
+
+    for(i=0; i<len; i++){
+        carattere = strCriptata[i] - 'a';
+        carattere = carattere - _chiave;
+        if(carattere < 0)
+            carattere = 25 - carattere;
+        carattere += 'a';
+        printf("%c %d\n", carattere, carattere);
+    }
 }
