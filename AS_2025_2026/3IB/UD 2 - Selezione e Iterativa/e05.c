@@ -53,10 +53,6 @@ int main(){
     else{
         printf("\nSerie numerica non realizzabile...");
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> 9be09e74d8d69e13105bf01b6276541ca336e598
     return(0);
 }
 /*
