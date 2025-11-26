@@ -1,6 +1,19 @@
 <?php
-// file di libreria contenente le funzioni comuni a più pagine che vengono
-// caricare tramite la funzione require().
+/*  #########################
+    # VARIABILI 'GLOBALI'   #
+    # UTILI A PIU' PAGINE   #
+    #########################
+*/
+$db_host = "localhost";
+$db_user = "root";
+$db_password = ""; // su uWamp impostare root come lo user.
+$db_name = "5ics01";
+
+/*  #########################
+    # FUNZIONI 'GLOBALI'    #
+    # UTILI A PIU' PAGINE   #
+    #########################
+*/
 function writeHeader(){
     echo('<!DOCTYPE html>
         <html lang="it">
@@ -24,9 +37,11 @@ function writeFooter(){
 
 function writeMainMenu(){
     echo('<a href="index.php">HOME</a> | 
-            <a href="categoria.php?scelta=listaCategoria">Lista Categorie</a> | 
-            <a href="categoria.php?scelta=formNuovaCategoria">Nuova Categoria </a>| 
-            <br />       
+        <a href="categoria.php?scelta=listaCategoria">Lista Categorie</a> | 
+        <a href="categoria.php?scelta=formNuovaCategoria">Nuova Categoria</a> | 
+        <a href="produttore.php?scelta=">Lista Produttori</a> | 
+        <a href="produttore.php?scelta=">Nuovo Produttore</a> |
+        <br />       
     ');
 }
 ?>
