@@ -1,5 +1,7 @@
 <?php
-/* Pagina dedicata alla gestione della tabella 'categoria' presente nel database.
+/*  Last Update: Thu 27.11.2025
+
+Pagina dedicata alla gestione della tabella 'categoria' presente nel database.
 Funzioni sviluppate:
 - listaCategoria -> Visualizza tutte le cateogirie prodotti presenti a database.
 - formNuovaCategoria -> Visualizza il form per l'inserimento dei dati di una nuova categoria.

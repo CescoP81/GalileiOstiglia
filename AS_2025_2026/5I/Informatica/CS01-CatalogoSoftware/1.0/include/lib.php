@@ -1,4 +1,6 @@
 <?php
+/* Last Update: Thu 27.11.2025 */
+
 /*  #########################
     # VARIABILI 'GLOBALI'   #
     # UTILI A PIU' PAGINE   #

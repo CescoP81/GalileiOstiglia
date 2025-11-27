@@ -1,4 +1,5 @@
 <?php
+/* Last Update: Thu 27.11.2025 */
 require("../include/lib.php");
 writeHeader();
     writeMainMenu();
