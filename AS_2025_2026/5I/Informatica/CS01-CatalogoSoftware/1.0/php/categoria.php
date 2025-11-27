@@ -70,6 +70,7 @@ writeHeader();
                 utile per selezionare il case che esegue effettivamente l'inserimento dei dati nel db.
             */
             echo('<div class="alert alert-success">Aggiunta di una nuova Categoria Prodotti</div>');
+            
             echo('<form action="categoria.php" method="get">
                 <div class="mb-3">
                     <label for="inputNomeCategoria" class="form-label">Nome Categoria:</label>
@@ -85,6 +86,8 @@ writeHeader();
             break;
         }
         case "addNuovaCategoria":{
+// http://scuola.local/AS_2025_2026/5I/Informatica/CS01-CatalogoSoftware/1.0/php/categoria.php?nomeCategoria=Ufficio&descrizioneCategoria=Software+per+ufficio.&scelta=addNuovaCategoria
+
             /* in questo case arrivo solo dopo aver premuto il bottone nel form, quindi devo recuperare
                 dal vettore REQUEST i valori delle chiavi 'nomeCategoria' e 'descrizioneCategoria', successivamente
                 creo la query di inserimento 'INSERT INTO...' e una volta collegato al DB eseguo la query.

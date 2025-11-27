@@ -39,6 +39,7 @@ function writeMainMenu(){
     echo('<a href="index.php">HOME</a> | 
         <a href="categoria.php?scelta=listaCategoria">Lista Categorie</a> | 
         <a href="categoria.php?scelta=formNuovaCategoria">Nuova Categoria</a> | 
+        
         <a href="produttore.php?scelta=">Lista Produttori</a> | 
         <a href="produttore.php?scelta=">Nuovo Produttore</a> |
         <br />       
