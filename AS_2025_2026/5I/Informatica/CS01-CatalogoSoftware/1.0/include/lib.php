@@ -38,12 +38,12 @@ function writeFooter(){
 }
 
 function writeMainMenu(){
-    echo('<a href="index.php">HOME</a> | 
-        <a href="categoria.php?scelta=listaCategoria">Lista Categorie</a> | 
-        <a href="categoria.php?scelta=formNuovaCategoria">Nuova Categoria</a> | 
+    echo('<a href="index.php" class="btn btn-primary btn-sm" role="button">HOME</a>
+        <a href="categoria.php?scelta=listaCategoria" class="btn btn-primary btn-sm" role="button">Lista Categorie</a>
+        <a href="categoria.php?scelta=formNuovaCategoria" class="btn btn-primary btn-sm" role="button">Nuova Categoria</a>
         
-        <a href="produttore.php?scelta=">Lista Produttori</a> | 
-        <a href="produttore.php?scelta=">Nuovo Produttore</a> |
+        <a href="produttore.php?scelta=listaProduttori" class="btn btn-primary btn-sm" role="button">Lista Produttori</a>
+        <a href="produttore.php?scelta=formNuovoProduttore" class="btn btn-primary btn-sm" role="button">Nuovo Produttore</a>
         <br />       
     ');
 }
