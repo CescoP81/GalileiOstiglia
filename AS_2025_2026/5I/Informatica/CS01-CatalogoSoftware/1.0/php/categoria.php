@@ -62,6 +62,7 @@ writeHeader();
                 ');
             }
             echo('</tbody>
+                <caption>Elenco categorie prodotti</caption>
                 </table>');
             break;
         }

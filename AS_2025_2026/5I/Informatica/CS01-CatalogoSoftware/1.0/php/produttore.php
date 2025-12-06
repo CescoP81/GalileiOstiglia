@@ -1,5 +1,5 @@
 <?php
-/* Last Update: Thu 04.12.2025
+/* Last Update: Thu 06.12.2025
 
 Pagina dedicata alla gestione della tabella 'produttore' presente nel database.
 Funzioni sviluppate:
@@ -42,6 +42,7 @@ writeHeader();
                 ');
             }
             echo('</tbody>
+                <caption>Elenco produttori</caption>    
                 </table>');
             break;
         }

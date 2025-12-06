@@ -39,11 +39,14 @@ function writeFooter(){
 
 function writeMainMenu(){
     echo('<a href="index.php" class="btn btn-primary btn-sm" role="button">HOME</a>
-        <a href="categoria.php?scelta=listaCategoria" class="btn btn-primary btn-sm" role="button">Lista Categorie</a>
-        <a href="categoria.php?scelta=formNuovaCategoria" class="btn btn-primary btn-sm" role="button">Nuova Categoria</a>
+        <a href="categoria.php?scelta=listaCategoria" class="btn btn-success btn-sm" role="button">Lista Categorie</a>
+        <a href="categoria.php?scelta=formNuovaCategoria" class="btn btn-success btn-sm" role="button">Nuova Categoria</a>
         
-        <a href="produttore.php?scelta=listaProduttori" class="btn btn-primary btn-sm" role="button">Lista Produttori</a>
-        <a href="produttore.php?scelta=formNuovoProduttore" class="btn btn-primary btn-sm" role="button">Nuovo Produttore</a>
+        <a href="produttore.php?scelta=listaProduttori" class="btn btn-danger btn-sm" role="button">Lista Produttori</a>
+        <a href="produttore.php?scelta=formNuovoProduttore" class="btn btn-danger btn-sm" role="button">Nuovo Produttore</a>
+        
+        <a href="prodotto.php?scelta=listaProdotti" class="btn btn-primary btn-sm" role="button">Lista Prodotti</a>
+        <a href="prodotto.php?scelta=formNuovoProdotto" class="btn btn-primary btn-sm" role="button">Nuovo Prodotto</a>
         <br />       
     ');
 }
