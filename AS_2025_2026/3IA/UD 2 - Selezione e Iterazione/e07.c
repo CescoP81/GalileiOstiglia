@@ -43,7 +43,21 @@ int main(){
         printf("\n");
         r = r + 1;
     }
+    printf("\n\n");
 
+    // doppia iterativa che mostra le coordinare (valori) riga e colonna per ogni singola posizione
+    // stampata.
+    r = 1;
+    while(r <= 5){  // iterativa per le righe
+        c = 1;
+        while(c <= 5){  // iterativa per le colonne
+            printf("(r:%d,c:%d) ", r, c);
+            c = c + 1;
+        }
+        printf("\n");
+        r = r + 1;
+    }
+    printf("\n\n");
 
     return(0);
 }
