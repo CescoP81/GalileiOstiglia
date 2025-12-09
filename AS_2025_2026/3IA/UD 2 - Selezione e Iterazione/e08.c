@@ -67,13 +67,14 @@ int main(){
 
     printf("\n\n");
     printf("Esercizio 3:\n");
-    // ciclica della parte altaù
+    // ciclica della parte alta
     c = 1;
     while(c <= 5){
         printf("+ ");
         c = c + 1;
     }
     printf("\n");
+    // cicliche per la parte centrale
     r = 1;
     while(r <= 3){
         c = 1;
@@ -89,11 +90,13 @@ int main(){
         printf("\n");
         r = r + 1;
     }
+    // ciclica per la parte bassa di chiusura figura.
     c = 1;
     while(c <= 5){
         printf("+ ");
         c = c + 1;
     }
+
     printf("\n\n");
     printf("Eserzicio 4:\n");
     r = 1;
