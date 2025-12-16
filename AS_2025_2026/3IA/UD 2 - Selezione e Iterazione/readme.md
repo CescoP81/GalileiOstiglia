@@ -23,3 +23,6 @@ Sviluppo di un doppio ciclo innestato per la generazione di una tabellina di num
 
 **e08.c**
 Utilizzo di doppi cicli innestati o consecutivi, in base al caso proposto, per realizzare schemi geometrici in modalità testuale. Aprire il file e nell'intestazione si trovano gli schemi realizzati.
+
+**e09.c**
+Creare un programma C che richiesto un numero intero N da tastiera, visualizza tutti i numeri da 1 a N e per ogni numero visualizza i suoi divisori.

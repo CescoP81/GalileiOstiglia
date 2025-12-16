@@ -21,7 +21,8 @@ writeHeader();
             $db = new mysqli($db_host, $db_user, $db_password, $db_name);
             $sql = "SELECT prodotto.id, prodotto.nome, prodotto.descrizione, prodotto.prezzo, categoria.nome AS categoria, produttore.nome AS produttore 
                     FROM prodotto, categoria, produttore 
-                    WHERE prodotto.idCategoria = categoria.id AND prodotto.idProduttore = produttore.id";            
+                    WHERE prodotto.idCategoria = categoria.id AND prodotto.idProduttore = produttore.id 
+                    AND categoria.stato=1 AND prodotto.stato=1";            
             $rs = $db->query($sql); 
             $db->close();
 
@@ -34,6 +35,7 @@ writeHeader();
                     <th scope="col">Prezzo</th>
                     <th scope="col">Categoria</th>
                     <th scope="col">Produttore</th>
+                    <th scope="col">Operazioni</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -46,6 +48,7 @@ writeHeader();
                     '<td>'.$record['prezzo'].'</td>'.
                     '<td>'.$record['categoria'].'</td>'.
                     '<td>'.$record['produttore'].'</td>'.
+                    '<td><a href="prodotto.php?scelta=cancellaProdotto&idProdotto='.$record['id'].'" class="btn btn-danger btn-sm" role="button">Cancella</a></td>'.
                     '</tr>
                 ');
             }
@@ -125,6 +128,19 @@ writeHeader();
                 echo('<div class="alert alert-danger">Problema in inserimento</div>');
             $db->close();
             
+            break;
+        }
+        case "cancellaProdotto":{
+            $idP = $_REQUEST['idProdotto'];
+
+            $sql = "UPDATE prodotto SET stato=0 WHERE id=".$idP;
+            //echo($sql);
+            $db = new mysqli($db_host, $db_user, $db_password, $db_name);
+            if($db->query($sql))
+                echo('<div class="alert alert-success">Aggiornamento avvenuto con successo</div>');
+            else
+                echo('<div class="alert alert-danger">Problema in aggiornamento</div>');
+            $db->close();
             break;
         }
         default:{
