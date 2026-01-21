@@ -6,11 +6,11 @@ Es: n=12 → 1,2,3 sono divisori primi ma sono presenti 6 divisori in totale. (1
 #include <stdio.h>
 
 int main(){
-    int cntValori;      // contatore valori inseriti.
-    int val;            // valore inserito in input.
+    int cntValori;      // contatore valori inseriti dall'utente
+    int val;            // valore inserito in input dall'utente
     int div;            // variabile per i divisori di un numero.
-    int cntDivTotale;   // contatore generale dei divisori trovati per un numero.
-    int divPrimo;       // variabile per i divisori di un divisore trovato di val.
+    int cntDivTotale;   // contatore generale dei divisori trovati(primi e non primi) per un numero.
+    int divPrimo;       // variabile per determinare i divisori del divisore trovato.
     int cntDiv;         // contatore divisori trovati per verifica del Primo.
     char junk;
 
