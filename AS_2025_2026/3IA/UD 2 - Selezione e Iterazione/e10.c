@@ -19,11 +19,11 @@ int main(){
         printf("2 -> Verifica numero primo\n");
         printf("3 -> Verifica numero perfetto\n");
 
-        printf("4 -> Genera N numeri casuali (n inserito da tastiera)\n");
-        printf("5 -> Genera n numeri dispari (n inserito da tastiera)\n");
-        printf("6 -> Genera n numeri casuali crescenti (n inserito da tastiera)\n");
+        printf("4 -> Genera N numeri casuali <1000 (n inserito da tastiera)\n");
+        printf("5 -> Genera n numeri dispari <1000 (n inserito da tastiera)\n");
+        printf("6 -> Genera n numeri casuali crescenti <9999 (n inserito da tastiera)\n");
         printf("7 -> Genera un numero casuale, determina il successivo numero primo\n");
-        
+
         printf("0 -> Termina Programma!\n");
         printf("Scelta: ");
         scanf("%d", &scelta);

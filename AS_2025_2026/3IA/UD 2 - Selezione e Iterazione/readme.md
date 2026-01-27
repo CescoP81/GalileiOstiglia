@@ -26,3 +26,6 @@ Utilizzo di doppi cicli innestati o consecutivi, in base al caso proposto, per r
 
 **e09.c**
 Creare un programma C che richiesto un numero intero N da tastiera, visualizza tutti i numeri da 1 a N e per ogni numero visualizza i suoi divisori.
+
+**e10.c**
+Semplice programma che esegue tre diverse operazioni su numeri interi, selezionabili da un menu numerico con discriminazione tramite switch-case. Utilizzo della forma iterativa do-while per la ripetizione del programma, utilizzo della struttura iterativa for per i cicli interni richiesti.
