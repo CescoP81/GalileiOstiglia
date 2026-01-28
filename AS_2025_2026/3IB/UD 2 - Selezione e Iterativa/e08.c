@@ -10,8 +10,9 @@ int main(){
     do{
         printf("---------\n");
         printf("1 -> Verifica PRIMO\n");
-        printf("2 -> Scelta Due\n");
-        printf("3 -> Scelta Tre\n");
+        // da realizzare
+        printf("2 -> Visualizza divisori\n");
+        printf("3 -> Verifica numero perfetto\n");
         printf("0 -> TERMINA PROGRAMMA\n");
         printf("scelta: ");
         scanf("%d", &scelta);
