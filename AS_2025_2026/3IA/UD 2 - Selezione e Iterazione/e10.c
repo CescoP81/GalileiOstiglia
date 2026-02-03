@@ -27,7 +27,6 @@ int main(){
         printf("4 -> Genera N numeri casuali <1000 (n inserito da tastiera)\n");
         printf("5 -> Genera n numeri dispari <1000 (n inserito da tastiera)\n");
         printf("6 -> Genera n numeri casuali crescenti <9999 (n inserito da tastiera)\n");
-
         printf("7 -> Genera un numero casuale, determina il successivo numero primo\n");
 
         printf("0 -> Termina Programma!\n");
@@ -176,6 +175,24 @@ int main(){
                 }
                 printf("\n\n");
                 break;
+            }
+            case 7:{
+                // acquisizione numero di valori da generare.
+                printf("Inserisci N: ");
+                scanf("%d", &n);
+                junk = getchar();
+
+                do{
+                    n = n + 1;
+                    cnt = 0;
+                    for(div=1; div<=n; div++){
+                        if(n%div == 0)
+                            cnt = cnt + 1;
+                    }
+                }while(cnt > 2);
+                printf("Successivo numero PRIMOo: %d", n);
+                printf("\n\n");
+                break;    
             }
             default:{
                 if(scelta != 0){
