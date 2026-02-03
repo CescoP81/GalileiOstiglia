@@ -4,24 +4,30 @@
     Utilizzo della forma iterativa do-while.
 */
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 int main(){
+    srand(time(NULL));
     int scelta;     // variabile per la scelta utente.
     int num;        // variabile per il numero in input dell'utente.
     int div;        // variabile per eventuali operazioni sui divisori di un numero.
     int cnt;        // variabile per conteggi tipo divisori, multipli etc...
     int sommaDiv;   // variabile per sommare i divisori di un numero.
     char junk;
+    int n;          // usato nel caso 4
+    int cnt2;
+    int old;
 
     do{
         printf("-- MENU --\n");
         printf("1 -> Visualizza divisori\n");
         printf("2 -> Verifica numero primo\n");
         printf("3 -> Verifica numero perfetto\n");
-
         printf("4 -> Genera N numeri casuali <1000 (n inserito da tastiera)\n");
         printf("5 -> Genera n numeri dispari <1000 (n inserito da tastiera)\n");
         printf("6 -> Genera n numeri casuali crescenti <9999 (n inserito da tastiera)\n");
+
         printf("7 -> Genera un numero casuale, determina il successivo numero primo\n");
 
         printf("0 -> Termina Programma!\n");
@@ -97,6 +103,76 @@ int main(){
                 }
                 else{
                     printf("Il numero %d NON risulta essere PERFETTO.\n", num);
+                }
+                printf("\n\n");
+                break;
+            }
+            case 4:{
+                // acquisizione numero di valori da generare.
+                printf("Inserisci N: ");
+                scanf("%d", &n);
+                junk = getchar();
+
+                // generazione degli N numeri random minori di 1000.
+                for(cnt=1; cnt<=n; cnt++){
+                    num = 1 + rand()%999;
+                    printf("%4d", num);
+                    if(cnt%20 == 0)
+                        printf("\n");
+                }
+                printf("\n\n");
+                break;
+            }
+            case 5:{
+                // acquisizione numero di valori da generare.
+                printf("Inserisci N: ");
+                scanf("%d", &n);
+                junk = getchar();
+
+                // generazione degli N numeri random dispari minori di 1000.
+                cnt = 0;
+                cnt2 = 0;
+                while(cnt<n){
+                    num = 1 + rand()%999;
+                    if(num%2 != 0){
+                        printf("%4d", num);
+                        cnt = cnt + 1;
+                        if(cnt%20 == 0)
+                            printf("\n");
+                    }
+                    cnt2 = cnt2 + 1;
+                }
+                printf("\nNumeri totali generati: %d", cnt2);
+                printf("\n\n");
+                break;
+            }
+            case 6:{
+                // acquisizione numero di valori da generare.
+                printf("Inserisci N: ");
+                scanf("%d", &n);
+                junk = getchar();
+
+                cnt = 0;
+                cnt2 = 0;
+                while((cnt < n) && (cnt2<500)){
+                    // genero un numero random.
+                    num = rand()%10000;
+
+                    if(cnt == 0){           // se è il primo numero lo stampo e lo assegno alla variabile old (ultimo numero estratto)
+                        printf("%d ", num);
+                        old = num;
+                        cnt = cnt + 1;
+                    }else{
+                        if(num > old){      // se numero estratto è maggiore dell'ultimo generato, allora stampo e assegno ad old. Mantengo la crescenza.
+                            printf("%d ", num);
+                            cnt = cnt + 1;
+                            old = num;
+
+                            if(cnt%20 == 0)
+                                printf("\n");
+                        }
+                    }
+                    cnt2 = cnt2 + 1;
                 }
                 printf("\n\n");
                 break;
