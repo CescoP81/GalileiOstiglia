@@ -13,6 +13,10 @@ int main(){
         // da realizzare
         printf("2 -> Visualizza divisori\n");
         printf("3 -> Verifica numero perfetto\n");
+
+        printf("4 -> Genera 10 numeri random dispari.\n");
+        printf("5 -> Richiedi un numero in input e trova il successivo numero PRIMO.\n");
+        printf("6 -> Richiedi numeri in input finche sono in ordine crescente. Termato stampa media numeri.\n")
         printf("0 -> TERMINA PROGRAMMA\n");
         printf("scelta: ");
         scanf("%d", &scelta);
