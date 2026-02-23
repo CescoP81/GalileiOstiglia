@@ -33,8 +33,29 @@ INNER JOIN af_evento AS e
 ON a.idEvento = e.id AND a.turnoGiornata=1
 
 -- ERRORE DI SINTASSI OMETTENDO LA PAROLA JOIN
-SELECT a.*
-FROM af_attivita AS a
-INNER af_evento AS e
-ON a.idEvento = e.id AND a.turnoGiornata=1;
+-- SELECT a.*
+-- FROM af_attivita AS a
+-- INNER af_evento AS e
+-- ON a.idEvento = e.id AND a.turnoGiornata=1;
 -- RESTITUISCE ERRORE.
+
+-- visualizzare per ogni studente il numero di attività a cui è iscritto.
+SELECT s.nome, s.cognome, COUNT(i.id) AS iscrizioni
+FROM af_studente AS s, af_iscrizione AS i
+WHERE s.id=i.idStudente
+GROUP BY s.id
+
+-- Visualizzare per ogni attività il numero di iscrizioni ricevute
+SELECT a.titolo, a.turnoGiornata, a.orarioInizio, a.orarioFine, COUNT(i.id) AS iscrizioni
+FROM af_attivita AS a, af_iscrizione AS i
+WHERE a.id=i.idAttivita 
+GROUP BY a.id
+
+-- Visualizzare tutti gli studenti iscritti all'evento con id=1
+SELECT DISTINCT s.cognome, s.nome, s.classe 
+FROM af_studente AS s, af_iscrizione AS i, af_attivita AS a, af_evento AS e
+WHERE s.id = i.idStudente AND
+    i.idAttivita = a.id AND
+    a.idEvento = e.id AND
+    e.id = 1
+ORDER BY s.cognome
