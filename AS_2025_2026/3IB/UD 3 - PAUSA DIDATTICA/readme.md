@@ -1,6 +1,6 @@
 Realizzare i seguenti programmi in linguaggio C
 
-Realizzare nel proprio codespace una cartella chiamata PausaDidattica dove inserire i file sviluppati durante queste lezioni
+Realizzare nel proprio codespace una cartella chiamata PausaDidattica dove inserire i file sviluppati durante queste lezioni.
 
 **e01.c**
 Realizza un programma C che richiede in input tre valori interi maggiori di zero,
