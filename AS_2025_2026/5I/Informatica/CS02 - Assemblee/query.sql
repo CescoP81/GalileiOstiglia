@@ -87,4 +87,4 @@ WHERE a.id = i.idAttivita AND s.id = i.idStudente AND (s.classe='5L' OR s.classe
 
 -- 14 Determinare il numero medio di iscrizioni tra tutte le attivita.
 
--- 15 
+-- 15 DEterminare e visualizzare tutti gli studenti REGISTRATI ma non ISCRITTI
