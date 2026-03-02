@@ -24,6 +24,13 @@ int calcolaArea(int _l);
  */
 void vediDivisori(int _n);
 
+/**
+ * Calcola il perimetro della figura con lato L
+ * @param int Misura del lato.
+ * @return Perimetro calcolato.
+ */
+int calcolaPerimetro(int _l);
+
 // sezione del MAIN PROGRAM
 int main(){
     int lato;
@@ -56,6 +63,10 @@ int main(){
 
     printf("\n");
     vediDivisori(54);
+
+    printf("\n\n");
+    perimetro = calcolaPerimetro(13);
+    printf("Perimetro calcolato: %d\n", perimetro);
     return(0);
 }
 // sezione di DEFINIZIONE delle funzioni (cioè scrivo effettivamente il codice delle funzioni)
@@ -67,7 +78,12 @@ int calcolaArea(int _l){
     // restituisco il valore calcola alla MAIN
     return(_area);
 }
+int calcolaPerimetro(int _l){
+    int perim;
 
+    perim = (_l + _l) * 2;
+    return(perim);
+}
 void vediDivisori(int _n){
     int div;
     div = 1;
