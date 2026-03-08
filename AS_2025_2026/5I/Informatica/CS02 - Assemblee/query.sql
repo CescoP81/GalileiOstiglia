@@ -88,7 +88,9 @@ WHERE a.id = i.idAttivita AND s.id = i.idStudente AND (s.classe='5L' OR s.classe
 -- 14 Determinare il numero medio di iscrizioni tra tutte le attivita.
 
 -- 15 Determinare e visualizzare tutti gli studenti REGISTRATI ma non ISCRITTI
-SELECT DISTINCT s.nome, s.cognome, s.classe
+-- aggiungendo le colonne della tab di destra, si nota come vengano lasciate
+-- a NULL dove non trova corrispondenza.
+SELECT DISTINCT s.nome, s.cognome, s.classe, i.idAttivita, i.dataIscrizione
 FROM af_studente AS s
 LEFT JOIN af_iscrizione AS i
 ON s.id=i.idStudente
