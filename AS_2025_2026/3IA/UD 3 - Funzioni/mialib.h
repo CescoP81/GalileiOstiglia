@@ -20,3 +20,20 @@ bool isPerfect(int _n);
  * @param int _n3 Terzo valore
  * @return boolean true/false
  */
+
+
+/**
+ * Inserimento controllato di un valore intero tra min e max estremi compresi
+ * @param int Valore minimo accettato
+ * @param int Valore massimo accettato
+ * @return Valore inserito dall'utente valido e nel range min-max
+ */
+int inputValoreRange(int _min, int _max);
+
+/**
+ * Genera un valore random compreso tra due valori interi min e max, estremi compresi
+ * @param int Valore minimo accettato
+ * @param int Valore massimo accettato
+ * @return Valore random generato compreso nel range min-max
+ */
+int randomValoreRange(int _min, int _max);
