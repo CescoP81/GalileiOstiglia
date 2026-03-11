@@ -20,6 +20,7 @@ bool isPerfect(int _n);
  * @param int _n3 Terzo valore
  * @return boolean true/false
  */
+bool isTernaPitagorica(int _n1, int _n2, int _n3);
 
 
 /**

@@ -37,3 +37,9 @@ bool isPerfect(int _n){
     else
         return(false);    
 }
+bool isTernaPitagorica(int _n1, int _n2, int _n3){
+    if((_n1*_n1) + (_n2+_n2) == (_n3*_n3))
+        return(true);
+    else
+        return(false);
+}

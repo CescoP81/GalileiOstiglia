@@ -25,5 +25,11 @@ int main(){
             printf("%d -> Perfetto\n", valore);
     }
 
-    return(0);
+    // verifico funzione terna pitagorica
+    if(isTernaPitagorica(3,4,5))
+        printf("I valori 3,4,5 sono una terna pitagorica.\n");
+    else
+        printf("I valori 3,4,5 non sono una terna pitagorica.\n");
+        
+    return(0); 
 }
