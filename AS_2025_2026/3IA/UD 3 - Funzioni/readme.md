@@ -17,8 +17,12 @@ Introduzione alla programmazione con funzioni, concetto di prototipo (dichiarazi
 - [x] bool isPrimo(int _n)
 
 **e02.c**
-Come e01.c ma le funzioni sono state spostate in file di libreria separati, in particolare il file **mialib.h contiene solo** i prototipi delle funzioni mentre il file **mialib.c contiene solo** la definizione delle funzioni. Il file e02.c include mialib.c la quale a sua volta include mialib.h
-- [x] bool isPrimo(int _n) Verifica se un numero passato come parametro per valore è primo oppure no.
-- [x] bool idPerfect(int _n) Verifica se un numero passato come parametro per valore è perfetto oppure no (perfetto se la somma dei suoi divisori è uguale al suo doppio; 6 è perfetto).
+Come e01.c ma le funzioni sono state spostate in file di libreria separati, in particolare il file **mialib.h contiene solo** i prototipi delle funzioni mentre il file **mialib.c contiene solo** la definizione delle funzioni. Il file e02.c include mialib.c la quale a sua volta include mialib.h  
+L'esercizio esegue una chiamata come test per le seguenti funzioni:
+- [x] bool isPrimo(int _n).
+- [x] bool idPerfect(int _n).
+- [x] bool isTernaPitagorica(int _n1, int _n2, int _n3).
+- [x] int inputValoreRange(int _min, int _max).
+- [x] int randomValoreRange(int _min, int _max).
 
 
