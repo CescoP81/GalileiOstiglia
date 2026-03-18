@@ -33,3 +33,10 @@ int getRandomValue();
  * @return Valore random generato nell'intervallo min<->max
  */
 int getRandomValueInterval(int _min, int _max);
+
+/**
+ * Verifica se un numero è primo oppure no
+ * @param int Numero da verificare
+ * @return True/False se è primo oppure no.
+ */
+bool isPrimo(int _num);

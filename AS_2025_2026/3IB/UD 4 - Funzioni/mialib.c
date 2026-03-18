@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <stdbool.h>
 #include "mialib.h"
 
 void vediDivisori(int _n){
@@ -49,4 +50,20 @@ int getRandomValueInterval(int _min, int _max){
     int box;
     box = _min + (rand()%(_max - _min + 1));
     return(box);
+}
+
+bool isPrimo(int _num){
+    int div;
+    int cnt;
+
+    cnt = 0;
+    for(div=1; div<=_num; div++){
+        if(_num%div == 0)
+            cnt = cnt + 1;
+    }
+
+    if(cnt <= 2)
+        return(true);
+    else
+        return(false);
 }
