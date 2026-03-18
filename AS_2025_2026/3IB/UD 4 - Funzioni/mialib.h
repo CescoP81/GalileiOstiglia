@@ -40,3 +40,17 @@ int getRandomValueInterval(int _min, int _max);
  * @return True/False se è primo oppure no.
  */
 bool isPrimo(int _num);
+
+/**
+ * Restituisce il successivo numero primo rispetto ad un valore passato come parametro.
+ * @param int Valore di riferimento
+ * @return Valore primo successivo al valore di riferimento.
+ */
+int nextPrimo(int _num);
+
+/**
+ * Restituisce il precedente numero primo rispetto ad un valore passato come parametro.
+ * @param int Valore di riferimento
+ * @return Valore primo precedente al valore di riferimento
+ */
+int prevPrimo(int _num);

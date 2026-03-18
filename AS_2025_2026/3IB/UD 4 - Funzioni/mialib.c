@@ -67,3 +67,12 @@ bool isPrimo(int _num){
     else
         return(false);
 }
+
+int nextPrimo(int _num){
+    int nextP;
+    nextP = _num + 1;
+    while(isPrimo(nextP) == false){
+        nextP = nextP + 1;
+    }
+    return(nextP);
+}
