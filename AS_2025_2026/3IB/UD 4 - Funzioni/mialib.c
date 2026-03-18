@@ -76,3 +76,12 @@ int nextPrimo(int _num){
     }
     return(nextP);
 }
+
+int prevPrimo(int _num){
+    int prevP;
+    prevP = _num - 1;
+    while(isPrimo(prevP) == false){
+        prevP = prevP - 1;
+    }
+    return(prevP);
+}

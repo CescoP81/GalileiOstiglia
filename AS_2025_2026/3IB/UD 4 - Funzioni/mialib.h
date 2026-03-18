@@ -54,3 +54,19 @@ int nextPrimo(int _num);
  * @return Valore primo precedente al valore di riferimento
  */
 int prevPrimo(int _num);
+
+/**
+ * Visualizza N numeri primi successivi ad un valore passato come parametro generati in modo casuale
+ * tra 1 e 999.
+ * @param int Valore di riferimento.
+ * @param int Numero di valori da generare
+ */
+void generaPrimi();
+
+/**
+ * Visualizza i divisori primi di un numero passato come parametro, restituisce 
+ * il numero di divisori trovati.
+ * @param int Numero di riferimento.
+ * @return Numero di divisori primi identificati e stamapti.
+ */
+--- divisoriPrimi(---);

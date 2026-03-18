@@ -18,7 +18,12 @@ int main(){
     else 
         printf("Il numero %d non e' primo.\n",val);
 
-    val = nextPrimo(val);
-    printf("Successivo primo: %d\n", val);
+    //val = nextPrimo(val);
+    printf("Successivo primo: %d\n", nextPrimo(val));
+
+    printf("Primo precedente: %d\n", prevPrimo(val));
+
+    printf("Valore originale: %d\n", val);
+    
     return(0);
 }
