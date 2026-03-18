@@ -38,3 +38,17 @@ int inputValoreRange(int _min, int _max);
  * @return Valore random generato compreso nel range min-max
  */
 int randomValoreRange(int _min, int _max);
+
+/**
+ * Restituisce il successivo numero primo di un valore passato come parametro.
+ * @param int Valore di riferimento.
+ * @return Successivo numero primo.
+ */
+int nextPrimo(int _val);
+
+/**
+ * Restituisce il primo precedente ad un valore passato come parametro
+ * @param int Valore di riferimento
+ * @return Valore primo precedente al valore di riferimento.
+ */
+int prevPrimo(int _val);

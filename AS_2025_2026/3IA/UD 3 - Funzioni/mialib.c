@@ -52,3 +52,37 @@ int inputValoreRange(int _min, int _max){
     
     return(valore);
 }
+
+int nextPrimo(int _val){
+    int nextP;
+    /* soluzione funzionante ma ottimizzabile 
+    bool primo;
+    int nextP;
+    int div;
+    nextP = _val;
+    do{
+        nextP = nextP + 1;
+        primo = true;
+        for(div=2; div<nextP; div++){
+            if(nextP%div == 0)
+                primo = false;
+        }
+    }while(primo == false);*/
+
+    //while(isPrimo(nextP) == false){
+    nextP = _val + 1;
+    while(!isPrimo(nextP)){
+        nextP = nextP + 1;
+    }
+
+    return(nextP);
+}
+int nextPrimo3(int _val) {
+    while (! isPrimo(++_val))
+        ;
+    return _val;
+}
+
+int prevPrimo(int _val){
+
+}
