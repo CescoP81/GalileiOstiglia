@@ -8,3 +8,5 @@ Il sistema deve prevedere:
 - Tracking di una spedizione.  
 
 Il personale della ditta gestisce le spedizioni e le relative tappe che effettuano, mentre il cliente identificato da un proprio codice univoco può visualizzare in tempo reale dove si trova la sua spedizione con eventuale tappa intermedia se non ancora consegnata al destinatario.
+
+![Diagramma ER FISICO della base di dati associata allo studio di realtà](er-fisico.drawio.png)
