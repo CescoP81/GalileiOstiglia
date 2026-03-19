@@ -61,7 +61,7 @@ int prevPrimo(int _num);
  * @param int Valore di riferimento.
  * @param int Numero di valori da generare
  */
-void generaPrimi();
+void generaPrimi(int _num, int _n);
 
 /**
  * Visualizza i divisori primi di un numero passato come parametro, restituisce 
