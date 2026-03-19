@@ -84,5 +84,10 @@ int nextPrimo3(int _val) {
 }
 
 int prevPrimo(int _val){
-
+    int nextP;
+    nextP = _val;
+    do{
+        nextP = nextP - 1;
+    }while(!isPrimo(nextP));
+    return(nextP);
 }

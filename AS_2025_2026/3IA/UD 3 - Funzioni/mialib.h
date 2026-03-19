@@ -52,3 +52,22 @@ int nextPrimo(int _val);
  * @return Valore primo precedente al valore di riferimento.
  */
 int prevPrimo(int _val);
+
+/**
+ * Visualizza a video N numeri casuali primi (compresi tra 1 e 999) successivi ad un valore di riferimento
+ * @param int Valore di riferimento.
+ * @param int Numero di valori da visualizzare.
+ */
+void visualizzaPrimi(int _val, int _n){
+    int cnt;
+    int num;
+
+    cnt = 1;
+    while(cnt <= _n){
+        num = randomValoreRange(1, 999);
+        if(isPrimo(num)){
+            printf("%d ", num);
+            cnt++;
+        }
+    }
+}
