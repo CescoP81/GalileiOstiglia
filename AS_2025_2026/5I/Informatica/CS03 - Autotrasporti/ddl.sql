@@ -11,6 +11,7 @@ create table cliente(
 create table provincia(
     id integer unsigned auto_increment,
     nome varchar(30),
+    sigla char(2),
 
     primary key(id)
 )ENGINE=InnoDB;
