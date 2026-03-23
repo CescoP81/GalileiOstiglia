@@ -9,6 +9,6 @@
 - [x] bool isPrimo(int _num) - Verifica se un numero è primo oppure no
 - [x] int nextPrimo(int _num) - Restituisce il successivo numero primo rispetto ad un valore passato come parametro.
 - [x] int prevPrimo(int _num) - Restituisce il precedente numero primo rispetto ad un valore passato come parametro.
-- [] void generaPrimi(int _num, int _n) - Visualizza N numeri primi successivi ad un valore passato come parametro generati in modo casuale
-- [] --- divisoriPrimi(---) - Visualizza i divisori primi di un numero passato come parametro, restituisce
+- [x] void generaPrimi(int _num, int _n) - Visualizza N numeri primi successivi ad un valore passato come parametro generati in modo casuale
+- [x] int divisoriPrimi(int _num) - Visualizza i divisori primi di un numero passato come parametro, restituisce
 
