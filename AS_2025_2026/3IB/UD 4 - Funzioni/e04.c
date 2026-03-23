@@ -5,6 +5,7 @@
 
 int main(){
     int val;
+    int trovati;
     char junk;
 
     // acquisisco un valore generico da tastiera.
@@ -29,5 +30,11 @@ int main(){
     generaPrimi(125, 100);
     printf("\n");
     
+    val = 129;
+    printf("Divisori primi di %d: ", val);
+    trovati = divisoriPrimi(val);
+    printf("\nTrovati totali: %d\n", trovati);
+    
+    //divisoriPrimi(28);
     return(0);
 }

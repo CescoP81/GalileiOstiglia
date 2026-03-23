@@ -104,3 +104,19 @@ void generaPrimi(int _num, int _n){
     }while(cnt <= _n);
     printf("Generazioni totali: %d\n", cntTot);
 }
+
+int divisoriPrimi(int _num){
+    int div;
+    int cnt;
+    
+    cnt = 0;
+    for(div=1; div<=_num; div++){
+        if(_num%div == 0){
+            if(isPrimo(div) == true){
+                printf("%d ", div);
+                cnt++;
+            }
+        }
+    }
+    return(cnt);
+}
