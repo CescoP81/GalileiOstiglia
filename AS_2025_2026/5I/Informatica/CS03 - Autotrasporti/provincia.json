@@ -1,0 +1,967 @@
+{
+  "Foglio1": [
+    {
+      "sigla": "AG",
+      "provincia": "Agrigento",
+      "superficie": 3055.9023,
+      "residenti": 446081,
+      "num_comuni": 43,
+      "id_regione": 15,
+      "cod_istat": "084"
+    },
+    {
+      "sigla": "AL",
+      "provincia": "Alessandria",
+      "superficie": 3557.9433,
+      "residenti": 427354,
+      "num_comuni": 187,
+      "id_regione": 12,
+      "cod_istat": "006"
+    },
+    {
+      "sigla": "AN",
+      "provincia": "Ancona",
+      "superficie": 1963.0646,
+      "residenti": 475495,
+      "num_comuni": 47,
+      "id_regione": 10,
+      "cod_istat": "042"
+    },
+    {
+      "sigla": "AO",
+      "provincia": "Aosta",
+      "superficie": 3258.6082,
+      "residenti": 127844,
+      "num_comuni": 74,
+      "id_regione": 19,
+      "cod_istat": "007"
+    },
+    {
+      "sigla": "AP",
+      "provincia": "Ascoli Piceno",
+      "superficie": 1229.4417,
+      "residenti": 210711,
+      "num_comuni": 33,
+      "id_regione": 10,
+      "cod_istat": "044"
+    },
+    {
+      "sigla": "AQ",
+      "provincia": "L'Aquila",
+      "superficie": 5046.9096,
+      "residenti": 300774,
+      "num_comuni": 108,
+      "id_regione": 1,
+      "cod_istat": "066"
+    },
+    {
+      "sigla": "AR",
+      "provincia": "Arezzo",
+      "superficie": 3232.9045,
+      "residenti": 344437,
+      "num_comuni": 36,
+      "id_regione": 16,
+      "cod_istat": "051"
+    },
+    {
+      "sigla": "AT",
+      "provincia": "Asti",
+      "superficie": 1508.9476,
+      "residenti": 217978,
+      "num_comuni": 117,
+      "id_regione": 12,
+      "cod_istat": "005"
+    },
+    {
+      "sigla": "AV",
+      "provincia": "Avellino",
+      "superficie": 2804.521,
+      "residenti": 428523,
+      "num_comuni": 118,
+      "id_regione": 4,
+      "cod_istat": "064"
+    },
+    {
+      "sigla": "BA",
+      "provincia": "Bari",
+      "superficie": 3646.5545,
+      "residenti": 1246297,
+      "num_comuni": 41,
+      "id_regione": 13,
+      "cod_istat": "072"
+    },
+    {
+      "sigla": "BG",
+      "provincia": "Bergamo",
+      "superficie": 2755.6872,
+      "residenti": 1094062,
+      "num_comuni": 243,
+      "id_regione": 9,
+      "cod_istat": "016"
+    },
+    {
+      "sigla": "BI",
+      "provincia": "Biella",
+      "superficie": 912.8867,
+      "residenti": 181426,
+      "num_comuni": 74,
+      "id_regione": 12,
+      "cod_istat": "096"
+    },
+    {
+      "sigla": "BL",
+      "provincia": "Belluno",
+      "superficie": 3608.8644,
+      "residenti": 209364,
+      "num_comuni": 60,
+      "id_regione": 20,
+      "cod_istat": "025"
+    },
+    {
+      "sigla": "BN",
+      "provincia": "Benevento",
+      "superficie": 2080.5149,
+      "residenti": 283651,
+      "num_comuni": 78,
+      "id_regione": 4,
+      "cod_istat": "062"
+    },
+    {
+      "sigla": "BO",
+      "provincia": "Bologna",
+      "superficie": 3702.8342,
+      "residenti": 990681,
+      "num_comuni": 55,
+      "id_regione": 5,
+      "cod_istat": "037"
+    },
+    {
+      "sigla": "BR",
+      "provincia": "Brindisi",
+      "superficie": 1860.1805,
+      "residenti": 399835,
+      "num_comuni": 20,
+      "id_regione": 13,
+      "cod_istat": "074"
+    },
+    {
+      "sigla": "BS",
+      "provincia": "Brescia",
+      "superficie": 4787.0961,
+      "residenti": 1247192,
+      "num_comuni": 205,
+      "id_regione": 9,
+      "cod_istat": "017"
+    },
+    {
+      "sigla": "BT",
+      "provincia": "Barletta-Andria-Trani",
+      "superficie": 1542.0975,
+      "residenti": 392446,
+      "num_comuni": 10,
+      "id_regione": 13,
+      "cod_istat": "110"
+    },
+    {
+      "sigla": "BZ",
+      "provincia": "Bolzano",
+      "superficie": 7397.7859,
+      "residenti": 509626,
+      "num_comuni": 116,
+      "id_regione": 17,
+      "cod_istat": "021"
+    },
+    {
+      "sigla": "CA",
+      "provincia": "Cagliari",
+      "superficie": 1248.0536,
+      "residenti": 431657,
+      "num_comuni": 17,
+      "id_regione": 14,
+      "cod_istat": "092"
+    },
+    {
+      "sigla": "CB",
+      "provincia": "Campobasso",
+      "superficie": 2926.3362,
+      "residenti": 226217,
+      "num_comuni": 84,
+      "id_regione": 11,
+      "cod_istat": "070"
+    },
+    {
+      "sigla": "CE",
+      "provincia": "Caserta",
+      "superficie": 2651.163,
+      "residenti": 908784,
+      "num_comuni": 104,
+      "id_regione": 4,
+      "cod_istat": "061"
+    },
+    {
+      "sigla": "CH",
+      "provincia": "Chieti",
+      "superficie": 2598.5676,
+      "residenti": 389053,
+      "num_comuni": 104,
+      "id_regione": 1,
+      "cod_istat": "069"
+    },
+    {
+      "sigla": "CL",
+      "provincia": "Caltanissetta",
+      "superficie": 2134.2077,
+      "residenti": 272458,
+      "num_comuni": 22,
+      "id_regione": 15,
+      "cod_istat": "085"
+    },
+    {
+      "sigla": "CN",
+      "provincia": "Cuneo",
+      "superficie": 6898.1862,
+      "residenti": 589102,
+      "num_comuni": 247,
+      "id_regione": 12,
+      "cod_istat": "004"
+    },
+    {
+      "sigla": "CO",
+      "provincia": "Como",
+      "superficie": 1278.9512,
+      "residenti": 592504,
+      "num_comuni": 147,
+      "id_regione": 9,
+      "cod_istat": "013"
+    },
+    {
+      "sigla": "CR",
+      "provincia": "Cremona",
+      "superficie": 1769.4188,
+      "residenti": 361812,
+      "num_comuni": 113,
+      "id_regione": 9,
+      "cod_istat": "019"
+    },
+    {
+      "sigla": "CS",
+      "provincia": "Cosenza",
+      "superficie": 6706.1822,
+      "residenti": 714281,
+      "num_comuni": 150,
+      "id_regione": 3,
+      "cod_istat": "078"
+    },
+    {
+      "sigla": "CT",
+      "provincia": "Catania",
+      "superficie": 3071.6385,
+      "residenti": 1077113,
+      "num_comuni": 58,
+      "id_regione": 15,
+      "cod_istat": "087"
+    },
+    {
+      "sigla": "CZ",
+      "provincia": "Catanzaro",
+      "superficie": 2417.2091,
+      "residenti": 359716,
+      "num_comuni": 80,
+      "id_regione": 3,
+      "cod_istat": "079"
+    },
+    {
+      "sigla": "EN",
+      "provincia": "Enna",
+      "superficie": 2572.9182,
+      "residenti": 172413,
+      "num_comuni": 20,
+      "id_regione": 15,
+      "cod_istat": "086"
+    },
+    {
+      "sigla": "FC",
+      "provincia": "Forlì-Cesena",
+      "superficie": 2378.3159,
+      "residenti": 392817,
+      "num_comuni": 30,
+      "id_regione": 5,
+      "cod_istat": "040"
+    },
+    {
+      "sigla": "FE",
+      "provincia": "Ferrara",
+      "superficie": 2627.6257,
+      "residenti": 352723,
+      "num_comuni": 21,
+      "id_regione": 5,
+      "cod_istat": "038"
+    },
+    {
+      "sigla": "FG",
+      "provincia": "Foggia",
+      "superficie": 7008.6887,
+      "residenti": 628221,
+      "num_comuni": 61,
+      "id_regione": 13,
+      "cod_istat": "071"
+    },
+    {
+      "sigla": "FI",
+      "provincia": "Firenze",
+      "superficie": 3513.6116,
+      "residenti": 987354,
+      "num_comuni": 41,
+      "id_regione": 16,
+      "cod_istat": "048"
+    },
+    {
+      "sigla": "FM",
+      "provincia": "Fermo",
+      "superficie": 861.3727,
+      "residenti": 175143,
+      "num_comuni": 40,
+      "id_regione": 10,
+      "cod_istat": "109"
+    },
+    {
+      "sigla": "FR",
+      "provincia": "Frosinone",
+      "superficie": 3248.422,
+      "residenti": 493229,
+      "num_comuni": 91,
+      "id_regione": 7,
+      "cod_istat": "060"
+    },
+    {
+      "sigla": "GE",
+      "provincia": "Genova",
+      "superficie": 1834.0073,
+      "residenti": 851283,
+      "num_comuni": 67,
+      "id_regione": 8,
+      "cod_istat": "010"
+    },
+    {
+      "sigla": "GO",
+      "provincia": "Gorizia",
+      "superficie": 475.2677,
+      "residenti": 140650,
+      "num_comuni": 25,
+      "id_regione": 6,
+      "cod_istat": "031"
+    },
+    {
+      "sigla": "GR",
+      "provincia": "Grosseto",
+      "superficie": 4502.2762,
+      "residenti": 220982,
+      "num_comuni": 28,
+      "id_regione": 16,
+      "cod_istat": "053"
+    },
+    {
+      "sigla": "IM",
+      "provincia": "Imperia",
+      "superficie": 1155.9872,
+      "residenti": 214290,
+      "num_comuni": 66,
+      "id_regione": 8,
+      "cod_istat": "008"
+    },
+    {
+      "sigla": "IS",
+      "provincia": "Isernia",
+      "superficie": 1533.4617,
+      "residenti": 87124,
+      "num_comuni": 52,
+      "id_regione": 11,
+      "cod_istat": "094"
+    },
+    {
+      "sigla": "KR",
+      "provincia": "Crotone",
+      "superficie": 1734.0464,
+      "residenti": 171666,
+      "num_comuni": 27,
+      "id_regione": 3,
+      "cod_istat": "101"
+    },
+    {
+      "sigla": "LC",
+      "provincia": "Lecco",
+      "superficie": 805.3935,
+      "residenti": 338425,
+      "num_comuni": 84,
+      "id_regione": 9,
+      "cod_istat": "097"
+    },
+    {
+      "sigla": "LE",
+      "provincia": "Lecce",
+      "superficie": 2797.7663,
+      "residenti": 798891,
+      "num_comuni": 96,
+      "id_regione": 13,
+      "cod_istat": "075"
+    },
+    {
+      "sigla": "LI",
+      "provincia": "Livorno",
+      "superficie": 1213.3914,
+      "residenti": 335631,
+      "num_comuni": 19,
+      "id_regione": 16,
+      "cod_istat": "049"
+    },
+    {
+      "sigla": "LO",
+      "provincia": "Lodi",
+      "superficie": 782.3153,
+      "residenti": 225798,
+      "num_comuni": 60,
+      "id_regione": 9,
+      "cod_istat": "098"
+    },
+    {
+      "sigla": "LT",
+      "provincia": "Latina",
+      "superficie": 2256.021,
+      "residenti": 552090,
+      "num_comuni": 33,
+      "id_regione": 7,
+      "cod_istat": "059"
+    },
+    {
+      "sigla": "LU",
+      "provincia": "Lucca",
+      "superficie": 1774.0314,
+      "residenti": 388555,
+      "num_comuni": 33,
+      "id_regione": 16,
+      "cod_istat": "046"
+    },
+    {
+      "sigla": "MB",
+      "provincia": "Monza e della Brianza",
+      "superficie": 405.6518,
+      "residenti": 850684,
+      "num_comuni": 55,
+      "id_regione": 9,
+      "cod_istat": "108"
+    },
+    {
+      "sigla": "MC",
+      "provincia": "Macerata",
+      "superficie": 2780.8007,
+      "residenti": 320418,
+      "num_comuni": 55,
+      "id_regione": 10,
+      "cod_istat": "043"
+    },
+    {
+      "sigla": "ME",
+      "provincia": "Messina",
+      "superficie": 3266.0637,
+      "residenti": 648062,
+      "num_comuni": 108,
+      "id_regione": 15,
+      "cod_istat": "083"
+    },
+    {
+      "sigla": "MI",
+      "provincia": "Milano",
+      "superficie": 1574.4453,
+      "residenti": 3075083,
+      "num_comuni": 133,
+      "id_regione": 9,
+      "cod_istat": "015"
+    },
+    {
+      "sigla": "MN",
+      "provincia": "Mantova",
+      "superficie": 2341.8435,
+      "residenti": 411335,
+      "num_comuni": 64,
+      "id_regione": 9,
+      "cod_istat": "020"
+    },
+    {
+      "sigla": "MO",
+      "provincia": "Modena",
+      "superficie": 2687.9534,
+      "residenti": 688376,
+      "num_comuni": 47,
+      "id_regione": 5,
+      "cod_istat": "036"
+    },
+    {
+      "sigla": "MS",
+      "provincia": "Massa e Carrara",
+      "superficie": 1155.2849,
+      "residenti": 199330,
+      "num_comuni": 17,
+      "id_regione": 16,
+      "cod_istat": "045"
+    },
+    {
+      "sigla": "MT",
+      "provincia": "Matera",
+      "superficie": 3479.3548,
+      "residenti": 200012,
+      "num_comuni": 31,
+      "id_regione": 2,
+      "cod_istat": "077"
+    },
+    {
+      "sigla": "NA",
+      "provincia": "Napoli",
+      "superficie": 1176.7245,
+      "residenti": 3055339,
+      "num_comuni": 92,
+      "id_regione": 4,
+      "cod_istat": "063"
+    },
+    {
+      "sigla": "NO",
+      "provincia": "Novara",
+      "superficie": 1340.5405,
+      "residenti": 367022,
+      "num_comuni": 87,
+      "id_regione": 12,
+      "cod_istat": "003"
+    },
+    {
+      "sigla": "NU",
+      "provincia": "Nuoro",
+      "superficie": 5640.6039,
+      "residenti": 213086,
+      "num_comuni": 74,
+      "id_regione": 14,
+      "cod_istat": "091"
+    },
+    {
+      "sigla": "OR",
+      "provincia": "Oristano",
+      "superficie": 2990.7029,
+      "residenti": 160766,
+      "num_comuni": 87,
+      "id_regione": 14,
+      "cod_istat": "095"
+    },
+    {
+      "sigla": "PA",
+      "provincia": "Palermo",
+      "superficie": 5005.0633,
+      "residenti": 1243638,
+      "num_comuni": 82,
+      "id_regione": 15,
+      "cod_istat": "082"
+    },
+    {
+      "sigla": "PC",
+      "provincia": "Piacenza",
+      "superficie": 2586.2282,
+      "residenti": 286336,
+      "num_comuni": 46,
+      "id_regione": 5,
+      "cod_istat": "033"
+    },
+    {
+      "sigla": "PD",
+      "provincia": "Padova",
+      "superficie": 2145.1853,
+      "residenti": 927848,
+      "num_comuni": 101,
+      "id_regione": 20,
+      "cod_istat": "028"
+    },
+    {
+      "sigla": "PE",
+      "provincia": "Pescara",
+      "superficie": 1228.6766,
+      "residenti": 315725,
+      "num_comuni": 46,
+      "id_regione": 1,
+      "cod_istat": "068"
+    },
+    {
+      "sigla": "PG",
+      "provincia": "Perugia",
+      "superficie": 6335.6539,
+      "residenti": 657873,
+      "num_comuni": 59,
+      "id_regione": 18,
+      "cod_istat": "054"
+    },
+    {
+      "sigla": "PI",
+      "provincia": "Pisa",
+      "superficie": 2444.3601,
+      "residenti": 413602,
+      "num_comuni": 37,
+      "id_regione": 16,
+      "cod_istat": "050"
+    },
+    {
+      "sigla": "PN",
+      "provincia": "Pordenone",
+      "superficie": 2276.3671,
+      "residenti": 312911,
+      "num_comuni": 50,
+      "id_regione": 6,
+      "cod_istat": "093"
+    },
+    {
+      "sigla": "PO",
+      "provincia": "Prato",
+      "superficie": 365.9075,
+      "residenti": 248292,
+      "num_comuni": 7,
+      "id_regione": 16,
+      "cod_istat": "100"
+    },
+    {
+      "sigla": "PR",
+      "provincia": "Parma",
+      "superficie": 3445.3941,
+      "residenti": 431049,
+      "num_comuni": 44,
+      "id_regione": 5,
+      "cod_istat": "034"
+    },
+    {
+      "sigla": "PT",
+      "provincia": "Pistoia",
+      "superficie": 963.5347,
+      "residenti": 287445,
+      "num_comuni": 20,
+      "id_regione": 16,
+      "cod_istat": "047"
+    },
+    {
+      "sigla": "PU",
+      "provincia": "Pesaro e Urbino",
+      "superficie": 2509.8625,
+      "residenti": 363388,
+      "num_comuni": 50,
+      "id_regione": 10,
+      "cod_istat": "041"
+    },
+    {
+      "sigla": "PV",
+      "provincia": "Pavia",
+      "superficie": 2967.9289,
+      "residenti": 539569,
+      "num_comuni": 185,
+      "id_regione": 9,
+      "cod_istat": "018"
+    },
+    {
+      "sigla": "PZ",
+      "provincia": "Potenza",
+      "superficie": 6592.2394,
+      "residenti": 376182,
+      "num_comuni": 100,
+      "id_regione": 2,
+      "cod_istat": "076"
+    },
+    {
+      "sigla": "RA",
+      "provincia": "Ravenna",
+      "superficie": 1859.0748,
+      "residenti": 386111,
+      "num_comuni": 18,
+      "id_regione": 5,
+      "cod_istat": "039"
+    },
+    {
+      "sigla": "RC",
+      "provincia": "Reggio Calabria",
+      "superficie": 3207.7587,
+      "residenti": 550323,
+      "num_comuni": 97,
+      "id_regione": 3,
+      "cod_istat": "080"
+    },
+    {
+      "sigla": "RE",
+      "provincia": "Reggio Emilia",
+      "superficie": 2290.9265,
+      "residenti": 522468,
+      "num_comuni": 42,
+      "id_regione": 5,
+      "cod_istat": "035"
+    },
+    {
+      "sigla": "RG",
+      "provincia": "Ragusa",
+      "superficie": 1623.5971,
+      "residenti": 310220,
+      "num_comuni": 12,
+      "id_regione": 15,
+      "cod_istat": "088"
+    },
+    {
+      "sigla": "RI",
+      "provincia": "Rieti",
+      "superficie": 2750.0195,
+      "residenti": 156521,
+      "num_comuni": 73,
+      "id_regione": 7,
+      "cod_istat": "057"
+    },
+    {
+      "sigla": "RM",
+      "provincia": "Roma",
+      "superficie": 5365.7698,
+      "residenti": 4039813,
+      "num_comuni": 121,
+      "id_regione": 7,
+      "cod_istat": "058"
+    },
+    {
+      "sigla": "RN",
+      "provincia": "Rimini",
+      "superficie": 923.4651,
+      "residenti": 326926,
+      "num_comuni": 27,
+      "id_regione": 5,
+      "cod_istat": "099"
+    },
+    {
+      "sigla": "RO",
+      "provincia": "Rovigo",
+      "superficie": 1823.5046,
+      "residenti": 242543,
+      "num_comuni": 50,
+      "id_regione": 20,
+      "cod_istat": "029"
+    },
+    {
+      "sigla": "SA",
+      "provincia": "Salerno",
+      "superficie": 4954.9252,
+      "residenti": 1093453,
+      "num_comuni": 158,
+      "id_regione": 4,
+      "cod_istat": "065"
+    },
+    {
+      "sigla": "SI",
+      "provincia": "Siena",
+      "superficie": 3819.7042,
+      "residenti": 267200,
+      "num_comuni": 35,
+      "id_regione": 16,
+      "cod_istat": "052"
+    },
+    {
+      "sigla": "SO",
+      "provincia": "Sondrio",
+      "superficie": 3194.8891,
+      "residenti": 181101,
+      "num_comuni": 77,
+      "id_regione": 9,
+      "cod_istat": "014"
+    },
+    {
+      "sigla": "SP",
+      "provincia": "La spezia",
+      "superficie": 882.2961,
+      "residenti": 218717,
+      "num_comuni": 32,
+      "id_regione": 8,
+      "cod_istat": "011"
+    },
+    {
+      "sigla": "SR",
+      "provincia": "Siracusa",
+      "superficie": 2121.8055,
+      "residenti": 399469,
+      "num_comuni": 21,
+      "id_regione": 15,
+      "cod_istat": "089"
+    },
+    {
+      "sigla": "SS",
+      "provincia": "Sassari",
+      "superficie": 7697.796,
+      "residenti": 494471,
+      "num_comuni": 92,
+      "id_regione": 14,
+      "cod_istat": "090"
+    },
+    {
+      "sigla": "SU",
+      "provincia": "Sud Sardegna",
+      "superficie": 6529.1399,
+      "residenti": 358158,
+      "num_comuni": 107,
+      "id_regione": 14,
+      "cod_istat": "111"
+    },
+    {
+      "sigla": "SV",
+      "provincia": "Savona",
+      "superficie": 1545.4232,
+      "residenti": 280837,
+      "num_comuni": 69,
+      "id_regione": 8,
+      "cod_istat": "009"
+    },
+    {
+      "sigla": "TA",
+      "provincia": "Taranto",
+      "superficie": 2467.1613,
+      "residenti": 582814,
+      "num_comuni": 29,
+      "id_regione": 13,
+      "cod_istat": "073"
+    },
+    {
+      "sigla": "TE",
+      "provincia": "Teramo",
+      "superficie": 1954.7349,
+      "residenti": 306955,
+      "num_comuni": 47,
+      "id_regione": 1,
+      "cod_istat": "067"
+    },
+    {
+      "sigla": "TN",
+      "provincia": "Trento",
+      "superficie": 6208.1793,
+      "residenti": 530308,
+      "num_comuni": 166,
+      "id_regione": 17,
+      "cod_istat": "022"
+    },
+    {
+      "sigla": "TO",
+      "provincia": "Torino",
+      "superficie": 6828.372,
+      "residenti": 2254720,
+      "num_comuni": 312,
+      "id_regione": 12,
+      "cod_istat": "001"
+    },
+    {
+      "sigla": "TP",
+      "provincia": "Trapani",
+      "superficie": 2469.4101,
+      "residenti": 430478,
+      "num_comuni": 25,
+      "id_regione": 15,
+      "cod_istat": "081"
+    },
+    {
+      "sigla": "TR",
+      "provincia": "Terni",
+      "superficie": 2128.3147,
+      "residenti": 228366,
+      "num_comuni": 33,
+      "id_regione": 18,
+      "cod_istat": "055"
+    },
+    {
+      "sigla": "TS",
+      "provincia": "Trieste",
+      "superficie": 212.8257,
+      "residenti": 231677,
+      "num_comuni": 6,
+      "id_regione": 6,
+      "cod_istat": "032"
+    },
+    {
+      "sigla": "TV",
+      "provincia": "Treviso",
+      "superficie": 2479.2621,
+      "residenti": 881245,
+      "num_comuni": 94,
+      "id_regione": 20,
+      "cod_istat": "026"
+    },
+    {
+      "sigla": "UD",
+      "provincia": "Udine",
+      "superficie": 4972.3729,
+      "residenti": 536622,
+      "num_comuni": 134,
+      "id_regione": 6,
+      "cod_istat": "030"
+    },
+    {
+      "sigla": "VA",
+      "provincia": "Varese",
+      "superficie": 1199.2468,
+      "residenti": 876960,
+      "num_comuni": 136,
+      "id_regione": 9,
+      "cod_istat": "012"
+    },
+    {
+      "sigla": "VB",
+      "provincia": "Verbano Cusio Ossola",
+      "superficie": 2262.6159,
+      "residenti": 160143,
+      "num_comuni": 74,
+      "id_regione": 12,
+      "cod_istat": "103"
+    },
+    {
+      "sigla": "VC",
+      "provincia": "Vercelli",
+      "superficie": 2082.173,
+      "residenti": 176307,
+      "num_comuni": 82,
+      "id_regione": 12,
+      "cod_istat": "002"
+    },
+    {
+      "sigla": "VE",
+      "provincia": "Venezia",
+      "superficie": 2477.4961,
+      "residenti": 847983,
+      "num_comuni": 44,
+      "id_regione": 20,
+      "cod_istat": "027"
+    },
+    {
+      "sigla": "VI",
+      "provincia": "Vicenza",
+      "superficie": 2720.4193,
+      "residenti": 865421,
+      "num_comuni": 113,
+      "id_regione": 20,
+      "cod_istat": "024"
+    },
+    {
+      "sigla": "VR",
+      "provincia": "Verona",
+      "superficie": 3096.7622,
+      "residenti": 907352,
+      "num_comuni": 98,
+      "id_regione": 20,
+      "cod_istat": "023"
+    },
+    {
+      "sigla": "VT",
+      "provincia": "Viterbo",
+      "superficie": 3616.2559,
+      "residenti": 315623,
+      "num_comuni": 60,
+      "id_regione": 7,
+      "cod_istat": "056"
+    },
+    {
+      "sigla": "VV",
+      "provincia": "Vibo Valentia",
+      "superficie": 1147.455,
+      "residenti": 162252,
+      "num_comuni": 50,
+      "id_regione": 3,
+      "cod_istat": "102"
+    }
+  ]
+}
