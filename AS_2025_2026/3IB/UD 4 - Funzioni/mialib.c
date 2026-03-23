@@ -85,3 +85,22 @@ int prevPrimo(int _num){
     }
     return(prevP);
 }
+
+void generaPrimi(int _num, int _n){
+    int casuale;
+    int cnt;
+    int cntTot;
+
+    cnt = 1;
+    cntTot = 0;
+    do{
+        cntTot = cntTot + 1;
+        //casuale = 1 + rand()%999; sostituisco con la seconda opzione
+        casuale = getRandomValueInterval(_num+1, 999);
+        if(isPrimo(casuale) && casuale>_num){   //equivalente a (isPrimo(casuale)==true && casuale>_num)
+            printf("%d ", casuale);
+            cnt = cnt + 1;
+        }
+    }while(cnt <= _n);
+    printf("Generazioni totali: %d\n", cntTot);
+}

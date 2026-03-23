@@ -69,4 +69,4 @@ void generaPrimi(int _num, int _n);
  * @param int Numero di riferimento.
  * @return Numero di divisori primi identificati e stamapti.
  */
---- divisoriPrimi(---);
+//--- divisoriPrimi(---);

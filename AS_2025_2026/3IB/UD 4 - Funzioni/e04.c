@@ -24,6 +24,10 @@ int main(){
     printf("Primo precedente: %d\n", prevPrimo(val));
 
     printf("Valore originale: %d\n", val);
+
+    printf("10 numeri primi casuali: ");
+    generaPrimi(125, 100);
+    printf("\n");
     
     return(0);
 }
