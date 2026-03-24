@@ -87,3 +87,13 @@ void raddoppiaValore(int* _n);
  * @param int* Riferimento alla variabile in cui mettere il perimetro.
  */
 void calcolaAreaPerimetro(int _base, int _altezza, int* _area, int* _perimetro);
+
+/**
+ * 
+ */
+void estraiCifra(int _num);
+
+/**
+ * 
+ */
+void convertiBinario(int _n);

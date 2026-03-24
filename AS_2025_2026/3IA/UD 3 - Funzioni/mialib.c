@@ -117,3 +117,21 @@ void calcolaAreaPerimetro(int _base, int _altezza, int* _area, int* _perimetro){
     *_area = tmpArea;
     *_perimetro = tmpPerimetro;
 }
+
+void estraiCifra(int _num){
+    int r;
+    if(_num!=0){
+        r = _num%10;
+        estraiCifra(_num/10);
+        printf("%d ", r); 
+    }
+}
+
+void convertiBinario(int _n){
+    int r;
+    if(_n!=0){
+        r = _n%2;
+        convertiBinario(_n/2);
+        printf("%d ", r); 
+    }
+}
