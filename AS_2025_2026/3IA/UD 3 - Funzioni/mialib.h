@@ -64,10 +64,26 @@ void visualizzaPrimi(int _val, int _n){
 
     cnt = 1;
     while(cnt <= _n){
-        num = randomValoreRange(1, 999);
+        //num = randomValoreRange(1, 999);
+        num = 4;
         if(isPrimo(num)){
             printf("%d ", num);
             cnt++;
         }
     }
 }
+
+/**
+ * Funzione che riceve una variabile per riferimento, ne raddoppia il valore contenuto.
+ * @param int* Riferimento(indirizzo in memoria) alla variabile originale.
+ */
+void raddoppiaValore(int* _n);
+
+/**
+ * Funzione che riceve base e altezza di un rettangolo, calcola Area e Perimetro "restituendoli" al main
+ * @param int Valore della base.
+ * @param int Valore dell'altezza.
+ * @param int* Riferimento alla variabile in cui mettere l'area.
+ * @param int* Riferimento alla variabile in cui mettere il perimetro.
+ */
+void calcolaAreaPerimetro(int _base, int _altezza, int* _area, int* _perimetro);

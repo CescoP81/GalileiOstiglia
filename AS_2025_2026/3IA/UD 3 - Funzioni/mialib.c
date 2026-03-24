@@ -91,3 +91,29 @@ int prevPrimo(int _val){
     }while(!isPrimo(nextP));
     return(nextP);
 }
+
+void raddoppiaValore(int* _n){
+    int tmp;            // creo una variabile intera di supporto
+
+    printf("Addr ricevuto: %p\n", _n);
+
+    tmp = *_n;          // in tmp metto il contenuto della cella di memoria il cui indirizzo è un _n.
+    tmp = tmp * 2;      // raddoppio il valore contenuto in tmp.
+    *_n = tmp;          // nella cella di memoria all'indirizzo contenuto in _n metto il valore di tmp.
+
+    // equivalente a: *_n = (*_n)*2;
+}
+
+void calcolaAreaPerimetro(int _base, int _altezza, int* _area, int* _perimetro){
+    // creo variabili di appoggio per calcola area e perimetro.
+    int tmpArea;
+    int tmpPerimetro;
+
+    // eseguo i calcoli.
+    tmpArea = _base * _altezza;
+    tmpPerimetro = (_base+_altezza) * 2;
+
+    // assegno i valori calcolati nelle rispettive celle di memoria di cui conosci gli indirizzi.
+    *_area = tmpArea;
+    *_perimetro = tmpPerimetro;
+}
