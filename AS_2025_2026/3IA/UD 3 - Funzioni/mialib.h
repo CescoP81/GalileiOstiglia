@@ -22,7 +22,6 @@ bool isPerfect(int _n);
  */
 bool isTernaPitagorica(int _n1, int _n2, int _n3);
 
-
 /**
  * Inserimento controllato di un valore intero tra min e max estremi compresi
  * @param int Valore minimo accettato
@@ -47,6 +46,13 @@ int randomValoreRange(int _min, int _max);
 int nextPrimo(int _val);
 
 /**
+ * Versione very short proposta dal Prof. Bottoni, livello PRO.
+ * @param int Valore di riferimento.
+ * @return Successivo numero primo.
+ */
+int nextPrimo3(int _val);
+
+/**
  * Restituisce il primo precedente ad un valore passato come parametro
  * @param int Valore di riferimento
  * @return Valore primo precedente al valore di riferimento.
@@ -58,20 +64,7 @@ int prevPrimo(int _val);
  * @param int Valore di riferimento.
  * @param int Numero di valori da visualizzare.
  */
-void visualizzaPrimi(int _val, int _n){
-    int cnt;
-    int num;
-
-    cnt = 1;
-    while(cnt <= _n){
-        //num = randomValoreRange(1, 999);
-        num = 4;
-        if(isPrimo(num)){
-            printf("%d ", num);
-            cnt++;
-        }
-    }
-}
+void visualizzaPrimi(int _val, int _n);
 
 /**
  * Funzione che riceve una variabile per riferimento, ne raddoppia il valore contenuto.
@@ -89,11 +82,14 @@ void raddoppiaValore(int* _n);
 void calcolaAreaPerimetro(int _base, int _altezza, int* _area, int* _perimetro);
 
 /**
- * 
+ * Funzione che in modo RICORSIVO suddivide un numero intero in singole cifre
+ * @param int Valore da cui ricavare la cifra con peso minore. (unità)
  */
 void estraiCifra(int _num);
 
 /**
- * 
+ * Funzione che in modo RICORSIVO esegue la conversione di un numero intero decimale in formato binario
+ * operando per divisioni successive.
+ * @param int Numero di cui calcolare il resto della divisone per 2 (operatore modulo - %)
  */
 void convertiBinario(int _n);

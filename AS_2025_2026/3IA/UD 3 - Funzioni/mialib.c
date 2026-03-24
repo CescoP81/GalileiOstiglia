@@ -48,9 +48,19 @@ bool isTernaPitagorica(int _n1, int _n2, int _n3){
 
 int inputValoreRange(int _min, int _max){
     int valore;
-
-    
+    char junk;
+    do{
+        printf("Inserisci un valore: ");
+        scanf("%d", &valore);
+        junk = getchar();
+    }while(valore <_min || valore>_max);    
     return(valore);
+}
+
+int randomValoreRange(int _min, int _max){
+    int random;
+    random = _min + rand()%(_max - _min + 1);
+    return(random);
 }
 
 int nextPrimo(int _val){
@@ -90,6 +100,20 @@ int prevPrimo(int _val){
         nextP = nextP - 1;
     }while(!isPrimo(nextP));
     return(nextP);
+}
+
+void visualizzaPrimi(int _val, int _n){
+    int cnt;
+    int num;
+
+    cnt = 1;
+    while(cnt <= _n){
+        num = randomValoreRange(1, 999);
+        if(isPrimo(num)){
+            printf("%d ", num);
+            cnt++;
+        }
+    }
 }
 
 void raddoppiaValore(int* _n){
