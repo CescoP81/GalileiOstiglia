@@ -13,7 +13,4 @@ foreach($json[0]->Foglio1 as $prov){
     echo($sql.'<br />');
 }
 // */
-
-
-
 ?>
