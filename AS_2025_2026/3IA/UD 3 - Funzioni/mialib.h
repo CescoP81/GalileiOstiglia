@@ -93,3 +93,11 @@ void estraiCifra(int _num);
  * @param int Numero di cui calcolare il resto della divisone per 2 (operatore modulo - %)
  */
 void convertiBinario(int _n);
+
+/**
+ * Funzione che scambia il contenuto di due variabili, se il primo è maggiore del secondo.
+ * @param int* Riferimento alla prima variabile.
+ * @param int* Riferimento alla seconda variabile
+ * @return True/False in caso lo scambio avvenga oppure no.
+ */
+bool scambiaValori(int* _a, int* _b);

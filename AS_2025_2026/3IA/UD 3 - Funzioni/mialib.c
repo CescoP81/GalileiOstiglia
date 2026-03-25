@@ -159,3 +159,17 @@ void convertiBinario(int _n){
         printf("%d ", r); 
     }
 }
+
+bool scambiaValori(int* _a, int* _b){
+    int tmp;
+    // il primo valore è maggiore del secondo?ù
+    if(*_a > *_b){
+        tmp = *_a;
+        *_a = *_b;
+        *_b = tmp;
+        return(true);
+    }
+    else{
+        return(false);
+    }
+}

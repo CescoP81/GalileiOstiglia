@@ -24,5 +24,16 @@ int main(){
     printf("\n\n");
     // richiamo la funzione che in modo ricorsivo converte il valore 12 base 10 -> in -> 1100 base 2
     convertiBinario(1756); //1100
+
+    printf("\n\n");
+    int x, y;
+    x = 5;
+    y = 15;
+    if(scambiaValori(&x, &y) == true){
+        printf("I valori sono stati scambiati x: %d, y: %d\n", x, y);
+    }
+    else{
+        printf("I valori NON sono stati scambiati x: %d, y: %d\n", x, y);
+    }
     return(0);
 }
