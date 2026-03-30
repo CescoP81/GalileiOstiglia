@@ -70,3 +70,19 @@ void generaPrimi(int _num, int _n);
  * @return Numero di divisori primi identificati e stamapti.
  */
 int divisoriPrimi(int _num);
+
+/**
+ * Funzione che scambia il valore di due variabili passate per riferimento (indirizzo)
+ * @param int* Riferimento alla prima variabile.
+ * @param int* Riferimento alla seconda variabile.
+ */
+void scambiaValori(int* _v1, int* _v2);
+
+/**
+ * Funzione che ricevuti base e altezza di un rettangolo, restituisce area e perimetro.
+ * @param int Base del rettangolo.
+ * @param int Altezza del rettangolo.
+ * @param int* Riferimento alla variabile per l'area.
+ * @param int* Riferimento alla variabile per il perimetro.
+ */
+void calcolaAreaPerimetro(int _b, int _h, int* _area, int* _perimetro);

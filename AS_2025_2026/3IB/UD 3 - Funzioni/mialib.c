@@ -120,3 +120,30 @@ int divisoriPrimi(int _num){
     }
     return(cnt);
 }
+
+void scambiaValori(int* _v1, int* _v2){
+    int tmp;    // variabile temporanea per scambia il contenuto di due variabili.
+
+    tmp = *_v1;     // copio il contenuto della cella indirizzata da _v1 in tmp.
+    *_v1 = *_v2;    // copio nella cella indirizzata da _v1 il contenuto della cella indirizziata da _v2
+    *_v2 = tmp;     // copio nella cella indirizzata da _v2 il contenuto di tmp.
+}
+
+void calcolaAreaPerimetro(int _b, int _h, int* _area, int* _perimetro){
+    int are;    // variabili che utilizzo per calcolare i risultati.
+    int per;
+
+    are = _b * _h;
+    per = (_b + _h) * 2;
+
+    *_area = are;
+    *_perimetro = per;
+
+    /*
+        se al posto delle righe r139 e r140 avessi scritto
+        return(are);
+        return(per);
+        Avrei avuto un errore di ritorno valori; la prima return r144 fa terminare la
+        funzione senza che venga eseguita la r145.
+    */
+}
