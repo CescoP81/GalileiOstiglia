@@ -3,7 +3,7 @@ create table cliente(
     id integer unsigned auto_increment,
     cognome varchar(20),
     nome varchar(20),
-    email varchar(50),
+    email varchar(50) UNIQUE,
 
     primary key(id)
 )ENGINE=InnoDB;
