@@ -6,8 +6,8 @@
 //const int DIM=10;
 
 int main(){
-    int vet[DIM];    // array di 10 elementi interi indicizzati da 0 a 9.
-    int i;          // variabile tipica per lo scorrimento di un vettore.
+    int vet[DIM];       // array di 10 elementi interi indicizzati da 0 a 9.
+    int i;              // variabile tipica per lo scorrimento di un vettore.
     int tmp;
 
     srand(time(NULL));
@@ -60,6 +60,5 @@ int main(){
         }
     }
     printf("\n");
-
     return(0);
 }
