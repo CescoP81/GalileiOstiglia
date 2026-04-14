@@ -46,4 +46,3 @@ Programma di testing delle seguenti funzioni:
 - [x] void estraiCifra(int);
 - [x] void convertiBinario(int);
 
-
