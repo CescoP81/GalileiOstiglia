@@ -11,7 +11,8 @@ int main(){
 
     initVettore(vettore, DIM);      // chiamo la funzione di inizializzazione del vettore.
     stampaVettore(vettore, DIM);    // chiamo la funzione di stampa a video del vettore.
-
+    printf("\n\n");
+/*
     printf("\n");
     initVettore(vettore, 5);
     stampaVettore(vettore, 5);
@@ -19,9 +20,10 @@ int main(){
     printf("\n");
     initVettore(vettore, 3);
     stampaVettore(vettore, 3);
-
+// */
     printf("\n");
-    printf("%c", 218);
+    //printf("%c", 218);
+    stampaVettoreGrafico(vettore, DIM);
 
 
     return(0);
