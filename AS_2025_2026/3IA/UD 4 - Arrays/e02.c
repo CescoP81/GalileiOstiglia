@@ -23,8 +23,7 @@ int main(){
 // */
     printf("\n");
     //printf("%c", 218);
-    stampaVettoreGrafico(vettore, DIM);
-
-
+    // stampaVettoreGrafico(vettore, DIM);
+    stampaVettoreGraficoBasic(vettore, DIM);
     return(0);
 }
