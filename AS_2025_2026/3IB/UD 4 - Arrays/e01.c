@@ -56,5 +56,11 @@ int main(){
         else
             printf("* ");
     }
+    printf("\n");
+
+    // visualizza il vettore con tutti i valori raddoppiati (x2)
+    for(i=0; i<DIM; i++){
+        printf("%d ", (vet[i]*2) );
+    }
     return(0);
 }
