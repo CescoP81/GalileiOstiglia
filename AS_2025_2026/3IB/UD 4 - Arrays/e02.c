@@ -14,3 +14,23 @@
     ogni punto deve essere eseguito senza uno switch-case, quando si inizia il codice per un determinato punto
     inserire un commento //Punto xx, dove xx è il numero del punto che si risolve.
 */
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+#define DIM 10
+
+int main(){
+    // punto 1
+    ...
+    ...
+
+    // punto 2
+    printf("- Stampa del punto 2 -\n")
+    ..
+    ..
+
+    // punto 3:
+
+    return(0);
+}
