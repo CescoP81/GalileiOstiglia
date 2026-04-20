@@ -50,6 +50,11 @@ int main(){
     printf("\n");
 
     // stampa a video tutti i valori divisibili per 3.
-    
+    for(i=0; i<DIM; i++){
+        if(vet[i] % 3 == 0)
+            printf("%d ", vet[i]);
+        else
+            printf("* ");
+    }
     return(0);
 }
