@@ -23,6 +23,7 @@
 int main(){
     // punto 1
     int vet[DIM];
+
     int i;
     int div, primo;
     int somma;
@@ -53,8 +54,9 @@ int main(){
         primo = 1;
         div = 2;
         while(div < vet[i]){
-            if(vet[i]%div == 0)
+            if(vet[i]%div == 0){
                 primo = 0;
+            }
             div = div + 1;
         }
         if(primo == 1)
