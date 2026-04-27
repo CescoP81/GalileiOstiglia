@@ -22,15 +22,110 @@
 
 int main(){
     // punto 1
-    ...
-    ...
+    int vet[DIM];
+    int i;
+    int div, primo;
+    int somma;
+    int max;
+    int src, trovato;
+    float media;
+    int sommaP, sommaD;
+    int min;
+    char junk;
+
+    srand(time(NULL));
 
     // punto 2
-    printf("- Stampa del punto 2 -\n")
-    ..
-    ..
+    for(i=0; i<DIM; i++){
+        vet[i] = 5 + rand()%11;
+    }
 
-    // punto 3:
+    // punto 3
+    printf("punto 3: ");
+    for(i=0; i<DIM; i++){
+        printf("%3d", vet[i]);
+    }
+    printf("\n---\n");
 
+    // punto 4
+    printf("punto 4: ");
+    for(i=0; i<DIM; i++){
+        primo = 1;
+        div = 2;
+        while(div < vet[i]){
+            if(vet[i]%div == 0)
+                primo = 0;
+            div = div + 1;
+        }
+        if(primo == 1)
+            printf("%3d", vet[i]);
+    }
+    printf("\n---\n");
+
+    // punto 5
+    printf("punto 5: ");
+    somma = 0;
+    for(i=0; i<DIM; i++){
+        somma = somma + vet[i];
+    }
+    printf("Somma dei valori %d", somma);
+    printf("\n---\n");
+
+    //punto 6
+    printf("punto 5: ");
+    max = vet[0];
+    for(i=1; i<DIM; i++){
+        if(vet[i] > max)
+            max = vet[i];
+    }
+    printf("Valore maggiore presente %d", max);
+    printf("\n---\n");
+
+    //punto 7
+    printf("punto 7:\n");
+    printf("Inserisci un valore intero compreso tra 5 e 15: ");
+    scanf("%d", &src);
+    junk = getchar();
+    trovato = 0;
+    for(i=0; i<DIM; i++){
+        if(vet[i] == src)
+            trovato = 1;
+    }
+    if(trovato == 1)
+        printf("Il valore %d compare una o piu' volte.", src);
+    printf("\n---\n");
+
+    //punto 8
+    printf("punto 8: ");
+    somma = 0;
+    for(i=0; i<DIM; i++){
+        somma = somma + vet[i];
+    }
+    media = (float)somma/DIM;
+    printf("Il valor media vale: %.2f", media);
+    printf("\n---\n");
+
+    //punto 9
+    printf("punto 9: ");
+    sommaP = 0;
+    sommaD = 0;
+    for(i=0; i<DIM; i++){
+        if(vet[i]%2 == 0)
+            sommaP = sommaP + vet[i];
+        else
+            sommaD = sommaD + vet[i];
+    }
+    printf("Totale pari= %d; Totale dispari= %d", sommaP, sommaD);
+    printf("\n---\n");
+
+    //punto 10
+    printf("punto 10: ");
+    min = vet[0];
+    for(i=1; i<DIM; i++){
+        if(vet[i] < min)
+            min = vet[i];
+    }
+    printf("Valore minore presente %d", min);
+    printf("\n---\n");
     return(0);
 }
