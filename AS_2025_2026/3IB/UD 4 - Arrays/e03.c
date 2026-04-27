@@ -7,6 +7,7 @@
 int main(){
     int vettore[DIM]; // crea/alloca un vettore di 10 celle di tipo intero con indici da 0 a 9.
     float med;
+    int max;
 
     inizializzaVettoreRandom(vettore, DIM);
     printf("Vettore inizializzato: ");
@@ -17,5 +18,13 @@ int main(){
     printf("Il valor medio vale: %.3f", med);
     printf("\n\n");
 
+    max = getValoreMassimo(vettore, DIM);
+    printf("Valore massimo presente: %d", max);
+    printf("\n\n");
+
+    printf("Valori primi presenti nel vettore: ");
+    stampaValoriPrimi(vettore, DIM);
+    printf("\n\n");
+    
     return(0);
 }

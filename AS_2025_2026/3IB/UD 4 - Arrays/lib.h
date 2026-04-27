@@ -22,14 +22,27 @@ void stampaVettore(int _vet[], int _dim);
  * 
  * @param int[] Reference to the vector to use.
  * @param int Size of the vector in use.
+ * @return The avarage value.
  */
 float getMediaVettore(int _vet[], int _dim);
 // da realizzare...
 
+/**
+ * [IT] Restituisce il valore massimo che compare nel vettore.
+ * [IT] Returns the maximum value that appears in the vector.
+ * 
+ * @param int[] Reference to the vector to use.
+ * @param int Size of the vector in use.
+ * @return The max value.
+ */
 int getValoreMassimo(int _vet[], int _dim);
 
 int getValoreMinimo(int _vet[], int _dim);
-
+/**
+ * [IT] Determina se un numero è primo oppure no; 0 non primo, 1 primo.
+ */
 int isPrimo(int _val);
-
-void stampaValoriPrimi(int _vet, int _dim);
+/**
+ * [IT] Stampa i soli valori primi presenti nel vettore
+ */
+void stampaValoriPrimi(int _vet[], int _dim);

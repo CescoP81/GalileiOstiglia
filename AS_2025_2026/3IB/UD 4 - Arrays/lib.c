@@ -31,3 +31,36 @@ float getMediaVettore(int _vet[], int _dim){
     // return(media);
     return((float)somma / _dim);
 }
+int getValoreMassimo(int _vet[], int _dim){
+    int i;
+    int max;
+
+    max = _vet[0];
+    for(i=1; i<_dim; i++){
+        if(_vet[i] > max)
+            max = _vet[i];
+    }
+    return(max);
+}
+int isPrimo(int _val){
+    int div;
+    if(_val < 2){
+        return(0);
+    }
+    if(_val == 2)
+        return(1);
+    div = 2;
+    while(div < _val){
+        if(_val%div == 0)
+            return(0);
+        div = div + 1;
+    }
+    return(1);
+}
+void stampaValoriPrimi(int _vet[], int _dim){
+    int i;
+    for(i=0; i<_dim; i++){
+        if(isPrimo(_vet[i]) == 1)
+            printf("%3d", _vet[i]);
+    }
+}
