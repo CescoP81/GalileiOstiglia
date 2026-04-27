@@ -16,5 +16,20 @@ void inizializzaVettoreRandom(int _vet[], int _dim);
  * @param int Size of the vector in use.
  */
 void stampaVettore(int _vet[], int _dim);
-
+/**
+ * [IT] Calcola e restituisce la media dei valori di vettore di interi.
+ * [EN] Calculates and returns the average of the values ​​of an integer vector.
+ * 
+ * @param int[] Reference to the vector to use.
+ * @param int Size of the vector in use.
+ */
 float getMediaVettore(int _vet[], int _dim);
+// da realizzare...
+
+int getValoreMassimo(int _vet[], int _dim);
+
+int getValoreMinimo(int _vet[], int _dim);
+
+int isPrimo(int _val);
+
+void stampaValoriPrimi(int _vet, int _dim);

@@ -12,10 +12,22 @@ void inizializzaVettoreRandom(int _vet[], int _dim){
         _vet[i] = 1 + (rand()%99);
     }
 }
-
 void stampaVettore(int _vet[], int _dim){
     int i;
     for(i=0; i<_dim; i++){
         printf("%3d", _vet[i]);
     }
+}
+float getMediaVettore(int _vet[], int _dim){
+    int i;
+    int somma;
+    //float media;
+
+    somma = 0;  // azzero la variabile accumulatore altrimenti potrei avere valori errati o casuali.
+    for(i=0; i<_dim; i++){
+        somma = somma + _vet[i];
+    }
+    // media = (float)somma / _dim;
+    // return(media);
+    return((float)somma / _dim);
 }
