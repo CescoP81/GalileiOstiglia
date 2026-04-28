@@ -44,3 +44,13 @@ void stampaVettoreGrafico(int _vet[], int _dim);
  * @param int Array length.
  */
 void stampaVettoreGraficoBasic(int _vet[], int _dim);
+/**
+ * [IT] Richiede l'inserimento manuale dei valori nel vettore con il vincolo che siano compresi tra min e max
+ * [EN] ...
+ * 
+ * @param int* Array reference.
+ * @param int Array length.
+ * @param int Min value allowed
+ * @param int Max value allowed
+ */
+void inputManualeArray(int _vet[], int _dim, int _min, int _max);

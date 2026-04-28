@@ -80,3 +80,23 @@ void stampaVettoreGraficoBasic(int _vet[], int _dim){
         printf("%4d", i);
     }
 }
+
+void inputManualeArray(int _vet[], int _dim, int _min, int _max){
+    int i;
+    char junk;
+    int val;
+
+    if(_min < _max){
+        for(i=0; i<_dim; i++){
+            do{
+                printf("Inserisci valore cella [%d]: ", i);
+                scanf("%d", &val);
+                junk = getchar();
+            }while(val<_min || val>_max);
+            _vet[i] = val;
+        }
+    }
+    else{
+        printf("Estremi errati.");
+    }
+}

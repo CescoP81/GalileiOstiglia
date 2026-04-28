@@ -25,11 +25,16 @@ int main(){
 // */
     printf("\n");
     // stampaVettoreGraficoBasic(vettore, DIM); // da usare su CodeSpace
-    stampaVettoreGrafico(vettore, DIM);
-    printf("\n");
+    //stampaVettoreGrafico(vettore, DIM);
+    //printf("\n");
     
-    initVettore(vettore2, DIM_2);
-    // stampaVettoreGraficoBasic(vettore2, DIM_2); // da usare su CodeSpace
-    stampaVettoreGrafico(vettore2, DIM_2);
+    initVettore(vettore2, DIM);
+    stampaVettoreGraficoBasic(vettore2, DIM); // da usare su CodeSpace
+    //stampaVettoreGrafico(vettore2, DIM_2);
+    printf("\n\n");
+
+    inputManualeArray(vettore2, DIM_2, 4, 15);
+    stampaVettoreGraficoBasic(vettore2, DIM_2);
+    printf("\n\n");
     return(0);
 }
