@@ -21,6 +21,16 @@ int main(){
     else{
         printf("Attenzione il numero %d non e' rappresentabile con %d bit!", numero, DIM);
     }
+
+
+    int bin1[DIM];
+    int bin2[DIM];
+    int bin3[DIM];
+    convertiBinario(14, bin1, DIM);
+    convertiBinario(16, bin2, DIM);
+    sommaBinaria(bin1, bin2, bin3, DIM);
+    stampaBinarioBasic(bin3, DIM);
+
     return(0);
 }
 
