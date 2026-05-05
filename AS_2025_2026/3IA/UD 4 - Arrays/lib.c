@@ -63,12 +63,12 @@ void stampaVettoreGraficoBasic(int _vet[], int _dim){
     printf("\n");
     printf("|");
     for(i=0; i<_dim; i++){
-        printf("%3d|", _vet[i],179);
+        printf("%3d|", _vet[i]);
     }
     printf("\n");
     printf("|");
     for(i=0; i<_dim; i++){
-        printf("---", 196,196,196);
+        printf("---");
         if(i<_dim-1)
             printf("|");
         else
@@ -136,12 +136,12 @@ int i;
     printf("\n");
     printf("|");
     for(i=0; i<_dim; i++){
-        printf("%3d|", _vet[i],179);
+        printf("%3d|", _vet[i]);
     }
     printf("\n");
     printf("|");
     for(i=0; i<_dim; i++){
-        printf("---", 196,196,196);
+        printf("---");
         if(i<_dim-1)
             printf("|");
         else
