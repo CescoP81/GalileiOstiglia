@@ -14,7 +14,8 @@ int main(){
     junk = getchar();
 
     if(convertiBinario(numero, bin, DIM)){
-        stampaBinario(bin, DIM);
+        //stampaBinario(bin, DIM);
+        stampaBinarioBasic(bin, DIM);
         printf("\n\n");
     }
     else{
@@ -22,3 +23,5 @@ int main(){
     }
     return(0);
 }
+
+// gcc e.c -lm

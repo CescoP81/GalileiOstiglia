@@ -74,3 +74,10 @@ int convertiBinario(int _n, int _v[], int _dim);
  * @param int Dimensione del vettore.
  */
 void stampaBinario(int _v[], int _dim);
+/**
+ * Stampa un vettore binario indicando la potenza di ogni singolo bit.
+ * 
+ * @param int[] Riferimento al vettore.
+ * @param int Dimensione del vettore.
+ */
+void stampaBinarioBasic(int _vet[], int _dim);
