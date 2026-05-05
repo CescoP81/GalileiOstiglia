@@ -135,7 +135,7 @@ int i;
 
     printf("\n");
     printf("|");
-    for(i=0; i<_dim; i++){
+    for(i=_dim-1; i>=0; i--){
         printf("%3d|", _vet[i]);
     }
     printf("\n");
@@ -152,4 +152,18 @@ int i;
     for(i=_dim-1; i>=0; i--){
         printf("%4d", i);
     }   
+}
+int sommaBinaria(int _bin1[], int _bin2[], int _bin3[], int _dim){
+    int i;
+    int riporto;
+
+    riporto = 0;
+    for(i=0; i<_dim; i++){
+        riporto = riporto + _bin1[i] + _bin2[i];
+        _bin3[i] = riporto % 2;
+        riporto = riporto / 2;
+    }
+    return(riporto);
+    // ritorna 0 se non ho avuto riporto, quindi la somma è rappresentabile con i bit a disposizione.
+    // ritorna 1 se è stato generato overflow, la somma non è rappresentabile con i bit a disposizione.
 }
