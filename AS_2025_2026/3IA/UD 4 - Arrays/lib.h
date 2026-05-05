@@ -54,3 +54,23 @@ void stampaVettoreGraficoBasic(int _vet[], int _dim);
  * @param int Max value allowed
  */
 void inputManualeArray(int _vet[], int _dim, int _min, int _max);
+
+// --- Funzioni per e03.c ---
+
+/**
+ * Funzione che converte un numero intero in un array binario.
+ * 
+ * @param int Numero da convertire.
+ * @param int[] Riferimento al vettore 'binario'.
+ * @param int Dimensione del vettore.
+ * @return 0/1 in caso affermativo o negativo dell'avvenuta conversione.
+ */
+int convertiBinario(int _n, int _v[], int _dim);
+
+/**
+ * Stampa un vettore di bit in formato binario.
+ * 
+ * @param int[] Riferimento al vettore.
+ * @param int Dimensione del vettore.
+ */
+void stampaBinario(int _v[], int _dim);

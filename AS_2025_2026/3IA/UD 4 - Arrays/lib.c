@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <math.h>
 #include "lib.h"
 
 void initVettore(int _vet[], int _dim){
@@ -47,7 +48,6 @@ void stampaVettoreGrafico(int _vet[], int _dim){
         printf("%4d", i);
     }
 }
-
 void stampaVettoreGraficoBasic(int _vet[], int _dim){
     int i;
     // put your code here...
@@ -80,7 +80,6 @@ void stampaVettoreGraficoBasic(int _vet[], int _dim){
         printf("%4d", i);
     }
 }
-
 void inputManualeArray(int _vet[], int _dim, int _min, int _max){
     int i;
     char junk;
@@ -98,5 +97,27 @@ void inputManualeArray(int _vet[], int _dim, int _min, int _max){
     }
     else{
         printf("Estremi errati.");
+    }
+}
+
+// --- Funzioni per e03.c ---
+int convertiBinario(int _n, int _v[], int _dim){
+    int i;
+    //if(_n<=255){  // limitata a 8 bit
+    if(_n < pow(2, _dim)){
+        for(i=0; i<_dim; i++){
+            _v[i] = _n % 2;     // salvo il resto della divisione x2 quindi il bit di posto i.
+            _n = _n / 2;        // divido il numero restante x2 per proseguire la scomposizione.
+        }
+        return(1);
+    }
+    else{
+        return(0);
+    }
+}
+void stampaBinario(int _v[], int _dim){
+    int i;
+    for(i=_dim-1; i>=0; i--){   // visualizzo il vettore dei bit binari partendo dall'ultima cella fino alla prima
+        printf("%d", _v[i]);
     }
 }
