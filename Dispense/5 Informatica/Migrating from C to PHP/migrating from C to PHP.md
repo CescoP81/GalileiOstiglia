@@ -3,6 +3,12 @@ marp: true
 theme: gaia
 _class: lead
 paginate: true
+style: |
+  .columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
 ---
 
 # Migriamo da C a PHP
@@ -12,11 +18,23 @@ paginate: true
 
 ### PHP?
 
-PHP inizialmente acronimo di Personal Home Page è ora l'acronimo di <ins>Hypertext Preprocessor.</ins><br /><br /><br />
+PHP inizialmente acronimo di Personal Home Page è ora l'acronimo di <ins>Hypertext Preprocessor.</ins> Nasce nel 1994 grazie all'opera del danese Rasmus Lerdorf e dopo 32 anni siamo alla versione 8. E' un linguaggio server-side tra i più diffusi al mondo.
+Storia di PHP: [Fonte Wikipedia](https://it.wikipedia.org/wiki/PHP)
+
+---
 
 #### I punti cardine del linguaggio si riassumono in:
 **Server-Side Scripting**
+<div class="columns">
+<div>
 PHP is executed on the server, which means it runs on the web server to generate dynamic content, such as web pages, before sending it to the user's browser.
+</div>
+<div>
+
+![Image](serverside.drawio.png)
+
+</div>
+</div>
 
 ---
 
