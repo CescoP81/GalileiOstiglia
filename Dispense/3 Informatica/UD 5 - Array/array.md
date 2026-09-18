@@ -81,10 +81,9 @@ E' buona norma dichiarare la dimensione come costante con operatore **const** op
 // dimensione o numero di celle dell'Array.
 #define DIM 20
 int main(){
-  // dichiarazione
-  int altezza[DIM];
-  int i;
-  char junk;
+  int altezza[DIM]; // dichiarazione Array
+  int i;            // variabile per cicli
+  char junk;        // variabile per pulizia buffer dopo scanf.
 }
 ```
 
@@ -108,7 +107,7 @@ E' un ciclo che assegna ad ogni cella un valore richiesto in input all'utente.
 ```c
 // codice C popolamento manuale
 for(i=0; i<DIM; i++){
-  printf("Inserisci il [%d] valore: ",i+1);
+  printf("Inserisci il [%d] valore: ", i+1);
   scanf("%d", &altezza[i]);
   junk = getchar();
 }
@@ -126,7 +125,7 @@ E' un ciclo che assegna ad ogni cella un valore random. (comodo per testing)
 // codice C popolamento automatico con random.
 for(i=0; i<DIM; i++){
   // genero altezze da 150 a 190 (intesi come centimetri)
-  altezza[i] = 150 + rand(41);
+  altezza[i] = 150 + rand()%41;
 }
 ```
 Cambiando la *i* cambia la cella indicizzata che viene utilizzata.
