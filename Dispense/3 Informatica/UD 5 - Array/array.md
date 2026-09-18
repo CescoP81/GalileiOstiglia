@@ -197,9 +197,9 @@ Prima calcolo nella variabile *totale* la somma di tutti i valori presenti, **su
 ```c
 // codice C calcolo del valore massimo.
 int max;
-int max = altezza[0]; // assegno la prima altezza al valore massimo
+max = altezza[0]; // assegno la prima altezza al valore massimo
 for(i=1; i<DIM; i++){
-  if(altezz[i] > max)
+  if(altezza[i] > max)
     max = altezza[i];
 }
 // finito il ciclo in max ho il valore massimo presente, posso stamparlo
@@ -212,9 +212,9 @@ Errore comune: assegnare alla variabile max un valore iniziale 0 o altro valore 
 ```c
 // codice C calcolo del valore minimo.
 int min;
-int min = altezza[0]; // assegno la prima altezza al valore minimo
+min = altezza[0]; // assegno la prima altezza al valore minimo
 for(i=1; i<DIM; i++){
-  if(altezz[i] < min)
+  if(altezza[i] < min)
     min = altezza[i];
 }
 // finito il ciclo in min ho il valore minimo presente, posso stamparlo.
