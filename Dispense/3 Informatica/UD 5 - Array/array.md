@@ -141,7 +141,7 @@ for(i=0; i<DIM; i++){
   printf("%d ", altezza[i]);
 }
 ```
-Ogni valore sarà distanzia il successivo con uno spazio; vedi spazio vuoto dopo il *%d*.
+Ogni valore distanzia il successivo con uno spazio; vedi spazio vuoto dopo il *%d*.
 
 ---
 
