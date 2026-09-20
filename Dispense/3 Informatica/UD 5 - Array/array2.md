@@ -219,7 +219,8 @@ void randomInputArray(int _v[], int _dim){
 // includi tutte le librerie necessarie e il file lib.h dei prototipi.
 #include <stdio.h>
 #include "lib.c"
-@define DIM 10
+#define DIM 10
+
 int main(){
   int vet[DIM];       //dichiaro il vettore
   srand(time(NULL));  // per avere i numeri random nella relativa funzione.
