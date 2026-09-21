@@ -122,7 +122,7 @@ void randomInputArray(int _v[], int _dim);
 // codice C popolamento automatico con random.
 void randomInputArray(int _v[], int _dim){
   for(i=0; i<_dim; i++){
-    // genero altezze da 150 a 190 (intesi come centimetri)
+    // genero valori da 1 a 99
     _v[i] = 1 + (rand() % 99);
   }
 }
