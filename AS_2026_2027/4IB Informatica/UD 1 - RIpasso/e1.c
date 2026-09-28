@@ -58,5 +58,12 @@ int main(){
         }
     }
     printf("L'altezza %d compare %d volta/e.\n", a_src, a_cnt);
-    
+
+    // comunico quali celle contengono altezze inferiori alla media.
+    for(i=0; i<DIM; i++){
+        if(altezza[i] < a_media)
+            printf("Cella %d presenta un'altezza inferiore alla media(%d)\n", i, altezza[i]);
+    }
+
+    return 0;
 }
