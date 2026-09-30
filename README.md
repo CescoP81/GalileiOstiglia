@@ -1,4 +1,4 @@
-# GalileiOstiglia
+# :school: GalileiOstiglia
 Materiale didattico sviluppato per gli studenti del triennio Informatica e Telecomunicazioni dell'IISS "G. Galilei" - Ostiglia (MN) a partire dall'anno scolastico 2021/22. Il materiale viene raccolto e catalogato secondo la seguente struttura:   
 + Classe/Materia/Unità Didattica.
 + L'anno scolastico corrente presenta le cartelle direttamente nella root del repository.
