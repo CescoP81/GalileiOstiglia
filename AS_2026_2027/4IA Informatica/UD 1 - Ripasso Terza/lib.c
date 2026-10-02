@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <time.h>
+#include <stdbool.h>
 #include "lib.h"
 
 void caricaVettore(int _v[], int _dim, int _min, int _max){

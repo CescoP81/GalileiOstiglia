@@ -13,7 +13,7 @@ int main(){
     printf("\n");
     printf("Valore medio del vettore: %.2f\n", mediaVettore(vett, DIM));
 
-    i = 17;
+    i = 5;
     tmp = getValoreAt(vett, DIM, i);
     if(tmp != -1)
         printf("Valore alla cella di indice %d: %d\n", i, tmp);

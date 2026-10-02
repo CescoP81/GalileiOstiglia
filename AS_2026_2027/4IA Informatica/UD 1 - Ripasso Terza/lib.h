@@ -35,3 +35,13 @@ float mediaVettore(int _v[], int _dim);
  * @return -1 se indice non esiste, altrimenti valore contenuto nella cella scelta.
  */
 int getValoreAt(int _v[], int _dim, int _index);
+
+/**
+ * Stampa a video il sotto array identificato tra index1 e index2.
+ * @param int* Riferimento al vettore.
+ * @param int Dimensione del vettore.
+ * @param int Indice iniziale.
+ * @param int Indice finale.
+ * @return true se stampa è possibile, false se stampa non è possibile.
+ */
+bool stampaSubArray(int _v[], int _dim, int _index1, int _index2);
