@@ -46,3 +46,20 @@ int getValoreAt(int _v[], int _dim, int _index);
  * @return true se stampa è possibile, false se stampa non è possibile.
  */
 bool stampaSubArray(int _v[], int _dim, int _index1, int _index2);
+//---------------------------
+
+/**
+ * Carica una matrice con valori random compresi tra 1 e 25.
+ * @param int Numero righe della matrice.
+ * @param int Numero colonne della matrice.
+ * @param int* Riferimento alla matrice dichiara nel main.
+ */
+void caricaMatrice(int _rows, int _cols, int _m[_rows][_cols]);
+
+/**
+ * Stampa una matrice di interi
+ * @param int Numero righe della matrice.
+ * @param int Numero colonne della matrice.
+ * @param int* Riferimento alla matrice dichiara nel main.
+ */
+void stampaMatrice(int _rows, int _cols, int _m[_rows][_cols]);
