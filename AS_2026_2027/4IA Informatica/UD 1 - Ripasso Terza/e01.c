@@ -7,6 +7,8 @@ int main(){
     int vett[DIM];
     int i;
     int tmp;
+    int a, b;
+    char junk;
 
     caricaVettore(vett, DIM, 5, 25);
     stampaVettore(vett, DIM);
@@ -19,6 +21,18 @@ int main(){
         printf("Valore alla cella di indice %d: %d\n", i, tmp);
     else
         printf("Hei, something goes wrong!");
+    printf("\n\n");
+    
+    printf("Inserisci estremo inferiore: ");
+    scanf("%d", &a);
+    junk = getchar();
+    printf("Inserisci estremo superiore: ");
+    scanf("%d", &b);
+    junk = getchar();
 
+    if(stampaSubArray(vett, DIM, a, b) == false)
+        printf("Hei, something goes wrong!");
+    printf("\n");
+    
     return 0;
 }

@@ -37,7 +37,8 @@ float mediaVettore(int _v[], int _dim);
 int getValoreAt(int _v[], int _dim, int _index);
 
 /**
- * Stampa a video il sotto array identificato tra index1 e index2.
+ * Stampa a video il sotto array identificato tra index1 e index2,
+ * con index1 minore di index2.
  * @param int* Riferimento al vettore.
  * @param int Dimensione del vettore.
  * @param int Indice iniziale.

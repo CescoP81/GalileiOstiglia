@@ -41,3 +41,24 @@ int getValoreAt(int _v[], int _dim, int _index){
     else
         return -1;
 }
+
+bool stampaSubArray(int _v[], int _dim, int _index1, int _index2){
+    int i;
+    // test su esistenza indice1.
+    if(_index1 < 0 || _index1 > _dim)
+        return false;
+    // test su esistenza indice21.
+    if(_index2 < 0 || _index2 > _dim)
+        return false;
+    // test verifica se index1 maggiore di index2.
+    if(_index1 > _index2)
+        return false;
+    // test che indice2 sia più grande di index1
+    if(_index1 == _index2)
+        return false;
+    
+    // stampa tra gli indici validi, estremi compresi.
+    for(i=_index1; i<=_index2; i++)
+        printf("%d ", _v[i]);
+    return true;
+}
