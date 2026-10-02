@@ -26,3 +26,12 @@ void stampaVettore(int _v[], int _dim);
  * @return Valore medio calcolato.
  */
 float mediaVettore(int _v[], int _dim);
+
+/**
+ * Restituisce il valore alla posizione indicata.
+ * @param int* Riferimento al vettore.
+ * @param int Dimensione del vettore.
+ * @param int Indice scelto del vettore.
+ * @return -1 se indice non esiste, altrimenti valore contenuto nella cella scelta.
+ */
+int getValoreAt(int _v[], int _dim, int _index);

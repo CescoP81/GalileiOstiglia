@@ -33,3 +33,10 @@ float mediaVettore(int _v[], int _dim){
     
     return ((float)totale)/_dim;
 }
+
+int getValoreAt(int _v[], int _dim, int _index){
+    if(_index >=0 && _index<_dim)
+        return _v[_index];
+    else
+        return -1;
+}
