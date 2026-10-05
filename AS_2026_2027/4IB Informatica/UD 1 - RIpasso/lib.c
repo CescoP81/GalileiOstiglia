@@ -33,3 +33,21 @@ void caricaVettore(int _dim, int _v[], int _min, int _max){
         _v[i] = _min + (rand() % (_max - _min +1));
     }
 }
+
+float mediaVettore(int _dim, int _v[]){
+    int i;
+    int totale;
+    float media;
+
+    // calcolo la somma di tutti i valori presenti nel vettore
+    totale = 0;
+    for(i=0; i<_dim; i++){
+        totale = totale + _v[i];
+    }
+
+    // calcolo la media !devo usare il casting per il calcolo!
+    media = (float)totale / _dim;
+
+    // restituisco la media
+    return media;
+}

@@ -16,5 +16,7 @@ int main(){
     caricaVettore(DIM, vett, 0, 50);
     stampaVettore(DIM, vett);
     printf("\n");
+    printf("Media del vettore: %.2f", mediaVettore(DIM, vett));
+    printf("\n");
     return 0;
 }

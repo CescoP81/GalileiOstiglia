@@ -26,3 +26,11 @@ void stampaVettore(int _dim, int _v[]);
  * @param int Valore massimo del range
  */
 void caricaVettore(int _dim, int _v[], int _min, int _max);
+
+/**
+ * Calcola e restituisce la media degli elementi del vettore
+ * @param int Dimensione del vettore
+ * @param int* Riferimento al vettore
+ * @return Valore della media (La funzione NON STAMPA AL SUO INTERNO)
+ */
+float mediaVettore(int _dim, int _v[]);
