@@ -80,3 +80,9 @@ void stampaMatrice(int _rows, int _cols, int _m[_rows][_cols]);
  * @param int* Riferimento alla matrice dichiara nel main.
  */
 void caricaMatriceScacchiera(int _rows, int _cols, int _m[_rows][_cols]);
+
+/* provare a creare le funzioni per le seguenti richieste:
+1. Calcolo del valor medio della matrice.
+2. Stampa della matrice con somma totale di ogni singola riga.
+3. Somma totale del triangolo inferiore e del triangolo superiore.
+*/
