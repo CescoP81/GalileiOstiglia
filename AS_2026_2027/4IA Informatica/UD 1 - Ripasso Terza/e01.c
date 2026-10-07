@@ -32,7 +32,16 @@ int main(){
 
     if(stampaSubArray(vett, DIM, a, b) == false)
         printf("Hei, something goes wrong!");
-    printf("\n");
+    printf("\n\n");
     
+    ordinaVettore(vett, DIM, 0);
+    stampaVettore(vett, DIM);
+    printf("\n");
+    ordinaVettore(vett, DIM, 1);
+    stampaVettore(vett, DIM);
+    printf("\n");
+    ordinaVettore(vett, DIM, 7); // ordinamento con "codice" mode non gestito.
+    stampaVettore(vett, DIM);
+    printf("\n");
     return 0;
 }

@@ -11,6 +11,8 @@ int main(){
 
     caricaMatrice(ROWS, COLS, matrix);
     stampaMatrice(ROWS, COLS, matrix);
-
+    printf("\n\n");
+    caricaMatriceScacchiera(ROWS, COLS, matrix);
+    stampaMatrice(ROWS, COLS, matrix);
     return 0;
 }

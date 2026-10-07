@@ -46,6 +46,15 @@ int getValoreAt(int _v[], int _dim, int _index);
  * @return true se stampa è possibile, false se stampa non è possibile.
  */
 bool stampaSubArray(int _v[], int _dim, int _index1, int _index2);
+
+/**
+ * Ordina un vettore in modo crescente o decrescente a scelta dell'utente
+ * @param int* Riferimento al vettore
+ * @param int Dimensione del vettore
+ * @param int Modo di ordinamento 0 decrescente 1 crescente
+ */
+void ordinaVettore(int _v[], int _dim, int _mode);
+
 //---------------------------
 
 /**
@@ -63,3 +72,11 @@ void caricaMatrice(int _rows, int _cols, int _m[_rows][_cols]);
  * @param int* Riferimento alla matrice dichiara nel main.
  */
 void stampaMatrice(int _rows, int _cols, int _m[_rows][_cols]);
+
+/**
+ * Carica una matrice con 0/1 alternati
+ * @param int Numero righe della matrice.
+ * @param int Numero colonne della matrice.
+ * @param int* Riferimento alla matrice dichiara nel main.
+ */
+void caricaMatriceScacchiera(int _rows, int _cols, int _m[_rows][_cols]);
