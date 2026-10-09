@@ -190,3 +190,23 @@ void triangoloInfSupMatrice(int _rows, int _cols, int _m[_rows][_cols]){
 
     printf("Superiore: %d, Inferiore: %d, Diagonale: %d", sommaSupe, sommaInfe, sommaDiag);
 }
+
+bool trovaVettoreMatrice(int _rows, int _cols, int _m[_rows][_cols], int _v[_cols]){
+    int i, j;
+    int cntUguali;
+
+    for(i=0; i<_rows; i++){
+        cntUguali = 0;
+        // conto quante celle del vettore sono uguali alle celle della riga i della matrice              
+        for(j=0; j<_cols; j++){
+            if(_m[i][j] == _v[j])
+                cntUguali++;
+        }
+        // se contatore è uguale al numero di colonne allora la riga
+        // è uguale al vettore quindi termino la funzione e restituisco TRUE
+        if(cntUguali == _cols)
+            return true;
+    }
+    // SOLO SE nessuna riga è uguale al vettore allora eseguo una return FALSE.
+    return false;
+}

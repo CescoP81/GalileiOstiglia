@@ -118,3 +118,4 @@ void triangoloInfSupMatrice(int _rows, int _cols, int _m[_rows][_cols]);
     La funzione restituisce 0/1 verificando se il vettore è uguale ad almeno
     una riga della matrice.
 */
+bool trovaVettoreMatrice(int _rows, int _cols, int _m[_rows][_cols], int _v[_cols]);

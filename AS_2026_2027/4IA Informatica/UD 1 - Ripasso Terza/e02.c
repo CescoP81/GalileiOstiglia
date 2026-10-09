@@ -8,6 +8,7 @@
 
 int main(){
     int matrix[ROWS][COLS];
+    int vett[COLS];
 
     caricaMatrice(ROWS, COLS, matrix);
     stampaMatrice(ROWS, COLS, matrix);
@@ -19,5 +20,17 @@ int main(){
     stampaSommeRigheMatrice(ROWS, COLS, matrix);
     printf("\n\n");
     triangoloInfSupMatrice(ROWS, COLS, matrix);
+    printf("\n\n");
+
+    //caricaVettore(vett, COLS, 0, 99);
+    for(int i=0; i<COLS; i++)
+        vett[i] = matrix[3][i];
+
+    stampaVettore(vett, COLS);
+    printf("\n");
+    if(trovaVettoreMatrice(ROWS, COLS, matrix, vett) == true)
+        printf("Il vettore e' presente in ALMENO una riga della matrice\n");
+    else
+        printf("Il vettore non e' presente nella matrice!\n");
     return 0;
 }
