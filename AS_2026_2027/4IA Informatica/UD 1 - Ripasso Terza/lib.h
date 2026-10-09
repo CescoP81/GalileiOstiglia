@@ -86,3 +86,35 @@ void caricaMatriceScacchiera(int _rows, int _cols, int _m[_rows][_cols]);
 2. Stampa della matrice con somma totale di ogni singola riga.
 3. Somma totale del triangolo inferiore e del triangolo superiore.
 */
+
+/**
+ * Calcola e restituisce il valor medio della matrice.
+ * @param int Numero di righe della matrice.
+ * @param int Numero di colonne della matrice.
+ * @param int* Riferimento alla matrice.
+ * @return Valor medio della matrice.
+ */
+float calcolaMediaMatrice(int _rows, int _cols, int _m[_rows][_cols]);
+
+/**
+ * Stampa matrice con somme riga
+ * @param int Numero di righe della matrice.
+ * @param int Numero di colonne della matrice.
+ * @param int* Riferimento alla matrice.
+ */
+void stampaSommeRigheMatrice(int _rows, int _cols, int _m[_rows][_cols]);
+
+/**
+ * Stampa la somma del triangolo superiore ed inferiore di una matrice QUADRATA
+ * @param int Numero di righe della matrice.
+ * @param int Numero di colonne della matrice.
+ * @param int* Riferimento alla matrice.
+ */
+void triangoloInfSupMatrice(int _rows, int _cols, int _m[_rows][_cols]);
+
+/*
+    Realizza una funzione che riceve una matrice e un vettore con numero di celle
+    pari al numero di colonne della matrice.
+    La funzione restituisce 0/1 verificando se il vettore è uguale ad almeno
+    una riga della matrice.
+*/

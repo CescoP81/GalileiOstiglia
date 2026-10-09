@@ -133,3 +133,60 @@ void caricaMatriceScacchiera(int _rows, int _cols, int _m[_rows][_cols]){
         }
     }
 }
+
+float calcolaMediaMatrice(int _rows, int _cols, int _m[_rows][_cols]){
+    int i, j;
+    int sommaTotale;
+    float media;
+
+    // doppio ciclo per calcolo della somma totale
+    sommaTotale = 0;
+    for(i=0; i<_rows; i++){
+        for(j=0; j<_cols; j++){
+            sommaTotale = sommaTotale + _m[i][j];
+        }
+    }
+
+    // calcolo e restituisco la media
+    media = (float)sommaTotale / (_rows*_cols);
+    return media;
+}
+
+void stampaSommeRigheMatrice(int _rows, int _cols, int _m[_rows][_cols]){
+    int i,j;
+    int sommaRiga;
+
+    // stampo e contemporaneamente calcolo la somma delle celle per la riga i
+    for(i=0; i<_rows; i++){
+        sommaRiga = 0;
+        for(j=0; j<_cols; j++){
+            printf("%3d", _m[i][j]);
+            sommaRiga = sommaRiga + _m[i][j];
+        }
+        printf(" -> %3d", sommaRiga);
+        printf("\n");
+    }
+}
+
+void triangoloInfSupMatrice(int _rows, int _cols, int _m[_rows][_cols]){
+    int i, j;
+    int sommaInfe;
+    int sommaSupe;
+    int sommaDiag;
+
+    sommaInfe = 0;
+    sommaSupe = 0;
+    sommaDiag = 0;
+    for(i=0; i<_rows; i++){
+        for(j=0; j<_cols; j++){
+            if(j>i)
+                sommaSupe = sommaSupe + _m[i][j];
+            if(i>j)
+                sommaInfe = sommaInfe + _m[i][j];
+            if(i == j)
+                sommaDiag = sommaDiag + _m[i][j];
+        }
+    }
+
+    printf("Superiore: %d, Inferiore: %d, Diagonale: %d", sommaSupe, sommaInfe, sommaDiag);
+}

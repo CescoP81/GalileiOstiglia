@@ -14,5 +14,10 @@ int main(){
     printf("\n\n");
     caricaMatriceScacchiera(ROWS, COLS, matrix);
     stampaMatrice(ROWS, COLS, matrix);
+    printf("\n");
+    printf("Valor medio della matrice: %.2f\n\n", calcolaMediaMatrice(ROWS, COLS, matrix));
+    stampaSommeRigheMatrice(ROWS, COLS, matrix);
+    printf("\n\n");
+    triangoloInfSupMatrice(ROWS, COLS, matrix);
     return 0;
 }
