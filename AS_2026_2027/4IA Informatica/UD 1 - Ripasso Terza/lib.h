@@ -112,10 +112,12 @@ void stampaSommeRigheMatrice(int _rows, int _cols, int _m[_rows][_cols]);
  */
 void triangoloInfSupMatrice(int _rows, int _cols, int _m[_rows][_cols]);
 
-/*
-    Realizza una funzione che riceve una matrice e un vettore con numero di celle
-    pari al numero di colonne della matrice.
-    La funzione restituisce 0/1 verificando se il vettore è uguale ad almeno
-    una riga della matrice.
+/**
+* Verifica se un vettore è uguale ad almeno una riga della matrice; il vettore
+* deve avere domensione pari al numero di colonne della matrice.
+* @param int Numero di righe della matrice.
+* @param int Numero di colonne della matrice.
+* @param int* Riferimento alla matrice.
+* @param int* Riferimento al vettore.
 */
 bool trovaVettoreMatrice(int _rows, int _cols, int _m[_rows][_cols], int _v[_cols]);
