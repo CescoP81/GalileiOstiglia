@@ -10,7 +10,7 @@ Materiale didattico sviluppato per gli studenti del triennio Informatica e Telec
 | **UPL**oad | Nuovo materiale è caricato dopo una lezione o a supporto di una lezione ancora da svolgere. | 
 | **UPD**ate: | Materiale esistente ha subito un aggiornameto (es. esercizi completati o incrementati, schemi ER con nuove tabelle, etc...) |
 
-### Wiki   
+### :green_book: Wiki   
 In questa sezione troverai un'indicazione degli argomenti che verranno trattati durante l'anno scolastico così da avere sempre una visione
 chiara sul percorso intrapreso.
 
