@@ -6,7 +6,7 @@ Materiale didattico sviluppato per gli studenti del triennio Informatica e Telec
 
 ---
 
-### Commits
+### :arrow_down: Commits
 | Message | Description |
 |---|---|
 | **UPL**oad | Nuovo materiale è caricato dopo una lezione o a supporto di una lezione ancora da svolgere. | 
