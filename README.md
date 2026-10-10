@@ -1,8 +1,10 @@
 # :school: GalileiOstiglia
 Materiale didattico sviluppato per gli studenti del triennio Informatica e Telecomunicazioni dell'IISS "G. Galilei" - Ostiglia (MN) a partire dall'anno scolastico 2021/22. Il materiale viene raccolto e catalogato secondo la seguente struttura:   
-+ Classe/Materia/Unità Didattica.
-+ **AS_xxxx_xxxx** Racchiude l'anno scolastico corrente presenta le cartelle direttamente nella root del repository.
-+ **Anni Precedenti** contiene il materiale sviluppato negli anni passati, tutti i materiali vengono archiviati spostando le cartelle classe nella relativa cartella dell'anno, così da avere: Anno Scolastico/Classe/Materia/Unità Didattica.
+- Classe Materia/Unità Didattica.
+- **AS_xxxx_xxxx** Racchiude l'anno scolastico corrente presenta le cartelle contenenti i materiali prodotti.
+- **Anni Precedenti** contiene il materiale sviluppato negli anni passati, tutti i materiali vengono archiviati spostando la cartella dell'anno corrente, così da avere: Anno Scolastico/Classe Materia/Unità Didattica.
+
+---
 
 ### Commits
 | Message | Description |
@@ -10,10 +12,14 @@ Materiale didattico sviluppato per gli studenti del triennio Informatica e Telec
 | **UPL**oad | Nuovo materiale è caricato dopo una lezione o a supporto di una lezione ancora da svolgere. | 
 | **UPD**ate: | Materiale esistente ha subito un aggiornameto (es. esercizi completati o incrementati, schemi ER con nuove tabelle, etc...) |
 
+---
+
 ### :green_book: Wiki   
 In questa sezione troverai un'indicazione degli argomenti che verranno trattati durante l'anno scolastico così da avere sempre una visione
 chiara sul percorso intrapreso.  
 [:link: Wiki](https://github.com/CescoP81/GalileiOstiglia/wiki)
+
+---
 
 ### :information_source: Informazioni
 Informazioni sulle lezioni ed i materiali si possono sempre richiedere scrivendo alle e-mail:
