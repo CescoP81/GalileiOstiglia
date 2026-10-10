@@ -13,3 +13,8 @@ Materiale didattico sviluppato per gli studenti del triennio Informatica e Telec
 ### Wiki   
 In questa sezione troverai un'indicazione degli argomenti che verranno trattati durante l'anno scolastico così da avere sempre una visione
 chiara sul percorso intrapreso.
+
+### :information_source: Informazioni
+Informazioni sulle lezioni ed i materiali si possono sempre richiedere scrivendo alle e-mail:
+- Per studenti del "G.Galilei - Ostiglia (MN)": francesco.pradella@galileiostiglia.edu.it
+- Per visualizzatori esterni: prof@francescopradella.it
