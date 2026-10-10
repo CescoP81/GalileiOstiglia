@@ -12,7 +12,8 @@ Materiale didattico sviluppato per gli studenti del triennio Informatica e Telec
 
 ### :green_book: Wiki   
 In questa sezione troverai un'indicazione degli argomenti che verranno trattati durante l'anno scolastico così da avere sempre una visione
-chiara sul percorso intrapreso.
+chiara sul percorso intrapreso.  
+[:link: Wiki](https://github.com/CescoP81/GalileiOstiglia/wiki)
 
 ### :information_source: Informazioni
 Informazioni sulle lezioni ed i materiali si possono sempre richiedere scrivendo alle e-mail:
