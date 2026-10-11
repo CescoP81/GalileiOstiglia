@@ -23,6 +23,11 @@ int main(){
     printf("\n\n");
 
     //caricaVettore(vett, COLS, 0, 99);
+    /*  Il ciclo FOR seguente assegna al vettore i valori della 4° riga della matrice,
+        trick utile per verificare la funzione trovaVettoreMatrice e vedere se restituisce
+        un true. Una volta verificato il corretto funzionamento, commentare le righe 31-32 e
+        abilitare la riga 25.
+    */
     for(int i=0; i<COLS; i++)
         vett[i] = matrix[3][i];
 
