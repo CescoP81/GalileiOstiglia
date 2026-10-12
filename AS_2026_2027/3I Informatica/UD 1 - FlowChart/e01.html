@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Algoritmo di somma in javaScript</title>
+    </head>
+    <body>
+        Inserisci A: <input type="text" id="inputA"><br />
+        Inserisci B: <input type="text" id="inputB"><br />
+        <input type="button" value="Esegui la somma" id="btnSomma"><br />
+        <div style="width: 300px; height: 200px; border: solid 1px rgb(200,200,200)" id="viewBox">
+            Inserisci due valori per sommarli...
+        </div>
+    <script>
+        function somma(){
+            let a = parseInt(document.querySelector("#inputA").value);
+            let b = parseInt(document.querySelector("#inputB").value);
+            let vb = document.querySelector("#viewBox");
+
+            c = a + b;
+            if(c >= 10){
+                vb.innerHTML = 'C=' +c+ ' valore maggiore o uguale a 10! <br />';
+            }
+            else{
+                vb.innerHTML = 'C=' +c+ ' valore minore a 10! <br />';
+            }
+        }
+        let btnS = document.querySelector("#btnSomma");
+        btnS.onclick = somma;
+    </script>
+    </body>
+</html>

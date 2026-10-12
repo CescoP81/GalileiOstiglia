@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="e01"/>
+        <attribute name="authors" value="ASUS"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-10-12 01:49:43 "/>
+        <attribute name="created" value="QVNVUztaRU5CT09LLTE0LU9MRUQ7MjAyNi0xMC0xMjsiMTI6MzE6NTcgIjsyNTIz"/>
+        <attribute name="edited" value="QVNVUztaRU5CT09LLTE0LU9MRUQ7MjAyNi0xMC0xMjsiMDE6NDk6NDMgIjsyOzI2MzQ="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a" type="Integer" array="False" size=""/>
+            <declare name="b" type="Integer" array="False" size=""/>
+            <declare name="c" type="Integer" array="False" size=""/>
+            <assign variable="a" expression="0"/>
+            <assign variable="b" expression="0"/>
+            <assign variable="c" expression="0"/>
+            <output expression="&quot;Insersci A: &quot;" newline="True"/>
+            <input variable="a"/>
+            <output expression="&quot;Inserisci B: &quot;" newline="True"/>
+            <input variable="b"/>
+            <assign variable="c" expression="a+b"/>
+            <if expression="c&gt;=10">
+                <then>
+                    <output expression="&quot;C &#232; maggiore o uguale a 10&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;C &#232; minore di 10&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,2 @@
+- Creare un algoritmo che richiede in input tre valori
+A B C e comunica il valore maggiore.
