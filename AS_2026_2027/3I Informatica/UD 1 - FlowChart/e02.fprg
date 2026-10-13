@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="e02"/>
+        <attribute name="authors" value="ASUS"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-10-13 12:46:54 "/>
+        <attribute name="created" value="QVNVUztaRU5CT09LLTE0LU9MRUQ7MjAyNi0xMC0xMzsiMTI6NDA6MDggIjsyNTIw"/>
+        <attribute name="edited" value="QVNVUztaRU5CT09LLTE0LU9MRUQ7MjAyNi0xMC0xMzsiMTI6NDY6NTQgIjsxOzI2MzU="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="v1, v2, v3" type="Integer" array="False" size=""/>
+            <declare name="max" type="Integer" array="False" size=""/>
+            <assign variable="v1" expression="5"/>
+            <assign variable="v2" expression="9"/>
+            <assign variable="max" expression="v1"/>
+            <assign variable="v3" expression="4"/>
+            <if expression="v2 &gt; max">
+                <then>
+                    <assign variable="max" expression="v2"/>
+                </then>
+                <else/>
+            </if>
+            <if expression="v3 &gt; max">
+                <then>
+                    <assign variable="max" expression="v3"/>
+                </then>
+                <else/>
+            </if>
+            <output expression="max" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
