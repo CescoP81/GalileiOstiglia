@@ -103,3 +103,27 @@ void ordinaVettore(int _dim, int _v[], int _modo){
         }
     }
 }
+
+// ==============================================================================
+
+void initMatrice(int _rows, int _cols, int _m[_rows][_cols], int _min, int _max){
+    int i, j;
+    srand(time(NULL));
+
+    for(i=0; i<_rows; i++){
+        for(j=0; j<_cols; j++){
+            _m[i][j] = _min + (rand() % (_max - _min + 1));
+        }
+    }
+}
+
+void stampaMatrice(int _rows, int _cols, int _m[_rows][_cols]){
+    int i, j;
+
+    for(i=0; i<_rows; i++){
+        for(j=0; j<_cols; j++){
+            printf("%4d", _m[i][j]);
+        }
+        printf("\n");
+    }
+}

@@ -52,4 +52,26 @@ void ordinaVettore(int _dim, int _v[], int _modo);
 
 //=========================================================================
 
-/** */
+/**
+ * Inizializza una matrice di interi con valori random compresi tra min e max.
+ * @param int Dimensione righe
+ * @param int Dimensione colonne
+ * @param int* Riferimento alla matrice
+ * @param int Valore minimo del range
+ * @param int Valore massimo del range
+ */
+void initMatrice(int _rows, int _cols, int _m[_rows][_cols], int _min, int _max);
+
+/**
+ * Stampa una matrice di interi
+ * @param int Dimensione righe
+ * @param int Dimensione colonne
+ * @param int* Riferimento alla matrice
+ */
+void stampaMatrice(int _rows, int _cols, int _m[_rows][_cols]);
+
+/**
+ * Determina e restituisce il valore medio della matrice
+ * @param ...
+ */
+....
