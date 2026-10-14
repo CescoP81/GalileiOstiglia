@@ -34,3 +34,22 @@ void caricaVettore(int _dim, int _v[], int _min, int _max);
  * @return Valore della media (La funzione NON STAMPA AL SUO INTERNO)
  */
 float mediaVettore(int _dim, int _v[]);
+
+/**
+ * Determina e stampa i valori minimo e massimo presenti nel vettore.
+ * @param int Dimensione del vettore.
+ * @param int* Riferimento al vettore.
+ */
+void minimoMassimoVettore(int _dim, int _v[]);
+
+/**
+ * Ordina un vettore in modo crescente o decrescente con scelta dell'utente
+ * @param int Dimensione del vettore.
+ * @param int* Riferimento al vettore.
+ * @param int Modo di ordinamento [0->Decrescente 1->Crescente]
+ */
+void ordinaVettore(int _dim, int _v[], int _modo);
+
+//=========================================================================
+
+/** */

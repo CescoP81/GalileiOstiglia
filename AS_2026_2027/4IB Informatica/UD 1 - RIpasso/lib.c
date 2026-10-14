@@ -51,3 +51,55 @@ float mediaVettore(int _dim, int _v[]){
     // restituisco la media
     return media;
 }
+
+void minimoMassimoVettore(int _dim, int _v[]){
+    int i;
+    int min, max;
+
+    // ciclo per trovare il valore minimo presente nel vettore.
+    min = _v[0];
+    for(i=1; i<_dim; i++){
+        if(_v[i] < min)
+            min = _v[i];
+    }
+
+    // ciclo per trovare il valore maggiore presente nel vettore.
+    max = _v[0];
+    for(i=1; i<_dim; i++){
+        if(_v[i] > max)
+            max = _v[i];
+    }
+
+    printf("min: %d, max: %d\n", min, max);
+}
+
+void ordinaVettore(int _dim, int _v[], int _modo){
+    int i, j;
+    int tmp;
+
+    // modo 0 -> decrescente
+    if(_modo == 0){
+        for(i=0; i<_dim; i++){
+            for(j=i; j<_dim; j++){
+                if(_v[i] < _v[j]){
+                    tmp = _v[i];
+                    _v[i] = _v[j];
+                    _v[j] = tmp;
+                }
+            }
+        }
+    }
+
+    // modo 1 -> crescente
+    if(_modo == 1){
+        for(i=0; i<_dim; i++){
+            for(j=i; j<_dim; j++){
+                if(_v[i] > _v[j]){
+                    tmp = _v[i];
+                    _v[i] = _v[j];
+                    _v[j] = tmp;
+                }
+            }
+        }
+    }
+}
