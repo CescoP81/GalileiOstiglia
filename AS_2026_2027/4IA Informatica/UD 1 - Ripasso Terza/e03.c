@@ -27,7 +27,7 @@ int main(){
     int tentativi;      // contatore dei tentativi effettuati per indovinare il codice segreto
 
     caricaVettore(segreto, DIM, 0, 9);
-    //stampaVettore(segreto, DIM);
+    stampaVettore(segreto, DIM);
     tentativi = 0;
     do{
         printf("\n\n");
