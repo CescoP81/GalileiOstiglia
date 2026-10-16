@@ -8,6 +8,8 @@
 - getValoreAt(int _v[], int _dim, int _index): Restituisce il valore alla posizione indicata.
 - stampaSubArray(int _v[], int _dim, int _index1, int _index2): Stampa a video il sotto array identificato tra index1 e index2, con index1 minore di index2.
 - ordinaVettore(int _v[], int _dim, int _mode): Ordina un vettore in modo crescente o decrescente a scelta dell'utente.
+- richiediCodiceUtente(int _v[], int _dim): Utilizzata in e03.c gioco Catch The Pin.
+- verificaStampaCodice(int _s[], int _u[], int _dim): Utilizzata in e03.c gioco Catch The Pin.
 ---
 :notebook: *Per Matrici*
 - caricaMatrice(int _rows, int _cols, int _m[_rows][_cols]): Carica una matrice con valori random compresi tra 1 e 25.
@@ -17,3 +19,13 @@
 - stampaSommeRigheMatrice(int _rows, int _cols, int _m[_rows][_cols]): Stampa matrice con somme riga.
 - triangoloInfSupMatrice(int _rows, int _cols, int _m[_rows][_cols]): Stampa la somma del triangolo superiore ed inferiore di una matrice QUADRATA.
 - trovaVettoreMatrice(int _rows, int _cols, int _m[_rows][_cols], int _v[_cols]): Verifica se un vettore è uguale ad almeno una riga della matrice; il vettore deve avere domensione pari al numero di colonne della matrice.:
+
+---
+
+:gear: *main programs*   
+**e01.c**  
+Esercitazione di test funzioni sui vettori.  
+**e02.c**  
+Esercitazione di test funzioni sulle matrici.  
+**e03.c**  
+Sviluppo del semplice gioco "Catch the Pin".
