@@ -91,6 +91,39 @@ void ordinaVettore(int _v[], int _dim, int _mode){
     }
     
 }
+
+void richiediCodiceUtente(int _v[], int _dim){
+    int i;
+    char junk;
+    for(i=0; i<_dim; i++){
+        do{
+            printf("Inserisci la %d cifra: ", i+1);
+            scanf("%d", &_v[i]);
+            junk = getchar();
+        }while(_v[i]<0 || _v[i]>9);
+    }
+}
+
+bool verificaStampaCodice(int _s[], int _u[], int _dim){
+    int i;
+    int cnt;
+
+    // confronto le cifre tra segreto e utente, se uguali le mostro e incremento il contatore delle indovinate
+    cnt = 0;
+    for(i=0; i<_dim; i++){
+        if(_s[i] == _u[i]){
+            cnt++;
+            printf("%2d", _s[i]);
+        }
+        else    // altrimenti stampo il ?
+            printf(" ?");
+    }
+
+    if(cnt == _dim)
+        return true;
+    else
+        return false;
+}
 //---------------------------
 
 void caricaMatrice(int _rows, int _cols, int _m[_rows][_cols]){

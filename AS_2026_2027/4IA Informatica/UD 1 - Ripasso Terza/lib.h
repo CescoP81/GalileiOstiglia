@@ -55,6 +55,20 @@ bool stampaSubArray(int _v[], int _dim, int _index1, int _index2);
  */
 void ordinaVettore(int _v[], int _dim, int _mode);
 
+/**
+ * Richiede le 5 cifre del gioco catch the pin (e03.c)
+ * @param int* Riferimento al vettore
+ * @param int Dimensione del vettore
+ */
+void richiediCodiceUtente(int _v[], int _dim);
+
+/**
+ * Verifica e stampa se i due vettori sono uguali oppure differiscono
+ * @param int* Riferimento al vettore segreto
+ * @param int* Riferimento al vettore utente
+ * @param int Dimensione del vettore
+ */
+bool verificaStampaCodice(int _s[], int _u[], int _dim);
 //---------------------------
 
 /**
