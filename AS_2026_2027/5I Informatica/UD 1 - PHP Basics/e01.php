@@ -35,6 +35,10 @@
                 $var++;
             }
             echo('<br />');
+
+            for($var = 0; $var <= 10; $var++){
+                echo($var.' - ');
+            }
         ?>
     </body>
 </html>
