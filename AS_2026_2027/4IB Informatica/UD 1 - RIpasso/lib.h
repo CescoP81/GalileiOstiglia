@@ -72,11 +72,16 @@ void stampaMatrice(int _rows, int _cols, int _m[_rows][_cols]);
 
 /**
  * Determina e restituisce il valore medio della matrice
- * @param ...
+ * @param int Dimensione righe.
+ * @param int Dimensione colonne.
+ * @param int* Riferimento alla matrice.
  */
-float ...
+float mediaMatrice(int _rows, int _cols, int _m[_rows][_cols]);
 
 /**
  * Matrice scacchiera: riempie una matrice con numeri 1/0 in modo alternato simulando una scacchiera.
+ * @param int Dimensione righe.
+ * @param int Dimensione colonne.
+ * @param int* Riferimento alla matrice.
  */
-void ...
+void matriceScacchiera(int _rows, int _cols, int _m[_rows][_cols]);

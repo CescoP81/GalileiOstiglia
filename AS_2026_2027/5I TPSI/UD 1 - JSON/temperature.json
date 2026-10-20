@@ -1,0 +1,7 @@
+[
+    {"giorno": 1, "minima": 11, "massima": 23},
+    {"giorno": 2, "minima": 10, "massima": 24},
+    {"giorno": 3, "minima": 13, "massima": 27},
+    {"giorno": 4, "minima": 10, "massima": 23},
+    {"giorno": 5, "minima": 15, "massima": 27}
+]

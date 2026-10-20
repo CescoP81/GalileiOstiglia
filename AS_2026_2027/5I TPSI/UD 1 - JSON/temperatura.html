@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Prova di lettura JSON</title>
+    </head>
+    <body>
+        <div id="boxView">Box view...</div>
+
+        <script>
+            async function leggiTemperature(){
+                const response = await fetch("temperature.json");
+                const vetTemp = await response.json();
+
+                let bv = document.querySelector("#boxView");
+                
+                bv.innerHTML = "Numero json: " + vetTemp.length + "<br />";
+                for(let i=0; i<vetTemp.length; i++){
+                    bv.innerHTML += vetTemp[i].giorno + " " + vetTemp[i].minima + " " + vetTemp[i].massima + "<br />";
+                }
+                //*/
+               alert("toc toc");
+            }
+
+            leggiTemperature();
+        </script>
+    </body>
+</html>

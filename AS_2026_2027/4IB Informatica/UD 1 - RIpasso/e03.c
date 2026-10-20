@@ -10,5 +10,10 @@ int main(){
 
     initMatrice(R, C, matrix, 1, 15);
     stampaMatrice(R, C, matrix);
+    printf("\n");
+    printf("Media della matrice: %.2f\n", mediaMatrice(R, C, matrix));
+    printf("\n\n");
+    matriceScacchiera(R, C, matrix);
+    stampaMatrice(R, C, matrix);
     return 0;
 }

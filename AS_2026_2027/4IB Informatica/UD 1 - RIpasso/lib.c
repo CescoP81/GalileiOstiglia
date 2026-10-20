@@ -127,3 +127,30 @@ void stampaMatrice(int _rows, int _cols, int _m[_rows][_cols]){
         printf("\n");
     }
 }
+
+float mediaMatrice(int _rows, int _cols, int _m[_rows][_cols]){
+    int i, j;
+    int somma;
+
+    somma = 0;
+    for(i=0; i<_rows; i++){
+        for(j=0; j<_cols; j++){
+            somma = somma * _m[i][j];
+        }
+    }
+
+    return (float)somma / (_rows*_cols);
+}
+
+void matriceScacchiera(int _rows, int _cols, int _m[_rows][_cols]){
+    int i, j;
+    int cella;
+
+    cella = 1;
+    for(i=0; i<_rows; i++){
+        for(j=0; j<_cols; j++){
+            _m[i][j] = cella%2;
+            cella = cella + 1;
+        }
+    }
+}
