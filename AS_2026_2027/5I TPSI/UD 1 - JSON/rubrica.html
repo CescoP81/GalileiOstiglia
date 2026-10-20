@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- 
+    IL file rubrica.html e rubrica.json DECONO ESSERE inseriti nella cartella
+    c:\uwamp\www\tpsi\json
+    vanno richiamati
+    http://localhost/tpsi/json/rubrica.html
+ -->
+<html>
+    <head>
+        <title>Prova rubrica json</title>
+    </head>
+    <body>
+        <div id="viewBox" style="border: solid 1px rgb(200,0,0);"></div>
+
+        <script>
+            async function leggiRubrica(){
+                /* Viene eseguita una richiesta http al server per la risorsa rubrica.json,
+                il contenuto viene restituito al browser sottoforma di promessa (un insieme di dati ancora inutilizzabile)
+                */
+                const promise = await fetch("rubrica.json");
+                /* Per utilizzare i dati ricevuto devo farne il "parsing" in formato JSON.*/
+                const vettRubrica = await promise.json();
+
+                // imposto vb come riferimento alla viewBox dichiara nel body come div.
+                let vb = document.querySelector("#viewBox");
+
+                vb.innerHTML = "Numero di JSON ricevuti: "+vettRubrica.length+"<br /><br />";
+
+                for(let i=0; i < vettRubrica.length; i++){
+                    vb.innerHTML += vettRubrica[i].nome + " " + vettRubrica[i].cognome + " " + vettRubrica[i].paese + "<br />";
+                }
+            }
+            leggiRubrica();
+        </script>
+    </body>
+</html>

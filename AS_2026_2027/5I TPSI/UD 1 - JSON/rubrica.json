@@ -1,0 +1,22 @@
+[
+    {
+        "nome": "Luigi",
+        "cognome": "Alberti",
+        "paese": "Sustinente"
+    },
+    {
+        "nome": "Anna",
+        "cognome": "Rossini",
+        "paese": "Moglia"
+    },
+    {
+        "nome": "Michele",
+        "cognome": "Verdi",
+        "paese": "Poggio Rusco"
+    },
+    {
+        "nome": "Michela",
+        "cognome": "Ascardi",
+        "paese": "Mirandola"
+    }
+]
