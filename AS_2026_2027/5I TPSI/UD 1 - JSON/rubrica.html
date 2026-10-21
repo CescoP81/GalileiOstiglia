@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <!-- 
-    IL file rubrica.html e rubrica.json DECONO ESSERE inseriti nella cartella
+    IL file rubrica.html e rubrica.json DEVONO ESSERE inseriti nella cartella
     c:\uwamp\www\tpsi\json
-    vanno richiamati
+    DEVI richiamare il file HTML con la URL, come fosse un sito web.
     http://localhost/tpsi/json/rubrica.html
  -->
 <html>
@@ -14,11 +14,14 @@
 
         <script>
             async function leggiRubrica(){
+                //alert("Leggo....");
                 /* Viene eseguita una richiesta http al server per la risorsa rubrica.json,
                 il contenuto viene restituito al browser sottoforma di promessa (un insieme di dati ancora inutilizzabile)
                 */
                 const promise = await fetch("rubrica.json");
-                /* Per utilizzare i dati ricevuto devo farne il "parsing" in formato JSON.*/
+                /*  Per utilizzare i dati ricevuto devo farne il "parsing"/traduzione in formato JSON.
+                    se il parsing ha esito positivo viene creato il vettore di JSON vettRubrica.
+                */
                 const vettRubrica = await promise.json();
 
                 // imposto vb come riferimento alla viewBox dichiara nel body come div.
@@ -26,10 +29,16 @@
 
                 vb.innerHTML = "Numero di JSON ricevuti: "+vettRubrica.length+"<br /><br />";
 
+                /*  Per scorrere un vettore utilizzo un ciclo for, ogni cella del vettore è un JSON
+                    quindi per ogni cella ho a disposizione le chiavi/attributi del json definiti nel
+                    file rubrica.json
+                */
                 for(let i=0; i < vettRubrica.length; i++){
-                    vb.innerHTML += vettRubrica[i].nome + " " + vettRubrica[i].cognome + " " + vettRubrica[i].paese + "<br />";
+                    vb.innerHTML += vettRubrica[i].nome + " " + vettRubrica[i].cognome + " " + vettRubrica[i].sesso + " " + vettRubrica[i].anni + " " + vettRubrica[i].paese + "<br />";
                 }
             }
+
+            /*  ad ogni caricamento della pagina viene eseguita la funzione leggiRubrica. */
             leggiRubrica();
         </script>
     </body>

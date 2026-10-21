@@ -2,21 +2,29 @@
     {
         "nome": "Luigi",
         "cognome": "Alberti",
+        "sesso": "m",
+        "anni": 23,
         "paese": "Sustinente"
     },
     {
         "nome": "Anna",
         "cognome": "Rossini",
+        "sesso": "f",
+        "anni": 36,
         "paese": "Moglia"
     },
     {
         "nome": "Michele",
         "cognome": "Verdi",
+        "sesso": "m",
+        "anni": 28,
         "paese": "Poggio Rusco"
     },
     {
         "nome": "Michela",
         "cognome": "Ascardi",
+        "sesso": "f",
+        "anni": 35,
         "paese": "Mirandola"
     }
 ]
