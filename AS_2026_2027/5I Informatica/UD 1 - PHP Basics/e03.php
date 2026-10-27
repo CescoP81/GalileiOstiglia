@@ -8,11 +8,15 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     </head>
     <body>
-        
-        
         <?php
-            if(isset($_GET['scelta'])){
-                switch($_GET['scelta']){
+            /*  Possibilità di richiamo della pagina
+                1. http://.../e03.php -> senza nessuna chiave impostata
+                2. http://.../e03.php?scelta=calcola&inputA=4&inputB=6
+                Nel secondo caso le chiavi scelta, inputA, inputB diventano
+                indici nel vettore $_GET
+            */
+            if(isset($_GET['scelta'])){ //capisco se sono nel caso 1 o 2
+                switch($_GET['scelta']){    // capisco con la switch che tipo di scelta ho generato
                     case "calcola":{
                         $a = $_GET['inputA'];
                         $b = $_GET['inputB'];
@@ -24,7 +28,7 @@
                     }
                 }
             }
-            else{
+            else{   // non ho una scelta come chiave nella request
                 echo('<div class="container-fluid">
                     <h1>Form Inserimento Dati</h1>
                     <form action="e03.php" method="get">
