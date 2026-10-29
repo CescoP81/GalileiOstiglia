@@ -8,16 +8,20 @@
 <html>
     <head>
         <title>Prova rubrica json</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     </head>
     <body>
-        <button id="btnCaricaJSON">Carica Intera Lista</button>
-        <button id="btnCaricaMaschi">Carica Utenti Maschi</button>
-        <br /><br />
-        Et&agrave; minima: <input type="text" id="anniRichiesti">
-        <button id="btnEtaMinima">Et&agrave; maggiore o uguale di...</button>
-        <br /><br />
-        <div id="viewBox" style="border: solid 1px rgb(200,0,0);">Seleziona una opzione</div>
+        <div class="container mt-3">
+            <button id="btnCaricaJSON">Carica Intera Lista</button>
+            <button id="btnCaricaMaschi">Carica Utenti Maschi</button>
+            <br /><br />
+            Et&agrave; minima: <input type="text" id="anniRichiesti">
+            <button id="btnEtaMinima">Et&agrave; maggiore o uguale di...</button>
+            <br /><br />
+            <div id="viewBox" style="border: solid 1px rgb(200,0,0); padding: 5px;">Seleziona una opzione</div>
+        </div>
 
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
         <script>
             async function leggiRubrica(){
                 //alert("Leggo....");
@@ -39,9 +43,20 @@
                     quindi per ogni cella ho a disposizione le chiavi/attributi del json definiti nel
                     file rubrica.json
                 */
-                for(let i=0; i < vettRubrica.length; i++){
+                /*for(let i=0; i < vettRubrica.length; i++){
                     vb.innerHTML += vettRubrica[i].nome + " " + vettRubrica[i].cognome + " " + vettRubrica[i].sesso + " " + vettRubrica[i].anni + " " + vettRubrica[i].paese + "<br />";
+                }*/
+
+                let strTable = "<table class=\"table table-striped\">";
+                strTable += "<tbody>";
+                for(let i=0; i < vettRubrica.length; i++){
+                    strTable += "<tr>";
+                        strTable += "<td>"+vettRubrica[i].nome + "</td><td>" + vettRubrica[i].cognome + "</td><td> " + vettRubrica[i].sesso + "</td><td>" + vettRubrica[i].anni + "</td><td>" + vettRubrica[i].paese + "</td>";
+                    strTable += "</tr>";
                 }
+                strTable += "<tbody>";
+                strTable += "</table>";
+                vb.innerHTML = strTable;
             }
 
             async function caricaListaMaschi(){
