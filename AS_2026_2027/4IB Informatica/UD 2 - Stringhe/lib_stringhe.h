@@ -39,3 +39,11 @@ int contaVocali(int _dim, char _str[]);
  * @return 1 se palindroma, 0 se non parlindroma.
  */
 int isPalindroma(int _dim, char _str[]);
+
+/**
+ * Verifica se una parola è palindroma oppure no.
+ * @param int Dimensione massima della stringa
+ * @param char* Stringa di riferimento
+ * @return 1/0 se è palindroma oppure no
+ */
+int isPalindroma(int _dim, char _str[]);
