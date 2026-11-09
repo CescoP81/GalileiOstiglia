@@ -47,3 +47,10 @@ int isPalindroma(int _dim, char _str[]);
  * @return 1/0 se è palindroma oppure no
  */
 int isPalindroma(int _dim, char _str[]);
+
+/**
+ * Conta per ogni singola lettere quante volte compare nella parola passata.
+ * @param char* Riferimento alla parola da analizzare.
+ * @param int DImensione massima della parola.
+ */
+void contaLettere(int _dim, char _str[]);
