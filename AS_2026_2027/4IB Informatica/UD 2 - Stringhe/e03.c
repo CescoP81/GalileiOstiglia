@@ -18,7 +18,7 @@ int main(){
     scanf("%s", parola);
     junk = getchar();
 
-    if(isPalindroma(DIM, parola) == 1){
+    if(isPalindroma(parola) == 1){
         printf("La parola %s puo' essere letta anche al contrario!\n");
     }
     else{

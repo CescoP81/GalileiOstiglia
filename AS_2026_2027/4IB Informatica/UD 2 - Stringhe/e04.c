@@ -15,7 +15,7 @@ int main(){
     scanf("%s", &parola);
     junk = getchar();
 
-    contaLettere(DIM, parola);
+    contaLettere(parola);
 
     return 0;
 }

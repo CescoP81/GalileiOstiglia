@@ -18,10 +18,10 @@ int main(){
     printf("Parola Inserita: %s\n", str);
     strCharByChar(DIM, str);
 
-    printf("\nLunghezza della stringa %s: %d\n", str, lunghezzaStringa(DIM, str));
+    printf("\nLunghezza della stringa %s: %d\n", str, lunghezzaStringa(str));
 
     // richiamo della funzione contaVocali.
-    
+    printf("Nella parola %s sono presenti %d vocali.\n", str, contaVocali(str));
 
     return 0;
 }
