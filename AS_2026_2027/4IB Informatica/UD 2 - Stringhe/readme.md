@@ -33,8 +33,7 @@ Esercitazione che richiede in input due parole e verifica se sono una l'anagramm
 
 ---
 
-### **File:** lib_stringhe.h
-:notebook: *Per Vettori*  
+### :notebook: **File:** lib_stringhe.h
 - void initStringa(int _dim, char _str[]): Inizializza un vettore di caratteri con '\0' in tutte le celle.
 - void strCharByChar(int _dim, char _str[]): Stampa una stringa char-by-char.
 - int lunghezzaStringa(char _str[]): Calcola e restituisce la lunghezza di una stringa.
