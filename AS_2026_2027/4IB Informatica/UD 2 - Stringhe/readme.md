@@ -15,7 +15,7 @@ p2: 'COCA'
 
 ---
 
-:gear: *main programs*  
+### :gear: *main programs*  
 - **e01.c**  
 Codice di esempio sulla dichiarazione di una stringa, visualizzazione char by char.  
 
