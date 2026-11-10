@@ -39,6 +39,5 @@ Esercitazione che richiede in input due parole e verifica se sono una l'anagramm
 - int lunghezzaStringa(char _str[]): Calcola e restituisce la lunghezza di una stringa.
 - int contaVocali(int _dim, char _str[]): Calcola e restituisce il numero di VOCALI presenti nella stringa.
 - int isPalindroma(char _str[]): Verifica proprietà PALINDROMA: Una parola si dice palindroma se è possibile leggerla al contrario.
-- int isPalindroma(char _str[]): Verifica se una parola è palindroma oppure no.
-- void contaLettere(int _dim, char _str[]): Conta per ogni singola lettere quante volte compare nella parola passata.
+- void contaLettere(char _str[]): Conta per ogni singola lettere quante volte compare nella parola passata.
 - int isAnagramma(char _str1[], char _str2[]): Verifica se due stringhe sono l'una l'anagramma dell'altra.
