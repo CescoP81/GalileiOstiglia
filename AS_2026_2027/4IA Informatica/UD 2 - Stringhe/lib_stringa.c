@@ -7,14 +7,11 @@ void initStringa(int _dim, char _str[]){
         _str[i] = '\0';
 }
 
-int lunghezzaStringa(int _dim, char _str[]){
+int lunghezzaStringa(char _str[]){
     int len;
     len = 0;
     while(_str[len] != '\0')
         len++;
     
-    if(len < _dim)
-        return len;
-    else
-        return -1;
+    return len;
 }
