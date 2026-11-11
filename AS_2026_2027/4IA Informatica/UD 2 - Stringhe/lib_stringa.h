@@ -35,3 +35,11 @@ int contaCarattere(char _str[], char _src);
  * @param char* Riferimento alla parola
  */
 void contaInteroAlfabeto(char _str[]);
+
+/**
+ * Verifica se due parole sono una l'anagramma dell'altra. es: REMO e MORE
+ * @param char* Riferimento alla prima parola
+ * @param char* Riferimento alla seconda parola
+ * @return Vero/falso
+ */
+bool isAnagramma(char _str1[], char _str2[]);

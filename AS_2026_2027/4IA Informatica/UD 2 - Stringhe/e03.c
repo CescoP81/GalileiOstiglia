@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 #include "lib_stringa.c"
 
 #define DIM 40
