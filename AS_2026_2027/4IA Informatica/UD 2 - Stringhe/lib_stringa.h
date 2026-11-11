@@ -20,7 +20,7 @@ int lunghezzaStringa(char _str[]);
  * Stampa una stringa al contrario
  * @param char* Riferimento al vettore
  */
-....
+void stampaContrario(char _str[]);
 
 /**
  * Conta quante volte compare un carattere nella stringa
@@ -28,4 +28,4 @@ int lunghezzaStringa(char _str[]);
  * @param char Lettera da ricercare
  * @return Numero di occorrenze trovato
  */
-....
+int contaCarattere(char _str[], char _src);
