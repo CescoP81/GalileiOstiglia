@@ -44,3 +44,15 @@ int contaCarattere(char _str[], char _src){
 
     return cnt;
 }
+
+void contaInteroAlfabeto(char _str[]){
+    int i;      // contatore per passare le 26 lettere dell'alfabeto
+    char src;   // lettera da contare
+
+    src = 'a';
+    for(i=0; i<26; i++){
+        printf("%c -> %2d ", (src+i), contaCarattere(_str,(src+i)));
+        if((i+1)%13 == 0)
+            printf("\n");
+    }
+}

@@ -29,3 +29,9 @@ void stampaContrario(char _str[]);
  * @return Numero di occorrenze trovato
  */
 int contaCarattere(char _str[], char _src);
+
+/**
+ * Conta il numero di occorrenze per ogni lettera
+ * @param char* Riferimento alla parola
+ */
+void contaInteroAlfabeto(char _str[]);

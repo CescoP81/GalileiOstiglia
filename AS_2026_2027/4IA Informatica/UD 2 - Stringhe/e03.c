@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "lib_stringa.c"
 
-#define DIM 20
+#define DIM 40
 
 int main(){
     char parola[DIM];
@@ -23,5 +23,7 @@ int main(){
     printf("Lettera 'a' presente: %d\n", contaCarattere(parola, 'a'));
     printf("Lettera 'z' presente: %d\n", contaCarattere(parola, 'z'));
 
+    printf("\n\n");
+    contaInteroAlfabeto(parola);
     return 0;
 }
