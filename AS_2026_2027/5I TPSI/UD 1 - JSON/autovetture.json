@@ -1,0 +1,34 @@
+[
+    {
+        "marca":"Toyota",
+        "modello":"Corolla",
+        "annoImmatricolazione":"2001",
+        "provincia":"TO",
+        "uniproprietario":"true",
+        "kilometraggio":35000
+    },
+    {
+        "marca":"Audi",
+        "modello":"A4",
+        "annoImmatricolazione":"2009",
+        "provincia":"VR",
+        "uniproprietario":"false",
+        "kilometraggio":136000
+    },
+    {
+        "marca":"Fiat",
+        "modello":"Tigra",
+        "annoImmatricolazione":"2014",
+        "provincia":"RO",
+        "uniproprietario":"false",
+        "kilometraggio":255000
+    },
+    {
+        "marca":"Seat",
+        "modello":"Leon",
+        "annoImmatricolazione":"2020",
+        "provincia":"MN",
+        "uniproprietario":"true",
+        "kilometraggio":12000
+    }
+]

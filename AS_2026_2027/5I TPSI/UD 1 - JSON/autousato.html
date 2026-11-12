@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rivendita Auto Usate</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container mt-3">
+            <div class="alert alert-success text-center"><h1>RIVENDITA AUTO USATE... QUASI NUOVE!</h1></div>
+            <!-- Sezione dei bottoni per la UI -->
+            <div class="container mb-3">
+                <div class="row">
+                    <div class="col-4">
+                        <!-- colonna 1: bottoni generali -->
+                        <div class="alert alert-primary text-center"><h2>Ricerche<br />Generiche</h2></div>
+                        <button class="btn btn-primary" id="btnCaricaArchivio">Carica archivio Auto</button>
+                        <button class="btn btn-primary" id="btnCaricaUniproprietario">Carica Auto Uniproprietario</button>
+                    </div>
+                    <div class="col-4">
+                        <!-- colonna 2: ricerca per marca e provincia -->
+                        <div class="alert alert-success text-center"><h2>Ricerche Marca o Provincia</h2></div>
+                        <div class="form-group mb-3">
+                            <label for="inputMarca" class="form-label">Marca</label>
+                            <input class="form-control mb-3" id="inputMarca" type="text" placeholder="es. Fiat">
+                            <button class="btn btn-success" id="btnCercaMarca">Trova Modelli</button>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputProvincia" class="form-label">Provincia</label>
+                            <input class="form-control mb-3" id="inputProvincia" type="text" placeholder="es. MN">
+                            <button class="btn btn-success" id="btnCercaProvincia">Trova auto in Provincia</button>
+                        </div>
+                        
+                    </div>
+                    <div class="col-4">
+                        <!-- colonna 3: ricerca per anno immatricolazione -->
+                        <div class="alert alert-warning text-center"><h2>Ricerca per Anni Immatricolazione</h2></div>
+                        <div class="form-group">
+                            <label for="inputAnnoMinimo" class="form-label">Anno iniziale</label>
+                            <input class="form-control" id="inputAnnoMinimo" type="text" placeholder="es. 2000">
+                            <label for="inputAnnoMassimo" class="form-label">Anno finale</label>
+                            <input class="form-control" id="inputAnnoMassimo" type="text" placeholder="es. 2025">
+                            <button class="btn btn-warning mt-3" id="btnCercaAnno">Auto Intervallo di Tempo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ViewBox per visualizzare i risultati delle funzioni JS -->
+            <div class="container" id="viewBox"><h3>Usa la UI per sfogliare il catalogo.</h3></div>
+        </div>        
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <script>
+            /* ## my custom javascript here */
+            document.querySelector("#btnCaricaArchivio").addEventListener('click', async function (){
+                alert("Carico l'intero archivio di JSON...please wait!");
+            });
+            document.querySelector("#btnCaricaArchivio").addEventListener('click', async function (){
+                //alert("Vuoi caricare l'interto archivio...");
+                const promise = await fetch("autovetture.json");
+                const jsonArr = await promise.json();
+                let vb = document.querySelector("#viewBox");
+                
+                // costruisco tutto il codice HTML della tabella.
+                let resultTable = '<table class="table table-striped table-hover">';
+                resultTable += '<thead><tr>';
+                resultTable += '<th scope="col">#</th>';
+                resultTable += '<th scope="col">Marca</th>';
+                resultTable += '<th scope="col">Modello</th>';
+                resultTable += '<th scope="col">Anno Immatricolazione</th>';
+                resultTable += '<th scope="col">Provincia</th>';
+                resultTable += '<th scope="col">Uniproprietario</th>';
+                resultTable += '<th scope="col">Kilometraggio</th>';
+                resultTable += '</tr></thead>';
+                resultTable += '<tbody>';
+                    for(let i=0; i<jsonArr.length; i++){
+                        resultTable += '<tr>';
+                        resultTable += '<th scope="row">'+(i+1)+'</th>';
+                        resultTable += '<td>'+jsonArr[i].marca+'</td>';
+                        resultTable += '<td>'+jsonArr[i].modello+'</td>';
+                        resultTable += '<td>'+jsonArr[i].annoImmatricolazione+'</td>';
+                        resultTable += '<td>'+jsonArr[i].provincia+'</td>';
+                        resultTable += '<td>'+jsonArr[i].uniproprietario+'</td>';
+                        resultTable += '<td>'+jsonArr[i].kilometraggio+'</td>';
+                        resultTable += '</tr>';
+                    }
+                resultTable += '</tbody>';
+                resultTable += '<caption>AutoUsate s.n.c.</caption>';
+                resultTable += '</table>';
+
+                // Inserisco il codice della tabella nella viewBox.
+                vb.innerHTML = resultTable;
+            });
+            document.querySelector("#btnCaricaUniproprietario").addEventListener('click', async function (){
+                //alert("Vuoi caricare l'interto archivio...");
+                const promise = await fetch("autovetture.json");
+                const jsonArr = await promise.json();
+                let vb = document.querySelector("#viewBox");
+                let cnt; // contatore per i json effettivamente visualizzati
+                
+                let resultTable = '<table class="table table-striped table-hover">';
+                resultTable += '<thead><tr>';
+                resultTable += '<th scope="col">#</th>';
+                resultTable += '<th scope="col">Marca</th>';
+                resultTable += '<th scope="col">Modello</th>';
+                resultTable += '<th scope="col">Anno Immatricolazione</th>';
+                resultTable += '<th scope="col">Provincia</th>';
+                resultTable += '<th scope="col">Uniproprietario</th>';
+                resultTable += '<th scope="col">Kilometraggio</th>';
+                resultTable += '</tr></thead>';
+                resultTable += '<tbody>';
+                    cnt = 0;
+                    for(let i=0; i<jsonArr.length; i++){
+                        if(jsonArr[i].uniproprietario == "true"){
+                            resultTable += '<tr>';
+                            resultTable += '<th scope="row">'+(i+1)+'</th>';
+                            resultTable += '<td>'+jsonArr[i].marca+'</td>';
+                            resultTable += '<td>'+jsonArr[i].modello+'</td>';
+                            resultTable += '<td>'+jsonArr[i].annoImmatricolazione+'</td>';
+                            resultTable += '<td>'+jsonArr[i].provincia+'</td>';
+                            resultTable += '<td>'+jsonArr[i].uniproprietario+'</td>';
+                            resultTable += '<td>'+jsonArr[i].kilometraggio+'</td>';
+                            resultTable += '</tr>';
+                            cnt++;
+                        }
+                    }
+                resultTable += '</tbody>';
+                resultTable += '<caption>Auto a sistema: '+cnt+'</caption>';
+                resultTable += '</table>';
+
+                vb.innerHTML = resultTable;
+            });
+            document.querySelector("#btnCercaMarca").addEventListener('click', async function (){
+                //alert("Vuoi caricare l'interto archivio...");
+                const promise = await fetch("autovetture.json");
+                const jsonArr = await promise.json();
+                let vb = document.querySelector("#viewBox");
+                let marcaSrc = document.querySelector("#inputMarca").value;
+                let cnt; // contatore per i json effettivamente visualizzati
+
+                let resultTable = '<table class="table table-striped table-hover">';
+                resultTable += '<thead><tr>';
+                resultTable += '<th scope="col">#</th>';
+                resultTable += '<th scope="col">Marca</th>';
+                resultTable += '<th scope="col">Modello</th>';
+                resultTable += '<th scope="col">Anno Immatricolazione</th>';
+                resultTable += '<th scope="col">Provincia</th>';
+                resultTable += '<th scope="col">Uniproprietario</th>';
+                resultTable += '<th scope="col">Kilometraggio</th>';
+                resultTable += '</tr></thead>';
+                resultTable += '<tbody>';
+                    cnt = 0;
+                    for(let i=0; i<jsonArr.length; i++){
+                        if(jsonArr[i].marca == marcaSrc){
+                            resultTable += '<tr>';
+                            resultTable += '<th scope="row">'+(i+1)+'</th>';
+                            resultTable += '<td>'+jsonArr[i].marca+'</td>';
+                            resultTable += '<td>'+jsonArr[i].modello+'</td>';
+                            resultTable += '<td>'+jsonArr[i].annoImmatricolazione+'</td>';
+                            resultTable += '<td>'+jsonArr[i].provincia+'</td>';
+                            resultTable += '<td>'+jsonArr[i].uniproprietario+'</td>';
+                            resultTable += '<td>'+jsonArr[i].kilometraggio+'</td>';
+                            resultTable += '</tr>';
+                            cnt++;
+                        }
+                    }
+                resultTable += '</tbody>';
+                resultTable += '<caption>Auto a sistema: '+cnt+'</caption>';
+                resultTable += '</table>';
+
+                vb.innerHTML = resultTable;
+            });
+            document.querySelector("#btnCercaProvincia").addEventListener('click', async function (){
+                //alert("Vuoi caricare l'interto archivio...");
+                const promise = await fetch("autovetture.json");
+                const jsonArr = await promise.json();
+                let vb = document.querySelector("#viewBox");
+                let provinciaSrc = document.querySelector("#inputProvincia").value;
+                let cnt; // contatore per i json effettivamente visualizzati
+                
+                let resultTable = '<table class="table table-striped table-hover">';
+                resultTable += '<thead><tr>';
+                resultTable += '<th scope="col">#</th>';
+                resultTable += '<th scope="col">Marca</th>';
+                resultTable += '<th scope="col">Modello</th>';
+                resultTable += '<th scope="col">Anno Immatricolazione</th>';
+                resultTable += '<th scope="col">Provincia</th>';
+                resultTable += '<th scope="col">Uniproprietario</th>';
+                resultTable += '<th scope="col">Kilometraggio</th>';
+                resultTable += '</tr></thead>';
+                resultTable += '<tbody>';
+                    cnt = 0;
+                    for(let i=0; i<jsonArr.length; i++){
+                        if(jsonArr[i].provincia == provinciaSrc){
+                            resultTable += '<tr>';
+                            resultTable += '<th scope="row">'+(i+1)+'</th>';
+                            resultTable += '<td>'+jsonArr[i].marca+'</td>';
+                            resultTable += '<td>'+jsonArr[i].modello+'</td>';
+                            resultTable += '<td>'+jsonArr[i].annoImmatricolazione+'</td>';
+                            resultTable += '<td>'+jsonArr[i].provincia+'</td>';
+                            resultTable += '<td>'+jsonArr[i].uniproprietario+'</td>';
+                            resultTable += '<td>'+jsonArr[i].kilometraggio+'</td>';
+                            resultTable += '</tr>';
+                            cnt++;
+                        }
+                    }
+                resultTable += '</tbody>';
+                resultTable += '<caption>Auto a sistema: '+cnt+'</caption>';
+                resultTable += '</table>';
+
+                vb.innerHTML = resultTable;
+            });
+            document.querySelector("#btnCercaAnno").addEventListener('click', async function (){
+                const promise = await fetch("autovetture.json");
+                const jsonArr = await promise.json();
+                let vb = document.querySelector("#viewBox");
+                let annoIniziale = document.querySelector("#inputAnnoMinimo").value;
+                let annoFinale = document.querySelector("#inputAnnoMassimo").value;
+                let cnt; // contatore per i json effettivamente visualizzati
+                
+                let resultTable = '<table class="table table-striped table-hover">';
+                resultTable += '<thead><tr>';
+                resultTable += '<th scope="col">#</th>';
+                resultTable += '<th scope="col">Marca</th>';
+                resultTable += '<th scope="col">Modello</th>';
+                resultTable += '<th scope="col">Anno Immatricolazione</th>';
+                resultTable += '<th scope="col">Provincia</th>';
+                resultTable += '<th scope="col">Uniproprietario</th>';
+                resultTable += '<th scope="col">Kilometraggio</th>';
+                resultTable += '</tr></thead>';
+                resultTable += '<tbody>';
+                    cnt = 0;
+                    for(let i=0; i<jsonArr.length; i++){
+                        if(jsonArr[i].annoImmatricolazione >= annoIniziale && jsonArr[i].annoImmatricolazione <= annoFinale){
+                            resultTable += '<tr>';
+                            resultTable += '<th scope="row">'+(i+1)+'</th>';
+                            resultTable += '<td>'+jsonArr[i].marca+'</td>';
+                            resultTable += '<td>'+jsonArr[i].modello+'</td>';
+                            resultTable += '<td>'+jsonArr[i].annoImmatricolazione+'</td>';
+                            resultTable += '<td>'+jsonArr[i].provincia+'</td>';
+                            resultTable += '<td>'+jsonArr[i].uniproprietario+'</td>';
+                            resultTable += '<td>'+jsonArr[i].kilometraggio+'</td>';
+                            resultTable += '</tr>';
+                            cnt++;
+                        }
+                    }
+                resultTable += '</tbody>';
+                resultTable += '<caption>Auto a sistema: '+cnt+'</caption>';
+                resultTable += '</table>';
+
+                vb.innerHTML = resultTable;
+            });
+        </script>
+    </body>
+</html>
