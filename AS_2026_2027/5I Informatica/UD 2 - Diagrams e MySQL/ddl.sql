@@ -1,3 +1,4 @@
+-- Questo file contiene SOLO la definizione delle tabelle con i relativi attributi.
 CREATE TABLE IF NOT EXISTS autovettura(
     id integer unsigned auto_increment,
     marca varchar(20),
