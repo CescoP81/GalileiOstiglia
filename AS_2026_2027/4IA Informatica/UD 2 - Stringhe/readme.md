@@ -1,5 +1,5 @@
 ## ULTIMA ESERCITAZIONE PROPOSTA
-
+Realizzare un programma che richieda una parola in input, grazie ad una funzione generaAnagramma(...) crea un anagramma della parola originale. Non è richiesto che l'anagramma abbia un senso compiuto, è sufficiente che sia formato dalle stesse lettere in ugual numero ma in posizioni diverse rispetto alla parola originale.
 ---
 
 ### :gear: *main programs*  
