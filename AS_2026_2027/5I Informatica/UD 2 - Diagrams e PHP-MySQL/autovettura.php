@@ -15,7 +15,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     </head>
     <body>
-        <div class="container">
+        <div class="container mt-3">
             <!-- Creo la navbar con le opzioni generali -->
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
@@ -196,3 +196,5 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     </body>
 </html>
+
+// http://scuola.local/AS_2026_2027/5I%20Informatica/UD%202%20-%20Diagrams%20e%20PHP-MySQL/autovettura.php?inputMarca=Kia&inputModello=Picanto&inputAnno=1989&inputProvincia=NA&inputUnip=1&inputKilometri=30000&scelta=aggiungiAutovettura
