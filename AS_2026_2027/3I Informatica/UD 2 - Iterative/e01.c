@@ -8,6 +8,7 @@
 int main(){
     int cnt;    // variabile contatore per l'iterativa.
 
+/*
     // Voglio scrivere a video 5 volte "Hello World" andando a capo ogni volta.
     cnt = 1;
     while(cnt <= 5){
@@ -23,6 +24,13 @@ int main(){
     while(cnt >= 1){
         printf("Hello People -> %d proseguo...\n", cnt);
         cnt = cnt - 1;
+    }
+    printf("\nEsco con cnt= %d\n", cnt);
+*/
+    cnt = 3;
+    while(cnt >= 1){
+        printf("Hasta la vista -> %d proseguo...\n", cnt);
+        cnt = cnt + 1;
     }
     printf("\nEsco con cnt= %d\n", cnt);
     return 0;
