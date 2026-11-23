@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="es2"/>
+        <attribute name="authors" value="ASUS"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-11-15 05:58:32 "/>
+        <attribute name="created" value="QVNVUztaRU5CT09LLTE0LU9MRUQ7MjAyNi0xMS0xNTsiMDU6NTA6MzQgIjsyNTI1"/>
+        <attribute name="edited" value="QVNVUztaRU5CT09LLTE0LU9MRUQ7MjAyNi0xMS0xNTsiMDU6NTg6MzIgIjsxOzI2Mzk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="bm" type="Integer" array="False" size=""/>
+            <declare name="bM" type="Integer" array="False" size=""/>
+            <declare name="h" type="Integer" array="False" size=""/>
+            <declare name="area" type="Integer" array="False" size=""/>
+            <declare name="perim" type="Integer" array="False" size=""/>
+            <output expression="&quot;Inserisci base minore&quot;" newline="True"/>
+            <input variable="bm"/>
+            <output expression="&quot;Inserisci Base Maggiore&quot;" newline="True"/>
+            <input variable="bM"/>
+            <output expression="&quot;Inserisci Altezza&quot;" newline="True"/>
+            <input variable="h"/>
+            <if expression="h = 0">
+                <then>
+                    <if expression="bm = bM">
+                        <then>
+                            <assign variable="area" expression="bm*bM"/>
+                            <output expression="area" newline="True"/>
+                        </then>
+                        <else>
+                            <assign variable="perim" expression="(bm+BM)*2"/>
+                            <output expression="perim" newline="True"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <assign variable="area" expression="(bm + bM) * h / 2"/>
+                    <output expression="area" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
