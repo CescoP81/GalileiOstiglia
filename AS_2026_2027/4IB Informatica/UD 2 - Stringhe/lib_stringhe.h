@@ -57,3 +57,10 @@ void contaLettere(char _str[]);
  * @return 1 Anagramma presente, 0 Anagramma non presente.
  */
 int isAnagramma(char _str1[], char _str2[]);
+
+/**
+ * Genera un anagramma partendo da una stringa passata come parametro
+ * @param char* Riferimento alla prima stringa.
+ * @param char* Riferimento alla seconda stringa.
+ */
+void generaAnagramma(char _str1[], char _anagramma[]);

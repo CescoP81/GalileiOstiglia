@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 #include "lib_stringhe.h"
 
 void initStringa(int _dim, char _str[]){
@@ -119,7 +121,7 @@ int isAnagramma(char _str1[], char _str2[]){
     if(lunghezzaStringa(_str1) != lunghezzaStringa(_str2))
         return 0;   // se sono diverse non possono essere anagrammi
     else{
-        // hanno stessa lunghezza, allora procedo a verificare le lettere.
+        // hanno stessa lunghezza, allora procedo a verificare/contare le lettere.
         for(i=0; i<lunghezzaStringa(_str1); i++){ // incremento i contatori usando str1
             indice = _str1[i] - 'a';
             cnt_lettera[indice]++;
@@ -137,4 +139,42 @@ int isAnagramma(char _str1[], char _str2[]){
         }
         return 1; // se arrivo qui tutti i contatori erano a zero quindi SONO anagrammi
     }
+}
+
+void generaAnagramma(char _str1[], char _anagramma[]){
+    int i;                  // indice per muovermi sui vettori
+    int generato;           // flag che controlla se ho terminato di usare tutte le lettere originali
+    int cnt_lettera[26];    // vettore dei contatori.
+    int indiceContatore;    // indice per muovermi sul vettore dei contatori.
+    int indice;
+
+    // step 1: azzero il vettore dei contatori
+    for(i=0; i<26; i++)
+        cnt_lettera[i] = 0;
+
+        // step 2: conto quali e quante lettere compongono la parola originale str1
+    for(i=0; i<lunghezzaStringa(_str1); i++){
+        indice = _str1[i] - 'a';
+        cnt_lettera[indice]++;
+    }
+
+    // step 3: genero l'anagramma
+    //srand(time(NULL));
+    i = 0;
+    do{
+        generato = 1;
+        indiceContatore = rand()%26;
+        if(cnt_lettera[indiceContatore] > 0){
+            _anagramma[i] = 'a'+ indiceContatore;
+            i = i + 1;
+            cnt_lettera[indiceContatore]--;
+        }
+        // controllo se ho finito le lettere a disposizione
+        for(int j=0; j<26; j++){
+            if(cnt_lettera[j] != 0)
+                generato = 0;
+        }
+    }while(generato == 0);
+   
+    _anagramma[i] = '\0';
 }
