@@ -1,0 +1,1 @@
+## cartella principale contente gli Asset del Caso Studio - Progetto
