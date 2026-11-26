@@ -63,6 +63,7 @@
                                 <th scope="col">Provincia</th>
                                 <th scope="col">Uniproprietario</th>
                                 <th scope="col">Kilometraggio</th>
+                                <th scope="col">Gestione</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -77,6 +78,8 @@
                                             <td>'.$record['provincia'].'</td>
                                             <td>'.$record['uniproprietario'].'</td>
                                             <td>'.$record['kilometraggio'].'</td>
+                                            <td><a class="btn btn-danger btn-lg" href="autovettura.php?scelta=cancellaRecord&idRecord='.$record['id'].'">Cancella</a></td>
+                                            <!-- <td><a class="btn btn-danger btn-lg" href="autovettura.php?scelta=cancellaRecord&idRecord='.$record['id'].'"></a></td>-->
                                         </tr>');
                                 }
                                 ?>
@@ -190,11 +193,25 @@
                         $db->close();
                         break;
                     }
+                    case "cancellaRecord":{
+                        // recupero l'id del record da cancellare dalla http requesto
+                        $idR = $_REQUEST['idRecord'];
+
+                        // mi collego al database
+                        $db = new mysqli("localhost","root","","5i_as2627");
+                        $sql = "DELETE FROM autovettura WHERE id=$idR";
+
+                        if($db->query($sql))
+                            echo('<div class="alert alert-success text-center"><h3>Cancellazione avvenuta...</h3></div>');
+                        else
+                            echo('<div class="alert alert-warning text-center"><h3>Ops, qualquadra non cosa...</h3></div>');
+
+                        $db->close();
+                        break;
+                    }
                 }
             ?>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     </body>
 </html>
-
-// http://scuola.local/AS_2026_2027/5I%20Informatica/UD%202%20-%20Diagrams%20e%20PHP-MySQL/autovettura.php?inputMarca=Kia&inputModello=Picanto&inputAnno=1989&inputProvincia=NA&inputUnip=1&inputKilometri=30000&scelta=aggiungiAutovettura
