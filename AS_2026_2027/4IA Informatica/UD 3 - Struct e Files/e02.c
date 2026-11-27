@@ -15,11 +15,11 @@ int main(){
 
     // --- estensione esercizio utilizzando un vettore di 3 elementi.
     for(int i=0; i<DIM; i++){
-        inputShape(...);
+        inputShape(&vectorShape[i]);    // passo l'indirizzo di ogni cella del vettore.
     }    
 
     for(int i=0; i<DIM; i++){
-        printShape(...);
+        printShape(vectorShape[i]); //passo una copia di ogni cella del vettore.
     }
     return 0;
 }
