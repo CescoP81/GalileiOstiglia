@@ -15,6 +15,10 @@ void inputShape(Shape* _x){
     scanf("%d", &altezza);
     junk = getchar();
 
-    (*_x).b = base;         // _x->b = base;
-    (*_x).h = altezza;      // _x->h = altezza;
+    _x->b = base;         // (*_x).b = base;
+    _x->h = altezza;      // (*_x).h = altezza;
+}
+
+void printShape(Shape _x){
+    printf("Base: %d, Altezza: %d\n\n", _x.b, _x.h);
 }

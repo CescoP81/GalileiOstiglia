@@ -10,3 +10,5 @@ typedef struct{
  * @param Shape* Riferimento alla variabile da utilizzare.
  */
 void inputShape(Shape* _x);
+
+void printShape(Shape _x);
